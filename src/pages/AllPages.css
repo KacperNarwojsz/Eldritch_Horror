@@ -1,0 +1,104 @@
+/* MAIN */
+/* 
+.Home {
+    
+} */
+
+.Cthulhu {
+    background-image: url(/src/pictures/cthulhu.jpg);
+    background-size: cover;
+}
+
+/* FONTS  */
+
+@font-face {
+    font-family: Birmingham;
+    src: url(../Eldrich-font/Birmingham.ttf);
+}
+
+@font-face {
+    font-family: Birmingham_Bold;
+    src: url(../Eldrich-font/BirminghamBold.ttf);
+}
+
+@font-face {
+    font-family: Birmingham_Elongated;
+    src: url(../Eldrich-font/BirminghamElongated.ttf);
+}
+
+@font-face {
+    font-family: Birmingham_Squat;
+    src: url(../Eldrich-font/BirminghamSquat.ttf);
+}
+
+@font-face {
+    font-family: Birmingham_Titling;
+    src: url(../Eldrich-font/BirminghamTitling.ttf);
+}
+
+@font-face {
+    font-family: Birmingham_Titling_Bold;
+    src: url(../Eldrich-font/BirminghamTitlingBold.ttf);
+}
+
+@font-face {
+    font-family: Birmingham_Titling_Elongated;
+    src: url(../Eldrich-font/BirminghamTitlingElongated.ttf);
+}
+
+/* TEXT  */
+
+.title {
+    margin: 10px;
+    font-family: 'Birmingham_Titling_Bold';
+    font-size: 3.5em;
+    color: white;
+}
+
+/* PICTURES  */
+
+.eldrich_logo {
+    height: 25rem;
+    margin: 1rem;
+}
+
+/* BUTTONS  */
+
+.mainButton {
+    height: 15rem;
+    width: 15rem;
+    margin: 2rem;
+    font-family: 'Birmingham';
+    font-size: 1.6rem;
+    color: white;
+    padding-top: 11rem;
+    background-position: center;
+    transition: all .2s ease;
+}
+
+.mainButton:hover {
+    transform: scale(1.2);
+}
+
+#buttonAzathoth {
+    background-image: url(/src/pictures/azathoth.jpg);
+    background-size: 18rem;
+}
+
+#buttonYog {
+    background-image: url(/src/pictures/yog-sothoth.jpg);
+    background-size: 18rem;
+}
+
+#buttonShub {
+    background-image: url(/src/pictures/shub-niggurath.jpg);
+    background-size: cover;
+}
+
+#buttonCthulhu {
+    background-image: url(/src/pictures/cthulhu.jpg);
+    background-size: cover;
+    background-position: left;
+}
+
+

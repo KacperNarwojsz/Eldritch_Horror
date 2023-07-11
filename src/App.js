@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Home from './pages/Home';
+import Cthulhu from './pages/Cthulhu';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  
+  constructor() {
+    super();
+    this.state = {
+        route: 'home'
+    }
+  }
+
+  routeChange = (event) => {
+    if (event.key === 'Enter') {
+      this.setState({ route: event.target.value })
+    }
+  }
+
+  returnHome = (route) => {
+    this.setState({ route: 'home'})
+  }
+
+  render() {
+    const { route } = this.state;
+    const checkRoute = (route) => {
+      switch(route) {
+
+        case "home":        return <Home submitAnswerToMain={this.routeChange}/>;
+        case "Cthulhu":     return <Cthulhu />;
+        default:            return <Home submitAnswerToMain={this.routeChange}/>;
+      }
+    }
+
+    return (
+      <div className="App">
+         <div>{ checkRoute(route) }</div>
+      </div>
+    );
+  }
 }
 
 export default App;
