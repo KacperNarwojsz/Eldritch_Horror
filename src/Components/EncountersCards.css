@@ -1,0 +1,38 @@
+/* BUTTONS  */
+
+.encounterCard {
+    height: 23vh;
+    width: 15vh;
+    margin: 2vh;
+    justify-content: center;
+    background-size: contain;
+    transition: all .3s ease;
+}
+
+.encounterCard:hover {
+    transform: scale(1.1);
+}
+
+#America {
+    background-image: url(/src/pictures/Americas_Encounter.png);
+}
+
+#Europe {
+    background-image: url(/src/pictures/Europe_Encounter.png);
+}
+
+#AsiaAustralia {
+    background-image: url(/src/pictures/Asia-Australia_Encounter.png);
+}
+
+#General {
+    background-image: url(/src/pictures/General_Encounter.png);
+}
+
+#OtherWorld {
+    background-image: url(/src/pictures/Other_World_Encounter.png);
+}
+
+#Expedition {
+    background-image: url(/src/pictures/The_Pyramids_Encounter.png);
+}

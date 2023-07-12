@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Home from './pages/Home';
+import Azathoth from './pages/Azathoth';
+import YogSothoth from './pages/YogSothoth';
+import ShubNiggurath from './pages/ShubNiggurath';
 import Cthulhu from './pages/Cthulhu';
 import './App.css';
 
@@ -12,14 +15,20 @@ class App extends Component {
     }
   }
 
-  routeChange = (event) => {
-    if (event.key === 'Enter') {
-      this.setState({ route: event.target.value })
-    }
+  routeToAzathoth = (event) => {
+    this.setState({ route: 'Azathoth'})
   }
 
-  returnHome = (route) => {
-    this.setState({ route: 'home'})
+  routeToYog = (event) => {
+    this.setState({ route: 'YogSothoth'})
+  }
+
+  routeToShub = (event) => {
+    this.setState({ route: 'ShubNiggurath'})
+  }
+
+  routeToCthulhu = (event) => {
+    this.setState({ route: 'Cthulhu'})
   }
 
   render() {
@@ -27,9 +36,16 @@ class App extends Component {
     const checkRoute = (route) => {
       switch(route) {
 
-        case "home":        return <Home submitAnswerToMain={this.routeChange}/>;
-        case "Cthulhu":     return <Cthulhu />;
-        default:            return <Home submitAnswerToMain={this.routeChange}/>;
+        case "Azathoth":          return <Azathoth />;
+        case "YogSothoth":        return <YogSothoth />;
+        case "ShubNiggurath":     return <ShubNiggurath />;
+        case "Cthulhu":           return <Cthulhu />;
+        default:                  return <Home 
+                                            loadAzathoth={this.routeToAzathoth} 
+                                            loadYog={this.routeToYog}
+                                            loadShub={this.routeToShub}
+                                            loadCthulhu={this.routeToCthulhu}
+                                          />;
       }
     }
 

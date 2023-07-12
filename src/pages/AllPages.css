@@ -1,8 +1,19 @@
 /* MAIN */
-/* 
-.Home {
-    
-} */
+
+.Azathoth {
+    background-image: url(/src/pictures/azathoth.jpg);
+    background-size: cover;
+}
+
+.YohSothoth {
+    background-image: url(/src/pictures/yog-sothoth.jpg);
+    background-size: cover;
+}
+
+.ShubNiggurath {
+    background-image: url(/src/pictures/shub-niggurath.jpg);
+    background-size: cover;
+}
 
 .Cthulhu {
     background-image: url(/src/pictures/cthulhu.jpg);
@@ -55,9 +66,29 @@
     }
 }
 
+
+
+/* PICTURES  */
+
+.main_eldrich_logo {
+    height: 40vh;
+    padding-top: 4vh;
+    margin: 2vh;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeInAnimation ease 10s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.board {
+    height: 80vh;
+    width: 150vh;
+}
+
 /* TEXT  */
 
-.title {
+.main_title {
     margin: 2vh;
     padding: 0.5vh;
     font-family: 'Birmingham_Titling_Bold';
@@ -65,21 +96,8 @@
     color: white;
     justify-content: center;
     opacity: 0;
-    animation: fadeInAnimation ease 10s;
+    animation: fadeInAnimation ease 7s;
     animation-delay: 5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
-/* PICTURES  */
-
-.eldrich_logo {
-    height: 40vh;
-    padding-top: 4vh;
-    margin: 2vh;
-    justify-content: center;
-    opacity: 0;
-    animation: fadeInAnimation ease 10s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -96,7 +114,7 @@
     color: white;
     padding-top: 23vh;
     background-position: center;
-    transition: all .2s ease;
+    transition: all .3s ease;
 }
 
 .mainButton:hover {
@@ -107,8 +125,8 @@
     background-image: url(/src/pictures/azathoth.jpg);
     background-size: 36vh;
     opacity: 0;
-    animation: fadeInAnimation ease 10s;
-    animation-delay: 7s;
+    animation: fadeInAnimation ease 3s;
+    animation-delay: 6s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -117,8 +135,8 @@
     background-image: url(/src/pictures/yog-sothoth.jpg);
     background-size: 36vh;
     opacity: 0;
-    animation: fadeInAnimation ease 10s;
-    animation-delay: 8s;
+    animation: fadeInAnimation ease 3s;
+    animation-delay: 6.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -127,8 +145,8 @@
     background-image: url(/src/pictures/shub-niggurath.jpg);
     background-size: cover;
     opacity: 0;
-    animation: fadeInAnimation ease 10s;
-    animation-delay: 9s;
+    animation: fadeInAnimation ease 3s;
+    animation-delay: 7s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -138,10 +156,8 @@
     background-size: cover;
     background-position: left;
     opacity: 0;
-    animation: fadeInAnimation ease 10s;
-    animation-delay: 10s;
+    animation: fadeInAnimation ease 3s;
+    animation-delay: 7.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
-
-
