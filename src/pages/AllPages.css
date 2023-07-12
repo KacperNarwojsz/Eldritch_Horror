@@ -52,7 +52,7 @@
     margin: 0.4em;
     padding: 0.1em;
     font-family: 'Birmingham_Titling_Bold';
-    font-size: 3.5em;
+    font-size: 3.2em;
     color: white;
     justify-content: center;
 }
@@ -62,6 +62,7 @@
 .eldrich_logo {
     height: 25em;
     margin: 1em;
+    justify-content: center;
 }
 
 /* BUTTONS  */
