@@ -49,7 +49,8 @@
 /* TEXT  */
 
 .title {
-    margin: 10px;
+    margin: 0.4em;
+    padding: 0.1em;
     font-family: 'Birmingham_Titling_Bold';
     font-size: 3.5em;
     color: white;
@@ -68,7 +69,7 @@
 .mainButton {
     height: 10em;
     width: 10em;
-    margin: 2em;
+    margin: 1em;
     justify-content: center;
     font-family: 'Birmingham';
     font-size: 1.6em;
