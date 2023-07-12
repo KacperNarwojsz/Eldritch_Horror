@@ -46,6 +46,15 @@
     src: url(../Eldrich-font/BirminghamTitlingElongated.ttf);
 }
 
+
+/* KEYS  */
+
+@keyframes fadeInAnimation {
+    100% {
+        opacity: 1;
+    }
+}
+
 /* TEXT  */
 
 .title {
@@ -55,6 +64,11 @@
     font-size: 6vh;
     color: white;
     justify-content: center;
+    opacity: 0;
+    animation: fadeInAnimation ease 10s;
+    animation-delay: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 /* PICTURES  */
@@ -64,6 +78,10 @@
     padding-top: 4vh;
     margin: 2vh;
     justify-content: center;
+    opacity: 0;
+    animation: fadeInAnimation ease 10s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 /* BUTTONS  */
@@ -88,22 +106,42 @@
 #buttonAzathoth {
     background-image: url(/src/pictures/azathoth.jpg);
     background-size: 36vh;
+    opacity: 0;
+    animation: fadeInAnimation ease 10s;
+    animation-delay: 7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 #buttonYog {
     background-image: url(/src/pictures/yog-sothoth.jpg);
     background-size: 36vh;
+    opacity: 0;
+    animation: fadeInAnimation ease 10s;
+    animation-delay: 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 #buttonShub {
     background-image: url(/src/pictures/shub-niggurath.jpg);
     background-size: cover;
+    opacity: 0;
+    animation: fadeInAnimation ease 10s;
+    animation-delay: 9s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 #buttonCthulhu {
     background-image: url(/src/pictures/cthulhu.jpg);
     background-size: cover;
     background-position: left;
+    opacity: 0;
+    animation: fadeInAnimation ease 10s;
+    animation-delay: 10s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 
