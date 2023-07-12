@@ -53,25 +53,27 @@
     font-family: 'Birmingham_Titling_Bold';
     font-size: 3.5em;
     color: white;
+    justify-content: center;
 }
 
 /* PICTURES  */
 
 .eldrich_logo {
-    height: 25rem;
-    margin: 1rem;
+    height: 25em;
+    margin: 1em;
 }
 
 /* BUTTONS  */
 
 .mainButton {
-    height: 15rem;
-    width: 15rem;
-    margin: 2rem;
+    height: 10em;
+    width: 10em;
+    margin: 2em;
+    justify-content: center;
     font-family: 'Birmingham';
-    font-size: 1.6rem;
+    font-size: 1.6em;
     color: white;
-    padding-top: 11rem;
+    padding-top: 8em;
     background-position: center;
     transition: all .2s ease;
 }
@@ -82,12 +84,12 @@
 
 #buttonAzathoth {
     background-image: url(/src/pictures/azathoth.jpg);
-    background-size: 18rem;
+    background-size: 12em;
 }
 
 #buttonYog {
     background-image: url(/src/pictures/yog-sothoth.jpg);
-    background-size: 18rem;
+    background-size: 12em;
 }
 
 #buttonShub {
