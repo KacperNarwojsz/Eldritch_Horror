@@ -1,9 +1,17 @@
+/* MAIN  */
+
+.encounters {
+    display: grid;
+    grid-column: 3 / 11;
+    grid-row: 4 / 5;
+}
+
 /* BUTTONS  */
 
 .encounterCard {
     height: 23vh;
     width: 15vh;
-    margin: 2vh;
+    margin: 2.5vh;
     justify-content: center;
     background-size: contain;
     transition: all .3s ease;
@@ -14,25 +22,33 @@
 }
 
 #America {
-    background-image: url(/src/pictures/Americas_Encounter.png);
+    background-image: url(/src/pictures/Encounter_Americas.png);
 }
 
 #Europe {
-    background-image: url(/src/pictures/Europe_Encounter.png);
+    background-image: url(/src/pictures/Encounter_Europe.png);
 }
 
 #AsiaAustralia {
-    background-image: url(/src/pictures/Asia-Australia_Encounter.png);
+    background-image: url(/src/pictures/Encounter_Asia-Australia.png);
 }
 
 #General {
-    background-image: url(/src/pictures/General_Encounter.png);
+    background-image: url(/src/pictures/Encounter_General.png);
 }
 
 #OtherWorld {
-    background-image: url(/src/pictures/Other_World_Encounter.png);
+    background-image: url(/src/pictures/Encounter_Other_World.png);
 }
 
 #Expedition {
-    background-image: url(/src/pictures/The_Pyramids_Encounter.png);
+    background-image: url(/src/pictures/Encounter_Expedition.png);
+}
+
+#Ancient_research {
+    background-image: url(/src/pictures/Encounter_Cthulhu_research.png);
+}
+
+#Ancient_special {
+    background-image: url(/src/pictures/Encounter_Cthulhu_special.png);
 }

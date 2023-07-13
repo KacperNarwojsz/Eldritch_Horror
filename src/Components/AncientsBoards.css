@@ -1,0 +1,53 @@
+/* MAIN  */
+
+.CthulhuBoard {
+    display: grid;
+    grid-column: auto;
+    grid-row: auto;
+}
+
+/* BUTTONS  */
+
+.CthulhuSheet {
+    background-image: url(/src/pictures/Ancient_Cthulhu_sheet_front.png);
+    background-size: contain;
+    display: grid;
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+    height: 44.95vh;
+    width: 36vh;
+    margin: 2vh;
+    transition: all .3s ease;
+}
+
+.CthulhuSheet:hover {
+    transform: scale(1.03);
+}
+
+.CthulhuMystery {
+    background-image: url(/src/pictures/Ancient_Cthulhu_mystery.png);
+    height: 15vh;
+    width: 23vh;
+    margin: 2vh;
+    position: absolute;
+    background-size: contain;
+    transition: all .3s ease;
+}
+
+.CthulhuMystery:hover {
+    transform: scale(1.1);
+}
+
+.Mythos {
+    background-image: url(/src/pictures/Mythos_Card.png);
+    height: 23vh;
+    width: 15vh;
+    margin: 2vh;
+    justify-content: center;
+    background-size: contain;
+    transition: all .3s ease;
+}
+
+.Mythos:hover {
+    transform: scale(1.1);
+}
