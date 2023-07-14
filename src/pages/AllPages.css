@@ -63,11 +63,17 @@
 .Cthulhu {
     background-image: url(/src/pictures/Ancient_Cthulhu.jpg);
     background-size: cover;
+    /* display: grid; */
+    height: 100vh;
+    width: 100vw;
+}
+
+.CthulhuContainer {
     display: grid;
     height: 100vh;
     width: 100vw;
-    grid-template-columns: 12.2% repeat(8 9.45%) 12.2%;
-    grid-template-rows: 9.8% repeat(3 26.8%) 9.8%;   
+    /* grid-template-columns: repeat(43fr);
+    grid-template-rows: repeat(20fr); */
 }
 
 /* PICTURES  */
@@ -83,17 +89,32 @@
     animation-fill-mode: forwards;
 }
 
-.eldrich_board {
-    grid-area: 1/1/6/11;
+.eldrich_board { 
     margin: 2vh 2vw;
     max-height: 96vh;
     max-width: 96vw;
     overflow: hidden;
-    /* object-fit: cover; */
-    /* width: 100%;
-    max-height: 100%; */
     align-self: center;
-    /* justify-self: stretch; */
+    justify-self: center;
+}
+
+.EldrichBoardDiv {
+    grid-area: 5/2/24/38;
+}
+
+/* .test {
+    grid-area: 4/24/40/57;
+} */
+
+.CthuluBoardDiv {
+    grid-column-start: 8;
+    grid-row-start: 7;
+    grid-area: 7/8/16/16
+}
+
+.EncountersCardsDiv {
+    grid-area: 16/4/18/36;
+    scale: 0.9;
 }
 
 /* TEXT  */
