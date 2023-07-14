@@ -8,11 +8,11 @@ import './AllPages.css'
 const Cthulhu = ({ submitAnswerToMain }) => {
     return (
         <div className='Cthulhu'>
-            <img src={eldrich_board} className="eldrich_board" alt="Eldrich_board" />
-            <div className="CthulhuCards">
+                <img src={eldrich_board} className="eldrich_board" alt="Eldrich_board" />
+            {/* <div className="CthulhuCards">
                 <CthulhuBoard />
                 <EncountersCards />
-            </div>
+            </div> */}
         </div>
     )
 }

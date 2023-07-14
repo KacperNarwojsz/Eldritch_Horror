@@ -5,8 +5,8 @@ const CthulhuBoard = ({ submitAnswerToHome }) => {
     return (
         <div className='CthulhuBoard'>
             <button className='CthulhuSheet'></button> 
-            <button className='CthulhuMystery'></button>
-            <button className='Mythos'></button>
+            {/* <button className='CthulhuMystery'></button>
+            <button className='Mythos'></button> */}
         </div>
     )
 }
