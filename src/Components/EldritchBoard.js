@@ -7,7 +7,7 @@ const EldritchBoard = ({ children }) => {
     return (
         <div className='EldritchBoard'>
             <img src={eldritch_board} className="eldritch_board" alt="eldritch_board" />
-            {children}
+            {children} 
         </div>
     )
 }

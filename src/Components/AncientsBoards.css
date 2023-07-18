@@ -1,8 +1,10 @@
 /* MAIN  */
 
-/* .CthulhuBoard {
-    position: fixed;
-} */
+.CthulhuBoard {
+    position: absolute;
+    left: 11%;
+    top: 13%;
+}
 
 /* BUTTONS  */
 
