@@ -2,37 +2,37 @@
 
 @font-face {
     font-family: Birmingham;
-    src: url(../Eldrich-font/Birmingham.ttf);
+    src: url(../Eldritch-font/Birmingham.ttf);
 }
 
 @font-face {
     font-family: Birmingham_Bold;
-    src: url(../Eldrich-font/BirminghamBold.ttf);
+    src: url(../Eldritch-font/BirminghamBold.ttf);
 }
 
 @font-face {
     font-family: Birmingham_Elongated;
-    src: url(../Eldrich-font/BirminghamElongated.ttf);
+    src: url(../Eldritch-font/BirminghamElongated.ttf);
 }
 
 @font-face {
     font-family: Birmingham_Squat;
-    src: url(../Eldrich-font/BirminghamSquat.ttf);
+    src: url(../Eldritch-font/BirminghamSquat.ttf);
 }
 
 @font-face {
     font-family: Birmingham_Titling;
-    src: url(../Eldrich-font/BirminghamTitling.ttf);
+    src: url(../Eldritch-font/BirminghamTitling.ttf);
 }
 
 @font-face {
     font-family: Birmingham_Titling_Bold;
-    src: url(../Eldrich-font/BirminghamTitlingBold.ttf);
+    src: url(../Eldritch-font/BirminghamTitlingBold.ttf);
 }
 
 @font-face {
     font-family: Birmingham_Titling_Elongated;
-    src: url(../Eldrich-font/BirminghamTitlingElongated.ttf);
+    src: url(../Eldritch-font/BirminghamTitlingElongated.ttf);
 }
 
 /* KEYS  */
@@ -78,7 +78,7 @@
 
 /* PICTURES  */
 
-.main_eldrich_logo {
+.main_eldritch_logo {
     height: 40vh;
     padding-top: 4vh;
     margin: 2vh;
@@ -89,7 +89,7 @@
     animation-fill-mode: forwards;
 }
 
-.eldrich_board { 
+.eldritch_board { 
     margin: 2vh 2vw;
     max-height: 96vh;
     max-width: 96vw;
@@ -98,7 +98,7 @@
     justify-self: center;
 }
 
-.EldrichBoardDiv {
+.EldritchBoardDiv {
     grid-area: 5/2/24/38;
 }
 

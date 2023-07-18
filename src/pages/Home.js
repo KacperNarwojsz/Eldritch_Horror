@@ -1,5 +1,5 @@
 import React from "react";
-import eldrich_logo from "../pictures/Eldrich_logo.png";
+import eldritch_logo from "../pictures/Eldritch_logo.png";
 import './AllPages.css'
 
 
@@ -8,7 +8,7 @@ const Home = ({ loadAzathoth, loadYog, loadShub, loadCthulhu }) => {
     return (
         <div className='Home'>
             <div>
-                <img src={eldrich_logo} className="main_eldrich_logo" alt="eldrich_logo" />
+                <img src={eldritch_logo} className="main_eldritch_logo" alt="eldritch_logo" />
             </div>
             <div>
                 <h1 className="main_title">WYBIERZ PRZEDWIECZNEGO:</h1>
