@@ -1,0 +1,12 @@
+.EldritchBoard {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.eldritch_board {
+    width: 97vw;
+    overflow: hidden;
+    align-self: center;
+}
