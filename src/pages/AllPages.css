@@ -67,6 +67,37 @@
     width: 100vw;
 }
 
+.CthulhuDiv {
+    display: grid;
+    grid-template-rows: 50vh 50vh;
+}
+
+.CthulhuBoardDiv {
+    position: fixed;
+    width: 100vw;
+    height: 60vh;
+    top: 0;
+    left: 0;
+}
+
+.CthulhuBoardGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10vh 40vh 10vh;
+}
+
+/* .EncountersDiv {
+    position: fixed;
+    width: 100vw;
+    height: 40vh;
+    left: 0;
+    bottom: 0;
+} */
+
+.EncountersGrid {
+    grid-row:2/3;
+}
+
 /* .CthulhuContainer {
     display: grid;
     height: 100vh;

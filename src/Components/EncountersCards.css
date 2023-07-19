@@ -2,7 +2,10 @@
 
 .encounters {
     position: fixed;
-    bottom: 12%;
+    width: 100vw;
+    height: 40vh;
+    left: 0;
+    bottom: 0;
 }
 
 /* BUTTONS  */

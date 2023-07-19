@@ -4,9 +4,9 @@ import './AncientsBoards.css'
 const CthulhuBoard = ({ submitAnswerToHome }) => {
     return (
         <div className='CthulhuBoard'>
-            <button className='CthulhuSheet'></button> 
-            <button className='CthulhuMystery'></button>
-            <button className='Mythos'></button>
+            {/* <button className='CthulhuSheet'></button>  */}
+            {/* <button className='CthulhuMystery'></button>
+            <button className='Mythos'></button> */}
         </div>
     )
 }

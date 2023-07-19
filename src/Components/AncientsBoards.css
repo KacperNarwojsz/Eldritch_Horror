@@ -1,9 +1,7 @@
 /* MAIN  */
 
 .CthulhuBoard {
-    position: absolute;
-    left: 11%;
-    top: 13%;
+display: relative;
 }
 
 /* BUTTONS  */
