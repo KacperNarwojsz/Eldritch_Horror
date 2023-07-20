@@ -75,6 +75,21 @@
     left: 0;
 }
 
+.BoardDiv {
+    position: relative; 
+    width: 78.4vw;
+    margin-left: 10.8vw;
+    margin-right: 10.8vw;
+    margin-top: 5vw;
+}
+
+.FlexDiv {
+    display: flex;
+    height: 50vh;
+    width: 100vw;
+    align-items: flex-end;
+}
+
 .BottomDiv {
     position: fixed;
     height: 50vh;
