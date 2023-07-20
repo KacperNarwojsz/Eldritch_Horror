@@ -20,7 +20,7 @@
 .CthulhuSheet {
     background-image: url(/src/pictures/Ancient_Cthulhu_sheet_front.png);
     background-size: cover;
-    height: 21vw;
+    height: 21.5vw;
     width: 17.2vw;
     margin: 1.2vw;
     transition: all .3s ease;
@@ -44,6 +44,26 @@
     transform: scale(1.1);
 }
 
+.CthulhuMysteryFront {
+    background-image: url(/src/pictures/Ancient_Cthulhu_mystery_front.png);
+    height: 7.4vw;
+    width: 11.5vw;
+    margin: 1.2vw;
+    position: absolute;
+    left: 35vw;
+    background-size: cover;
+    transition: all .3s ease;
+}
+
+.CthulhuMysteryFront:hover {
+    transform: scale(1.1);
+}
+
+
+.CthulhuMystery:hover {
+    transform: scale(1.1);
+}
+
 .Mythos {
     background-image: url(/src/pictures/Mythos_Card.png);
     height: 11.5vw;
@@ -55,6 +75,76 @@
 }
 
 .Mythos:hover {
+    transform: scale(1.1);
+}
+
+.Mythos1 {
+    background-image: url(/src/pictures/Mythos_Card_1.png);
+    height: 11.5vw;
+    width: 7.4vw;
+    margin: 1.2vw;
+    justify-content: center;
+    background-size: cover;
+    transition: all .3s ease;
+}
+
+.Mythos1:hover {
+    transform: scale(1.1);
+}
+
+.Mythos2 {
+    background-image: url(/src/pictures/Mythos_Card_2.png);
+    height: 11.5vw;
+    width: 7.4vw;
+    margin: 1.2vw;
+    justify-content: center;
+    background-size: cover;
+    transition: all .3s ease;
+}
+
+.Mythos2:hover {
+    transform: scale(1.1);
+}
+
+.Mythos3 {
+    background-image: url(/src/pictures/Mythos_Card_3.png);
+    height: 11.5vw;
+    width: 7.4vw;
+    margin: 1.2vw;
+    justify-content: center;
+    background-size: cover;
+    transition: all .3s ease;
+}
+
+.Mythos3:hover {
+    transform: scale(1.1);
+}
+
+.Mythos4 {
+    background-image: url(/src/pictures/Mythos_Card_4.png);
+    height: 11.5vw;
+    width: 7.4vw;
+    margin: 1.2vw;
+    justify-content: center;
+    background-size: cover;
+    transition: all .3s ease;
+}
+
+.Mythos4:hover {
+    transform: scale(1.1);
+}
+
+.Mythos5 {
+    background-image: url(/src/pictures/Mythos_Card_5.png);
+    height: 11.5vw;
+    width: 7.4vw;
+    margin: 1.2vw;
+    justify-content: center;
+    background-size: cover;
+    transition: all .3s ease;
+}
+
+.Mythos5:hover {
     transform: scale(1.1);
 }
 
