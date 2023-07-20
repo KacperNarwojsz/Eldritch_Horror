@@ -1,6 +1,6 @@
 import React from "react";
 import EncountersCards from "../Components/EncountersCards";
-import CthulhuBoard from "../Components/CthulhuBoard";
+// import CthulhuBoard from "../Components/CthulhuBoard";
 import EldritchBoard from "../Components/EldritchBoard";
 import './AllPages.css'
 
@@ -8,21 +8,14 @@ import './AllPages.css'
 const Cthulhu = ({ submitAnswerToMain }) => {
     return (
         <div className="Cthulhu">
-            <div className="CthulhuDiv">
-                <EldritchBoard>
-                    <div className="CthulhuBoardDiv">
-                        <div className="CthulhuBoardGrid">
-                            <CthulhuBoard />
-                        </div>
-                    </div>
-                    <div className="EncountersDiv">
-                        <div className="EncountersGrid">
-                            <EncountersCards />
-                        </div>
-                    </div> 
-                </EldritchBoard>
-            </div>
-
+            <EldritchBoard>
+                <div className="TopDiv">
+                    {/* <CthulhuBoard /> */}
+                </div>
+                <div className="BottomDiv">
+                        <EncountersCards />
+                </div> 
+            </EldritchBoard>
         </div>
     )
 }

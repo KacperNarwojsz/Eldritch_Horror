@@ -1,21 +1,27 @@
 /* MAIN  */
 
 .encounters {
-    position: fixed;
-    width: 100vw;
+    position: relative;
+    width: 80vw;
+    margin-top: 4vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    /* width: 100vw;
     height: 40vh;
     left: 0;
-    bottom: 0;
+    bottom: 0; */
+    /* grid-row: 2/3;
+    justify-self: center;  */
 }
 
 /* BUTTONS  */
 
 .encounterCard {
-    height: 23vh;
-    width: 15vh;
-    margin: 2.5vh;
+    height: 12vw;
+    width: 7.8vw;
+    margin: 0.8vw;
     justify-content: center;
-    background-size: contain;
+    background-size: cover;
     transition: all .3s ease;
 }
 
