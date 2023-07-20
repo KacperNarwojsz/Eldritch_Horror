@@ -1,6 +1,6 @@
 import React from "react";
 import eldritch_board from "../pictures/Eldritch_board.png";
-import './EldritchBoard.css'
+import './Components.css'
 
 
 const EldritchBoard = ({ children }) => {

@@ -1,0 +1,118 @@
+/* --------- MAIN BOARD --------- */
+
+.EldritchBoard {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.eldritch_board {
+    width: 99vw;
+    overflow: hidden;
+    align-self: center;
+}
+
+/* --------- ANCCIENT BOARDS --------- */
+
+/* BUTTONS  */
+
+.CthulhuSheet {
+    background-image: url(/src/pictures/Ancient_Cthulhu_sheet_front.png);
+    background-size: cover;
+    height: 21vw;
+    width: 17.2vw;
+    margin: 1.2vw;
+    transition: all .3s ease;
+}
+
+.CthulhuSheet:hover {
+    transform: scale(1.03);
+}
+
+.CthulhuMystery {
+    background-image: url(/src/pictures/Ancient_Cthulhu_mystery.png);
+    height: 7.4vw;
+    width: 11.5vw;
+    margin: 1.2vw;
+    position: absolute;
+    background-size: cover;
+    transition: all .3s ease;
+}
+
+.CthulhuMystery:hover {
+    transform: scale(1.1);
+}
+
+.Mythos {
+    background-image: url(/src/pictures/Mythos_Card.png);
+    height: 11.5vw;
+    width: 7.4vw;
+    margin: 1.2vw;
+    justify-content: center;
+    background-size: cover;
+    transition: all .3s ease;
+}
+
+.Mythos:hover {
+    transform: scale(1.1);
+}
+
+/* --------- ENCOUNTERS CARDS --------- */
+
+/* MAIN  */
+
+.encounters {
+    position: relative;
+    width: 80vw;
+    margin-top: 4.7vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+/* BUTTONS  */
+
+.encounterCard {
+    height: 11.5vw;
+    width: 7.4vw;
+    margin: 1.2vw;
+    justify-content: center;
+    background-size: cover;
+    transition: all .3s ease;
+}
+
+.encounterCard:hover {
+    transform: scale(1.1);
+}
+
+#America {
+    background-image: url(/src/pictures/Encounter_Americas.png);
+}
+
+#Europe {
+    background-image: url(/src/pictures/Encounter_Europe.png);
+}
+
+#AsiaAustralia {
+    background-image: url(/src/pictures/Encounter_Asia-Australia.png);
+}
+
+#General {
+    background-image: url(/src/pictures/Encounter_General.png);
+}
+
+#OtherWorld {
+    background-image: url(/src/pictures/Encounter_Other_World.png);
+}
+
+#Expedition {
+    background-image: url(/src/pictures/Encounter_Expedition.png);
+}
+
+#Ancient_research {
+    background-image: url(/src/pictures/Encounter_Cthulhu_research.png);
+}
+
+#Ancient_special {
+    background-image: url(/src/pictures/Encounter_Cthulhu_special.png);
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import './EncountersCards.css'
+import './Components.css'
 
 const EncountersCards = ({ submitAnswerToHome }) => {
     return (
