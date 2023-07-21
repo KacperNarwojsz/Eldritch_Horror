@@ -45,7 +45,7 @@
 
 /* MAIN */
 
-.Home {
+.home {
     height: 100vh;
     max-width: 100vw;
     display: flex;
@@ -53,62 +53,64 @@
     justify-content: center;
 }
 
-.Azathoth {
+.azathoth {
     background-image: url(/src/pictures/Ancient_Azathoth.jpg);
     background-size: cover;
 }
 
-.YohSothoth {
+.yohSothoth {
     background-image: url(/src/pictures/Ancient_Yog-Sothoth.jpg);
     background-size: cover;
 }
 
-.ShubNiggurath {
+.shubNiggurath {
     background-image: url(/src/pictures/Ancient_Shub-Niggurath.jpg);
     background-size: cover;
 }
 
-.Cthulhu {
+.cthulhu {
     background-image: url(/src/pictures/Ancient_Cthulhu.jpg);
     background-size: cover;
     height: 100vh;
     width: 100vw;
 }
 
-.TopDiv {
+.topDiv {
     position: fixed;
     height: 50vh;
     width: 100vw;
     top: 0;
     left: 0;
+    z-index: 2;
 }
 
-.BoardDiv {
+.boardDiv {
     position: relative; 
     width: 78.4vw;
     margin-left: 10.8vw;
     margin-right: 10.8vw;
-    margin-top: 5.2vw;
+    margin-top: 5.4vw;
 }
 
-.FlexDiv {
+.flexDiv {
     display: flex;
     height: 50vh;
     width: 100vw;
     align-items: flex-end;
 }
 
-.BottomDiv {
+.bottomDiv {
     position: fixed;
     height: 50vh;
     width: 100vw;
     bottom: 0;
     left: 0;
+    z-index: 1;
 }
 
 /* PICTURES  */
 
-.mainEldritchLogo {
+.main_eldritch_logo {
     height: 18vw;
     margin: 1vw;
     justify-content: center;
@@ -136,8 +138,8 @@
 /* BUTTONS  */
 
 .ancientsButton {
-width: 100vw;
-justify-content: center;
+    width: 100vw;
+    justify-content: center;
 }
 
 .mainButton {
@@ -157,7 +159,7 @@ justify-content: center;
     transform: scale(1.2);
 }
 
-#buttonAzathoth {
+#ButtonAzathoth {
     background-image: url(/src/pictures/Ancient_Azathoth.jpg);
     background-size: 18vw;
     opacity: 0;
@@ -167,7 +169,7 @@ justify-content: center;
     animation-fill-mode: forwards;
 }
 
-#buttonYog {
+#ButtonYog {
     background-image: url(/src/pictures/Ancient_Yog-Sothoth.jpg);
     background-size: 19vw;
     opacity: 0;
@@ -177,7 +179,7 @@ justify-content: center;
     animation-fill-mode: forwards;
 }
 
-#buttonShub {
+#ButtonShub {
     background-image: url(/src/pictures/Ancient_Shub-Niggurath.jpg);
     background-size: cover;
     opacity: 0;
@@ -187,7 +189,7 @@ justify-content: center;
     animation-fill-mode: forwards;
 }
 
-#buttonCthulhu {
+#ButtonCthulhu {
     background-image: url(/src/pictures/Ancient_Cthulhu.jpg);
     background-size: cover;
     background-position: left;

@@ -1,6 +1,6 @@
 /* --------- MAIN BOARD --------- */
 
-.EldritchBoard {
+.eldritchBoard {
     display: flex;
     justify-content: center;
     height: 100vh;
@@ -15,56 +15,101 @@
 
 /* --------- ANCCIENT BOARDS --------- */
 
-/* BUTTONS  */
+/* MAIN  */
 
-.CthulhuSheet {
-    background-image: url(/src/pictures/Ancient_Cthulhu_sheet_front.png);
+.ancientBoard {
+    display: flex;
+    flex-direction: row;
+}
+
+.ancientMysteryMythos {
+    display: flex;
+    flex-direction: column;
+}
+
+.ancientMystery {
+    display: flex;
+    flex-direction: row;
+}
+
+.ancientMythos {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+/* BUTTONS  */
+.cthulhuSheetCard {
+    display: flex;
+    flex-direction: column;
+}
+
+.cthulhuSheet {
+    justify-content: flex-start;
     background-size: cover;
     height: 21.5vw;
     width: 17.2vw;
-    margin: 1.2vw;
+    margin-top: 1.2vw;
+    margin-left: 1.2vw;
+    margin-right: 1.2vw;
     transition: all .3s ease;
 }
 
-.CthulhuSheet:hover {
+.cthulhuSheet:hover {
     transform: scale(1.03);
 }
 
-.CthulhuMystery {
+.cthulhuSheet:focus {
+    transform: scale(1.4);
+}
+
+#CthulhuSheetFront {
+    background-image: url(/src/pictures/Ancient_Cthulhu_sheet_front.png);
+}
+
+#CthulhuSheetBack {
+    background-image: url(/src/pictures/Ancient_Cthulhu_sheet_back.png);
+}
+
+.flipButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 0.3vw;
+}
+
+#FlipButton {
+    font-family: 'Birmingham_Titling_Bold'; 
+    font-size: 0.8vw;
+    width: 5vw;
+    background-color: transparent;
+    border-radius: 1vw;
+    border-color: black;
+}
+
+.cthulhuMystery {
     background-image: url(/src/pictures/Ancient_Cthulhu_mystery.png);
     height: 7.4vw;
     width: 11.5vw;
     margin: 1.2vw;
-    position: absolute;
     background-size: cover;
     transition: all .3s ease;
 }
 
-.CthulhuMystery:hover {
+.cthulhuMystery:hover {
     transform: scale(1.1);
 }
 
-.CthulhuMysteryFront {
+#CthulhuMysteryFront {
     background-image: url(/src/pictures/Ancient_Cthulhu_mystery_front.png);
-    height: 7.4vw;
-    width: 11.5vw;
-    margin: 1.2vw;
-    position: absolute;
-    left: 35vw;
-    background-size: cover;
-    transition: all .3s ease;
 }
 
-.CthulhuMysteryFront:hover {
-    transform: scale(1.1);
+#CthulhuMysteryFront:focus {
+    transform: scale(2.5);
 }
 
-
-.CthulhuMystery:hover {
-    transform: scale(1.1);
-}
-
-.Mythos {
+.mythos {
     background-image: url(/src/pictures/Mythos_Card.png);
     height: 11.5vw;
     width: 7.4vw;
@@ -74,78 +119,59 @@
     transition: all .3s ease;
 }
 
-.Mythos:hover {
+.mythos:hover {
     transform: scale(1.1);
 }
 
-.Mythos1 {
+.mythosFront {
+    height: 11.5vw;
+    width: 7.4vw;
+    margin: 1.2vw;
+    justify-content: center;
+    background-size: cover;
+    transition: all .3s ease;
+}
+
+.mythosFront:hover {
+    transform: scale(1.1);
+}
+
+.mythosFront:focus {
+    transform: scale(2.5);
+    z-index: 1;
+}
+
+.mythosFrontBig {
+    height: 11.5vw;
+    width: 7.4vw;
+    margin: 1.2vw;
+    justify-content: center;
+    background-size: cover;
+    transition: all .3s ease;
+}
+
+.mythosFrontBig:hover {
+    transform: scale(2);
+}
+
+#Mythos1 {
     background-image: url(/src/pictures/Mythos_Card_1.png);
-    height: 11.5vw;
-    width: 7.4vw;
-    margin: 1.2vw;
-    justify-content: center;
-    background-size: cover;
-    transition: all .3s ease;
 }
 
-.Mythos1:hover {
-    transform: scale(1.1);
-}
-
-.Mythos2 {
+#Mythos2 {
     background-image: url(/src/pictures/Mythos_Card_2.png);
-    height: 11.5vw;
-    width: 7.4vw;
-    margin: 1.2vw;
-    justify-content: center;
-    background-size: cover;
-    transition: all .3s ease;
 }
 
-.Mythos2:hover {
-    transform: scale(1.1);
-}
-
-.Mythos3 {
+#Mythos3 {
     background-image: url(/src/pictures/Mythos_Card_3.png);
-    height: 11.5vw;
-    width: 7.4vw;
-    margin: 1.2vw;
-    justify-content: center;
-    background-size: cover;
-    transition: all .3s ease;
 }
 
-.Mythos3:hover {
-    transform: scale(1.1);
-}
-
-.Mythos4 {
+#Mythos4 {
     background-image: url(/src/pictures/Mythos_Card_4.png);
-    height: 11.5vw;
-    width: 7.4vw;
-    margin: 1.2vw;
-    justify-content: center;
-    background-size: cover;
-    transition: all .3s ease;
 }
 
-.Mythos4:hover {
-    transform: scale(1.1);
-}
-
-.Mythos5 {
+#Mythos5 {
     background-image: url(/src/pictures/Mythos_Card_5.png);
-    height: 11.5vw;
-    width: 7.4vw;
-    margin: 1.2vw;
-    justify-content: center;
-    background-size: cover;
-    transition: all .3s ease;
-}
-
-.Mythos5:hover {
-    transform: scale(1.1);
 }
 
 /* --------- ENCOUNTERS CARDS --------- */

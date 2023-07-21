@@ -5,7 +5,7 @@ import './Components.css'
 
 const EldritchBoard = ({ children }) => {
     return (
-        <div className='EldritchBoard'>
+        <div className='eldritchBoard'>
             <img src={eldritch_board} className="eldritch_board" alt="eldritch_board" />
             {children} 
         </div>

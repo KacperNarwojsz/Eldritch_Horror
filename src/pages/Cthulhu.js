@@ -7,18 +7,17 @@ import './AllPages.css'
 
 const Cthulhu = ({ submitAnswerToMain }) => {
     return (
-        <div className="Cthulhu">
+        <div className="cthulhu">
             <EldritchBoard>
-                <div className="TopDiv">
-                    <div className="BoardDiv">
-                        <div className="FlexDiv">
+                <div className="topDiv">
+                    <div className="boardDiv">
+                        <div className="flexDiv">
                             <CthulhuBoard />
                         </div>
                     </div>
-                    
                 </div>
-                <div className="BottomDiv">
-                        <EncountersCards />
+                <div className="bottomDiv">
+                     <EncountersCards />
                 </div> 
             </EldritchBoard>
         </div>

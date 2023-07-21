@@ -5,7 +5,7 @@ import './AllPages.css'
 const YogSothoth = ({ submitAnswerToMain }) => {
 
     return (
-        <div className='YogSothoth'>
+        <div className='yogSothoth'>
             
         </div>
     )
