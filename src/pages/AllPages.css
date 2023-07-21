@@ -45,6 +45,14 @@
 
 /* MAIN */
 
+.Home {
+    height: 100vh;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .Azathoth {
     background-image: url(/src/pictures/Ancient_Azathoth.jpg);
     background-size: cover;
@@ -98,20 +106,12 @@
     left: 0;
 }
 
-/* .CthulhuContainer {
-    display: grid;
-    height: 100vh;
-    width: 100vw; 
-    grid-template-columns: repeat(43fr);
-    grid-template-rows: repeat(20fr);
-} */
-
 /* PICTURES  */
 
-.main_eldritch_logo {
-    height: 40vh;
-    padding-top: 4vh;
-    margin: 2vh;
+.mainEldritchLogo {
+    height: 18vw;
+    padding-top: 1vw;
+    margin: 1vw;
     justify-content: center;
     opacity: 0;
     animation: fadeInAnimation ease 10s;
@@ -121,11 +121,10 @@
 
 /* TEXT  */
 
-.main_title {
-    margin: 2vh;
-    padding: 0.5vh;
+.mainTitle {
+    margin: 0.5vw;
     font-family: 'Birmingham_Titling_Bold';
-    font-size: 6vh;
+    font-size: 3.3vw;
     color: white;
     justify-content: center;
     opacity: 0;
@@ -137,15 +136,20 @@
 
 /* BUTTONS  */
 
+.ancientsButton {
+width: 100vw;
+justify-content: center;
+}
+
 .mainButton {
-    height: 30vh;
-    width: 30vh;
-    margin: 3vh;
+    height: 15vw;
+    width: 15vw;
+    margin: 2vw;
     justify-content: center;
     font-family: 'Birmingham';
-    font-size: 3vh;
+    font-size: 1.5vw;
     color: white;
-    padding-top: 23vh;
+    padding-top: 11vw;
     background-position: center;
     transition: all .3s ease;
 }
@@ -156,7 +160,7 @@
 
 #buttonAzathoth {
     background-image: url(/src/pictures/Ancient_Azathoth.jpg);
-    background-size: 36vh;
+    background-size: 18vw;
     opacity: 0;
     animation: fadeInAnimation ease 3s;
     animation-delay: 6s;
@@ -166,7 +170,7 @@
 
 #buttonYog {
     background-image: url(/src/pictures/Ancient_Yog-Sothoth.jpg);
-    background-size: 36vh;
+    background-size: 19vw;
     opacity: 0;
     animation: fadeInAnimation ease 3s;
     animation-delay: 6.5s;
