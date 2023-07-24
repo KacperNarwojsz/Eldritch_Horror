@@ -43,6 +43,31 @@
     }
 }
 
+.stamp{
+    position:relative;
+    animation-name: pulse;
+    animation-delay:2.5s;
+    animation-duration: 0.5s;
+    opacity: 0;
+    animation-fill-mode:forwards;
+  }
+  
+  @keyframes pulse{
+    0%{
+      opacity: 0;
+    }
+    10%{
+      opacity:.50;
+      transform-origin: 50% 50%;
+      transform: scale(5);
+      transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    }
+    100%{
+      opacity:1;
+      transform: scale(1);
+    }
+  }
+
 /* MAIN */
 
 .home {
@@ -73,6 +98,11 @@
     background-size: cover;
     height: 100vh;
     width: 100vw;
+    /* FADE IN ANIMATION */
+    opacity: 0;
+    animation: fadeInAnimation ease 7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 .topDiv {
@@ -114,6 +144,7 @@
     height: 18vw;
     margin: 1vw;
     justify-content: center;
+    /* FADE IN ANIMATION */
     opacity: 0;
     animation: fadeInAnimation ease 10s;
     animation-iteration-count: 1;
@@ -128,6 +159,7 @@
     font-size: 3.3vw;
     color: white;
     justify-content: center;
+         /* FADE IN ANIMATION */
     opacity: 0;
     animation: fadeInAnimation ease 7s;
     animation-delay: 5s;
@@ -153,6 +185,11 @@
     padding-top: 11vw;
     background-position: center;
     transition: all .3s ease;
+    /* FADE IN ANIMATION */
+    opacity: 0;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 .mainButton:hover {
@@ -162,40 +199,25 @@
 #ButtonAzathoth {
     background-image: url(/src/pictures/Ancient_Azathoth.jpg);
     background-size: 18vw;
-    opacity: 0;
-    animation: fadeInAnimation ease 3s;
     animation-delay: 6s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
 }
 
 #ButtonYog {
     background-image: url(/src/pictures/Ancient_Yog-Sothoth.jpg);
     background-size: 19vw;
-    opacity: 0;
-    animation: fadeInAnimation ease 3s;
     animation-delay: 6.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+
 }
 
 #ButtonShub {
     background-image: url(/src/pictures/Ancient_Shub-Niggurath.jpg);
     background-size: cover;
-    opacity: 0;
-    animation: fadeInAnimation ease 3s;
     animation-delay: 7s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
 }
 
 #ButtonCthulhu {
     background-image: url(/src/pictures/Ancient_Cthulhu.jpg);
     background-size: cover;
     background-position: left;
-    opacity: 0;
-    animation: fadeInAnimation ease 3s;
     animation-delay: 7.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
 }

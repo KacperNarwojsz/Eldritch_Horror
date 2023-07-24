@@ -32,15 +32,15 @@ class CthulhuBoard extends Component {
                 <div className='ancientMysteryMythos'>
                     <div className='ancientMystery'>
                         <button className='cthulhuMystery'></button>
-                        <button className='cthulhuMystery' id='CthulhuMysteryFront'></button>
+                        {/* <button className='cthulhuMystery' id='CthulhuMysteryFront'></button> */}
                     </div>
                     <div className='ancientMythos'>
                         <button className='mythos'></button>
-                        <button className='mythosFront' id='Mythos1'></button>
+                        {/* <button className='mythosFront' id='Mythos1'></button>
                         <button className='mythosFront' id='Mythos2'></button>
                         <button className='mythosFront' id='Mythos3'></button>
                         <button className='mythosFront' id='Mythos4'></button>
-                        <button className='mythosFront' id='Mythos5'></button>
+                        <button className='mythosFront' id='Mythos5'></button> */}
                     </div>
                 </div>
             </div>
