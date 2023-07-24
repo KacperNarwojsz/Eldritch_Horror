@@ -5,10 +5,11 @@ import './Components.css'
 class CthulhuBoard extends Component {
     constructor(props) {
         super(props); 
-        // this.addActiveClass = this.addActiveClass.bind(this)
         this.state = {
             ancientCard: false,
+            isLoadDone: false,
         }
+        this.timer()
     }
 
     toggleCard = () => {
@@ -19,11 +20,17 @@ class CthulhuBoard extends Component {
         this.setState ({ancientCard: false})
     }
 
+    timer() {
+        setInterval(() => {
+          this.setState({isLoadDone: true})
+        }, 7000)
+      }
+      
     render() {
         return (
             <div className='ancientBoard'>
                 <div className='cthulhuSheetCard'>
-                    <button className='cthulhuSheet' id={this.state.ancientCard ? 'CthulhuSheetBack' : 'CthulhuSheetFront'}></button>
+                    <button className={this.state.isLoadDone ? 'cthulhuSheet' : 'cthulhuSheetStamp'} id={this.state.ancientCard ? 'CthulhuSheetBack' : 'CthulhuSheetFront'}></button>
                     <div className='flipButtons'>
                         <button className='flipButtonFront' id='FlipButton' onClick={this.toogleCardBack}>Front</button>
                         <button className='flipButtonBack' id='FlipButton' onClick={this.toggleCard}>Back</button>
@@ -31,11 +38,11 @@ class CthulhuBoard extends Component {
                 </div>
                 <div className='ancientMysteryMythos'>
                     <div className='ancientMystery'>
-                        <button className='cthulhuMystery'></button>
+                        <button className={this.state.isLoadDone ? 'cthulhuMystery' : 'cthulhuMysteryStamp'}></button>
                         {/* <button className='cthulhuMystery' id='CthulhuMysteryFront'></button> */}
                     </div>
                     <div className='ancientMythos'>
-                        <button className='mythos'></button>
+                        <button className={this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>
                         {/* <button className='mythosFront' id='Mythos1'></button>
                         <button className='mythosFront' id='Mythos2'></button>
                         <button className='mythosFront' id='Mythos3'></button>

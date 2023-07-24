@@ -11,10 +11,10 @@
     width: 99vw;
     overflow: hidden;
     align-self: center;
-    /* FADE IN ANIMATION */
     opacity: 0;
-    animation: fadeInAnimation ease 4s;
-    animation-delay: 3s;
+    /* FRONT TURN TABLE ANIMATION */
+    animation: frontTurnTable ease 1.2s;
+    animation-delay: 2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -50,6 +50,23 @@
     flex-direction: column;
 }
 
+.cthulhuSheetStamp {
+    justify-content: flex-start;
+    background-size: cover;
+    height: 21.5vw;
+    width: 17.2vw;
+    margin-top: 1.2vw;
+    margin-left: 1.2vw;
+    margin-right: 1.2vw;
+    /* STAMP ANIMATION */
+    position:relative;
+    animation-name: pulse;
+    animation-delay:4s;
+    animation-duration: 0.7s;
+    opacity: 0;
+    animation-fill-mode:forwards;
+}
+
 .cthulhuSheet {
     justify-content: flex-start;
     background-size: cover;
@@ -59,13 +76,7 @@
     margin-left: 1.2vw;
     margin-right: 1.2vw;
     transition: all .3s ease;
-    /* STAMP ANIMATION */
-    position:relative;
-    animation-name: pulse;
-    animation-delay:6s;
-    animation-duration: 0.7s;
-    opacity: 0;
-    animation-fill-mode:forwards;
+    z-index: 2;
 }
 
 .cthulhuSheet:hover {
@@ -77,6 +88,7 @@
 }
 
 #CthulhuSheetFront {
+    background-image: url(/src/pictures/Ancient_Cthulhu_sheet_back.png);
     background-image: url(/src/pictures/Ancient_Cthulhu_sheet_front.png);
 }
 
@@ -90,10 +102,11 @@
     justify-content: space-evenly;
     align-items: center;
     margin-top: 0.3vw;
+    z-index: 1;
     /* FADE IN ANIMATION */
     opacity: 0;
     animation: fadeInAnimation ease 3s;
-    animation-delay: 6.2s;
+    animation-delay: 4.2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -107,20 +120,28 @@
     border-color: black;
 }
 
+.cthulhuMysteryStamp {
+    background-image: url(/src/pictures/Ancient_Cthulhu_mystery.png);
+    height: 7.4vw;
+    width: 11.5vw;
+    margin: 1.2vw;
+    background-size: cover;
+    /* STAMP ANIMATION */
+    position:relative;
+    animation-name: pulse;
+    animation-delay:4.5s;
+    animation-duration: 0.7s;
+    opacity: 0;
+    animation-fill-mode:forwards;   
+}
+
 .cthulhuMystery {
     background-image: url(/src/pictures/Ancient_Cthulhu_mystery.png);
     height: 7.4vw;
     width: 11.5vw;
     margin: 1.2vw;
     background-size: cover;
-    transition: all .3s ease;
-    /* STAMP ANIMATION */
-    position:relative;
-    animation-name: pulse;
-    animation-delay:6.5s;
-    animation-duration: 0.7s;
-    opacity: 0;
-    animation-fill-mode:forwards;    
+    transition: all .3s ease;    
 }
 
 .cthulhuMystery:hover {
@@ -135,6 +156,22 @@
     transform: scale(2.5);
 }
 
+.mythosStamp {
+    background-image: url(/src/pictures/Mythos_Card.png);
+    height: 11.5vw;
+    width: 7.4vw;
+    margin: 1.2vw;
+    justify-content: center;
+    background-size: cover;
+    /* STAMP ANIMATION */
+    position:relative;
+    animation-name: pulse;
+    animation-delay:5s;
+    animation-duration: 0.7s;
+    opacity: 0;
+    animation-fill-mode:forwards;
+}
+
 .mythos {
     background-image: url(/src/pictures/Mythos_Card.png);
     height: 11.5vw;
@@ -143,13 +180,6 @@
     justify-content: center;
     background-size: cover;
     transition: all .3s ease;
-    /* STAMP ANIMATION */
-    position:relative;
-    animation-name: pulse;
-    animation-delay:7s;
-    animation-duration: 0.7s;
-    opacity: 0;
-    animation-fill-mode:forwards;
 }
 
 .mythos:hover {
@@ -221,13 +251,12 @@
 
 /* BUTTONS  */
 
-.encounterCard {
+.encounterCardStamp {
     height: 11.5vw;
     width: 7.4vw;
     margin: 1.2vw;
     justify-content: center;
     background-size: cover;
-    transition: all .3s ease;
     /* STAMP ANIMATION */
     position:relative;
     animation-name: pulse;
@@ -236,46 +265,55 @@
     animation-fill-mode:forwards;
 }
 
+.encounterCard {
+    height: 11.5vw;
+    width: 7.4vw;
+    margin: 1.2vw;
+    justify-content: center;
+    background-size: cover;
+    transition: all .3s ease;
+}
+
 .encounterCard:hover {
     transform: scale(1.1);
 }
 
 #America {
     background-image: url(/src/pictures/Encounter_Americas.png);
-    animation-delay:8.1s;
+    animation-delay:6.1s;
 }
 
 #Europe {
     background-image: url(/src/pictures/Encounter_Europe.png);
-    animation-delay:8.2s;
+    animation-delay:6.2s;
 }
 
 #AsiaAustralia {
     background-image: url(/src/pictures/Encounter_Asia-Australia.png);
-    animation-delay:8.3s
+    animation-delay:6.3s
 }
 
 #General {
     background-image: url(/src/pictures/Encounter_General.png);
-    animation-delay:8.4s
+    animation-delay:6.4s
 }
 
 #OtherWorld {
     background-image: url(/src/pictures/Encounter_Other_World.png);
-    animation-delay:8.5s
+    animation-delay:6.5s
 }
 
 #Expedition {
     background-image: url(/src/pictures/Encounter_Expedition.png);
-    animation-delay:8.6s
+    animation-delay:6.6s
 }
 
 #Ancient_research {
     background-image: url(/src/pictures/Encounter_Cthulhu_research.png);
-    animation-delay:8.7s
+    animation-delay:6.7s
 }
 
 #Ancient_special {
     background-image: url(/src/pictures/Encounter_Cthulhu_special.png);
-    animation-delay:8.8s
+    animation-delay:6.8s
 }

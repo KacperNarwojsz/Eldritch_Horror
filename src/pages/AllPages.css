@@ -38,35 +38,35 @@
 /* KEYS  */
 
 @keyframes fadeInAnimation {
+    100% { opacity: 1; }
+}
+  
+@keyframes pulse{
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity:.50;
+        transform-origin: 50% 50%;
+        transform: scale(5);
+        transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    }
     100% {
-        opacity: 1;
+        opacity:1;
+        transform: scale(1);
     }
 }
 
-.stamp{
-    position:relative;
-    animation-name: pulse;
-    animation-delay:2.5s;
-    animation-duration: 0.5s;
-    opacity: 0;
-    animation-fill-mode:forwards;
-  }
-  
-  @keyframes pulse{
-    0%{
-      opacity: 0;
+@keyframes frontTurnTable{
+    0%  {
+        transform: rotateX(-90deg);   
     }
-    10%{
-      opacity:.50;
-      transform-origin: 50% 50%;
-      transform: scale(5);
-      transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+
+    100% { 
+        opacity: 1;
+        transform: rotateX(0deg);    
     }
-    100%{
-      opacity:1;
-      transform: scale(1);
-    }
-  }
+}
 
 /* MAIN */
 
