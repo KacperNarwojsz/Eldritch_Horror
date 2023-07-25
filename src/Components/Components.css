@@ -28,14 +28,20 @@
     flex-direction: row;
 }
 
-.ancientMysteryMythos {
+.ancientMysteryMythosLvlChar {
     display: flex;
     flex-direction: column;
+}
+
+.ancientMysteryLvlChar {
+    display: flex;
+    flex-direction: row;
 }
 
 .ancientMystery {
     display: flex;
     flex-direction: row;
+    width: 49.3vw
 }
 
 .ancientMythos {
@@ -45,6 +51,7 @@
 }
 
 /* BUTTONS  */
+
 .cthulhuSheetCard {
     display: flex;
     flex-direction: column;
@@ -88,7 +95,6 @@
 }
 
 #CthulhuSheetFront {
-    background-image: url(/src/pictures/Ancient_Cthulhu_sheet_back.png);
     background-image: url(/src/pictures/Ancient_Cthulhu_sheet_front.png);
 }
 
@@ -236,6 +242,73 @@
 #Mythos5 {
     background-image: url(/src/pictures/Mythos_Card_5.png);
 }
+
+/* --------- LEVEL AND CHARACTERS --------- */
+
+.lvlChar {
+    display: flex;
+    flex-direction: column;
+}
+
+.lvl {
+    height: 2vw;
+    width: 8.25vw;
+    margin-top: 1.2vw;
+    justify-content: center;
+    background-size: cover;
+}
+
+#LvlEasy {
+    background-image: url(/src/pictures/LvlChar/LvlEasy.png);
+}
+
+#LvlNormal {
+    background-image: url(/src/pictures/LvlChar/LvlNormal.png);
+}
+
+#LvlHard {
+    background-image: url(/src/pictures/LvlChar/LvlHard.png);
+}
+
+.char {
+    height: 5.4vw;
+    width: 8.25vw;
+    background-size: cover;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+/* #Char1 {
+    background-image: url(/src/pictures/LvlChar/Char1.png);
+}
+
+#Char2 {
+    background-image: url(/src/pictures/LvlChar/Char2.png);
+}
+
+#Char3 {
+    background-image: url(/src/pictures/LvlChar/Char3.png);
+} */
+
+#Char4 {
+    background-image: url(/src/pictures/LvlChar/Char4.png);
+}
+
+/* #Char5 {
+    background-image: url(/src/pictures/LvlChar/Char5.png);
+}
+
+#Char6 {
+    background-image: url(/src/pictures/LvlChar/Char6.png);
+}
+
+#Char7 {
+    background-image: url(/src/pictures/LvlChar/Char7.png);
+}
+
+#Char8 {
+    background-image: url(/src/pictures/LvlChar/Char8.png);
+} */
 
 /* --------- ENCOUNTERS CARDS --------- */
 

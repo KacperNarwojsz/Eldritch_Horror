@@ -1,7 +1,7 @@
 import React from "react";
 import EncountersCards from "../Components/EncountersCards";
-import CthulhuBoard from "../Components/CthulhuBoard";
 import EldritchBoard from "../Components/EldritchBoard";
+import CthulhuBoard from "../Components/CthulhuBoard";
 import './AllPages.css'
 
 

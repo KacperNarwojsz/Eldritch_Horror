@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import 'reactjs-popup/dist/index.css';
+import LvlChar from './LvlChar';
 import './Components.css'
 
 
@@ -33,13 +35,16 @@ class CthulhuBoard extends Component {
                     <button className={this.state.isLoadDone ? 'cthulhuSheet' : 'cthulhuSheetStamp'} id={this.state.ancientCard ? 'CthulhuSheetBack' : 'CthulhuSheetFront'}></button>
                     <div className='flipButtons'>
                         <button className='flipButtonFront' id='FlipButton' onClick={this.toogleCardBack}>Front</button>
-                        <button className='flipButtonBack' id='FlipButton' onClick={this.toggleCard}>Back</button>
+                        <button className='flipButtonBack' id='FlipButton' onClick={this.toggleCard}>Rewers</button>
                     </div> 
                 </div>
-                <div className='ancientMysteryMythos'>
-                    <div className='ancientMystery'>
-                        <button className={this.state.isLoadDone ? 'cthulhuMystery' : 'cthulhuMysteryStamp'}></button>
-                        {/* <button className='cthulhuMystery' id='CthulhuMysteryFront'></button> */}
+                <div className='ancientMysteryMythosLvlChar'>
+                    <div className='ancientMysteryLvlChar'>
+                        <div className='ancientMystery'>
+                            <button className={this.state.isLoadDone ? 'cthulhuMystery' : 'cthulhuMysteryStamp'}></button>
+                            {/* <button className='cthulhuMystery' id='CthulhuMysteryFront'></button> */}
+                        </div>
+                    <LvlChar /> 
                     </div>
                     <div className='ancientMythos'>
                         <button className={this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>
