@@ -305,6 +305,10 @@
     justify-content: flex-end;
 }
 
+.char:focus {
+    transform: scale(2.5);
+}
+
 /* #Char1 {
     background-image: url(/src/pictures/LvlChar/Char1.png);
 }
