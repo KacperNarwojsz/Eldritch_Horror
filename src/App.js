@@ -5,7 +5,6 @@ import YogSothoth from './pages/YogSothoth';
 import ShubNiggurath from './pages/ShubNiggurath';
 import Cthulhu from './pages/Cthulhu';
 import CthulhuLvlChar from './pages/CthulhuLvlChar';
-import LvlChar from './Components/LvlChar';
 import './App.css';
 
 class App extends Component {
@@ -15,7 +14,7 @@ class App extends Component {
     this.state = {
         route: 'home',
         level: '',
-        characters: '',
+        characters: 0,
     }
   }
 
@@ -51,6 +50,37 @@ class App extends Component {
     this.setState({ level: 'Hard'})
   }
 
+  setCharTo1 = (event) => {
+    this.setState({characters: 1})
+  }
+
+  setCharTo2 = (event) => {
+    this.setState({characters: 2})
+  }
+
+  setCharTo3 = (event) => {
+    this.setState({characters: 3})
+  }
+
+  setCharTo4 = (event) => {
+    this.setState({characters: 4})
+  }
+
+  setCharTo5 = (event) => {
+    this.setState({characters: 5})
+  }
+
+  setCharTo6 = (event) => {
+    this.setState({characters: 6})
+  }
+
+  setCharTo7 = (event) => {
+    this.setState({characters: 7})
+  }
+
+  setCharTo8 = (event) => {
+    this.setState({characters: 8})
+  }
 
   render() {
     const { route } = this.state;
@@ -60,12 +90,19 @@ class App extends Component {
         case "Azathoth":          return <Azathoth />;
         case "YogSothoth":        return <YogSothoth />;
         case "ShubNiggurath":     return <ShubNiggurath />;
-        case "Cthulhu":           return <Cthulhu />;
+        case "Cthulhu":           return <Cthulhu 
+                                            level={this.state.level}
+                                            characters={this.state.characters}
+                                          />;
         case "CthulhuLvlChar":    return <CthulhuLvlChar 
                                             loadCthulhu={this.routeToCthulhu}
                                             chooseLvlEasy={this.setLvlEasy}
                                             chooseLvlNormal={this.setLvlNormal}
                                             chooseLvlHard={this.setLvlHard}
+                                            chooseCharNo1={this.setCharTo1} chooseCharNo2={this.setCharTo2}
+                                            chooseCharNo3={this.setCharTo3} chooseCharNo4={this.setCharTo4}
+                                            chooseCharNo5={this.setCharTo5} chooseCharNo6={this.setCharTo6}
+                                            chooseCharNo7={this.setCharTo7} chooseCharNo8={this.setCharTo8}
                                           />;
         default:                  return <Home 
                                             loadAzathoth={this.routeToAzathoth} 

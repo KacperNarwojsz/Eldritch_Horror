@@ -5,12 +5,13 @@ import './Components.css'
 
 
 class CthulhuBoard extends Component {
-    constructor() {
+    constructor({ level, characters }) {
         super(); 
         this.state = {
             ancientCard: false,
             isLoadDone: false,
-            lvl: '',
+            level: level,
+            characters: characters,
         }  
     }
 
@@ -48,7 +49,7 @@ class CthulhuBoard extends Component {
                             <button className={this.state.isLoadDone ? 'cthulhuMystery' : 'cthulhuMysteryStamp'}></button>
                             {/* <button className='cthulhuMystery' id='CthulhuMysteryFront'></button> */}
                         </div>
-                    <LvlChar /> 
+                    <LvlChar level={this.state.level} characters={this.state.characters}/> 
                     </div>
                     <div className='ancientMythos'>
                         <button className={this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>

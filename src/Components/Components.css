@@ -309,7 +309,7 @@
     transform: scale(2.5);
 }
 
-/* #Char1 {
+#Char1 {
     background-image: url(/src/pictures/LvlChar/Char1.png);
 }
 
@@ -319,13 +319,13 @@
 
 #Char3 {
     background-image: url(/src/pictures/LvlChar/Char3.png);
-} */
+}
 
 #Char4 {
     background-image: url(/src/pictures/LvlChar/Char4.png);
 }
 
-/* #Char5 {
+#Char5 {
     background-image: url(/src/pictures/LvlChar/Char5.png);
 }
 
@@ -339,7 +339,7 @@
 
 #Char8 {
     background-image: url(/src/pictures/LvlChar/Char8.png);
-} */
+}
 
 /* --------- ENCOUNTERS CARDS --------- */
 
