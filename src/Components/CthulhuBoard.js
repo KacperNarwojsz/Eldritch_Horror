@@ -11,8 +11,17 @@ class CthulhuBoard extends Component {
             ancientCard: false,
             isLoadDone: false,
             lvl: '',
-        }
+        }  
+    }
+
+    componentDidMount() {
         this.timer()
+    }
+
+    timer() {
+        setInterval(() => {
+          this.setState({isLoadDone: true})
+        }, 7000)
     }
 
     toggleCard = () => {
@@ -22,12 +31,6 @@ class CthulhuBoard extends Component {
     toogleCardBack = () => {
         this.setState ({ancientCard: false})
     }
-
-    timer() {
-        setInterval(() => {
-          this.setState({isLoadDone: true})
-        }, 7000)
-      }
       
     render() {
         return (

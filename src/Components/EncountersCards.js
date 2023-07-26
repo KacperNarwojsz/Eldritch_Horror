@@ -8,6 +8,9 @@ class EncountersCards extends Component {
         this.state = {
             isLoadDone: false,
         }
+    }
+
+    componentDidMount() {
         this.timer()
     }
 
