@@ -1,3 +1,24 @@
+/* --------- LEVEL AND CHARACTER MATT --------- */
+
+.lvlCharMatt {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    /* FADE IN ANIMATION */
+    opacity: 0;
+    animation: fadeInAnimation ease 3s;
+    animation-delay: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.lvl_char_matt {
+    width: 58vw;
+    overflow: hidden;
+    align-self: center;
+}
+
 /* --------- MAIN BOARD --------- */
 
 .eldritchBoard {
@@ -14,7 +35,7 @@
     opacity: 0;
     /* FRONT TURN TABLE ANIMATION */
     animation: frontTurnTable ease 1.2s;
-    animation-delay: 2s;
+    animation-delay: 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -68,7 +89,7 @@
     /* STAMP ANIMATION */
     position:relative;
     animation-name: pulse;
-    animation-delay:4s;
+    animation-delay:2s;
     animation-duration: 0.7s;
     opacity: 0;
     animation-fill-mode:forwards;
@@ -112,7 +133,7 @@
     /* FADE IN ANIMATION */
     opacity: 0;
     animation: fadeInAnimation ease 3s;
-    animation-delay: 4.2s;
+    animation-delay: 2.2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -135,7 +156,7 @@
     /* STAMP ANIMATION */
     position:relative;
     animation-name: pulse;
-    animation-delay:4.5s;
+    animation-delay:2.5s;
     animation-duration: 0.7s;
     opacity: 0;
     animation-fill-mode:forwards;   
@@ -172,7 +193,7 @@
     /* STAMP ANIMATION */
     position:relative;
     animation-name: pulse;
-    animation-delay:5s;
+    animation-delay:3s;
     animation-duration: 0.7s;
     opacity: 0;
     animation-fill-mode:forwards;
@@ -248,6 +269,12 @@
 .lvlChar {
     display: flex;
     flex-direction: column;
+    /* FADE IN ANIMATION */
+    opacity: 0;
+    animation: fadeInAnimation ease 3s;
+    animation-delay: 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 .lvl {
@@ -353,40 +380,40 @@
 
 #America {
     background-image: url(/src/pictures/Encounter_Americas.png);
-    animation-delay:6.1s;
+    animation-delay:4.1s;
 }
 
 #Europe {
     background-image: url(/src/pictures/Encounter_Europe.png);
-    animation-delay:6.2s;
+    animation-delay:4.2s;
 }
 
 #AsiaAustralia {
     background-image: url(/src/pictures/Encounter_Asia-Australia.png);
-    animation-delay:6.3s
+    animation-delay:4.3s
 }
 
 #General {
     background-image: url(/src/pictures/Encounter_General.png);
-    animation-delay:6.4s
+    animation-delay:4.4s
 }
 
 #OtherWorld {
     background-image: url(/src/pictures/Encounter_Other_World.png);
-    animation-delay:6.5s
+    animation-delay:4.5s
 }
 
 #Expedition {
     background-image: url(/src/pictures/Encounter_Expedition.png);
-    animation-delay:6.6s
+    animation-delay:4.6s
 }
 
 #Ancient_research {
     background-image: url(/src/pictures/Encounter_Cthulhu_research.png);
-    animation-delay:6.7s
+    animation-delay:4.7s
 }
 
 #Ancient_special {
     background-image: url(/src/pictures/Encounter_Cthulhu_special.png);
-    animation-delay:6.8s
+    animation-delay:4.8s
 }

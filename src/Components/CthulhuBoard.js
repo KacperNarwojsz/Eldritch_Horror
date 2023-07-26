@@ -5,11 +5,12 @@ import './Components.css'
 
 
 class CthulhuBoard extends Component {
-    constructor(props) {
-        super(props); 
+    constructor() {
+        super(); 
         this.state = {
             ancientCard: false,
             isLoadDone: false,
+            lvl: '',
         }
         this.timer()
     }

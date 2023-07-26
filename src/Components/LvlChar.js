@@ -10,3 +10,11 @@ const LvlChar = ({ submitAnswerToMain }) => {
 }
 
 export default LvlChar;
+
+{/* <button className="lvl" 
+id={switch(this.state.level) {
+    case "Easy":        return "LvlEasy";
+    case "Hard":        return "LvlHard";
+    default: "Normal"    return "LvlNormal"}}> */}
+
+ // id={this.state.lvl = 'Normal' ? 'LvlNormal' : (this.state.lvl = 'Easy' ? 'LvlEasy' : 'LvlHard')}

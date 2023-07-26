@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: Birmingham;
-    src: url(../Eldritch-font/Birmingham.ttf);
+    src: url(../Eldritch-font/Birmingham.otf);
 }
 
 @font-face {
@@ -93,7 +93,7 @@
     background-size: cover;
 }
 
-.cthulhu {
+.cthulhuLvlChar {
     background-image: url(/src/pictures/Ancient_Cthulhu.jpg);
     background-size: cover;
     height: 100vh;
@@ -103,6 +103,13 @@
     animation: fadeInAnimation ease 7s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+}
+
+.cthulhu {
+    background-image: url(/src/pictures/Ancient_Cthulhu.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
 }
 
 .topDiv {
@@ -138,6 +145,24 @@
     z-index: 1;
 }
 
+.lvlDiv {
+    display:flex;
+    margin-left:28vw;
+    margin-right: 28vw;
+    height: 50vh;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.charDiv {
+    display:flex;
+    margin-left:28vw;
+    margin-right: 28vw;
+    height: 50vh;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 /* PICTURES  */
 
 .main_eldritch_logo {
@@ -149,6 +174,13 @@
     animation: fadeInAnimation ease 10s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+}
+
+.lvl_char_icon {
+    height: 3vw;
+    margin-bottom: 0.3vw;
+    width: 3.3vw;
+    align-self: center;
 }
 
 /* TEXT  */
@@ -165,6 +197,12 @@
     animation-delay: 5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+}
+
+.lvlCharText {
+    font-family: 'Birmingham_Titling_Bold';
+    font-size: 2vw;
+    margin-bottom: 0.1vw;
 }
 
 /* BUTTONS  */
@@ -220,4 +258,45 @@
     background-size: cover;
     background-position: left;
     animation-delay: 7.5s;
+}
+
+.lvlButton {
+    font-family: 'Birmingham'; 
+    font-size: 2vw;
+    height: 3vw;
+    width: 20vw;
+    background-color: transparent;
+    border-radius: 1vw;
+    border-color: black;
+}
+
+.lvlButton:focus {
+    border-color: white;
+}
+
+.charButton {
+    font-family: 'Birmingham'; 
+    font-size: 2.5vw;
+    height: 3vw;
+    width: 7vw;
+    background-color: transparent;
+    border-radius: 1vw;
+    border-color: black;
+}
+
+.charButton:focus {
+    border-color: white;
+}
+
+.startButton {
+    font-family: 'Birmingham_Titling_Bold';
+    font-size: 2.7vw;
+    height: 5vw;
+    width: 35vw;
+    margin: 2vw;
+    margin-top: 3vw;
+    background-color: transparent;
+    border-radius: 1vw;
+    border-color: black;
+    align-self: center;
 }

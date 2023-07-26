@@ -3,7 +3,7 @@ import eldritch_logo from "../pictures/Eldritch_logo.png";
 import './AllPages.css'
 
 
-const Home = ({ loadAzathoth, loadYog, loadShub, loadCthulhu }) => {
+const Home = ({ loadAzathoth, loadYog, loadShub, loadCthulhuLvlChar }) => {
 
     return (
         <div className='home'>
@@ -17,7 +17,7 @@ const Home = ({ loadAzathoth, loadYog, loadShub, loadCthulhu }) => {
                 <button className="mainButton" id="ButtonAzathoth" onClick={loadAzathoth}>Azathoth</button>
                 <button className="mainButton" id="ButtonYog" onClick={loadYog}>Yog-Sothoth</button>
                 <button className="mainButton" id="ButtonShub" onClick={loadShub}>Shub-Niggurath</button>
-                <button className="mainButton" id="ButtonCthulhu" onClick={loadCthulhu}>Cthulhu</button>
+                <button className="mainButton" id="ButtonCthulhu" onClick={loadCthulhuLvlChar}>Cthulhu</button>
             </div>
         </div>
     )
