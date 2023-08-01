@@ -13,8 +13,9 @@ class App extends Component {
     super();
     this.state = {
         route: 'home',
-        level: '',
-        characters: 0,
+        level: false,
+        characters: false,
+        start: false,
     }
   }
 
@@ -96,6 +97,9 @@ class App extends Component {
                                           />;
         case "CthulhuLvlChar":    return <CthulhuLvlChar 
                                             loadCthulhu={this.routeToCthulhu}
+                                            level={this.state.level}
+                                            characters={this.state.characters}
+                                            allowanceToStart={this.state.start}
                                             chooseLvlEasy={this.setLvlEasy}
                                             chooseLvlNormal={this.setLvlNormal}
                                             chooseLvlHard={this.setLvlHard}

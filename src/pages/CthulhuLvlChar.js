@@ -5,9 +5,11 @@ import lvl_icon from '../pictures/LvlIcon.png'
 import './AllPages.css'
 
 
-const CthulhuLvlChar = ({ loadCthulhu, chooseLvlEasy, chooseLvlNormal, chooseLvlHard, 
+
+const CthulhuLvlChar = ({ loadCthulhu, level, characters,
+                        chooseLvlEasy, chooseLvlNormal, chooseLvlHard, 
                         chooseCharNo1, chooseCharNo2, chooseCharNo3, chooseCharNo4, 
-                        chooseCharNo5, chooseCharNo6, chooseCharNo7, chooseCharNo8 }) => {
+                        chooseCharNo5, chooseCharNo6, chooseCharNo7, chooseCharNo8 }) => {                       
 
     return (
         <div className='cthulhuLvlChar'>
@@ -37,7 +39,7 @@ const CthulhuLvlChar = ({ loadCthulhu, chooseLvlEasy, chooseLvlNormal, chooseLvl
                                 <button className='charButton' onClick={chooseCharNo7}>7</button>
                                 <button className='charButton' onClick={chooseCharNo8}>8</button>
                             </div>
-                            <button className='startButton' onClick={loadCthulhu}>ROZPOCZNIJ</button>
+                            <button className='startButton' onClick={!characters || !level ? undefined : loadCthulhu}>ROZPOCZNIJ</button>
                         </div>
                     </div>
                 </LvlCharMatt>
