@@ -22,7 +22,7 @@ class CthulhuBoard extends Component {
     timer() {
         setInterval(() => {
           this.setState({isLoadDone: true})
-        }, 7000)
+        }, 5000)
     }
 
     toggleCard = () => {

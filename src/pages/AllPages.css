@@ -270,7 +270,13 @@
     border-color: black;
 }
 
-.lvlButton:focus {
+.lvlButtonActive {
+    font-family: 'Birmingham'; 
+    font-size: 2vw;
+    height: 3vw;
+    width: 20vw;
+    background-color: transparent;
+    border-radius: 1vw;
     border-color: white;
 }
 
@@ -284,7 +290,13 @@
     border-color: black;
 }
 
-.charButton:focus {
+.charButtonActive {
+    font-family: 'Birmingham'; 
+    font-size: 2.5vw;
+    height: 3vw;
+    width: 7vw;
+    background-color: transparent;
+    border-radius: 1vw;
     border-color: white;
 }
 

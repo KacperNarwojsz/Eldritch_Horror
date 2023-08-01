@@ -17,7 +17,7 @@ class EncountersCards extends Component {
     timer() {
         setInterval(() => {
           this.setState({isLoadDone: true})
-        }, 8000)
+        }, 6000)
     }
 
     render() {
