@@ -28,15 +28,14 @@ class EncountersCards extends Component {
 
     //   className={`encounterAmericaFront${americaDraw}`}
 
-    // <button className='encounterCardFront'></button><br></br>
 
 
     render(americaDraw, setAmericaDraw, togglePopup, isOpen) {
         return (
         <div className='encounters'>
             <Popup contentStyle={{width: "15.9vw", height: "25vw", padding: 0, borderRadius: "0.4vw"}} trigger=
-                {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='America'></button>}modal nested>
-                {close => (<div className='encounterCardFront' id='encounterAmericaFront1'><button className='encounterCloseButton' onClick={() => close()}>X</button></div>)}
+                {<button onClick={true} className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='America'></button>}modal nested>
+                {close => (<div className='outerPopup'><div className='encounterCardFront' id='AmericaFront1'><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup>
             <button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='Europe'></button>
             <button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='AsiaAustralia'></button>
