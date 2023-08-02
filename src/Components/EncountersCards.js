@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Popup from 'reactjs-popup';
 import './Components.css'
+import random from 'random'
 
 
 class EncountersCards extends Component {
@@ -8,7 +9,7 @@ class EncountersCards extends Component {
         super(props); 
         this.state = {
             isLoadDone: false,
-            americaDraw: 0,
+            americaShuffle: 0,
         }
     }
 
@@ -22,20 +23,16 @@ class EncountersCards extends Component {
         }, 6000)
     }
 
-    setAmericaDraw = (event) => {
-        this.setState({ americaDraw: 2})
-      }
+    handleClick = () => {
+        this.setState({americaShuffle: random.int(1,8)});
+    }
 
-    //   className={`encounterAmericaFront${americaDraw}`}
-
-
-
-    render(americaDraw, setAmericaDraw, togglePopup, isOpen) {
+    render() {
         return (
         <div className='encounters'>
-            <Popup contentStyle={{width: "15.9vw", height: "25vw", padding: 0, borderRadius: "0.4vw"}} trigger=
-                {<button onClick={true} className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='America'></button>}modal nested>
-                {close => (<div className='outerPopup'><div className='encounterCardFront' id='AmericaFront1'><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
+            <Popup onOpen={this.handleClick} contentStyle={{width: "15.9vw", height: "25vw", padding: 0, borderRadius: "0.4vw"}} trigger=
+                {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='America'></button>}modal nested>
+                {close => (<div className='outerPopup'><div className='encounterCardFront' id={`AmericaFront${this.state.americaShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup>
             <button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='Europe'></button>
             <button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='AsiaAustralia'></button>

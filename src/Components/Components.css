@@ -114,7 +114,7 @@
 }
 
 .cthulhuSheet:focus {
-    transform: scale(1.4);
+    transform: scale(1.5);
 }
 
 #CthulhuSheetFront {
@@ -437,6 +437,30 @@
 
 #AmericaFront2 {
     background-image: url(/src/pictures/EncounterCards/America/Encounter_Americas_Front_2.png);
+}
+
+#AmericaFront3 {
+    background-image: url(/src/pictures/EncounterCards/America/Encounter_Americas_Front_3.png);
+}
+
+#AmericaFront4 {
+    background-image: url(/src/pictures/EncounterCards/America/Encounter_Americas_Front_4.png);
+}
+
+#AmericaFront5 {
+    background-image: url(/src/pictures/EncounterCards/America/Encounter_Americas_Front_5.png);
+}
+
+#AmericaFront6 {
+    background-image: url(/src/pictures/EncounterCards/America/Encounter_Americas_Front_6.png);
+}
+
+#AmericaFront7 {
+    background-image: url(/src/pictures/EncounterCards/America/Encounter_Americas_Front_7.png);
+}
+
+#AmericaFront8 {
+    background-image: url(/src/pictures/EncounterCards/America/Encounter_Americas_Front_8.png);
 }
 
 #Europe {
