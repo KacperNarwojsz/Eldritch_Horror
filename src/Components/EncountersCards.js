@@ -30,7 +30,7 @@ class EncountersCards extends Component {
     render() {
         return (
         <div className='encounters'>
-            <Popup onOpen={this.handleClick} contentStyle={{width: "15.9vw", height: "25vw", padding: 0, borderRadius: "0.4vw"}} trigger=
+            <Popup onOpen={this.handleClick} contentStyle={{width: "15.9vw", height: "25vw", background:'transparent', border: 'transparent'}} trigger=
                 {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='America'></button>}modal nested>
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`AmericaFront${this.state.americaShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup>
