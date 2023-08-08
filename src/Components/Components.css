@@ -468,9 +468,73 @@
     animation-delay:4.2s;
 }
 
+#EuropeFront1 {
+    background-image: url(/src/pictures/EncounterCards/Europe/Encounter_Europe_Front_1.png);
+}
+
+#EuropeFront2 {
+    background-image: url(/src/pictures/EncounterCards/Europe/Encounter_Europe_Front_2.png);
+}
+
+#EuropeFront3 {
+    background-image: url(/src/pictures/EncounterCards/Europe/Encounter_Europe_Front_3.png);
+}
+
+#EuropeFront4 {
+    background-image: url(/src/pictures/EncounterCards/Europe/Encounter_Europe_Front_4.png);
+}
+
+#EuropeFront5 {
+    background-image: url(/src/pictures/EncounterCards/Europe/Encounter_Europe_Front_5.png);
+}
+
+#EuropeFront6 {
+    background-image: url(/src/pictures/EncounterCards/Europe/Encounter_Europe_Front_6.png);
+}
+
+#EuropeFront7 {
+    background-image: url(/src/pictures/EncounterCards/Europe/Encounter_Europe_Front_7.png);
+}
+
+#EuropeFront8 {
+    background-image: url(/src/pictures/EncounterCards/Europe/Encounter_Europe_Front_8.png);
+}
+
 #AsiaAustralia {
     background-image: url(/src/pictures/Encounter_Asia-Australia.png);
     animation-delay:4.3s
+}
+
+#AsiaAustraliaFront1 {
+    background-image: url(/src/pictures/EncounterCards/AsiaAustralia/Encounter_AsiaAustralia_Front_1.png);
+}
+
+#AsiaAustraliaFront2 {
+    background-image: url(/src/pictures/EncounterCards/AsiaAustralia/Encounter_AsiaAustralia_Front_2.png);
+}
+
+#AsiaAustraliaFront3 {
+    background-image: url(/src/pictures/EncounterCards/AsiaAustralia/Encounter_AsiaAustralia_Front_3.png);
+}
+
+#AsiaAustraliaFront4 {
+    background-image: url(/src/pictures/EncounterCards/AsiaAustralia/Encounter_AsiaAustralia_Front_4.png);
+}
+
+#AsiaAustraliaFront5 {
+    background-image: url(/src/pictures/EncounterCards/AsiaAustralia/Encounter_AsiaAustralia_Front_5.png);
+}
+
+#AsiaAustraliaFront6 {
+    background-image: url(/src/pictures/EncounterCards/AsiaAustralia/Encounter_AsiaAustralia_Front_6.png);
+}
+
+#AsiaAustraliaFront7 {
+    background-image: url(/src/pictures/EncounterCards/AsiaAustralia/Encounter_AsiaAustralia_Front_7.png);
+}
+
+#AsiaAustraliaFront8 {
+    background-image: url(/src/pictures/EncounterCards/AsiaAustralia/Encounter_AsiaAustralia_Front_8.png);
 }
 
 #General {
@@ -478,9 +542,153 @@
     animation-delay:4.4s
 }
 
+#GeneralFront1 {
+    background-image: url(/src/pictures/EncounterCards/General/Encounter_General_Front_1.png);
+}
+
+#GeneralFront2 {
+    background-image: url(/src/pictures/EncounterCards/General/Encounter_General_Front_2.png);
+}
+
+#GeneralFront3 {
+    background-image: url(/src/pictures/EncounterCards/General/Encounter_General_Front_3.png);
+}
+
+#GeneralFront4 {
+    background-image: url(/src/pictures/EncounterCards/General/Encounter_General_Front_4.png);
+}
+
+#GeneralFront5 {
+    background-image: url(/src/pictures/EncounterCards/General/Encounter_General_Front_5.png);
+}
+
+#GeneralFront6 {
+    background-image: url(/src/pictures/EncounterCards/General/Encounter_General_Front_6.png);
+}
+
+#GeneralFront7 {
+    background-image: url(/src/pictures/EncounterCards/General/Encounter_General_Front_7.png);
+}
+
+#GeneralFront8 {
+    background-image: url(/src/pictures/EncounterCards/General/Encounter_General_Front_8.png);
+}
+
+#GeneralFront9 {
+    background-image: url(/src/pictures/EncounterCards/General/Encounter_General_Front_9.png);
+}
+
+#GeneralFront10 {
+    background-image: url(/src/pictures/EncounterCards/General/Encounter_General_Front_10.png);
+}
+
+#GeneralFront11 {
+    background-image: url(/src/pictures/EncounterCards/General/Encounter_General_Front_11.png);
+}
+
+#GeneralFront12 {
+    background-image: url(/src/pictures/EncounterCards/General/Encounter_General_Front_12.png);
+}
+
 #OtherWorld {
     background-image: url(/src/pictures/Encounter_Other_World.png);
     animation-delay:4.5s
+}
+
+#OtherWorldFront1 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_1.png);
+}
+
+#OtherWorldFront2 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_2.png);
+}
+
+#OtherWorldFront3 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_3.png);
+}
+
+#OtherWorldFront4 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_4.png);
+}
+
+#OtherWorldFront5 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_5.png);
+}
+
+#OtherWorldFront6 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_6.png);
+}
+
+#OtherWorldFront7 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_7.png);
+}
+
+#OtherWorldFront8 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_8.png);
+}
+
+#OtherWorldFront9 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_9.png);
+}
+
+#OtherWorldFront10 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_10.png);
+}
+
+#OtherWorldFront11 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_11.png);
+}
+
+#OtherWorldFront12 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_12.png);
+}
+
+#OtherWorldFront13 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_13.png);
+}
+
+#OtherWorldFront14 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_14.png);
+}
+
+#OtherWorldFront15 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_15.png);
+}
+
+#OtherWorldFront16 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_16.png);
+}
+
+#OtherWorldFront17 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_17.png);
+}
+
+#OtherWorldFront18 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_18.png);
+}
+
+#OtherWorldFront19 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_19.png);
+}
+
+#OtherWorldFront20 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_20.png);
+}
+
+#OtherWorldFront21 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_21.png);
+}
+
+#OtherWorldFront22 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_22.png);
+}
+
+#OtherWorldFront23 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_23.png);
+}
+
+#OtherWorldFront24 {
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_24.png);
 }
 
 #Expedition {
@@ -488,12 +696,68 @@
     animation-delay:4.6s
 }
 
-#Ancient_research {
+#CthulhuResearch {
     background-image: url(/src/pictures/Encounter_Cthulhu_research.png);
     animation-delay:4.7s
 }
 
-#Ancient_special {
+#CthulhuResearchFront1 {
+    background-image: url(/src/pictures/EncounterCards/CthulhuResearch/Encounter_CthulhuResearch_Front_1.png);
+}
+
+#CthulhuResearchFront2 {
+    background-image: url(/src/pictures/EncounterCards/CthulhuResearch/Encounter_CthulhuResearch_Front_2.png);
+}
+
+#CthulhuResearchFront3 {
+    background-image: url(/src/pictures/EncounterCards/CthulhuResearch/Encounter_CthulhuResearch_Front_3.png);
+}
+
+#CthulhuResearchFront4 {
+    background-image: url(/src/pictures/EncounterCards/CthulhuResearch/Encounter_CthulhuResearch_Front_4.png);
+}
+
+#CthulhuResearchFront5 {
+    background-image: url(/src/pictures/EncounterCards/CthulhuResearch/Encounter_CthulhuResearch_Front_5.png);
+}
+
+#CthulhuResearchFront6 {
+    background-image: url(/src/pictures/EncounterCards/CthulhuResearch/Encounter_CthulhuResearch_Front_6.png);
+}
+
+#CthulhuResearchFront7 {
+    background-image: url(/src/pictures/EncounterCards/CthulhuResearch/Encounter_CthulhuResearch_Front_7.png);
+}
+
+#CthulhuResearchFront8 {
+    background-image: url(/src/pictures/EncounterCards/CthulhuResearch/Encounter_CthulhuResearch_Front_8.png);
+}
+
+#CthulhuSpecial {
     background-image: url(/src/pictures/Encounter_Cthulhu_special.png);
     animation-delay:4.8s
+}
+
+#CthulhuSpecialFront1 {
+    background-image: url(/src/pictures/EncounterCards/CthulhuSpecial/Encounter_CthulhuSpecial_Front_1.png);
+}
+
+#CthulhuSpecialFront2 {
+    background-image: url(/src/pictures/EncounterCards/CthulhuSpecial/Encounter_CthulhuSpecial_Front_2.png);
+}
+
+#CthulhuSpecialFront3 {
+    background-image: url(/src/pictures/EncounterCards/CthulhuSpecial/Encounter_CthulhuSpecial_Front_3.png);
+}
+
+#CthulhuSpecialFront4 {
+    background-image: url(/src/pictures/EncounterCards/CthulhuSpecial/Encounter_CthulhuSpecial_Front_4.png);
+}
+
+#CthulhuSpecialFront5 {
+    background-image: url(/src/pictures/EncounterCards/CthulhuSpecial/Encounter_CthulhuSpecial_Front_5.png);
+}
+
+#CthulhuSpecialFront6 {
+    background-image: url(/src/pictures/EncounterCards/CthulhuSpecial/Encounter_CthulhuSpecial_Front_6.png);
 }
