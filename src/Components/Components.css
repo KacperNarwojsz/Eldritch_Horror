@@ -423,11 +423,11 @@
     width: 15.9vw;
     justify-content: center;
     background-size: cover;
-    border-radius: 0.4vw;
+    border-radius: 0.9vw;
 }
 
 #America {
-    background-image: url(/src/pictures/Encounter_Americas.png);
+    background-image: url(/src/pictures/EncounterCards/America/Encounter_Americas.png);
     animation-delay:4.1s;
 }
 
@@ -464,7 +464,7 @@
 }
 
 #Europe {
-    background-image: url(/src/pictures/Encounter_Europe.png);
+    background-image: url(/src/pictures/EncounterCards/Europe/Encounter_Europe.png);
     animation-delay:4.2s;
 }
 
@@ -501,7 +501,7 @@
 }
 
 #AsiaAustralia {
-    background-image: url(/src/pictures/Encounter_Asia-Australia.png);
+    background-image: url(/src/pictures/EncounterCards/AsiaAustralia/Encounter_AsiaAustralia.png);
     animation-delay:4.3s
 }
 
@@ -538,7 +538,7 @@
 }
 
 #General {
-    background-image: url(/src/pictures/Encounter_General.png);
+    background-image: url(/src/pictures/EncounterCards/General/Encounter_General.png);
     animation-delay:4.4s
 }
 
@@ -591,7 +591,7 @@
 }
 
 #OtherWorld {
-    background-image: url(/src/pictures/Encounter_Other_World.png);
+    background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld.png);
     animation-delay:4.5s
 }
 
@@ -691,13 +691,110 @@
     background-image: url(/src/pictures/EncounterCards/OtherWorld/Encounter_OtherWorld_Front_24.png);
 }
 
-#Expedition {
-    background-image: url(/src/pictures/Encounter_Expedition.png);
+#ExpeditionAntarctica {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionAntarctica.png);
     animation-delay:4.6s
 }
 
+#ExpeditionAntarcticaFront1 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionAntarctica_Front_1.png);
+}
+
+#ExpeditionAntarcticaFront2 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionAntarctica_Front_2.png);
+}
+
+#ExpeditionAntarcticaFront3 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionAntarctica_Front_3.png);
+}
+
+#ExpeditionTheAmazon {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionTheAmazon.png);
+    animation-delay:4.6s
+}
+
+#ExpeditionTheAmazonFront1 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionAntarctica_Front_1.png);
+}
+
+#ExpeditionTheAmazonFront2 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionAntarctica_Front_2.png);
+}
+
+#ExpeditionTheAmazonFront3 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionAntarctica_Front_3.png);
+}
+
+#ExpeditionTheHeartofAfrica {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionTheHeartofAfrica.png);
+    animation-delay:4.6s
+}
+
+#ExpeditionTheHeartofAfricaFront1 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionTheHeartofAfrica_Front_1.png);
+}
+
+#ExpeditionTheHeartofAfricaFront2 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionTheHeartofAfrica_Front_2.png);
+}
+
+#ExpeditionTheHeartofAfricaFront3 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionTheHeartofAfrica_Front_3.png);
+}
+
+#ExpeditionTheHimalayas {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionTheHimalayas.png);
+    animation-delay:4.6s
+}
+
+#ExpeditionTheHimalayasFront1 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionTheHimalayas_Front_1.png);
+}
+
+#ExpeditionTheHimalayasFront2 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionTheHimalayas_Front_2.png);
+}
+
+#ExpeditionTheHimalayasFront3 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionTheHimalayas_Front_3.png);
+}
+
+#ExpeditionThePyramids {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionThePyramids.png);
+    animation-delay:4.6s
+}
+
+#ExpeditionThePyramidsFront1 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionThePyramids_Front_1.png);
+}
+
+#ExpeditionThePyramidsFront2 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionThePyramids_Front_2.png);
+}
+
+#ExpeditionThePyramidsFront3 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionThePyramids_Front_3.png);
+}
+
+#ExpeditionTunguska {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionTunguska.png);
+    animation-delay:4.6s
+}
+
+#ExpeditionTunguskaFront1 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionTunguska_Front_1.png);
+}
+
+#ExpeditionTunguskaFront2 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionTunguska_Front_2.png);
+}
+
+#ExpeditionTunguskaFront3 {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionTunguska_Front_3.png);
+}
+
 #CthulhuResearch {
-    background-image: url(/src/pictures/Encounter_Cthulhu_research.png);
+    background-image: url(/src/pictures/EncounterCards/CthulhuResearch/Encounter_CthulhuResearch.png);
     animation-delay:4.7s
 }
 
@@ -734,7 +831,7 @@
 }
 
 #CthulhuSpecial {
-    background-image: url(/src/pictures/Encounter_Cthulhu_special.png);
+    background-image: url(/src/pictures/EncounterCards/CthulhuSpecial/Encounter_CthulhuSpecial.png);
     animation-delay:4.8s
 }
 

@@ -125,7 +125,7 @@ class EncountersCards extends Component {
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`OtherWorldFront${this.state.otherworldShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup>
             <Popup onOpen={this.handleExpeditionShuffle} contentStyle={{width: "15.9vw", height: "25vw", background:'transparent', border: 'transparent'}} trigger=
-                {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='Expedition'></button>}modal nested>
+                {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='ExpeditionAntarctica'></button>}modal nested>
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`ExpeditionFront${this.state.expeditionShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup>
             <Popup onOpen={this.handleCthulhuResearchShuffle} contentStyle={{width: "15.9vw", height: "25vw", background:'transparent', border: 'transparent'}} trigger=
