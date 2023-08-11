@@ -5,14 +5,14 @@ import CthulhuBoard from "../Components/CthulhuBoard";
 import './AllPages.css'
 
 
-const Cthulhu = ({ level, characters }) => {
+const Cthulhu = ({ level, characters, victory }) => {
     return (
         <div className="cthulhu">
             <EldritchBoard>
                 <div className="topDiv">
                     <div className="boardDiv">
                         <div className="flexDiv">
-                            <CthulhuBoard level={level} characters={characters}/>
+                            <CthulhuBoard level={level} characters={characters} victory={victory}/>
                         </div>
                     </div>
                 </div>

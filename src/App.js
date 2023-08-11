@@ -5,14 +5,16 @@ import YogSothoth from './pages/YogSothoth';
 import ShubNiggurath from './pages/ShubNiggurath';
 import Cthulhu from './pages/Cthulhu';
 import CthulhuLvlChar from './pages/CthulhuLvlChar';
+import Victory from './pages/Victory';
 import './App.css';
+
 
 class App extends Component {
   
   constructor() {
     super();
     this.state = {
-        route: 'home',
+        route: 'Home',
         level: false,
         characters: false,
         start: false,
@@ -37,6 +39,14 @@ class App extends Component {
 
   routeToCthulhu = (event) => {
     this.setState({ route: 'Cthulhu'})
+  }
+
+  routeToVictory = (event) => {
+    this.setState({ route: 'Victory'})
+  }
+
+  routeToHome = (event) => {
+    window.location.reload(true);
   }
 
   setLvlEasy = (event) => {
@@ -94,6 +104,7 @@ class App extends Component {
         case "Cthulhu":           return <Cthulhu 
                                             level={this.state.level}
                                             characters={this.state.characters}
+                                            victory={this.routeToVictory}
                                           />;
         case "CthulhuLvlChar":    return <CthulhuLvlChar 
                                             loadCthulhu={this.routeToCthulhu}
@@ -108,6 +119,8 @@ class App extends Component {
                                             chooseCharNo5={this.setCharTo5} chooseCharNo6={this.setCharTo6}
                                             chooseCharNo7={this.setCharTo7} chooseCharNo8={this.setCharTo8}
                                           />;
+        case "Victory":           return <Victory 
+                                            loadHome={this.routeToHome}/>
         default:                  return <Home 
                                             loadAzathoth={this.routeToAzathoth} 
                                             loadYog={this.routeToYog}

@@ -1,0 +1,97 @@
+.cthulhuMysteryFrontDiv {
+    display: flex;
+}
+
+.cthulhuMysteryFront {
+    background-image: url(/src/pictures/MysteryCards/CthulhuMystery/Ancient_Cthulhu_Mystery_Front_1.png);
+    height: 7.4vw;
+    width: 11.5vw;
+    margin-top: 1.2vw;
+    background-size: cover;
+    border-radius: 0.4vw;
+    transition: all .3s ease;  
+    cursor: pointer;
+}
+
+.cthulhuMysteryFront:hover {
+    transform: scale(1.05);
+}
+
+.cthulhuMysteryFront:focus {
+    transform: scale(2.5);
+}
+
+.tokensDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tokens {
+    display: flex;
+    justify-content: center;
+}
+
+.tokenCounter {
+    width: 9vw;
+    height: 3.3vw;
+    background-color: transparent;
+    text-align: center;
+    font-family: BirminghamBold;
+    font-size: 2.6vw;
+    margin: 0.5vw;
+    border: 0.15vw solid black;
+    border-radius: 1vw;
+}
+
+.tokenDone {
+    width: 9vw;
+    height: 3.3vw;
+    background-image: url(/src/pictures/TokenDone.png);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0.5vw;
+    border: 0.15vw solid black;
+    border-radius: 1vw;
+    transition: all .3s ease; 
+    cursor: pointer;
+}
+
+.tokenDone:hover {
+    transform: scale(1.05);
+}
+
+.tokenBack {
+    background-image: url(/src/pictures/TokenBack.png);
+    background-color: transparent;
+    background-size: cover;
+    align-self: center;
+    margin: 0.5vw;
+    border-radius: 50%;
+    width: 2vw;
+    height: 2vw;
+    transition: all .3s ease; 
+    cursor: pointer;
+}
+
+.tokenBack:hover {
+    transform: scale(1.05);
+}
+
+.tokenEldritch {
+    background-image: url(/src/pictures/TokenEldritch.png);
+    background-size: cover;
+    margin: 0.5vw;
+    border-radius: 50%;
+    width: 2.8vw;
+    height: 2.8vw;
+    transition: all .3s ease;  
+    cursor: pointer; 
+}
+
+.tokenEldritch:hover {
+    transform: scale(1.05);
+}
+

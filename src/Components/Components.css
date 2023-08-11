@@ -107,6 +107,7 @@
     border-radius: 0.4vw;
     transition: all .3s ease;
     z-index: 2;
+    cursor: pointer;
 }
 
 .cthulhuSheet:hover {
@@ -147,6 +148,7 @@
     background-color: transparent;
     border-radius: 1vw;
     border-color: black;
+    cursor: pointer;
 }
 
 .cthulhuMysteryStamp {
@@ -173,6 +175,7 @@
     background-size: cover;
     border-radius: 0.4vw;
     transition: all .3s ease;    
+    cursor: pointer;
 }
 
 .cthulhuMystery:hover {
@@ -191,7 +194,7 @@
     background-image: url(/src/pictures/Mythos_Card.png);
     height: 11.5vw;
     width: 7.4vw;
-    margin: 1.2vw;
+    margin: 0vw 1.2vw 1.2vw 1.2vw;
     justify-content: center;
     background-size: cover;
     border-radius: 0.4vw;
@@ -208,11 +211,12 @@
     background-image: url(/src/pictures/Mythos_Card.png);
     height: 11.5vw;
     width: 7.4vw;
-    margin: 1.2vw;
+    margin: 0vw 1.2vw 1.2vw 1.2vw;
     justify-content: center;
     background-size: cover;
     border-radius: 0.4vw;
     transition: all .3s ease;
+    cursor: pointer;
 }
 
 .mythos:hover {
@@ -222,14 +226,16 @@
 .mythosFront {
     height: 11.5vw;
     width: 7.4vw;
-    margin: 1.2vw;
+    margin: 0vw 1.2vw 1.2vw 1.2vw;
     justify-content: center;
     background-size: cover;
+    border-radius: 0.4vw;
     transition: all .3s ease;
+    cursor: pointer;
 }
 
 .mythosFront:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .mythosFront:focus {
@@ -311,6 +317,12 @@
     align-items: flex-start;
     justify-content: flex-end;
     border-radius: 0.4vw;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.char:hover {
+    transform: scale(1.03);
 }
 
 .char:focus {
@@ -386,6 +398,7 @@
     border-radius: 50%;
     margin-top: 0.2vw;
     margin-left: 14vw;
+    cursor: pointer;
 }
 
 .encounterCardStamp {
@@ -411,6 +424,7 @@
     background-size: cover;
     border-radius: 0.4vw;
     transition: all .3s ease;
+    cursor: pointer;
 }
 
 .encounterCard:hover {

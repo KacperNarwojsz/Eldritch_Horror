@@ -163,6 +163,15 @@
     justify-content: flex-start;
 }
 
+.victoryDiv {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /* PICTURES  */
 
 .main_eldritch_logo {
@@ -205,6 +214,19 @@
     margin-bottom: 0.1vw;
 }
 
+.victoryText {
+    font-family: 'Birmingham_Bold';
+    font-size: 7vw;
+    color: white;
+    justify-content: center;
+         /* FADE IN ANIMATION */
+    opacity: 0;
+    animation: fadeInAnimation ease 7s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
 /* BUTTONS  */
 
 .ancientsButton {
@@ -228,6 +250,7 @@
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    cursor: pointer;
 }
 
 .mainButton:hover {
@@ -268,6 +291,7 @@
     background-color: transparent;
     border-radius: 1vw;
     border-color: black;
+    cursor: pointer;
 }
 
 .lvlButtonActive {
@@ -288,6 +312,7 @@
     background-color: transparent;
     border-radius: 1vw;
     border-color: black;
+    cursor: pointer;
 }
 
 .charButtonActive {
@@ -311,4 +336,26 @@
     border-radius: 1vw;
     border-color: black;
     align-self: center;
+    cursor: pointer;
+}
+
+.victoryButton {
+    font-family: 'Birmingham_Titling_Bold';
+    font-size: 2.7vw;
+    color: white;
+    height: 5vw;
+    width: 35vw;
+    margin: 2vw;
+    margin-top: 3vw;
+    background-color: transparent;
+    border-radius: 1vw;
+    border-color: white;
+    align-self: center;
+    cursor: pointer;
+    /* FADE IN ANIMATION */
+    opacity: 0;
+    animation: fadeInAnimation ease 7s;
+    animation-delay: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
