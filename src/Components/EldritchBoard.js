@@ -1,5 +1,5 @@
 import React from "react";
-import eldritch_board from "../pictures/Eldritch_board.png";
+import eldritch_board from "../pictures/Main/Eldritch_board.png";
 import './Components.css'
 
 

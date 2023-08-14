@@ -1,5 +1,5 @@
 import React from "react";
-import lvl_char_matt from '../pictures/LvlCharMatt.png'
+import lvl_char_matt from '../pictures/LvlChar/LvlCharMatt.png'
 import './Components.css'
 
 

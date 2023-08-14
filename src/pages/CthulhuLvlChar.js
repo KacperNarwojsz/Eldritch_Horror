@@ -1,7 +1,7 @@
 import React from 'react';
 import LvlCharMatt from '../Components/LvlCharMatt';
-import char_icon from '../pictures/CharIcon.png'
-import lvl_icon from '../pictures/LvlIcon.png'
+import char_icon from '../pictures/LvlChar/CharIcon.png'
+import lvl_icon from '../pictures/LvlChar/LvlIcon.png'
 import './AllPages.css'
 
 

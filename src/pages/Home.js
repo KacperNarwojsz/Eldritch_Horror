@@ -1,5 +1,5 @@
 import React from "react";
-import eldritch_logo from "../pictures/Eldritch_logo.png";
+import eldritch_logo from "../pictures/Main/Eldritch_logo.png";
 import './AllPages.css'
 
 

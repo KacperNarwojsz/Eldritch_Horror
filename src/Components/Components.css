@@ -119,11 +119,11 @@
 }
 
 #CthulhuSheetFront {
-    background-image: url(/src/pictures/Ancient_Cthulhu_sheet_front.png);
+    background-image: url(/src/pictures/SheetCards/Ancient_Cthulhu_sheet_front.png);
 }
 
 #CthulhuSheetBack {
-    background-image: url(/src/pictures/Ancient_Cthulhu_sheet_back.png);
+    background-image: url(/src/pictures/SheetCards/Ancient_Cthulhu_sheet_back.png);
 }
 
 .flipButtons{
@@ -168,7 +168,7 @@
 }
 
 .sheetCardTokenMinus {
-    background-image: url(/src/pictures/TokenMinus.png);
+    background-image: url(/src/pictures/Tokens/TokenMinus.png);
     background-color: transparent;
     background-size: cover;
     align-self: center;
@@ -181,7 +181,7 @@
 
 
 .sheetCardSanity {
-    background-image: url(/src/pictures/TokenSanity.png);
+    background-image: url(/src/pictures/Tokens/TokenSanity.png);
     background-color: transparent;
     background-size: cover;
     margin-left: 0.4vw;
@@ -202,7 +202,7 @@
 }
 
 .sheetCardTokenPlus {
-    background-image: url(/src/pictures/TokenPlus.png);
+    background-image: url(/src/pictures/Tokens/TokenPlus.png);
     background-color: transparent;
     background-size: cover;
     align-self: center;
@@ -214,7 +214,7 @@
 }
 
 .cthulhuMysteryStamp {
-    background-image: url(/src/pictures/Ancient_Cthulhu_mystery.png);
+    background-image: url(/src/pictures/MysteryCards/Ancient_Cthulhu_mystery.png);
     height: 7.4vw;
     width: 11.5vw;
     margin: 1.2vw;
@@ -230,7 +230,7 @@
 }
 
 .cthulhuMystery {
-    background-image: url(/src/pictures/Ancient_Cthulhu_mystery.png);
+    background-image: url(/src/pictures/MysteryCards/Ancient_Cthulhu_mystery.png);
     height: 7.4vw;
     width: 11.5vw;
     margin: 1.2vw;
@@ -244,16 +244,8 @@
     transform: scale(1.1);
 }
 
-#CthulhuMysteryFront {
-    background-image: url(/src/pictures/Ancient_Cthulhu_mystery_front.png);
-}
-
-#CthulhuMysteryFront:focus {
-    transform: scale(2.5);
-}
-
 .mythosStamp {
-    background-image: url(/src/pictures/Mythos_Card.png);
+    background-image: url(/src/pictures/Mythos/Mythos_Card.png);
     height: 11.5vw;
     width: 7.4vw;
     margin: 0vw 1.2vw 1.2vw 1.2vw;
@@ -270,7 +262,7 @@
 }
 
 .mythos {
-    background-image: url(/src/pictures/Mythos_Card.png);
+    background-image: url(/src/pictures/Mythos/Mythos_Card.png);
     height: 11.5vw;
     width: 7.4vw;
     margin: 0vw 1.2vw 1.2vw 1.2vw;
@@ -319,23 +311,23 @@
 }
 
 #Mythos1 {
-    background-image: url(/src/pictures/Mythos_Card_1.png);
+    background-image: url(/src/pictures/Mythos/Mythos_Card_1.png);
 }
 
 #Mythos2 {
-    background-image: url(/src/pictures/Mythos_Card_2.png);
+    background-image: url(/src/pictures/Mythos/Mythos_Card_2.png);
 }
 
 #Mythos3 {
-    background-image: url(/src/pictures/Mythos_Card_3.png);
+    background-image: url(/src/pictures/Mythos/Mythos_Card_3.png);
 }
 
 #Mythos4 {
-    background-image: url(/src/pictures/Mythos_Card_4.png);
+    background-image: url(/src/pictures/Mythos/Mythos_Card_4.png);
 }
 
 #Mythos5 {
-    background-image: url(/src/pictures/Mythos_Card_5.png);
+    background-image: url(/src/pictures/Mythos/Mythos_Card_5.png);
 }
 
 /* --------- LEVEL AND CHARACTERS --------- */

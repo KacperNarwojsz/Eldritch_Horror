@@ -79,22 +79,22 @@
 }
 
 .azathoth {
-    background-image: url(/src/pictures/Ancient_Azathoth.jpg);
+    background-image: url(/src/pictures/Main/Ancient_Azathoth.jpg);
     background-size: cover;
 }
 
 .yohSothoth {
-    background-image: url(/src/pictures/Ancient_Yog-Sothoth.jpg);
+    background-image: url(/src/pictures/Main/Ancient_Yog-Sothoth.jpg);
     background-size: cover;
 }
 
 .shubNiggurath {
-    background-image: url(/src/pictures/Ancient_Shub-Niggurath.jpg);
+    background-image: url(/src/pictures/Main/Ancient_Shub-Niggurath.jpg);
     background-size: cover;
 }
 
 .cthulhuLvlChar {
-    background-image: url(/src/pictures/Ancient_Cthulhu.jpg);
+    background-image: url(/src/pictures/Main/Ancient_Cthulhu.jpg);
     background-size: cover;
     height: 100vh;
     width: 100vw;
@@ -106,7 +106,7 @@
 }
 
 .cthulhu {
-    background-image: url(/src/pictures/Ancient_Cthulhu.jpg);
+    background-image: url(/src/pictures/Main/Ancient_Cthulhu.jpg);
     background-size: cover;
     height: 100vh;
     width: 100vw;
@@ -166,7 +166,7 @@
 .victoryDiv {
     height: 100vh;
     width: 100vw;
-    background-image: url(/src/pictures/Eldritch_Horror_Cover.png);
+    background-image: url(/src/pictures/Main/Eldritch_Horror_Cover.png);
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -265,26 +265,26 @@
 }
 
 #ButtonAzathoth {
-    background-image: url(/src/pictures/Ancient_Azathoth.jpg);
+    background-image: url(/src/pictures/Main/Ancient_Azathoth.jpg);
     background-size: 18vw;
     animation-delay: 6s;
 }
 
 #ButtonYog {
-    background-image: url(/src/pictures/Ancient_Yog-Sothoth.jpg);
+    background-image: url(/src/pictures/Main/Ancient_Yog-Sothoth.jpg);
     background-size: 19vw;
     animation-delay: 6.5s;
 
 }
 
 #ButtonShub {
-    background-image: url(/src/pictures/Ancient_Shub-Niggurath.jpg);
+    background-image: url(/src/pictures/Main/Ancient_Shub-Niggurath.jpg);
     background-size: cover;
     animation-delay: 7s;
 }
 
 #ButtonCthulhu {
-    background-image: url(/src/pictures/Ancient_Cthulhu.jpg);
+    background-image: url(/src/pictures/Main/Ancient_Cthulhu.jpg);
     background-size: cover;
     background-position: left;
     animation-delay: 7.5s;

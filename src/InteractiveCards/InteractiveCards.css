@@ -13,19 +13,19 @@
 }
 
 #CthulhuMysteryFront1 {
-    background-image: url(/src/pictures/MysteryCards/CthulhuMystery/Ancient_Cthulhu_Mystery_Front_1.png);
+    background-image: url(/src/pictures/MysteryCards/Ancient_Cthulhu_Mystery_Front_1.png);
 }
 
 #CthulhuMysteryFront2 {
-    background-image: url(/src/pictures/MysteryCards/CthulhuMystery/Ancient_Cthulhu_Mystery_Front_2.png);
+    background-image: url(/src/pictures/MysteryCards/Ancient_Cthulhu_Mystery_Front_2.png);
 }
 
 #CthulhuMysteryFront3 {
-    background-image: url(/src/pictures/MysteryCards/CthulhuMystery/Ancient_Cthulhu_Mystery_Front_3.png);
+    background-image: url(/src/pictures/MysteryCards/Ancient_Cthulhu_Mystery_Front_3.png);
 }
 
 #CthulhuMysteryFront4 {
-    background-image: url(/src/pictures/MysteryCards/CthulhuMystery/Ancient_Cthulhu_Mystery_Front_4.png);
+    background-image: url(/src/pictures/MysteryCards/Ancient_Cthulhu_Mystery_Front_4.png);
 }
 
 .cthulhuMysteryFront:hover {
@@ -64,7 +64,7 @@
 .tokenDone {
     width: 9vw;
     height: 3.3vw;
-    background-image: url(/src/pictures/TokenDone.png);
+    background-image: url(/src/pictures/Tokens/TokenDone.png);
     background-color: transparent;
     background-size: contain;
     background-repeat: no-repeat;
@@ -81,7 +81,7 @@
 }
 
 .tokenMinus {
-    background-image: url(/src/pictures/TokenMinus.png);
+    background-image: url(/src/pictures/Tokens/TokenMinus.png);
     background-color: transparent;
     background-size: cover;
     align-self: center;
@@ -99,7 +99,7 @@
 }
 
 .tokenPlus {
-    background-image: url(/src/pictures/TokenPlus.png);
+    background-image: url(/src/pictures/Tokens/TokenPlus.png);
     background-color: transparent;
     background-size: cover;
     align-self: center;
@@ -117,7 +117,7 @@
 }
 
 .tokenEldritch {
-    background-image: url(/src/pictures/TokenEldritch.png);
+    background-image: url(/src/pictures/Tokens/TokenEldritch.png);
     background-size: cover;
     background-color: transparent;
     margin: 0.5vw;
@@ -127,7 +127,7 @@
 }
 
 .tokenClue {
-    background-image: url(/src/pictures/TokenClue.png);
+    background-image: url(/src/pictures/Tokens/TokenClue.png);
     background-size: cover;
     background-color: transparent;
     margin: 0.5vw;
@@ -161,18 +161,18 @@
 }
 
 #TokenCthylla {
-    background-image: url(/src/pictures/TokenCthylla.png);
+    background-image: url(/src/pictures/Tokens/TokenCthylla.png);
 }
 
 #TokenCthyllaSlayed {
-    background-image: url(/src/pictures/TokenCthyllaSlayed.png);
+    background-image: url(/src/pictures/Tokens/TokenCthyllaSlayed.png);
     cursor: pointer;
 }
 
 .tokenKilling {
     width: 3.5vw;
     height: 3.5vw;
-    background-image: url(/src/pictures/TokenKilling.png);
+    background-image: url(/src/pictures/Tokens/TokenKilling.png);
     background-color: transparent;
     background-size: cover;
     background-repeat: no-repeat;
@@ -187,7 +187,7 @@
 .tokenMonsterDone {
     width: 3.5vw;
     height: 3.5vw;
-    background-image: url(/src/pictures/TokenDone.png);
+    background-image: url(/src/pictures/Tokens/TokenDone.png);
     background-color: transparent;
     background-size: contain;
     background-repeat: no-repeat;
