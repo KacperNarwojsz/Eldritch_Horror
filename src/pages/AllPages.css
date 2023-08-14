@@ -166,10 +166,17 @@
 .victoryDiv {
     height: 100vh;
     width: 100vw;
+    background-image: url(/src/pictures/Eldritch_Horror_Cover.png);
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* FADE IN ANIMATION */
+    opacity: 0;
+    animation: fadeInAnimation ease 10s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 /* PICTURES  */

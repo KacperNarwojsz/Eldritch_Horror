@@ -30,18 +30,17 @@ class CthulhuMysteryCard1 extends Component {
         return (
                 <div className="cthulhuMysteryFrontDiv">
                     <div>
-                        <button className="cthulhuMysteryFront"></button>
+                        <button className="cthulhuMysteryFront" id="CthulhuMysteryFront1"></button>
                     </div>
                     <div className="tokensDiv">
+                        <div className="counter">
+                            <button className="tokenMinus" onClick={this.counterDecrement}></button>
+                            <button className="tokenEldritch"></button>
+                            <button className="tokenPlus" onClick={this.counterIncrement}></button>
+                        </div>
                         {this.state.counter!==this.state.characters?<button className="tokenCounter">{`${this.state.counter}/${this.state.characters}`}</button>:null}
                         {this.state.counter===this.state.characters?<button className="tokenDone" onClick={this.state.mysteryDone}></button>:null}
-                        {this.state.counter===this.state.characters?<button className="tokenDone" onClick={this.state.victory}></button>:null}
-                        <div className="tokens">
-                            <button onClick={this.counterDecrement} className="tokenBack"></button>
-                            <button onClick={this.counterIncrement} className="tokenEldritch"></button>
-                            <button onClick={this.counterDecrement} className="tokenBack"></button>
-                        </div>
-                        
+        
                     </div>
                 </div>
 

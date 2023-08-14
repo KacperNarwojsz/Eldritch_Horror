@@ -4,41 +4,35 @@ import "./InteractiveCards.css"
 
 
 class CthulhuMysteryCard4 extends Component {
-    constructor({ characters, mysteryDone }) {
+    constructor({ mysteryDone, victory }) {
         super(); 
         this.state = {
-            counter: 0,
-            characters: characters,
             mysteryDone: mysteryDone,
+            victory: victory,
+            monsterSlayed: false,
         } 
     }
 
-    counterIncrement = () => {
-        if (this.state.counter !== this.state.characters) {
-            this.setState ({counter: this.state.counter +1})
-        }
+    slayMonster = () => {
+            this.setState ({monsterSlayed: true})
     }
 
-    counterDecrement = () => {
-        if (this.state.counter !== 0) {
-            this.setState ({counter: this.state.counter -1})
-        }
+    undoSlayMonster = () => {
+        this.setState ({monsterSlayed: false})
     }
 
     render() {
         return (
                 <div className="cthulhuMysteryFrontDiv">
                     <div>
-                        <button className="cthulhuMysteryFront"></button>
+                        <button className="cthulhuMysteryFront" id="CthulhuMysteryFront4"></button>
                     </div>
-                    <div className="tokensDiv">
-                        {this.state.counter!==this.state.characters?<button className="tokenCounter">{`${this.state.counter}/${this.state.characters}`}</button>:null}
-                        {this.state.counter===this.state.characters?<button className="tokenDone" onClick={this.state.mysteryDone}></button>:null}
-                        <div className="tokens">
-                            <button onClick={this.counterDecrement} className="tokenBack"></button>
-                            <button onClick={this.counterIncrement} className="tokenEldritch"></button>
+                    <div className="tokensMonsterDiv">
+                        <button className="monster" id={this.state.monsterSlayed?"TokenCthyllaSlayed":"TokenCthylla"} onClick={this.state.monsterSlayed?this.undoSlayMonster:null}></button>
+                        <div className="tokensMonster">
+                            {this.state.monsterSlayed?null:<button className="tokenKilling" onClick={this.slayMonster}></button>}
+                            {this.state.monsterSlayed?<button className="tokenMonsterDone" onClick={this.state.mysteryDone}></button>:null}
                         </div>
-                        
                     </div>
                 </div>
 

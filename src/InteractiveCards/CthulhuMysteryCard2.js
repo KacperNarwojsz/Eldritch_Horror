@@ -4,17 +4,18 @@ import "./InteractiveCards.css"
 
 
 class CthulhuMysteryCard2 extends Component {
-    constructor({ characters, mysteryDone }) {
+    constructor({ characters, mysteryDone, victory }) {
         super(); 
         this.state = {
             counter: 0,
             characters: characters,
             mysteryDone: mysteryDone,
+            victory: victory,
         } 
     }
 
     counterIncrement = () => {
-        if (this.state.counter !== this.state.characters) {
+        if (this.state.counter !== Math.ceil(this.state.characters/2)) {
             this.setState ({counter: this.state.counter +1})
         }
     }
@@ -29,16 +30,16 @@ class CthulhuMysteryCard2 extends Component {
         return (
                 <div className="cthulhuMysteryFrontDiv">
                     <div>
-                        <button className="cthulhuMysteryFront"></button>
+                        <button className="cthulhuMysteryFront" id="CthulhuMysteryFront2"></button>
                     </div>
                     <div className="tokensDiv">
-                        {this.state.counter!==this.state.characters?<button className="tokenCounter">{`${this.state.counter}/${this.state.characters}`}</button>:null}
-                        {this.state.counter===this.state.characters?<button className="tokenDone" onClick={this.state.mysteryDone}></button>:null}
-                        <div className="tokens">
-                            <button onClick={this.counterDecrement} className="tokenBack"></button>
-                            <button onClick={this.counterIncrement} className="tokenEldritch"></button>
+                        <div className="counter">
+                            <button className="tokenMinus" onClick={this.counterDecrement}></button>
+                            <button className="tokenEldritch"></button>
+                            <button className="tokenPlus" onClick={this.counterIncrement}></button>
                         </div>
-                        
+                        {this.state.counter!==Math.ceil(this.state.characters/2)?<button className="tokenCounter">{`${this.state.counter}/${Math.ceil(this.state.characters/2)}`}</button>:null}
+                        {this.state.counter===Math.ceil(this.state.characters/2)?<button className="tokenDone" onClick={this.state.mysteryDone}></button>:null}
                     </div>
                 </div>
 

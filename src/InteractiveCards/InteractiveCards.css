@@ -3,7 +3,6 @@
 }
 
 .cthulhuMysteryFront {
-    background-image: url(/src/pictures/MysteryCards/CthulhuMystery/Ancient_Cthulhu_Mystery_Front_1.png);
     height: 7.4vw;
     width: 11.5vw;
     margin-top: 1.2vw;
@@ -11,6 +10,22 @@
     border-radius: 0.4vw;
     transition: all .3s ease;  
     cursor: pointer;
+}
+
+#CthulhuMysteryFront1 {
+    background-image: url(/src/pictures/MysteryCards/CthulhuMystery/Ancient_Cthulhu_Mystery_Front_1.png);
+}
+
+#CthulhuMysteryFront2 {
+    background-image: url(/src/pictures/MysteryCards/CthulhuMystery/Ancient_Cthulhu_Mystery_Front_2.png);
+}
+
+#CthulhuMysteryFront3 {
+    background-image: url(/src/pictures/MysteryCards/CthulhuMystery/Ancient_Cthulhu_Mystery_Front_3.png);
+}
+
+#CthulhuMysteryFront4 {
+    background-image: url(/src/pictures/MysteryCards/CthulhuMystery/Ancient_Cthulhu_Mystery_Front_4.png);
 }
 
 .cthulhuMysteryFront:hover {
@@ -21,13 +36,15 @@
     transform: scale(2.5);
 }
 
+/* --------- COUNTER MYSTERIES --------- */
+
 .tokensDiv {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.tokens {
+.counter {
     display: flex;
     justify-content: center;
 }
@@ -63,35 +80,121 @@
     transform: scale(1.05);
 }
 
-.tokenBack {
-    background-image: url(/src/pictures/TokenBack.png);
+.tokenMinus {
+    background-image: url(/src/pictures/TokenMinus.png);
     background-color: transparent;
     background-size: cover;
     align-self: center;
     margin: 0.5vw;
     border-radius: 50%;
+    border: 1vw;
     width: 2vw;
     height: 2vw;
     transition: all .3s ease; 
     cursor: pointer;
 }
 
-.tokenBack:hover {
-    transform: scale(1.05);
+.tokenMinus:hover {
+    transform: scale(1.15);
+}
+
+.tokenPlus {
+    background-image: url(/src/pictures/TokenPlus.png);
+    background-color: transparent;
+    background-size: cover;
+    align-self: center;
+    margin: 0.5vw;
+    border-radius: 50%;
+    border: 1vw;
+    width: 2vw;
+    height: 2vw;
+    transition: all .3s ease; 
+    cursor: pointer;    
+}
+
+.tokenPlus:hover {
+    transform: scale(1.15);
 }
 
 .tokenEldritch {
     background-image: url(/src/pictures/TokenEldritch.png);
     background-size: cover;
+    background-color: transparent;
     margin: 0.5vw;
     border-radius: 50%;
     width: 2.8vw;
     height: 2.8vw;
-    transition: all .3s ease;  
-    cursor: pointer; 
 }
 
-.tokenEldritch:hover {
-    transform: scale(1.05);
+.tokenClue {
+    background-image: url(/src/pictures/TokenClue.png);
+    background-size: cover;
+    background-color: transparent;
+    margin: 0.5vw;
+    border:none;
+    width: 2.8vw;
+    height: 2.8vw;
 }
 
+/* --------- MONSTER MYSTERIES --------- */
+
+.tokensMonsterDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.tokensMonster {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.monster {
+    background-size: cover;
+    background-color: transparent;
+    align-self: center;
+    margin: 0.5vw;
+    border:none;
+    width: 6vw;
+    height: 6vw;
+}
+
+#TokenCthylla {
+    background-image: url(/src/pictures/TokenCthylla.png);
+}
+
+#TokenCthyllaSlayed {
+    background-image: url(/src/pictures/TokenCthyllaSlayed.png);
+    cursor: pointer;
+}
+
+.tokenKilling {
+    width: 3.5vw;
+    height: 3.5vw;
+    background-image: url(/src/pictures/TokenKilling.png);
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0.5vw;
+    justify-self: center;
+    border: none;
+    transition: all .3s ease; 
+    cursor: pointer;
+}
+
+.tokenMonsterDone {
+    width: 3.5vw;
+    height: 3.5vw;
+    background-image: url(/src/pictures/TokenDone.png);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0.5vw;
+    border: 0.15vw solid black;
+    border-radius: 50%;
+    transition: all .3s ease; 
+    cursor: pointer;
+}

@@ -129,7 +129,7 @@
 .flipButtons{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     margin-top: 0.3vw;
     z-index: 1;
@@ -141,13 +141,75 @@
     animation-fill-mode: forwards;
 }
 
-#FlipButton {
+.flipButton {
     font-family: 'Birmingham_Titling_Bold'; 
     font-size: 0.8vw;
     width: 5vw;
     background-color: transparent;
     border-radius: 1vw;
     border-color: black;
+    cursor: pointer;
+}
+
+#FlipButtonFront {
+    margin-left: 1.2vw;
+}
+
+#FlipButtonBack {
+    margin-right: 1.2vw;
+}
+
+.sheetCardAddons{
+    background-color: rgba(238, 238, 215, 0.716);
+    display: flex;
+    border: 0.15vw solid black;
+    border-radius: 1vw;
+    height: 1.1vw;
+}
+
+.sheetCardTokenMinus {
+    background-image: url(/src/pictures/TokenMinus.png);
+    background-color: transparent;
+    background-size: cover;
+    align-self: center;
+    border-radius: 50%;
+    border: 1vw;
+    width: 1.1vw;
+    height: 1.1vw;
+    cursor: pointer;
+}
+
+
+.sheetCardSanity {
+    background-image: url(/src/pictures/TokenSanity.png);
+    background-color: transparent;
+    background-size: cover;
+    margin-left: 0.4vw;
+    width: 1.3vw;
+    height: 1.1vw;
+    border: none;
+    align-items: center;
+}
+
+.sheetCardCounter {
+    background-color: transparent;
+    width: 1.6vw;
+    height: 1vw;
+    border: none;
+    text-align: center;
+    font-family: BirminghamBold;
+    font-size: 0.98vw;
+}
+
+.sheetCardTokenPlus {
+    background-image: url(/src/pictures/TokenPlus.png);
+    background-color: transparent;
+    background-size: cover;
+    align-self: center;
+    border-radius: 50%;
+    border: 1vw;
+    width: 1.1vw;
+    height: 1.1vw;
     cursor: pointer;
 }
 
