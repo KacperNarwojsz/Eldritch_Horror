@@ -179,7 +179,6 @@
     cursor: pointer;
 }
 
-
 .sheetCardSanity {
     background-image: url(/src/pictures/Tokens/TokenSanity.png);
     background-color: transparent;
@@ -242,6 +241,30 @@
 
 .cthulhuMystery:hover {
     transform: scale(1.1);
+}
+
+.cthulhuMysteryFrontPopup {
+    display: flex;
+    height: 19vw;
+    width: 30vw;
+    justify-content: center;
+    background-size: cover;
+    border-radius: 0.9vw;
+}
+
+.mysteryCloseButton {
+    width: 1.5vw;
+    height: 1.5vw;
+    font-family: 'Birmingham'; 
+    font-size: 1vw;
+    text-align: center;
+    background-color: rgb(213, 213, 160);
+    cursor: pointer;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    margin-top: 0.2vw;
+    margin-left: 28vw;
+    cursor: pointer;
 }
 
 .mythosStamp {

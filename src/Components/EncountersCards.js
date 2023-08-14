@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Popup from 'reactjs-popup';
-import './Components.css'
 import chooseRandom from './Shuffler';
+import './Components.css'
+
 
 class EncountersCards extends Component {
     constructor(props) {

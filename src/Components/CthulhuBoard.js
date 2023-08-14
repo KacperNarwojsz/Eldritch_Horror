@@ -6,7 +6,9 @@ import CthulhuMysteryCard2 from '../InteractiveCards/CthulhuMysteryCard2';
 import CthulhuMysteryCard3 from '../InteractiveCards/CthulhuMysteryCard3';
 import CthulhuMysteryCard4 from '../InteractiveCards/CthulhuMysteryCard4';
 import chooseRandom from './Shuffler';
-import './Components.css'
+import Popup from 'reactjs-popup';
+import './Components.css';
+import '../InteractiveCards/InteractiveCards.css';
 
 
 class CthulhuBoard extends Component {
@@ -19,10 +21,12 @@ class CthulhuBoard extends Component {
             level: level,
             characters: characters,
             mysteryNo: chooseRandom(this.mysteryDeck),
+            prevMysteryNo: 0,
             isMystery1Active: false,
             isMystery2Active: false,
             isMystery3Active: false,
             isMystery4Active: false,
+            popping: true,
             victory: victory,
             counter: 0,
         }  
@@ -49,6 +53,7 @@ class CthulhuBoard extends Component {
     chooseMystery = () => {
         if (this.state.isMystery1Active === false && this.state.isMystery2Active === false &&
             this.state.isMystery3Active === false && this.state.isMystery4Active === false) {
+                this.setState(prevState => ({prevMysteryNo: prevState.mysteryNo}))
                 this.setState({mysteryNo: chooseRandom(this.mysteryDeck)});
                 if (this.state.mysteryNo === 1) {
                     this.setState ({isMystery1Active: true})
@@ -64,7 +69,7 @@ class CthulhuBoard extends Component {
 
     mysteryDone = () => {
          if (this.state.isMystery1Active === true) {
-            this.setState ({isMystery1Active: false})
+            this.setState ({isMystery1Active: false })
         } else if (this.state.isMystery2Active === true) {
             this.setState ({isMystery2Active: false})
         } else if (this.state.isMystery3Active === true) {
@@ -72,6 +77,7 @@ class CthulhuBoard extends Component {
         } else if (this.state.isMystery4Active === true) {
             this.setState ({isMystery4Active: false})
         }
+        this.setState(({popping: true}))
     }
 
     counterIncrement = () => {
@@ -83,6 +89,10 @@ class CthulhuBoard extends Component {
         if (this.state.counter !== 0) {
             this.setState ({counter: this.state.counter -1})
         }
+    }
+
+    canPop = () => {
+        this.setState ({popping: false})
     }
       
     render() {
@@ -104,7 +114,12 @@ class CthulhuBoard extends Component {
                 <div className='ancientMysteryMythosLvlChar'>
                     <div className='ancientMysteryLvlChar'>
                         <div className='ancientMystery'>
-                            <button className={this.state.isLoadDone ? 'cthulhuMystery' : 'cthulhuMysteryStamp'} onClick={this.chooseMystery}></button>
+                            {/* <button className={this.state.isLoadDone ? 'cthulhuMystery' : 'cthulhuMysteryStamp'} onClick={this.chooseMystery}></button> */}
+                            {this.state.popping?
+                            <Popup onOpen={this.chooseMystery} onClose={this.canPop} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
+                            {<button className={this.state.isLoadDone ? 'cthulhuMystery' : 'cthulhuMysteryStamp'}></button>}modal nested>
+                            {close => (<div className='outerPopup'><div className='cthulhuMysteryFrontPopup' id={`CthulhuMysteryFront${this.state.prevMysteryNo}`}><button className='mysteryCloseButton' onClick={() => close()}>X</button></div></div>)}
+                            </Popup>:<button className='cthulhuMystery'></button>}
                             {this.state.isMystery1Active?<CthulhuMysteryCard1 characters={this.state.characters} mysteryDone={this.mysteryDeck.length === 0 ? this.state.victory : this.mysteryDone}/>:null}
                             {this.state.isMystery2Active?<CthulhuMysteryCard2 characters={this.state.characters} mysteryDone={this.mysteryDeck.length === 0 ? this.state.victory : this.mysteryDone}/>:null}
                             {this.state.isMystery3Active?<CthulhuMysteryCard3 characters={this.state.characters} mysteryDone={this.mysteryDeck.length === 0 ? this.state.victory : this.mysteryDone}/>:null}
