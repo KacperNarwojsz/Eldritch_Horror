@@ -114,11 +114,11 @@ class CthulhuBoard extends Component {
                     </div>
                     <div className='ancientMythos'>
                         <button className={this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>
-                        <button className='mythosFront' id={this.state.victory ? 'Mythos2' : 'Mythos1'}></button>
+                        {/* <button className='mythosFront' id='Mythos1'></button>
                         <button className='mythosFront' id='Mythos2'></button>
                         <button className='mythosFront' id='Mythos3'></button>
                         <button className='mythosFront' id='Mythos4'></button>
-                        <button className='mythosFront' id='Mythos5'></button>
+                        <button className='mythosFront' id='Mythos5'></button> */}
                     </div>
                 </div>
             </div>
