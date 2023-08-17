@@ -169,12 +169,6 @@ class CthulhuBoard extends Component {
                         {this.state.isMythosNG1Active?<MythosNG1 mythosNG1Done={this.mythosNG1Done}/>:null}
                         {this.state.isMythosNG6Active?<MythosNG6 mythosNG6Done={this.mythosNG6Done}/>:null}
                         {this.state.isMythosHG1Active?<MythosHG1 mythosHG1Done={this.mythosHG1Done}/>:null}
-
-                        {/* <button className='mythosFront' id='Mythos1'></button>
-                        <button className='mythosFront' id='Mythos2'></button>
-                        <button className='mythosFront' id='Mythos3'></button>
-                        <button className='mythosFront' id='Mythos4'></button>
-                        <button className='mythosFront' id='Mythos5'></button> */}
                     </div>
                 </div>
             </div>
