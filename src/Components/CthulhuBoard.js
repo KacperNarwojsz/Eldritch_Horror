@@ -19,7 +19,7 @@ class CthulhuBoard extends Component {
     constructor({ level, characters, victory}) {
         super(); 
         this.mysteryDeck = [1,2,3,4]
-        this.mythosDeck = ['NG1','NG2','NG3','NG4','NG5','NG6','NG7','NG7','HG1']
+        this.mythosDeck = ['NG1','NG2','NG3','NG4','NG5','NG6','NG7','NG8','HG1']
         this.state = {
             ancientCard: false,
             isLoadDone: false,
