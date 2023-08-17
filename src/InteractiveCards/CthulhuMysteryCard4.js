@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import "./InteractiveCards.css"
 
-
-
 class CthulhuMysteryCard4 extends Component {
     constructor({ mysteryDone, victory }) {
         super(); 
@@ -27,11 +25,11 @@ class CthulhuMysteryCard4 extends Component {
                     <div>
                         <button className="cthulhuMysteryFront" id="CthulhuMysteryFront4"></button>
                     </div>
-                    <div className="tokensMonsterDiv">
-                        <button className="monster" id={this.state.monsterSlayed?"TokenCthyllaSlayed":"TokenCthylla"} onClick={this.state.monsterSlayed?this.undoSlayMonster:null}></button>
-                        <div className="tokensMonster">
-                            {this.state.monsterSlayed?null:<button className="tokenKilling" onClick={this.slayMonster}></button>}
-                            {this.state.monsterSlayed?<button className="tokenMonsterDone" onClick={this.state.mysteryDone}></button>:null}
+                    <div className="mysteryTokensMonsterDiv">
+                        <button className="mysteryMonster" id={this.state.monsterSlayed?"TokenCthyllaSlayed":"TokenCthylla"} onClick={this.state.monsterSlayed?this.undoSlayMonster:null}></button>
+                        <div className="mysteryTokensMonster">
+                            {this.state.monsterSlayed?null:<button className="tokenMysteryKilling" onClick={this.slayMonster}></button>}
+                            {this.state.monsterSlayed?<button className="tokenMysteryMonsterDone" onClick={this.state.mysteryDone}></button>:null}
                         </div>
                     </div>
                 </div>

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import "./InteractiveCards.css"
 
-
-
 class CthulhuMysteryCard3 extends Component {
     constructor({ characters, mysteryDone, victory }) {
         super(); 
@@ -32,14 +30,14 @@ class CthulhuMysteryCard3 extends Component {
                     <div>
                         <button className="cthulhuMysteryFront" id="CthulhuMysteryFront3"></button>
                     </div>
-                    <div className="tokensDiv">
-                        <div className="counter">
-                            <button className="tokenMinus" onClick={this.counterDecrement}></button>
-                            <button className="tokenClue"></button>
-                            <button className="tokenPlus" onClick={this.counterIncrement}></button>
+                    <div className="mysteryTokensDiv">
+                        <div className="mysteryCounter">
+                            <button className="tokenMysteryMinus" onClick={this.counterDecrement}></button>
+                            <button className="tokenMysteryClue"></button>
+                            <button className="tokenMysteryPlus" onClick={this.counterIncrement}></button>
                         </div>
-                        {this.state.counter!==this.state.characters?<button className="tokenCounter">{`${this.state.counter}/${this.state.characters}`}</button>:null}
-                        {this.state.counter===this.state.characters?<button className="tokenDone" onClick={this.state.mysteryDone}></button>:null}
+                        {this.state.counter!==this.state.characters?<button className="tokenMysteryCounter">{`${this.state.counter}/${this.state.characters}`}</button>:null}
+                        {this.state.counter===this.state.characters?<button className="tokenMysteryDone" onClick={this.state.mysteryDone}></button>:null}
                     </div>
                 </div>
 
