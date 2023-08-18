@@ -36,9 +36,12 @@ class CthulhuBoard extends Component {
             counter: 0,
             mythosNo: chooseRandom(this.mythosDeck),
             prevMythosNo: true,
-            isMythosNG1Active: false,
-            isMythosNG6Active: false,
-            isMythosHG1Active: false,
+            choosenMythos: [],
+            mythos1: false,
+            mythos2: false,
+            mythos3: false,
+            mythos4: false,
+            mythos5: false,
         }  
     }
 
@@ -77,46 +80,72 @@ class CthulhuBoard extends Component {
         }
     }
 
+    mysteryDone = () => {
+        if (this.state.isMystery1Active === true) {
+           this.setState ({isMystery1Active: false })
+       } else if (this.state.isMystery2Active === true) {
+           this.setState ({isMystery2Active: false})
+       } else if (this.state.isMystery3Active === true) {
+           this.setState ({isMystery3Active: false})
+       } else if (this.state.isMystery4Active === true) {
+           this.setState ({isMystery4Active: false})
+       }
+       this.setState(({popping: true}))
+   }
+
     chooseMythos = () => {
         this.setState(prevState => ({prevMythosNo: prevState.mythosNo}))
         this.setState({mythosNo: chooseRandom(this.mythosDeck)});
         if (this.state.mythosNo === 'NG1') {
-            this.setState ({isMythosNG1Active: true})
+            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+            if  (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
         } else if (this.state.mythosNo === 'NG6') {
-            this.setState ({isMythosNG6Active: true})
+            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
         } else if (this.state.mythosNo === 'HG1') {
-            this.setState ({isMythosHG1Active: true})
+            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
         } 
     }
 
-    mysteryDone = () => {
-         if (this.state.isMystery1Active === true) {
-            this.setState ({isMystery1Active: false })
-        } else if (this.state.isMystery2Active === true) {
-            this.setState ({isMystery2Active: false})
-        } else if (this.state.isMystery3Active === true) {
-            this.setState ({isMystery3Active: false})
-        } else if (this.state.isMystery4Active === true) {
-            this.setState ({isMystery4Active: false})
-        }
-        this.setState(({popping: true}))
-    }
-
     mythosNG1Done = () => {
-        this.setState ({isMythosNG1Active: false })
+        if      (this.state.choosenMythos[0] === 'NG1') { this.setState ({mythos1: 'done' }) } 
+        else if (this.state.choosenMythos[1] === 'NG1') { this.setState ({mythos2: 'done' }) } 
+        else if (this.state.choosenMythos[2] === 'NG1') { this.setState ({mythos3: 'done' }) } 
+        else if (this.state.choosenMythos[3] === 'NG1') { this.setState ({mythos4: 'done' }) } 
+        else if (this.state.choosenMythos[4] === 'NG1') { this.setState ({mythos5: 'done' }) }
     }
 
     mythosNG6Done = () => {
-        this.setState ({isMythosNG6Active: false })
-    }   
-
-    mythosHG1Done = () => {
-        this.setState ({isMythosHG1Active: false })
+        if      (this.state.choosenMythos[0] === 'NG6') { this.setState ({mythos1: 'done' }) } 
+        else if (this.state.choosenMythos[1] === 'NG6') { this.setState ({mythos2: 'done' }) } 
+        else if (this.state.choosenMythos[2] === 'NG6') { this.setState ({mythos3: 'done' }) } 
+        else if (this.state.choosenMythos[3] === 'NG6') { this.setState ({mythos4: 'done' }) } 
+        else if (this.state.choosenMythos[4] === 'NG6') { this.setState ({mythos5: 'done' }) }
     }  
 
-    counterIncrement = () => {
-            this.setState ({counter: this.state.counter +1})
+    mythosHG1Done = () => {
+        if      (this.state.choosenMythos[0] === 'HG1') { this.setState ({mythos1: 'done' }) } 
+        else if (this.state.choosenMythos[1] === 'HG1') { this.setState ({mythos2: 'done' }) } 
+        else if (this.state.choosenMythos[2] === 'HG1') { this.setState ({mythos3: 'done' }) } 
+        else if (this.state.choosenMythos[3] === 'HG1') { this.setState ({mythos4: 'done' }) } 
+        else if (this.state.choosenMythos[4] === 'HG1') { this.setState ({mythos5: 'done' }) }
+    }
 
+    counterIncrement = () => {
+        this.setState ({counter: this.state.counter +1})
     }
 
     counterDecrement = () => {
@@ -130,6 +159,52 @@ class CthulhuBoard extends Component {
     }
       
     render() {
+        const { choosenMythos } = this.state;
+        const InteractiveCard1 = (choosenMythos) => {
+            switch(choosenMythos[0]) {
+              case "NG1":      return <MythosNG1 mythosNG1Done={this.mythosNG1Done}/>;
+              case "NG6":      return <MythosNG6 mythosNG6Done={this.mythosNG6Done}/>;
+              case "HG1":      return <MythosHG1 mythosHG1Done={this.mythosHG1Done}/>;
+              default:         return null;
+            }
+        } 
+
+        const InteractiveCard2 = (choosenMythos) => {
+            switch(choosenMythos[1]) {
+              case "NG1":      return <MythosNG1 mythosNG1Done={this.mythosNG1Done}/>;
+              case "NG6":      return <MythosNG6 mythosNG6Done={this.mythosNG6Done}/>;
+              case "HG1":      return <MythosHG1 mythosHG1Done={this.mythosHG1Done}/>;
+              default:         return null;
+            }
+        }
+
+        const InteractiveCard3 = (choosenMythos) => {
+            switch(choosenMythos[2]) {
+              case "NG1":      return <MythosNG1 mythosNG1Done={this.mythosNG1Done}/>;
+              case "NG6":      return <MythosNG6 mythosNG6Done={this.mythosNG6Done}/>;
+              case "HG1":      return <MythosHG1 mythosHG1Done={this.mythosHG1Done}/>;
+              default:         return null;
+            }
+        }
+
+        const InteractiveCard4 = (choosenMythos) => {
+            switch(choosenMythos[3]) {
+              case "NG1":      return <MythosNG1 mythosNG1Done={this.mythosNG1Done}/>;
+              case "NG6":      return <MythosNG6 mythosNG6Done={this.mythosNG6Done}/>;
+              case "HG1":      return <MythosHG1 mythosHG1Done={this.mythosHG1Done}/>;
+              default:         return null;
+            }
+        }
+
+        const InteractiveCard5 = (choosenMythos) => {
+            switch(choosenMythos[4]) {
+              case "NG1":      return <MythosNG1 mythosNG1Done={this.mythosNG1Done}/>;
+              case "NG6":      return <MythosNG6 mythosNG6Done={this.mythosNG6Done}/>;
+              case "HG1":      return <MythosHG1 mythosHG1Done={this.mythosHG1Done}/>;
+              default:         return null;
+            }
+        }
+
         return (
             <div className='ancientBoard'>
                 <div className='cthulhuSheetCard'>
@@ -166,9 +241,11 @@ class CthulhuBoard extends Component {
                         {<button className={this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>}modal nested>
                         {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.prevMythosNo}`}><button className='mythosCloseButton' onClick={() => close()}>X</button></div></div>)}
                         </Popup>:<button className='mythos'></button>}
-                        {this.state.isMythosNG1Active?<MythosNG1 mythosNG1Done={this.mythosNG1Done}/>:null}
-                        {this.state.isMythosNG6Active?<MythosNG6 mythosNG6Done={this.mythosNG6Done}/>:null}
-                        {this.state.isMythosHG1Active?<MythosHG1 mythosHG1Done={this.mythosHG1Done}/>:null}
+                        {this.state.mythos1 === true ?<div>{ InteractiveCard1(choosenMythos) }</div>:null}
+                        {this.state.mythos2 === true ?<div>{ InteractiveCard2(choosenMythos) }</div>:null}
+                        {this.state.mythos3 === true ?<div>{ InteractiveCard3(choosenMythos) }</div>:null}   
+                        {this.state.mythos4 === true ?<div>{ InteractiveCard4(choosenMythos) }</div>:null}
+                        {this.state.mythos5 === true ?<div>{ InteractiveCard5(choosenMythos) }</div>:null} 
                     </div>
                 </div>
             </div>
