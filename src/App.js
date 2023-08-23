@@ -6,6 +6,7 @@ import ShubNiggurath from './pages/ShubNiggurath';
 import Cthulhu from './pages/Cthulhu';
 import CthulhuLvlChar from './pages/CthulhuLvlChar';
 import Victory from './pages/Victory';
+import Defeat from './pages/Defeat';
 import './App.css';
 
 
@@ -21,75 +22,85 @@ class App extends Component {
     }
   }
 
-  routeToAzathoth = (event) => {
+  routeToAzathoth = () => {
     this.setState({ route: 'Azathoth'})
   }
 
-  routeToYog = (event) => {
+  routeToYog = () => {
     this.setState({ route: 'YogSothoth'})
   }
 
-  routeToShub = (event) => {
+  routeToShub = () => {
     this.setState({ route: 'ShubNiggurath'})
   }
 
-  routeToCthulhuLvlChar = (event) => {
+  routeToCthulhuLvlChar = () => {
     this.setState({ route: 'CthulhuLvlChar'})
   }
 
-  routeToCthulhu = (event) => {
+  routeToCthulhu = () => {
     this.setState({ route: 'Cthulhu'})
   }
 
-  routeToVictory = (event) => {
+  routeToVictory = () => {
     this.setState({ route: 'Victory'})
   }
 
-  routeToHome = (event) => {
+  routeToDefeat = () => {
+    this.setState({ route: 'Defeat'})
+  }
+
+  routeToHome = () => {
+    this.setState({ route: 'Home'})
+    this.setState({ level: false})
+    this.setState({ characters: false})
+  }
+
+  reload = () => {
     window.location.reload(true);
   }
 
-  setLvlEasy = (event) => {
+  setLvlEasy = () => {
     this.setState({ level: 'Easy'})
   }
 
-  setLvlNormal = (event) => {
+  setLvlNormal = () => {
     this.setState({ level: 'Normal'})
   }
 
-  setLvlHard = (event) => {
+  setLvlHard = () => {
     this.setState({ level: 'Hard'})
   }
 
-  setCharTo1 = (event) => {
+  setCharTo1 = () => {
     this.setState({characters: 1})
   }
 
-  setCharTo2 = (event) => {
+  setCharTo2 = () => {
     this.setState({characters: 2})
   }
 
-  setCharTo3 = (event) => {
+  setCharTo3 = () => {
     this.setState({characters: 3})
   }
 
-  setCharTo4 = (event) => {
+  setCharTo4 = () => {
     this.setState({characters: 4})
   }
 
-  setCharTo5 = (event) => {
+  setCharTo5 = () => {
     this.setState({characters: 5})
   }
 
-  setCharTo6 = (event) => {
+  setCharTo6 = () => {
     this.setState({characters: 6})
   }
 
-  setCharTo7 = (event) => {
+  setCharTo7 = () => {
     this.setState({characters: 7})
   }
 
-  setCharTo8 = (event) => {
+  setCharTo8 = () => {
     this.setState({characters: 8})
   }
 
@@ -102,12 +113,15 @@ class App extends Component {
         case "YogSothoth":        return <YogSothoth />;
         case "ShubNiggurath":     return <ShubNiggurath />;
         case "Cthulhu":           return <Cthulhu 
+                                            loadChulhuLvlChar={this.routeToCthulhuLvlChar}
                                             level={this.state.level}
                                             characters={this.state.characters}
                                             victory={this.routeToVictory}
+                                            defeat={this.routeToDefeat}
                                           />;
         case "CthulhuLvlChar":    return <CthulhuLvlChar 
                                             loadCthulhu={this.routeToCthulhu}
+                                            loadHome={this.routeToHome}
                                             level={this.state.level}
                                             characters={this.state.characters}
                                             allowanceToStart={this.state.start}
@@ -120,7 +134,9 @@ class App extends Component {
                                             chooseCharNo7={this.setCharTo7} chooseCharNo8={this.setCharTo8}
                                           />;
         case "Victory":           return <Victory 
-                                            loadHome={this.routeToHome}/>
+                                            reloadApp={this.reload}/>
+        case "Defeat":            return <Defeat 
+                                            reloadApp={this.reload}/>                                  
         default:                  return <Home 
                                             loadAzathoth={this.routeToAzathoth} 
                                             loadYog={this.routeToYog}

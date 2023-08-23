@@ -6,7 +6,7 @@ import './AllPages.css'
 
 
 
-const CthulhuLvlChar = ({ loadCthulhu, level, characters,
+const CthulhuLvlChar = ({ loadCthulhu, loadHome, level, characters,
                         chooseLvlEasy, chooseLvlNormal, chooseLvlHard, 
                         chooseCharNo1, chooseCharNo2, chooseCharNo3, chooseCharNo4, 
                         chooseCharNo5, chooseCharNo6, chooseCharNo7, chooseCharNo8 }) => {                       
@@ -17,7 +17,10 @@ const CthulhuLvlChar = ({ loadCthulhu, level, characters,
                     <div className='topDiv'>
                         <div className='lvlDiv'>
                             <h1 className='lvlCharText'>POZIOM</h1>
-                            <img src={lvl_icon} className="lvl_char_icon" alt="lvl_icon" />
+                            <div className='lvlBackDiv'>
+                                <button className='backLvlCharButton' onClick={loadHome}></button>
+                                <img src={lvl_icon} className="lvl_char_icon" alt="lvl_icon" />
+                            </div>
                             <div className='lvlButtonsDiv'>
                                 <button className={level === 'Easy' ? 'lvlButtonActive' : 'lvlButton'} onClick={chooseLvlEasy}>ŁATWY</button><br></br>
                                 <button className={level === 'Normal' ? 'lvlButtonActive' : 'lvlButton'} onClick={chooseLvlNormal}>NORMALNY</button><br></br>

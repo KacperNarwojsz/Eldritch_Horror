@@ -241,7 +241,7 @@ class CthulhuBoard extends Component {
                         {<button className={this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>}modal nested>
                         {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.prevMythosNo}`}><button className='mythosCloseButton' onClick={() => close()}>X</button></div></div>)}
                         </Popup>:<button className='mythos'></button>}
-                        {this.state.mythos1 === true ?<div>{ InteractiveCard1(choosenMythos) }</div>:null}
+                        {this.state.mythos1 === true ?<div>{ InteractiveCard1(choosenMythos, 1) }</div>:null}
                         {this.state.mythos2 === true ?<div>{ InteractiveCard2(choosenMythos) }</div>:null}
                         {this.state.mythos3 === true ?<div>{ InteractiveCard3(choosenMythos) }</div>:null}   
                         {this.state.mythos4 === true ?<div>{ InteractiveCard4(choosenMythos) }</div>:null}
