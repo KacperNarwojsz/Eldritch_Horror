@@ -152,7 +152,7 @@ class App extends Component {
       </div>
     );
     } else {
-      <Loading />
+      return <Loading />
     }
   }
 }
