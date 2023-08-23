@@ -240,7 +240,18 @@
 }
 
 /* TEXT  */
-
+.loadingText {
+    margin-top: 5vw;
+    font-family: 'Birmingham';
+    font-size: 5vw;
+    color: white;
+    justify-content: center;
+         /* FADE IN ANIMATION */
+    opacity: 0;
+    animation: fadeInAnimation ease 7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
 .mainTitle {
     margin: 1vw;
     font-family: 'Birmingham_Titling_Bold';
