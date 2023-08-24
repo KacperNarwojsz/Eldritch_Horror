@@ -7,7 +7,6 @@ import Cthulhu from './pages/Cthulhu';
 import CthulhuLvlChar from './pages/CthulhuLvlChar';
 import Victory from './pages/Victory';
 import Defeat from './pages/Defeat';
-// import Loading from './pages/Loading';
 import './App.css';
 
 class App extends Component {
@@ -15,17 +14,12 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-        loading: true,
         route: 'Home',
         level: false,
         characters: false,
         start: false,
     }
   }
-
-  // componentDidMount() {
-  //   demoAsyncCall().then(() => this.setState({ loading: false }));
-  // }
 
   routeToAzathoth = () => {
     this.setState({ route: 'Azathoth'})
@@ -150,35 +144,13 @@ class App extends Component {
                                           />;
       }
     }
-    return (
-          <div className="App">
-            <div>{ checkRoute(route) }</div>
-          </div>
-        );
-    // if(this.state.loading) {
-    //   return null;
-    // } else {
-    //   return (
-    //     <div className="App">
-    //       <div>{ checkRoute(route) }</div>
-    //     </div>
-    //   );
-    // }
 
-    // if(document.readyState === 'complete'){
-    // return (
-    //   <div className="App">
-    //      <div>{ checkRoute(route) }</div>
-    //   </div>
-    // );
-    // } else {
-    //   return <Loading />
-    // }
+  return (
+      <div className="App">
+        <div>{ checkRoute(route) }</div>
+      </div>
+    );
   }
 }
-
-// function demoAsyncCall() {
-//   return new Promise((resolve) => setTimeout(() => resolve(), 2500));
-// }
 
 export default App;
