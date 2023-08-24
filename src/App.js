@@ -23,9 +23,9 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    demoAsyncCall().then(() => this.setState({ loading: false }));
-  }
+  // componentDidMount() {
+  //   demoAsyncCall().then(() => this.setState({ loading: false }));
+  // }
 
   routeToAzathoth = () => {
     this.setState({ route: 'Azathoth'})
@@ -150,16 +150,21 @@ class App extends Component {
                                           />;
       }
     }
+    return (
+          <div className="App">
+            <div>{ checkRoute(route) }</div>
+          </div>
+        );
+    // if(this.state.loading) {
+    //   return null;
+    // } else {
+    //   return (
+    //     <div className="App">
+    //       <div>{ checkRoute(route) }</div>
+    //     </div>
+    //   );
+    // }
 
-    if(this.state.loading) {
-      return null;
-    } else {
-      return (
-        <div className="App">
-          <div>{ checkRoute(route) }</div>
-        </div>
-      );
-    }
     // if(document.readyState === 'complete'){
     // return (
     //   <div className="App">
@@ -172,8 +177,8 @@ class App extends Component {
   }
 }
 
-function demoAsyncCall() {
-  return new Promise((resolve) => setTimeout(() => resolve(), 2500));
-}
+// function demoAsyncCall() {
+//   return new Promise((resolve) => setTimeout(() => resolve(), 2500));
+// }
 
 export default App;
