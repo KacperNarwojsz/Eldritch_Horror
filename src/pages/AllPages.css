@@ -309,7 +309,7 @@
 }
 
 .defeatPopupText {
-    font-family: 'Birmingham_Bold';
+    font-family: 'Birmingham';
     font-size: 5vw;
     color: white;
     justify-content: center;
@@ -516,7 +516,7 @@
 }
 
 .defeatButton {
-    font-family: 'Birmingham_Titling_Bold';
+    /* font-family: 'Birmingham_Titling_Bold'; */
     font-size: 2.7vw;
     color: white;
     height: 10vw;
