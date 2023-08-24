@@ -7,7 +7,7 @@ import Cthulhu from './pages/Cthulhu';
 import CthulhuLvlChar from './pages/CthulhuLvlChar';
 import Victory from './pages/Victory';
 import Defeat from './pages/Defeat';
-// import Loading from './pages/Loading';
+import Loading from './pages/Loading';
 import './App.css';
 
 class App extends Component {
@@ -15,11 +15,16 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+        loading: true,
         route: 'Home',
         level: false,
         characters: false,
         start: false,
     }
+  }
+
+  componentDidMount() {
+    this.setState({ loading: false })
   }
 
   routeToAzathoth = () => {
@@ -145,11 +150,16 @@ class App extends Component {
                                           />;
       }
     }
-    return (
-        <div className="App">
-           <div>{ checkRoute(route) }</div>
-        </div>
+
+    if(this.state.loading) {
+      return <Loading />
+    } else {
+      return (
+          <div className="App">
+            <div>{ checkRoute(route) }</div>
+          </div>
       );
+    }
     // if(document.readyState === 'complete'){
     // return (
     //   <div className="App">
