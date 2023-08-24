@@ -1,3 +1,10 @@
+/* LOADER */
+
+.loader:empty {
+    background-image: url(../pictures/Main/CthuluGif.gif);
+    background-size: cover;
+}
+
 /* FONTS  */
 
 @font-face {

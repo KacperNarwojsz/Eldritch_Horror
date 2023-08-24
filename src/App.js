@@ -7,7 +7,7 @@ import Cthulhu from './pages/Cthulhu';
 import CthulhuLvlChar from './pages/CthulhuLvlChar';
 import Victory from './pages/Victory';
 import Defeat from './pages/Defeat';
-import Loading from './pages/Loading';
+// import Loading from './pages/Loading';
 import './App.css';
 
 class App extends Component {
@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ loading: false })
+    demoAsyncCall().then(() => this.setState({ loading: false }));
   }
 
   routeToAzathoth = () => {
@@ -152,12 +152,12 @@ class App extends Component {
     }
 
     if(this.state.loading) {
-      return <Loading />
+      return null;
     } else {
       return (
-          <div className="App">
-            <div>{ checkRoute(route) }</div>
-          </div>
+        <div className="App">
+          <div>{ checkRoute(route) }</div>
+        </div>
       );
     }
     // if(document.readyState === 'complete'){
@@ -170,6 +170,10 @@ class App extends Component {
     //   return <Loading />
     // }
   }
+}
+
+function demoAsyncCall() {
+  return new Promise((resolve) => setTimeout(() => resolve(), 2500));
 }
 
 export default App;
