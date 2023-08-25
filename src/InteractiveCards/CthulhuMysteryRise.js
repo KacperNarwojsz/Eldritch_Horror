@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import "./InteractiveCards.css"
 
-class CthulhuMysteryCard4 extends Component {
-    constructor({ mysteryDone, characters }) {
+class CthulhuMysteryRise extends Component {
+    constructor({ cthulhuSlayed, characters }) {
         super(); 
         this.state = {
-            mysteryDone: mysteryDone,
+            cthulhuSlayed: cthulhuSlayed,
             monsterSlayed: false,
             characters: characters,
             counter: 0,
@@ -13,9 +13,9 @@ class CthulhuMysteryCard4 extends Component {
     }
 
     counterIncrement = () => {
-        if (this.state.counter < this.state.characters+1) {
+        if (this.state.counter < this.state.characters+2) {
             this.setState ({counter: this.state.counter +1})
-        } else if (this.state.counter === this.state.characters+1){
+        } else if (this.state.counter === this.state.characters+2){
             this.setState ({counter: this.state.counter +1})
             this.setState ({monsterSlayed: true})
         }
@@ -32,20 +32,17 @@ class CthulhuMysteryCard4 extends Component {
         return (
                 <div className="cthulhuMysteryFrontDiv">
                     <div>
-                        <button className="cthulhuMysteryFront" id="CthulhuMysteryFront4"></button>
-                    </div>
-                    <div>
                         <div className="mysteryTokensMonsterDiv">
-                            <button className="mysteryMonster" id={this.state.monsterSlayed?"TokenCthyllaSlayed":"TokenCthylla"}></button>
+                            <button className="mysteryMonster" id={this.state.monsterSlayed?"TokenCthulhuSlayed":"TokenCthulhu"}></button>
                             <div className="mysteryTokensMonster">
-                                {this.state.counter===this.state.characters+2?null:<button className="tokenMysteryKilling"></button>}
-                                {this.state.counter===this.state.characters+2?<button className="tokenMysteryMonsterDone" onClick={this.state.mysteryDone}></button>:null}
+                                {this.state.counter===this.state.characters+3?null:<button className="tokenMysteryKilling"></button>}
+                                {this.state.counter===this.state.characters+3?<button className="tokenMysteryMonsterDone" onClick={this.state.cthulhuSlayed}></button>:null}
                             </div>
                         </div>
                         <div className='mysteryMonsterAddons'>
                         <button className='mysteryMonsterTokenMinus' onClick={this.counterDecrement}></button>
                         <button className='mysteryMonsterTokenHealth'></button>
-                        <button className='mysteryMonsterCounter'>{`${this.state.counter}/${this.state.characters+2}`}</button>
+                        <button className='mysteryMonsterCounter'>{`${this.state.counter}/${this.state.characters+3}`}</button>
                         <button className='mysteryMonsterTokenPlus' onClick={this.counterIncrement}></button>
                         </div>
                     </div>
@@ -53,4 +50,4 @@ class CthulhuMysteryCard4 extends Component {
         )
     }
 }
-export default CthulhuMysteryCard4;
+export default CthulhuMysteryRise;

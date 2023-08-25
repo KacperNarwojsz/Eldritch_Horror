@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import "./InteractiveCards.css"
 
 class CthulhuMysteryCard1 extends Component {
-    constructor({ characters, mysteryDone, victory }) {
+    constructor({ characters, mysteryDone }) {
         super(); 
         this.state = {
             counter: 0,
             characters: characters,
             mysteryDone: mysteryDone,
-            victory: victory,
         } 
     }
 

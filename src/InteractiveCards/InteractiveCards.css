@@ -144,6 +144,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: 0.5vw;
 }
 
 .mysteryTokensMonster {
@@ -156,7 +157,10 @@
     background-size: cover;
     background-color: transparent;
     align-self: center;
-    margin: 0.5vw;
+    margin-top: 0.7vw;
+    margin-right: 0.5vw;
+    margin-bottom: 0.1vw;
+    margin-left: 0.5vw;
     border:none;
     width: 6vw;
     height: 6vw;
@@ -168,7 +172,14 @@
 
 #TokenCthyllaSlayed {
     background-image: url(/src/pictures/Tokens/TokenCthyllaSlayed.png);
-    cursor: pointer;
+}
+
+#TokenCthulhu {
+    background-image: url(/src/pictures/Tokens/TokenCthulhu.png);
+}
+
+#TokenCthulhuSlayed {
+    background-image: url(/src/pictures/Tokens/TokenCthulhuSlayed.png);
 }
 
 .tokenMysteryKilling {
@@ -183,11 +194,65 @@
     justify-self: center;
     border: none;
     transition: all .3s ease; 
+}
+
+.mysteryMonsterAddons {
+    background-color: rgba(238, 238, 215, 0.716);
+    display: flex;
+    justify-self: center;
+    justify-content: space-between;
+    align-items: center;
+    border: 0.15vw solid black;
+    border-radius: 1vw;
+    height: 1.2vw;
+    width: 7vw;
+    margin-right: 2vw;
+    margin-left: 2vw;
+}
+
+.mysteryMonsterTokenMinus {
+    background-image: url(/src/pictures/Tokens/TokenMinus.png);
+    background-color: transparent;
+    background-size: cover;
+    border-radius: 50%;
+    border: 1vw;
+    width: 1.1vw;
+    height: 1.1vw;
     cursor: pointer;
 }
 
-.tokenMysteryKilling:hover {
-    transform: scale(1.15);
+.mysteryMonsterTokenHealth {
+    background-image: url(/src/pictures/Tokens/TokenHealth.png);
+    background-color: transparent;
+    background-size: cover;
+    margin-left: 0.5vw;
+    width: 1.15vw;
+    height: 1.1vw;
+    border: none;
+}
+
+.mysteryMonsterCounter {
+    background-color: transparent;
+    width: 1.6vw;
+    height: 1vw;
+    border: none;
+    margin-right: 0.4vw;
+    margin-bottom: 0.1vw;
+    text-align: center;
+    font-family: BirminghamBold;
+    font-size: 0.98vw;
+}
+
+.mysteryMonsterTokenPlus {
+    background-image: url(/src/pictures/Tokens/TokenPlus.png);
+    background-color: transparent;
+    background-size: cover;
+    justify-content: flex-end;
+    border-radius: 50%;
+    border: 1vw;
+    width: 1.1vw;
+    height: 1.1vw;
+    cursor: pointer;
 }
 
 .tokenMysteryMonsterDone {

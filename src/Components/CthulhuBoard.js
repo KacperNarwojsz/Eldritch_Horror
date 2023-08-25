@@ -5,6 +5,7 @@ import CthulhuMysteryCard1 from '../InteractiveCards/CthulhuMysteryCard1';
 import CthulhuMysteryCard2 from '../InteractiveCards/CthulhuMysteryCard2';
 import CthulhuMysteryCard3 from '../InteractiveCards/CthulhuMysteryCard3';
 import CthulhuMysteryCard4 from '../InteractiveCards/CthulhuMysteryCard4';
+import CthulhuMysteryRise from '../InteractiveCards/CthulhuMysteryRise';
 import MythosNG1 from '../InteractiveCards/MythosNG1';
 import MythosNG6 from '../InteractiveCards/MythosNG6';
 import MythosHG1 from '../InteractiveCards/MythosHG1';
@@ -13,15 +14,13 @@ import Popup from 'reactjs-popup';
 import './Components.css';
 import '../InteractiveCards/InteractiveCards.css';
 
-
-
 class CthulhuBoard extends Component {
     constructor({ level, characters, victory}) {
         super(); 
         this.mysteryDeck = [1,2,3,4]
         this.mythosDeck = ['NG1','NG2','NG3','NG4','NG5','NG6','NG7','NG8','HG1']
         this.state = {
-            ancientCard: false,
+            ancientCardFilpped: false,
             isLoadDone: false,
             level: level,
             characters: characters,
@@ -31,6 +30,7 @@ class CthulhuBoard extends Component {
             isMystery2Active: false,
             isMystery3Active: false,
             isMystery4Active: false,
+            isCthulhuAwake: false,
             popping: true,
             victory: victory,
             counter: 0,
@@ -56,11 +56,11 @@ class CthulhuBoard extends Component {
     }
 
     toggleCard = () => {
-        this.setState ({ancientCard: true})
+        this.setState ({ancientCardFilpped: true})
     }
 
     toogleCardBack = () => {
-        this.setState ({ancientCard: false})
+        this.setState ({ancientCardFilpped: false})
     }
 
     chooseMystery = () => {
@@ -92,6 +92,15 @@ class CthulhuBoard extends Component {
        }
        this.setState(({popping: true}))
    }
+
+   cthulhuAwakening = () => {
+    this.setState ({isCthulhuAwake: true})
+    this.setState ({isMystery1Active: false })
+    this.setState ({isMystery2Active: false })
+    this.setState ({isMystery3Active: false })
+    this.setState ({isMystery4Active: false })
+    this.setState(({popping: false}))
+}
 
     chooseMythos = () => {
         this.setState(prevState => ({prevMythosNo: prevState.mythosNo}))
@@ -208,10 +217,10 @@ class CthulhuBoard extends Component {
         return (
             <div className='ancientBoard'>
                 <div className='cthulhuSheetCard'>
-                    <button className={this.state.isLoadDone ? 'cthulhuSheet' : 'cthulhuSheetStamp'} id={this.state.ancientCard ? 'CthulhuSheetBack' : 'CthulhuSheetFront'}></button>
+                    <button className={this.state.isLoadDone ? 'cthulhuSheet' : 'cthulhuSheetStamp'} id={this.state.ancientCardFilpped ? 'CthulhuSheetBack' : 'CthulhuSheetFront'}></button>
                     <div className='flipButtons'>
                         <button className='flipButton' id='FlipButtonFront' onClick={this.toogleCardBack}>Front</button>
-                       {this.state.ancientCard?<div className='sheetCardAddons'>
+                       {this.state.ancientCardFilpped?<div className='sheetCardAddons'>
                             <button className='sheetCardTokenMinus' onClick={this.counterDecrement}></button>
                             <button className='sheetCardSanity'></button>
                             <button className='sheetCardCounter'>{this.state.counter}</button>
@@ -228,10 +237,11 @@ class CthulhuBoard extends Component {
                             {<button className={this.state.isLoadDone ? 'cthulhuMystery' : 'cthulhuMysteryStamp'}></button>}modal nested>
                             {close => (<div className='outerPopup'><div className='cthulhuMysteryFrontPopup' id={`CthulhuMysteryFront${this.state.prevMysteryNo}`}><button className='mysteryCloseButton' onClick={() => close()}>X</button></div></div>)}
                             </Popup>:<button className='cthulhuMystery'></button>}
-                            {this.state.isMystery1Active?<CthulhuMysteryCard1 characters={this.state.characters} mysteryDone={this.mysteryDeck.length === 0 ? this.state.victory : this.mysteryDone}/>:null}
-                            {this.state.isMystery2Active?<CthulhuMysteryCard2 characters={this.state.characters} mysteryDone={this.mysteryDeck.length === 0 ? this.state.victory : this.mysteryDone}/>:null}
-                            {this.state.isMystery3Active?<CthulhuMysteryCard3 characters={this.state.characters} mysteryDone={this.mysteryDeck.length === 0 ? this.state.victory : this.mysteryDone}/>:null}
-                            {this.state.isMystery4Active?<CthulhuMysteryCard4 mysteryDone={this.mysteryDeck.length === 0 ? this.state.victory : this.mysteryDone}/>:null}
+                            {this.state.isMystery1Active?<CthulhuMysteryCard1 characters={this.state.characters} mysteryDone={this.mysteryDeck.length === 0 ? (!this.state.ancientCardFilpped ? this.state.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
+                            {this.state.isMystery2Active?<CthulhuMysteryCard2 characters={this.state.characters} mysteryDone={this.mysteryDeck.length === 0 ? (!this.state.ancientCardFilpped ? this.state.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
+                            {this.state.isMystery3Active?<CthulhuMysteryCard3 characters={this.state.characters} mysteryDone={this.mysteryDeck.length === 0 ? (!this.state.ancientCardFilpped ? this.state.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
+                            {this.state.isMystery4Active?<CthulhuMysteryCard4 characters={this.state.characters} mysteryDone={this.mysteryDeck.length === 0 ? (!this.state.ancientCardFilpped ? this.state.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
+                            {this.state.isCthulhuAwake?<CthulhuMysteryRise characters={this.state.characters} cthulhuSlayed= {this.state.victory}/>:null}
                         </div>
                         <LvlChar level={this.state.level} characters={this.state.characters}/> 
                     </div>
