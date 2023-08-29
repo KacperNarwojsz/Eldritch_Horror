@@ -14,9 +14,12 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-        route: 'Home',
-        level: false,
-        characters: false,
+        // route: "'Home'",
+        // level: false,
+        // characters: false,
+        route: "Cthulhu",
+        level: "Easy",
+        characters: 3,
         start: false,
     }
   }
