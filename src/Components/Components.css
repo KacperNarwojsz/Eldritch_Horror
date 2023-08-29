@@ -106,7 +106,6 @@
     margin-right: 1.2vw;
     border-radius: 0.4vw;
     transition: all .3s ease;
-    z-index: 2;
     cursor: pointer;
 }
 
@@ -115,7 +114,8 @@
 }
 
 .cthulhuSheet:focus {
-    transform: scale(1.5);
+    transform: scale(2.18) translate(79%, 16%);
+    z-index: 1;
 }
 
 #CthulhuSheetFront {
@@ -126,45 +126,45 @@
     background-image: url(/src/pictures/SheetCards/Ancient_Cthulhu_sheet_back.png);
 }
 
-.flipButtons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0.3vw;
-    z-index: 1;
-    /* FADE IN ANIMATION */
-    opacity: 0;
-    animation: fadeInAnimation ease 3s;
-    animation-delay: 2.2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
 .flipButton {
-    font-family: 'Birmingham_Titling_Bold'; 
-    font-size: 0.8vw;
-    width: 5vw;
+    background-image: url(/src/pictures/Tokens/TokenFlip.png);
+    background-size: cover;
     background-color: transparent;
-    border-radius: 1vw;
-    border-color: black;
-    cursor: pointer;
+    position: relative;
+    height: 2vw;
+    width: 2vw;
+    border: 0.2vw solid;
+    transition: all .3s ease;
 }
 
-#FlipButtonFront {
-    margin-left: 1.2vw;
+.flipButton:hover {
+    transform: scale(1.1);
 }
 
-#FlipButtonBack {
-    margin-right: 1.2vw;
+#flipButtonFront {
+    top: -9.4vw;
+    left: 7.3vw;
 }
+
+#flipButtonBack {
+    top: -8.7vw;
+    right: 7.3vw;
+}
+
 
 .sheetCardAddons{
+    align-self: center;
     background-color: rgba(238, 238, 215, 0.716);
+    margin: 0.1vw;
     display: flex;
+    justify-items: center;
     border: 0.15vw solid black;
     border-radius: 1vw;
     height: 1.1vw;
+    width: 5.5vw;
+    position: relative;
+    top: 1.5vw;
+    left: 0.3vw;
 }
 
 .sheetCardTokenMinus {
@@ -245,8 +245,8 @@
 
 .cthulhuMysteryFrontPopup {
     display: flex;
-    height: 19vw;
-    width: 30vw;
+    height: 26.3vw;
+    width: 41.5vw;
     justify-content: center;
     background-size: cover;
     border-radius: 0.9vw;
@@ -263,7 +263,7 @@
     border: 1px solid #000000;
     border-radius: 50%;
     margin-top: 0.2vw;
-    margin-left: 28vw;
+    margin-left: 39.5vw;
     cursor: pointer;
 }
 
@@ -271,7 +271,7 @@
     background-image: url(/src/pictures/Mythos/Mythos_Card.png);
     height: 11.5vw;
     width: 7.4vw;
-    margin: 0.1vw 1.2vw 2.4vw 1.2vw;
+    margin: 0.1vw 1.2vw 2.7vw 1.2vw;
     justify-content: center;
     background-size: cover;
     border-radius: 0.4vw;
@@ -288,7 +288,7 @@
     background-image: url(/src/pictures/Mythos/Mythos_Card.png);
     height: 11.5vw;
     width: 7.4vw;
-    margin: 0.1vw 1.2vw 2.9vw 1.2vw;
+    margin: 0.1vw 1.2vw 2.7vw 1.2vw;
     justify-content: center;
     background-size: cover;
     border-radius: 0.4vw;
@@ -302,8 +302,8 @@
 
 .mythosFrontPopup {
     display: flex;
-    height: 25vw;
-    width: 15.9vw;
+    height: 41vw;
+    width: 26.3vw;
     justify-content: center;
     background-size: cover;
     border-radius: 0.9vw;
@@ -320,30 +320,9 @@
     border: 1px solid #000000;
     border-radius: 50%;
     margin-top: 0.2vw;
-    margin-left: 14vw;
+    margin-left: 24vw;
     cursor: pointer;
 }
-
-
-/* #Mythos1 {
-    background-image: url(/src/pictures/Mythos/Mythos_Card_1.png);
-}
-
-#Mythos2 {
-    background-image: url(/src/pictures/Mythos/Mythos_Card_2.png);
-}
-
-#Mythos3 {
-    background-image: url(/src/pictures/Mythos/Mythos_Card_3.png);
-}
-
-#Mythos4 {
-    background-image: url(/src/pictures/Mythos/Mythos_Card_4.png);
-}
-
-#Mythos5 {
-    background-image: url(/src/pictures/Mythos/Mythos_Card_5.png);
-} */
 
 /* --------- LEVEL AND CHARACTERS --------- */
 
@@ -455,21 +434,6 @@
 
 /* BUTTONS  */
 
-.encounterCloseButton {
-    width: 1.5vw;
-    height: 1.5vw;
-    font-family: 'Birmingham'; 
-    font-size: 1vw;
-    text-align: center;
-    background-color: rgb(213, 213, 160);
-    cursor: pointer;
-    border: 1px solid #000000;
-    border-radius: 50%;
-    margin-top: 0.2vw;
-    margin-left: 14vw;
-    cursor: pointer;
-}
-
 .encounterCardStamp {
     height: 11.5vw;
     width: 7.4vw;
@@ -502,11 +466,26 @@
 
 .encounterCardFront {
     display: flex;
-    height: 25vw;
-    width: 15.9vw;
+    height: 41vw;
+    width: 26.3vw;
     justify-content: center;
     background-size: cover;
     border-radius: 0.9vw;
+}
+
+.encounterCloseButton {
+    width: 1.5vw;
+    height: 1.5vw;
+    font-family: 'Birmingham'; 
+    font-size: 1vw;
+    text-align: center;
+    background-color: rgb(213, 213, 160);
+    cursor: pointer;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    margin-top: 0.2vw;
+    margin-left: 24vw;
+    cursor: pointer;
 }
 
 #America {

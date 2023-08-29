@@ -57,6 +57,10 @@ class CthulhuBoard extends Component {
         }, 5000)
     }
 
+    flipCardSheet = () => {
+        this.setState ({ancientCardFlipped: !this.state.ancientCardFlipped})
+    }
+
     toggleCard = () => {
         this.setState ({ancientCardFlipped: true})
     }
@@ -256,19 +260,17 @@ class CthulhuBoard extends Component {
 
         return (
             <div className='ancientBoard'>
-                <div className='cthulhuSheetCard'>
-                    <button className={this.state.isLoadDone ? 'cthulhuSheet' : 'cthulhuSheetStamp'} id={this.state.ancientCardFlipped ? 'CthulhuSheetBack' : 'CthulhuSheetFront'}></button>
-                    <div className='flipButtons'>
-                        <button className='flipButton' id='FlipButtonFront' onClick={this.toogleCardBack}>Front</button>
-                       {this.state.ancientCardFlipped?<div className='sheetCardAddons'>
+                    <button className={this.state.isLoadDone ? 'cthulhuSheet' : 'cthulhuSheetStamp'} id={this.state.ancientCardFlipped ? 'CthulhuSheetBack' : 'CthulhuSheetFront'}>
+                        {!this.state.ancientCardFlipped?<button className='flipButton' id='flipButtonFront' onClick={this.flipCardSheet}></button>:null}
+                        {this.state.ancientCardFlipped?<button className='flipButton' id='flipButtonBack' onClick={this.flipCardSheet}></button>:null}
+                        {this.state.ancientCardFlipped?<div className='sheetCardAddons'>
                             <button className='sheetCardTokenMinus' onClick={this.sheetCardCounterDecrement}></button>
                             <button className='sheetCardSanity'></button>
                             <button className='sheetCardCounter'>{this.state.sheetCardCounter}</button>
                             <button className='sheetCardTokenPlus' onClick={this.sheetCardCounterIncrement}></button>
                         </div>:null}
-                        <button className='flipButton' id='FlipButtonBack' onClick={this.toggleCard}>Rewers</button>
-                    </div> 
-                </div>
+                    </button>
+
                 <div className='ancientMysteryMythosLvlChar'>
                     <div className='ancientMysteryLvlChar'>
                         <div className='ancientMystery'>

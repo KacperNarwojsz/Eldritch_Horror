@@ -12,6 +12,7 @@
     border-radius: 0.4vw;
     transition: all .3s ease;  
     cursor: pointer;
+    z-index: 1;
 }
 
 #CthulhuMysteryFront1 {
@@ -35,7 +36,8 @@
 }
 
 .cthulhuMysteryFront:focus {
-    transform: scale(2.5);
+    transform: scale(4) translateY(50%);
+    z-index: 1;
 }
 
 /* COUNTER MYSTERIES */
@@ -299,11 +301,11 @@
 }
 
 .mythosFront:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) 
 }
 
 .mythosFront:focus {
-    transform: scale(2.5);
+    transform: scale(3.8) translateY(7%);
     z-index: 1;
 }
 
