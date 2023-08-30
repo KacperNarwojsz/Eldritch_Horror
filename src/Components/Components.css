@@ -438,10 +438,10 @@
 .encounters {
     position: relative;
     display: flex;
-    width: 80vw;
+    width: 78vw;
     margin-top: 4.7vw;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 11vw;
+    margin-right: 11vw;
 }
 
 .outerPopup {
@@ -472,17 +472,12 @@
     align-items: center;
 }
 
-.discardedRow {
-    display: flex;
-    flex-direction: row;
-}
-
 /* BUTTONS  */
 
 .encounterCardStamp {
     height: 11.5vw;
     width: 7.4vw;
-    margin: 1.2vw;
+    margin: 1vw;
     margin-top: 0.5vw;
     margin-bottom: 0.2vw;
     justify-content: center;
@@ -499,7 +494,7 @@
 .encounterCard {
     height: 11.5vw;
     width: 7.4vw;
-    margin: 1.2vw;
+    margin: 1vw;
     margin-top: 0.5vw;
     margin-bottom: 0.2vw;
     justify-content: center;
@@ -539,21 +534,14 @@
 
 .encounterCardDiscard {
     display: flex;
-    height: 17.9vw;
-    width: 11vw;
+    height: 41vw;
+    width: 26.3vw;
     margin: 0.5vw;
     justify-content: center;
     background-size: cover;
     border-radius: 0.9vw;
     transition: all .3s ease;
     cursor: pointer;
-}
-
-.encounterCardDiscard:focus {
-    transform: scale(2.5);
-    position: relative;
-    left: 45vw;
-    top: 10vw;
 }
 
 .encounterDiscardCloseButton {
@@ -566,9 +554,16 @@
     cursor: pointer;
     border: 1px solid #000000;
     border-radius: 50%;
-    margin-left: 93.5vw;
-    margin-bottom: 1vw;
+    margin-left: 35vw;
     cursor: pointer;
+}
+
+.discardText {
+    font-family: 'Birmingham'; 
+    font-size: 5vw;
+    margin-top: -44vw;
+    padding-top: 15vw;
+    padding-bottom: 20vw;
 }
 
 #America {
@@ -1002,4 +997,57 @@
 
 #CthulhuSpecialFront6 {
     background-image: url(/src/pictures/EncounterCards/CthulhuSpecial/Encounter_CthulhuSpecial_Front_6.png);
+}
+
+/* --------- SWIPER CSS --------- */
+
+#app { height: 100% }
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper {
+  width: 26.5vw;
+  height: 41.2vw;
+  margin-bottom: 2vw;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1vw;
+  color: #fff;
 }
