@@ -295,9 +295,9 @@ class CthulhuBoard extends Component {
                         </Popup>:<button className='mythos'></button>}
                         {this.state.mythos1 === true ?<div>{ InteractiveCard1(choosenMythos) }</div>:null}
                         {this.state.mythos2 === true ?<div>{ InteractiveCard2(choosenMythos) }</div>:null}
-                        {this.state.mythos3 === true ?<div>{ InteractiveCard3(choosenMythos) }</div>:null}   
+                        {this.state.mythos3 === true ?<div>{ InteractiveCard3(choosenMythos) }</div>:null}
                         {this.state.mythos4 === true ?<div>{ InteractiveCard4(choosenMythos) }</div>:null}
-                        {this.state.mythos5 === true ?<div>{ InteractiveCard5(choosenMythos) }</div>:null} 
+                        {this.state.mythos5 === true ?<div>{ InteractiveCard5(choosenMythos) }</div>:null}
                     </div>
                 </div>
             </div>

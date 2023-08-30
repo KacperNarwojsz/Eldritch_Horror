@@ -212,6 +212,28 @@
     cursor: pointer;
 }
 
+.discardButton {
+    background-color: transparent;
+    width: 7vw;
+    height: 1.3vw;
+    text-align: center;
+    font-family: BirminghamBold;
+    font-size: 0.8vw;
+    border: 0.2vw solid black;
+    border-radius: 1vw;
+    transition: all .3s ease;
+    /* FADE IN ANIMATION */
+    opacity: 0;
+    animation: fadeInAnimation ease 3s;
+    animation-delay: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.discardButton:hover {
+    transform: scale(1.1);
+}
+
 .cthulhuMysteryStamp {
     background-image: url(/src/pictures/MysteryCards/Ancient_Cthulhu_Mystery.png);
     height: 7.4vw;
@@ -415,6 +437,7 @@
 
 .encounters {
     position: relative;
+    display: flex;
     width: 80vw;
     margin-top: 4.7vw;
     margin-left: 10vw;
@@ -432,12 +455,36 @@
     align-items: center;
 }
 
+.encounterDiscardDiv {
+    flex-direction: column;
+    width: 10vw;
+}
+
+.outerPopupDiscard {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.discardedRow {
+    display: flex;
+    flex-direction: row;
+}
+
 /* BUTTONS  */
 
 .encounterCardStamp {
     height: 11.5vw;
     width: 7.4vw;
     margin: 1.2vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.2vw;
     justify-content: center;
     background-size: cover;
     border-radius: 0.4vw;
@@ -453,6 +500,8 @@
     height: 11.5vw;
     width: 7.4vw;
     margin: 1.2vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.2vw;
     justify-content: center;
     background-size: cover;
     border-radius: 0.4vw;
@@ -461,7 +510,7 @@
 }
 
 .encounterCard:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) translateY(-4%);
 }
 
 .encounterCardFront {
@@ -485,6 +534,40 @@
     border-radius: 50%;
     margin-top: 0.2vw;
     margin-left: 24vw;
+    cursor: pointer;
+}
+
+.encounterCardDiscard {
+    display: flex;
+    height: 17.9vw;
+    width: 11vw;
+    margin: 0.5vw;
+    justify-content: center;
+    background-size: cover;
+    border-radius: 0.9vw;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.encounterCardDiscard:focus {
+    transform: scale(2.5);
+    position: relative;
+    left: 45vw;
+    top: 10vw;
+}
+
+.encounterDiscardCloseButton {
+    width: 1.5vw;
+    height: 1.5vw;
+    font-family: 'Birmingham'; 
+    font-size: 1vw;
+    text-align: center;
+    background-color: rgb(213, 213, 160);
+    cursor: pointer;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    margin-left: 93.5vw;
+    margin-bottom: 1vw;
     cursor: pointer;
 }
 
