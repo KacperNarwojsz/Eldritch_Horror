@@ -13,36 +13,31 @@ class EncountersCards extends Component {
         this.shuffleDeckAmerica = [1,2,3,4,5,6,7,8]
         this.discardDeckAmerica = []
         this.shuffleDeckEurope = [1,2,3,4,5,6,7,8]
-        this.discardDeckEurope = [1,2,3,4]
+        this.discardDeckEurope = []
         this.shuffleDeckAsiaAustralia = [1,2,3,4,5,6,7,8]
-        this.discardDeckAsiaAustralia = [1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8]
+        this.discardDeckAsiaAustralia = []
         this.shuffleDeckGeneral = [1,2,3,4,5,6,7,8,9,10,11,12]
-        this.discardDeckGeneral = [1,2,3,4,5,6,7,8,9,10,11,12,1,2,3,4,5,6,7,8,9,10,11,12]
+        this.discardDeckGeneral = []
         this.shuffleDeckOtherWorld = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
-        this.discardDeckOtherWorld = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+        this.discardDeckOtherWorld = []
         this.shuffleDeckReverseExpedition = ['Antarctica', 'Antarctica', 'Antarctica', 
                                              'TheAmazon', 'TheAmazon', 'TheAmazon', 
                                              'TheHeartofAfrica', 'TheHeartofAfrica', 'TheHeartofAfrica',
                                              'TheHimalayas', 'TheHimalayas', 'TheHimalayas',
                                              'ThePyramids', 'ThePyramids', 'ThePyramids', 
                                              'Tunguska', 'Tunguska', 'Tunguska']
-        this.discardDeckReverseExpedition = ['Antarctica', 'Antarctica', 'Antarctica', 
-                                             'TheAmazon', 'TheAmazon', 'TheAmazon', 
-                                             'TheHeartofAfrica', 'TheHeartofAfrica', 'TheHeartofAfrica',
-                                             'TheHimalayas', 'TheHimalayas', 'TheHimalayas',
-                                             'ThePyramids', 'ThePyramids', 'ThePyramids', 
-                                             'Tunguska', 'Tunguska', 'Tunguska']
+        this.discardDeckReverseExpedition = []
         this.shuffleDeckExpeditionAntarctica = [1,2,3]
         this.shuffleDeckExpeditionTheAmazon = [1,2,3]
         this.shuffleDeckExpeditionTheHeartofAfrica = [1,2,3]
         this.shuffleDeckExpeditionTheHimalayas = [1,2,3]
         this.shuffleDeckExpeditionThePyramids = [1,2,3]
         this.shuffleDeckExpeditionTunguska = [1,2,3]
-        this.discardDeckExpedition = [1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3]
+        this.discardDeckExpedition = []
         this.shuffleDeckCthulhuResearch = [1,2,3,4,5,6,7,8]
-        this.discardDeckCthulhuResearch = [1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8]
+        this.discardDeckCthulhuResearch = []
         this.shuffleDeckCthulhuSpecial = [1,2,3,4,5,6]
-        this.discardDeckCthulhuSpecial = [1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6]
+        this.discardDeckCthulhuSpecial = []
 
         this.state = {
             isLoadDone: false,
@@ -60,6 +55,27 @@ class EncountersCards extends Component {
     componentDidMount() {
         this.timer()
     }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.americaShuffle !== this.state.americaShuffle) {
+            this.discardDeckAmerica.push(this.state.americaShuffle);
+        } else if (prevState.europeShuffle !== this.state.europeShuffle) {
+            this.discardDeckEurope.push(this.state.europeShuffle);
+        } else if (prevState.asiaamericaShuffle !== this.state.asiaamericaShuffle) {
+            this.discardDeckAsiaAustralia.push(this.state.asiaamericaShuffle);
+        } else if (prevState.generalShuffle !== this.state.generalShuffle) {
+            this.discardDeckGeneral.push(this.state.generalShuffle);
+        } else if (prevState.otherworldShuffle !== this.state.otherworldShuffle) {
+            this.discardDeckOtherWorld.push(this.state.otherworldShuffle);
+        } else if (prevState.expeditionPreviousReverse !== this.state.expeditionPreviousReverse) {
+            this.discardDeckReverseExpedition.push(this.state.expeditionPreviousReverse);
+            this.discardDeckExpedition.push(this.state.expeditionShuffle);
+        } else if (prevState.cthulhuresearchShuffle !== this.state.cthulhuresearchShuffle) {
+            this.discardDeckCthulhuResearch.push(this.state.cthulhuresearchShuffle);
+        } else if (prevState.cthulhuspecialShuffle !== this.state.cthulhuspecialShuffle) {
+            this.discardDeckCthulhuSpecial.push(this.state.cthulhuspecialShuffle); 
+        }
+    }    
     
     timer() {
         setInterval(() => {
@@ -140,16 +156,7 @@ class EncountersCards extends Component {
                         this.shuffleDeckExpeditionTunguska = [1,2,3]
                     }
         }
-        // this.setState(prevState => ({expeditionPreviousReverse: prevState.expeditionReverseShuffle, 
-        //                              expeditionReverseShuffle: chooseRandom(this.shuffleDeckReverseExpedition)}));
-        //     if (this.shuffleDeckReverseExpedition.length < 1) {
-        //         this.shuffleDeckReverseExpedition = ['Antarctica', 'Antarctica', 'Antarctica', 
-        //                                                 'TheAmazon', 'TheAmazon', 'TheAmazon', 
-        //                                                 'TheHeartofAfrica', 'TheHeartofAfrica', 'TheHeartofAfrica',
-        //                                                 'TheHimalayas', 'TheHimalayas', 'TheHimalayas',
-        //                                                 'ThePyramids', 'ThePyramids', 'ThePyramids', 
-        //                                                 'Tunguska', 'Tunguska', 'Tunguska']
-        //     } 
+
         this.setState(prevState => ({expeditionPreviousReverse: prevState.expeditionReverseShuffle})); 
         this.setState({expeditionReverseShuffle: chooseRandom(this.shuffleDeckReverseExpedition)});
             if (this.shuffleDeckReverseExpedition.length < 1) {
@@ -177,7 +184,7 @@ class EncountersCards extends Component {
         }
     }
 
-    render(PreviousReverse) {
+    render() {
         return (
         <div className='encounters'>
             {/* <p>{`America no. ${this.state.americaShuffle} array ${this.shuffleDeckAmerica}`}</p>
@@ -198,7 +205,7 @@ class EncountersCards extends Component {
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`AmericaFront${this.state.americaShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup>
             <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                {<button className='discardButton'>ODRZUCONE</button>}modal nested>
+                {this.discardDeckAmerica.length!==0?<button className='discardButton'>ODRZUCONE</button>:null}modal nested>
                 {close => (<div className='outerPopupDiscard'>
                 <button className='encounterDiscardCloseButton' onClick={() => close()}>X</button>
                 <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]} className="mySwiper">
@@ -235,7 +242,6 @@ class EncountersCards extends Component {
                     {this.discardDeckAmerica.length>=31?<SwiperSlide><div className='encounterCardDiscard' id={`AmericaFront${this.discardDeckAmerica[this.discardDeckAmerica.length-31]}`}></div></SwiperSlide>:null}
                     {this.discardDeckAmerica.length>=32?<SwiperSlide><div className='encounterCardDiscard' id={`AmericaFront${this.discardDeckAmerica[this.discardDeckAmerica.length-32]}`}></div></SwiperSlide>:null}
                 </Swiper>
-                {this.discardDeckAmerica.length===0?<h1 className='discardText'>BRAK</h1>:null} 
                 </div>)}
             </Popup>
             </div>
@@ -245,7 +251,7 @@ class EncountersCards extends Component {
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`EuropeFront${this.state.europeShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup>
             <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                {<button className='discardButton'>ODRZUCONE</button>}modal nested>
+                {this.discardDeckEurope.length!==0?<button className='discardButton'>ODRZUCONE</button>:null}modal nested>
                 {close => (<div className='outerPopupDiscard'>
                 <button className='encounterDiscardCloseButton' onClick={() => close()}>X</button>
                 <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]} className="mySwiper">
@@ -282,7 +288,6 @@ class EncountersCards extends Component {
                     {this.discardDeckEurope.length>=31?<SwiperSlide><div className='encounterCardDiscard' id={`EuropeFront${this.discardDeckEurope[this.discardDeckEurope.length-31]}`}></div></SwiperSlide>:null}
                     {this.discardDeckEurope.length>=32?<SwiperSlide><div className='encounterCardDiscard' id={`EuropeFront${this.discardDeckEurope[this.discardDeckEurope.length-32]}`}></div></SwiperSlide>:null}
                 </Swiper>
-                {this.discardDeckEurope.length===0?<h1 className='discardText'>BRAK</h1>:null}
                 </div>)}
             </Popup>
             </div>
@@ -292,7 +297,7 @@ class EncountersCards extends Component {
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`AsiaAustraliaFront${this.state.asiaamericaShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup>
             <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                {<button className='discardButton'>ODRZUCONE</button>}modal nested>
+                {this.discardDeckAsiaAustralia.length!==0?<button className='discardButton'>ODRZUCONE</button>:null}modal nested>
                 {close => (<div className='outerPopupDiscard'>
                 <button className='encounterDiscardCloseButton' onClick={() => close()}>X</button>
                 <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]} className="mySwiper">
@@ -329,7 +334,6 @@ class EncountersCards extends Component {
                     {this.discardDeckAsiaAustralia.length>=31?<SwiperSlide><div className='encounterCardDiscard' id={`AsiaAustraliaFront${this.discardDeckAsiaAustralia[this.discardDeckAsiaAustralia.length-31]}`}></div></SwiperSlide>:null}
                     {this.discardDeckAsiaAustralia.length>=32?<SwiperSlide><div className='encounterCardDiscard' id={`AsiaAustraliaFront${this.discardDeckAsiaAustralia[this.discardDeckAsiaAustralia.length-32]}`}></div></SwiperSlide>:null}
                 </Swiper>
-                {this.discardDeckAsiaAustralia.length===0?<h1 className='discardText'>BRAK</h1>:null}
                 </div>)}
             </Popup>
             </div>
@@ -339,7 +343,7 @@ class EncountersCards extends Component {
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`GeneralFront${this.state.generalShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup>
             <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                {<button className='discardButton'>ODRZUCONE</button>}modal nested>
+                {this.discardDeckGeneral.length!==0?<button className='discardButton'>ODRZUCONE</button>:null}modal nested>
                 {close => (<div className='outerPopupDiscard'>
                 <button className='encounterDiscardCloseButton' onClick={() => close()}>X</button>
                 <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]} className="mySwiper">
@@ -376,7 +380,6 @@ class EncountersCards extends Component {
                     {this.discardDeckGeneral.length>=31?<SwiperSlide><div className='encounterCardDiscard' id={`GeneralFront${this.discardDeckGeneral[this.discardDeckGeneral.length-31]}`}></div></SwiperSlide>:null}
                     {this.discardDeckGeneral.length>=32?<SwiperSlide><div className='encounterCardDiscard' id={`GeneralFront${this.discardDeckGeneral[this.discardDeckGeneral.length-32]}`}></div></SwiperSlide>:null}
                 </Swiper>
-                {this.discardDeckGeneral.length===0?<h1 className='discardText'>BRAK</h1>:null}
                 </div>)}
             </Popup>
             </div>
@@ -386,7 +389,7 @@ class EncountersCards extends Component {
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`OtherWorldFront${this.state.otherworldShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup>
             <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                {<button className='discardButton'>ODRZUCONE</button>}modal nested>
+                {this.discardDeckOtherWorld.length!==0?<button className='discardButton'>ODRZUCONE</button>:null}modal nested>
                 {close => (<div className='outerPopupDiscard'>
                 <button className='encounterDiscardCloseButton' onClick={() => close()}>X</button>
                 <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]} className="mySwiper">
@@ -423,7 +426,6 @@ class EncountersCards extends Component {
                     {this.discardDeckOtherWorld.length>=31?<SwiperSlide><div className='encounterCardDiscard' id={`OtherWorldFront${this.discardDeckOtherWorld[this.discardDeckOtherWorld.length-31]}`}></div></SwiperSlide>:null}
                     {this.discardDeckOtherWorld.length>=32?<SwiperSlide><div className='encounterCardDiscard' id={`OtherWorldFront${this.discardDeckOtherWorld[this.discardDeckOtherWorld.length-32]}`}></div></SwiperSlide>:null}
                 </Swiper>
-                {this.discardDeckOtherWorld.length===0?<h1 className='discardText'>BRAK</h1>:null}
                 </div>)}
             </Popup>
             </div>
@@ -433,7 +435,7 @@ class EncountersCards extends Component {
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`Expedition${this.state.expeditionPreviousReverse}Front${this.state.expeditionShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup>
             <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                {<button className='discardButton'>ODRZUCONE</button>}modal nested>
+                {this.discardDeckExpedition.length!==0?<button className='discardButton'>ODRZUCONE</button>:null}modal nested>
                 {close => (<div className='outerPopupDiscard'>
                 <button className='encounterDiscardCloseButton' onClick={() => close()}>X</button>
                 <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]} className="mySwiper">
@@ -470,7 +472,6 @@ class EncountersCards extends Component {
                     {this.discardDeckExpedition.length>=31?<SwiperSlide><div className='encounterCardDiscard' id={`Expedition${this.discardDeckReverseExpedition[this.discardDeckReverseExpedition.length-31]}Front${this.discardDeckExpedition[this.discardDeckExpedition.length-31]}`}></div></SwiperSlide>:null}
                     {this.discardDeckExpedition.length>=32?<SwiperSlide><div className='encounterCardDiscard' id={`Expedition${this.discardDeckReverseExpedition[this.discardDeckReverseExpedition.length-32]}Front${this.discardDeckExpedition[this.discardDeckExpedition.length-32]}`}></div></SwiperSlide>:null}
                 </Swiper>
-                {this.discardDeckExpedition.length===0?<h1 className='discardText'>BRAK</h1>:null}
                 </div>)}
             </Popup>
             </div>
@@ -480,7 +481,7 @@ class EncountersCards extends Component {
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`CthulhuResearchFront${this.state.cthulhuresearchShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup>
             <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                {<button className='discardButton'>ODRZUCONE</button>}modal nested>
+                {this.discardDeckCthulhuResearch.length!==0?<button className='discardButton'>ODRZUCONE</button>:null}modal nested>
                 {close => (<div className='outerPopupDiscard'>
                 <button className='encounterDiscardCloseButton' onClick={() => close()}>X</button>
                 <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]} className="mySwiper">
@@ -517,7 +518,6 @@ class EncountersCards extends Component {
                     {this.discardDeckCthulhuResearch.length>=31?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-31]}`}></div></SwiperSlide>:null}
                     {this.discardDeckCthulhuResearch.length>=32?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-32]}`}></div></SwiperSlide>:null}
                 </Swiper>
-                {this.discardDeckCthulhuResearch.length===0?<h1 className='discardText'>BRAK</h1>:null}
                 </div>)}
             </Popup>
             </div>
@@ -527,7 +527,7 @@ class EncountersCards extends Component {
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`CthulhuSpecialFront${this.state.cthulhuspecialShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup> 
             <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                {<button className='discardButton'>ODRZUCONE</button>}modal nested>
+                {this.discardDeckCthulhuSpecial.length!==0?<button className='discardButton'>ODRZUCONE</button>:null}modal nested>
                 {close => (<div className='outerPopupDiscard'>
                 <button className='encounterDiscardCloseButton' onClick={() => close()}>X</button>
                 <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]} className="mySwiper">
@@ -564,7 +564,6 @@ class EncountersCards extends Component {
                     {this.discardDeckCthulhuSpecial.length>=31?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-31]}`}></div></SwiperSlide>:null}
                     {this.discardDeckCthulhuSpecial.length>=32?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-32]}`}></div></SwiperSlide>:null}
                 </Swiper>
-                {this.discardDeckCthulhuSpecial.length===0?<h1 className='discardText'>BRAK</h1>:null}
                 </div>)}
             </Popup>
             </div>           

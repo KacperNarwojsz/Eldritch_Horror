@@ -224,8 +224,7 @@
     transition: all .3s ease;
     /* FADE IN ANIMATION */
     opacity: 0;
-    animation: fadeInAnimation ease 3s;
-    animation-delay: 5s;
+    animation: fadeInAnimation ease 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
