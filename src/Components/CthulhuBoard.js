@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import 'reactjs-popup/dist/index.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCards } from 'swiper/modules';
 import LvlChar from './LvlChar';
 import CthulhuMysteryCard1 from '../InteractiveCards/CthulhuMysteryCard1';
 import CthulhuMysteryCard2 from '../InteractiveCards/CthulhuMysteryCard2';
@@ -11,6 +13,8 @@ import MythosNG6 from '../InteractiveCards/MythosNG6';
 import MythosHG1 from '../InteractiveCards/MythosHG1';
 import chooseRandom from './Shuffler';
 import Popup from 'reactjs-popup';
+import 'swiper/css';
+import 'swiper/css/effect-cards';
 import './Components.css';
 import '../InteractiveCards/InteractiveCards.css';
 
@@ -18,7 +22,9 @@ class CthulhuBoard extends Component {
     constructor({ level, characters, victory}) {
         super(); 
         this.mysteryDeck = [1,2,3,4]
+        this.discardMysteryDeck = []
         this.mythosDeck = ['NG1','NG2','NG3','NG4','NG5','NG6','NG7','NG8','HG1']
+        this.discardMythosDeck = []
         this.state = {
             ancientCardFlipped: false,
             isLoadDone: false,
@@ -50,6 +56,12 @@ class CthulhuBoard extends Component {
     componentDidMount() {
         this.timer()
     }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(prevState.prevMythosNo !== this.state.prevMythosNo) {
+            this.discardMythosDeck.push(this.state.prevMythosNo);
+        }
+    } 
 
     timer() {
         setInterval(() => {
@@ -134,15 +146,19 @@ class CthulhuBoard extends Component {
         if (this.state.isMystery1Active === true) {
            this.setState ({isMystery1Active: false })
            this.setState ({mysteryCounter: 0})
+           this.discardMysteryDeck.push(1);
        } else if (this.state.isMystery2Active === true) {
            this.setState ({isMystery2Active: false})
            this.setState ({mysteryCounter: 0})
+           this.discardMysteryDeck.push(2);
        } else if (this.state.isMystery3Active === true) {
            this.setState ({isMystery3Active: false})
            this.setState ({mysteryCounter: 0})
+           this.discardMysteryDeck.push(3);
        } else if (this.state.isMystery4Active === true) {
            this.setState ({isMystery4Active: false})
            this.setState ({mysteryCounter: 0})
+           this.discardMysteryDeck.push(4);
        }
        this.setState(({popping: true}))
    }
@@ -158,6 +174,7 @@ class CthulhuBoard extends Component {
         this.setState ({isMystery3Active: false })
         this.setState ({isMystery4Active: false })
         this.setState(({popping: false}))
+        this.discardMysteryDeck.push(this.state.prevMysteryNo);
     }   
 
     chooseMythos = () => {
@@ -274,11 +291,27 @@ class CthulhuBoard extends Component {
                 <div className='ancientMysteryMythosLvlChar'>
                     <div className='ancientMysteryLvlChar'>
                         <div className='ancientMystery'>
-                            {this.state.popping?
-                            <Popup onOpen={this.chooseMystery} onClose={this.canPop} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                            {<button className={this.state.isLoadDone ? 'cthulhuMystery' : 'cthulhuMysteryStamp'}></button>}modal nested>
-                            {close => (<div className='outerPopup'><div className='cthulhuMysteryFrontPopup' id={`CthulhuMysteryFront${this.state.prevMysteryNo}`}><button className='mysteryCloseButton' onClick={() => close()}>X</button></div></div>)}
-                            </Popup>:<button className='cthulhuMystery'></button>}
+                            <div className='ancientMysteryDiscard'>
+                                {this.state.popping?
+                                <Popup onOpen={this.chooseMystery} onClose={this.canPop} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
+                                {<button className={this.state.isLoadDone ? 'cthulhuMystery' : 'cthulhuMysteryStamp'}></button>}modal nested>
+                                {close => (<div className='outerPopup'><div className='cthulhuMysteryFrontPopup' id={`CthulhuMysteryFront${this.state.prevMysteryNo}`}><button className='mysteryCloseButton' onClick={() => close()}>X</button></div></div>)}
+                                </Popup>:<button className='cthulhuMystery'></button>}
+                                <div className='ancientMysteryDiscardButtonDiv'>
+                                    <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
+                                        {this.discardMysteryDeck.length!==0?<button className='discardButton' id='discardMystery'>ODRZUCONE</button>:null}modal nested>
+                                        {close => (<div className='outerPopupDiscard'>
+                                        <button className='mysteryDiscardCloseButton' onClick={() => close()}>X</button>
+                                        <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]} className="mySwiper" id="swiperMystery">
+                                            {this.discardMysteryDeck.length>=1?<SwiperSlide><div className='mysteryCardDiscard' id={`CthulhuMysteryFront${this.discardMysteryDeck[this.discardMysteryDeck.length-1]}`}></div></SwiperSlide>:null}
+                                            {this.discardMysteryDeck.length>=2?<SwiperSlide><div className='mysteryCardDiscard' id={`CthulhuMysteryFront${this.discardMysteryDeck[this.discardMysteryDeck.length-2]}`}></div></SwiperSlide>:null}
+                                            {this.discardMysteryDeck.length>=3?<SwiperSlide><div className='mysteryCardDiscard' id={`CthulhuMysteryFront${this.discardMysteryDeck[this.discardMysteryDeck.length-3]}`}></div></SwiperSlide>:null}
+                                            {this.discardMysteryDeck.length>=4?<SwiperSlide><div className='mysteryCardDiscard' id={`CthulhuMysteryFront${this.discardMysteryDeck[this.discardMysteryDeck.length-4]}`}></div></SwiperSlide>:null}
+                                        </Swiper>
+                                        </div>)}
+                                    </Popup>
+                                </div>
+                            </div>
                             {this.state.isMystery1Active?<CthulhuMysteryCard1 characters={this.state.characters} mystery123Decrement={this.mystery123Decrement} mysteryCounter={this.state.mysteryCounter} mystery13Increment={this.mystery13Increment} key={this.state.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.state.ancientCardFlipped ? this.state.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
                             {this.state.isMystery2Active?<CthulhuMysteryCard2 characters={this.state.characters} mystery123Decrement={this.mystery123Decrement} mysteryCounter={this.state.mysteryCounter} mystery2Increment={this.mystery2Increment} key={this.state.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.state.ancientCardFlipped ? this.state.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
                             {this.state.isMystery3Active?<CthulhuMysteryCard3 characters={this.state.characters} mystery123Decrement={this.mystery123Decrement} mysteryCounter={this.state.mysteryCounter} mystery13Increment={this.mystery13Increment} key={this.state.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.state.ancientCardFlipped ? this.state.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
@@ -288,11 +321,39 @@ class CthulhuBoard extends Component {
                         <LvlChar level={this.state.level} characters={this.state.characters}/> 
                     </div>
                     <div className='ancientMythos'>
-                        {this.state.prevMythosNo?
-                        <Popup onOpen={this.chooseMythos} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                        {<button className={this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>}modal nested>
-                        {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.prevMythosNo}`}><button className='mythosCloseButton' onClick={() => close()}>X</button></div></div>)}
-                        </Popup>:<button className='mythos'></button>}
+                        <div className='ancientMythosDiscard'>
+                            {this.state.prevMythosNo?
+                            <Popup onOpen={this.chooseMythos} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
+                                {<button className={this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>}modal nested>
+                                {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.prevMythosNo}`}><button className='mythosCloseButton' onClick={() => close()}>X</button></div></div>)}
+                            </Popup>:<button className='mythos'></button>}
+                            <div className='ancientMythosDiscardButtonDiv'>
+                                <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
+                                    {this.discardMythosDeck.length!==0?<button className='discardButton' id='discardMythos'>ODRZUCONE</button>:null}modal nested>
+                                    {close => (<div className='outerPopupDiscard'>
+                                    <button className='encounterDiscardCloseButton' onClick={() => close()}>X</button>
+                                    <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]} className="mySwiper">
+                                        {this.discardMythosDeck.length>=1?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-1]}`}></div></SwiperSlide>:null}
+                                        {this.discardMythosDeck.length>=2?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-2]}`}></div></SwiperSlide>:null}
+                                        {this.discardMythosDeck.length>=3?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-3]}`}></div></SwiperSlide>:null}
+                                        {this.discardMythosDeck.length>=4?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-4]}`}></div></SwiperSlide>:null}
+                                        {this.discardMythosDeck.length>=5?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-5]}`}></div></SwiperSlide>:null}
+                                        {this.discardMythosDeck.length>=6?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-6]}`}></div></SwiperSlide>:null}
+                                        {this.discardMythosDeck.length>=7?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-7]}`}></div></SwiperSlide>:null}
+                                        {this.discardMythosDeck.length>=8?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-8]}`}></div></SwiperSlide>:null}
+                                        {this.discardMythosDeck.length>=9?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-9]}`}></div></SwiperSlide>:null}
+                                        {this.discardMythosDeck.length>=10?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-10]}`}></div></SwiperSlide>:null}
+                                        {this.discardMythosDeck.length>=11?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-11]}`}></div></SwiperSlide>:null}
+                                        {this.discardMythosDeck.length>=12?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-12]}`}></div></SwiperSlide>:null}
+                                        {this.discardMythosDeck.length>=13?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-13]}`}></div></SwiperSlide>:null}
+                                        {this.discardMythosDeck.length>=14?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-14]}`}></div></SwiperSlide>:null}
+                                        {this.discardMythosDeck.length>=15?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-15]}`}></div></SwiperSlide>:null}
+                                        {this.discardMythosDeck.length>=16?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-16]}`}></div></SwiperSlide>:null}
+                                    </Swiper>
+                                    </div>)}
+                                </Popup>
+                            </div>
+                        </div>
                         {this.state.mythos1 === true ?<div>{ InteractiveCard1(choosenMythos) }</div>:null}
                         {this.state.mythos2 === true ?<div>{ InteractiveCard2(choosenMythos) }</div>:null}
                         {this.state.mythos3 === true ?<div>{ InteractiveCard3(choosenMythos) }</div>:null}

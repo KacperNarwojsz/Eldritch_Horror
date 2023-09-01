@@ -5,7 +5,7 @@ import { EffectCards } from 'swiper/modules';
 import chooseRandom from './Shuffler';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
-import './Components.css'
+import './Components.css';
 
 class EncountersCards extends Component {
     constructor(props) {

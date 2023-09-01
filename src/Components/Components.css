@@ -65,10 +65,31 @@
     width: 49.3vw
 }
 
+.ancientMysteryDiscard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ancientMysteryDiscardButtonDiv {
+    margin: 0;
+    height: 1.3vw;
+}
+
 .ancientMythos {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+}
+
+.ancientMythosDiscard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ancientMythosDiscardButtonDiv {
+    height: 2.7vw;
 }
 
 /* BUTTONS  */
@@ -229,6 +250,15 @@
     animation-fill-mode: forwards;
 }
 
+#discardMythos {
+    margin-bottom: 1.5vw;
+}
+
+#discardMystery {
+    width: 11.5vw;
+    margin-bottom: 0vw;
+}
+
 .discardButton:hover {
     transform: scale(1.1);
 }
@@ -238,6 +268,7 @@
     height: 7.4vw;
     width: 11.5vw;
     margin: 1.2vw;
+    margin-bottom: 0.1vw;
     background-size: cover;
     border-radius: 0.4vw;
     /* STAMP ANIMATION */
@@ -254,6 +285,7 @@
     height: 7.4vw;
     width: 11.5vw;
     margin: 1.2vw;
+    margin-bottom: 0.1vw;
     background-size: cover;
     border-radius: 0.4vw;
     transition: all .3s ease;    
@@ -262,6 +294,7 @@
 
 .cthulhuMystery:hover {
     transform: scale(1.1);
+    z-index: 1;
 }
 
 .cthulhuMysteryFrontPopup {
@@ -288,11 +321,38 @@
     cursor: pointer;
 }
 
+.mysteryCardDiscard {
+    display: flex;
+    height: 26.3vw;
+    width: 42.3vw;
+    margin: 0.5vw;
+    justify-content: center;
+    background-size: cover;
+    border-radius: 0.9vw;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.mysteryDiscardCloseButton {
+    width: 1.5vw;
+    height: 1.5vw;
+    font-family: 'Birmingham'; 
+    font-size: 1vw;
+    text-align: center;
+    background-color: rgb(213, 213, 160);
+    cursor: pointer;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    margin-left: 44vw;
+    margin-bottom: 1vw;
+    cursor: pointer;
+}
+
 .mythosStamp {
     background-image: url(/src/pictures/Mythos/Mythos_Card.png);
     height: 11.5vw;
     width: 7.4vw;
-    margin: 0.1vw 1.2vw 2.7vw 1.2vw;
+    margin: 0.1vw 1.2vw 0.2vw 1.2vw;
     justify-content: center;
     background-size: cover;
     border-radius: 0.4vw;
@@ -309,7 +369,7 @@
     background-image: url(/src/pictures/Mythos/Mythos_Card.png);
     height: 11.5vw;
     width: 7.4vw;
-    margin: 0.1vw 1.2vw 2.7vw 1.2vw;
+    margin: 0.1vw 1.2vw 0.2vw 1.2vw;
     justify-content: center;
     background-size: cover;
     border-radius: 0.4vw;
@@ -319,6 +379,7 @@
 
 .mythos:hover {
     transform: scale(1.1);
+    z-index: 1;
 }
 
 .mythosFrontPopup {
@@ -553,7 +614,8 @@
     cursor: pointer;
     border: 1px solid #000000;
     border-radius: 50%;
-    margin-left: 35vw;
+    margin-left: 28vw;
+    margin-bottom: 0.2vw;
     cursor: pointer;
 }
 
@@ -1041,6 +1103,11 @@ body {
   width: 26.5vw;
   height: 41.2vw;
   margin-bottom: 2vw;
+}
+
+#swiperMystery {
+  width: 42.3vw;
+  height: 26.5vw;
 }
 
 .swiper-slide {
