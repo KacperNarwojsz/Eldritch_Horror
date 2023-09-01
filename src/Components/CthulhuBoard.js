@@ -58,7 +58,7 @@ class CthulhuBoard extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if(prevState.prevMythosNo !== this.state.prevMythosNo) {
+        if(prevState.prevMythosNo !== this.state.prevMythosNo && this.state.prevMythosNo !== 'NG1' && this.state.prevMythosNo !== 'NG6' && this.state.prevMythosNo !== 'HG1') {
             this.discardMythosDeck.push(this.state.prevMythosNo);
         }
     } 
@@ -210,6 +210,7 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'NG1') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'NG1') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'NG1') { this.setState ({mythos5: 'done' }) }
+        this.discardMythosDeck.push('NG1');
     }
 
     mythosNG6Done = () => {
@@ -218,6 +219,7 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'NG6') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'NG6') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'NG6') { this.setState ({mythos5: 'done' }) }
+        this.discardMythosDeck.push('NG6');
     }  
 
     mythosHG1Done = () => {
@@ -226,6 +228,7 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'HG1') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'HG1') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'HG1') { this.setState ({mythos5: 'done' }) }
+        this.discardMythosDeck.push('HG1');
     }
       
     render() {
