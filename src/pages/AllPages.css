@@ -35,6 +35,11 @@
     src: url(../Eldritch-font/BirminghamTitlingElongated.ttf);
 }
 
+@font-face {
+    font-family: EldritchNumbers;
+    src: url(../Eldritch-font/EldritchNumbers.otf);
+}
+
 /* KEYS  */
 
 @keyframes fadeInAnimation {
@@ -389,8 +394,9 @@
 }
 
 .charButton {
-    font-family: 'Birmingham'; 
-    font-size: 2.5vw;
+    font-family: EldritchNumbers; 
+    font-size: 2.3vw;
+    padding-top: 0.4vw;
     height: 3vw;
     width: 7vw;
     background-color: transparent;
@@ -400,8 +406,9 @@
 }
 
 .charButtonActive {
-    font-family: 'Birmingham'; 
-    font-size: 2.5vw;
+    font-family: EldritchNumbers; 
+    font-size: 2.3vw;
+    padding-top: 0.4vw;
     height: 3vw;
     width: 7vw;
     background-color: transparent;

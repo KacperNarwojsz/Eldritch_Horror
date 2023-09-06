@@ -217,8 +217,9 @@
     height: 1vw;
     border: none;
     text-align: center;
-    font-family: BirminghamBold;
-    font-size: 0.98vw;
+    font-family: EldritchNumbers;
+    font-size: 0.95vw;
+    padding-top: 0.15vw;
 }
 
 .sheetCardTokenPlus {
@@ -566,6 +567,7 @@
 
 .encounterCard:hover {
     transform: scale(1.1) translateY(-4%);
+    z-index: 1;
 }
 
 .encounterCardFront {
