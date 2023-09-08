@@ -393,12 +393,35 @@
     transform: scale(1.2);
 }
 
-.mythosEldritchDiv{
-    display: flex;
-    z-index: 10;
+.tokenMythosEldritchFaded {
+    width: 1.7vw;
+    height: 1.7vw;
+    background-image: url(/src/pictures/Tokens/TokenEldritchFaded.png);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0.2vw;
+    margin-left: 0.25vw;
+    margin-right: 0.25vw;
+    margin-bottom: 0.5vw;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+    bottom: 0.7vw;
+    right: 2.55vw;
+    text-align: center;
+    font-family: EldritchNumbers;
+    padding-top: 0.1vw;
+    font-size: 1.2vw;
 }
 
-.mythosAddons{
+/* .mythosEldritchDiv{
+    display: flex;
+    z-index: 10;
+} */
+
+/* .mythosAddons{
     align-self: center;
     background-color: rgba(238, 238, 215, 0.716);
     margin: 0.1vw;
@@ -411,9 +434,9 @@
     position: relative;
     bottom: 2.1vw;
     left: 1.9vw;
-}
+} */
 
-.mythosTokenMinus {
+/* .mythosTokenMinus {
     background-image: url(/src/pictures/Tokens/TokenMinus.png);
     background-color: transparent;
     align-self: center;
@@ -429,9 +452,9 @@
     bottom: 1vw;
     right: 1.7vw;
     cursor: pointer;
-}
+} */
 
-.mythosEldritch {
+/* .mythosEldritch {
     background-image: url(/src/pictures/Tokens/TokenEldritch.png);
     background-color: transparent;
     background-size: cover;
@@ -441,9 +464,9 @@
     margin-top: 0.05vw;
     border: none;
     align-items: center;
-}
+} */
 
-.mythosCounter {
+/* .mythosCounter {
     background-color: transparent;
     width: 0.8vw;
     height: 0.8vw;
@@ -454,9 +477,9 @@
     text-align: center;
     font-family: EldritchNumbers;
     font-size: 0.75vw;
-}
+} */
 
-.mythosTokenPlus {
+/* .mythosTokenPlus {
     background-image: url(/src/pictures/Tokens/TokenPlus.png);
     background-color: transparent;
     align-self: center;
@@ -472,6 +495,201 @@
     bottom: 3.1vw;
     left: 2.3vw;
     cursor: pointer;
+} */
+
+.outerPopupMythos {
+    position: fixed;
+    display: flex;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.mythosPopUpMatt {
+    display: flex;
+    flex-direction: column;
+    background-image: url(/src/pictures/Mythos/MythosMatt.png);
+    background-size: cover;
+    width: 60vw;
+    height: 41vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.mythosPopUpMattDiv {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 40vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.mythosPopUpCloseButton{
+    width: 1.5vw;
+    height: 1.5vw;
+    font-family: 'Birmingham'; 
+    font-size: 1vw;
+    text-align: center;
+    background-color: rgb(213, 213, 160);
+    cursor: pointer;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    /* margin-top: -3.5vw;
+    margin-left: 41.5vw; */
+    position: relative;
+    bottom: 6.5vw;
+    left: 20.7vw;
+    cursor: pointer;
+}
+
+.mythosPopUpReckoningRulesDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tokenMythosPopUpMadness {
+    background-image: url(/src/pictures/Tokens/TokenMadness.png);
+    background-size: cover;
+    height: 11vw;
+    width: 7.1vw;
+    border-radius: 0.7vw;
+    margin-left: 2vw;
+}
+
+.tokenMythosPopUpArrow {
+    background-image: url(/src/pictures/Tokens/TokenArrowRight.png);
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+    height: 4vw;
+    width: 5vw;
+    margin: 2vw;
+    margin-left: 4vw;
+}
+
+.tokenMythosPopUpLeadInvestigator {
+    background-image: url(/src/pictures/Tokens/TokenLeadInvestigator.png);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-color: transparent;
+    border: none;
+    height: 7vw;
+    width: 10.5vw;
+    margin-left: 1vw;
+}
+
+.mythosPopUpCounterDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tokenMythosPopUpCounter {
+    width: 9vw;
+    height: 3.7vw;
+    background-color: transparent;
+    text-align: center;
+    font-family: EldritchNumbers;
+    font-size: 3vw;
+    margin: 0.5vw;
+    padding-top: 0.4vw;
+    border: 0.15vw solid black;
+    border-radius: 1vw;
+}
+
+.tokenMythosPopUpMinus {
+    background-image: url(/src/pictures/Tokens/TokenMinus.png);
+    background-color: transparent;
+    background-size: cover;
+    align-self: center;
+    margin: 0.5vw;
+    border-radius: 50%;
+    border: 1vw;
+    width: 3vw;
+    height: 3vw;
+    transition: all .3s ease; 
+    cursor: pointer;
+}
+
+.tokenMythosPopUpMinus:hover {
+    transform: scale(1.15);
+}
+
+.tokenMythosPopUpEldritch {
+    background-image: url(/src/pictures/Tokens/TokenEldritch.png);
+    background-size: cover;
+    background-color: transparent;
+    margin: 0.5vw;
+    border-radius: 50%;
+    width: 3.5vw;
+    height: 3.5vw;
+}
+
+.tokenMythosPopUpPlus {
+    background-image: url(/src/pictures/Tokens/TokenPlus.png);
+    background-color: transparent;
+    background-size: cover;
+    align-self: center;
+    margin: 0.5vw;
+    border-radius: 50%;
+    border: 1vw;
+    width: 3vw;
+    height: 3vw;
+    transition: all .3s ease; 
+    cursor: pointer;    
+}
+
+.tokenMythosPopUpPlus:hover {
+    transform: scale(1.15);
+}
+
+.mythosPopUpDoneDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tokenMythosPopUpIconsFont{
+    font-family: EldritchIcons;
+    font-size: 4vw;
+    font-weight: 300;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+}
+
+.tokenMythosPopUpNumbersFont{
+    font-family: EldritchNumbers;
+    font-size: 3.6vw;
+    font-weight: 300;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+}
+
+.tokenMythosPopUpDone {
+    display: flex;
+    width: 9vw;
+    height: 3.3vw;
+    background-image: url(/src/pictures/Tokens/TokenDone.png);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0.5vw;
+    border: 0.15vw solid black;
+    border-radius: 1vw;
+    justify-content: center;
+    transition: all .3s ease; 
+    cursor: pointer;
+}
+
+.tokenMythosPopUpDone:hover {
+    transform: scale(1.05);
 }
 
 #MythosNG1 {

@@ -59,7 +59,7 @@ class CthulhuBoard extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if(prevState.prevMythosNo !== this.state.prevMythosNo && this.state.prevMythosNo !== 'NG1' && this.state.prevMythosNo !== 'NG6' && this.state.prevMythosNo !== 'HG1') {
+        if(prevState.prevMythosNo !== this.state.prevMythosNo && this.state.prevMythosNo !== 'NG1' && this.state.prevMythosNo !== 'NG6' && this.state.prevMythosNo !== 'HG1' && this.state.prevMythosNo !== 'EB1') {
             this.discardMythosDeck.push(this.state.prevMythosNo);
         }
     } 

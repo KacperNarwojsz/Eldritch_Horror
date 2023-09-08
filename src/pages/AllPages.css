@@ -40,6 +40,11 @@
     src: url(../Eldritch-font/EldritchNumbers.otf);
 }
 
+@font-face {
+    font-family: EldritchIcons;
+    src: url(../Eldritch-font/EldritchHorrorIcons_v2_1.ttf);
+}
+
 /* KEYS  */
 
 @keyframes fadeInAnimation {
