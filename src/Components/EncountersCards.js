@@ -205,7 +205,7 @@ class EncountersCards extends Component {
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`AmericaFront${this.state.americaShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup>
             <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                {this.discardDeckAmerica.length!==0?<button className='discardButton'>ODRZUCONE</button>:null}modal nested>
+                {this.discardDeckAmerica.length!==0?<button className='discardButton' id='discardEncounter'>ODRZUCONE</button>:null}modal nested>
                 {close => (<div className='outerPopupDiscard'>
                 <button className='encounterDiscardCloseButton' onClick={() => close()}>X</button>
                 <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]} className="mySwiper">

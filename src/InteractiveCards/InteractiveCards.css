@@ -12,7 +12,6 @@
     border-radius: 0.4vw;
     transition: all .3s ease;  
     cursor: pointer;
-    z-index: 1;
 }
 
 #CthulhuMysteryFront1 {
@@ -37,7 +36,7 @@
 
 .cthulhuMysteryFront:focus {
     transform: scale(4) translateY(50%);
-    z-index: 1;
+    z-index: 100;
 }
 
 /* COUNTER MYSTERIES */
@@ -225,7 +224,7 @@
 }
 
 .mysteryMonsterTokenHealth {
-    background-image: url(/src/pictures/Tokens/TokenHealth.png);
+    background-image: url(/src/pictures/Tokens/TokenHealthSmall.png);
     background-color: transparent;
     background-size: cover;
     /* margin-left: 0.3vw; */
@@ -307,7 +306,6 @@
 
 .mythosFront:focus {
     transform: scale(3.8) translateY(7%);
-    z-index: 1;
 }
 
 .mythosFrontBig {
@@ -367,7 +365,7 @@
     transform: scale(1.2);
 }
 
-.tokenMythosClue {
+.tokenMythosClueFaded {
     width: 2.2vw;
     height: 2.2vw;
     background-image: url(/src/pictures/Tokens/TokenClueFaded.png);
@@ -416,87 +414,6 @@
     font-size: 1.2vw;
 }
 
-/* .mythosEldritchDiv{
-    display: flex;
-    z-index: 10;
-} */
-
-/* .mythosAddons{
-    align-self: center;
-    background-color: rgba(238, 238, 215, 0.716);
-    margin: 0.1vw;
-    display: flex;
-    justify-items: center;
-    border: 0.15vw solid black;
-    border-radius: 1vw;
-    height: 0.8vw;
-    width: 2.5vw;
-    position: relative;
-    bottom: 2.1vw;
-    left: 1.9vw;
-} */
-
-/* .mythosTokenMinus {
-    background-image: url(/src/pictures/Tokens/TokenMinus.png);
-    background-color: transparent;
-    align-self: center;
-    background-color: rgba(238, 238, 215, 0.716);
-    background-size: cover;
-    align-self: center;
-    border-radius: 50%;
-    border: 0.1vw;
-    margin-right: 0.5vw;
-    width: 0.8vw;
-    height: 0.8vw;
-    position: relative;
-    bottom: 1vw;
-    right: 1.7vw;
-    cursor: pointer;
-} */
-
-/* .mythosEldritch {
-    background-image: url(/src/pictures/Tokens/TokenEldritch.png);
-    background-color: transparent;
-    background-size: cover;
-    margin-left: 0.4vw;
-    width: 0.73vw;
-    height: 0.7vw;
-    margin-top: 0.05vw;
-    border: none;
-    align-items: center;
-} */
-
-/* .mythosCounter {
-    background-color: transparent;
-    width: 0.8vw;
-    height: 0.8vw;
-    border: none;
-    margin-left: 0.1vw;
-    margin-right: 0.1vw;
-    margin-top: 0.05vw;
-    text-align: center;
-    font-family: EldritchNumbers;
-    font-size: 0.75vw;
-} */
-
-/* .mythosTokenPlus {
-    background-image: url(/src/pictures/Tokens/TokenPlus.png);
-    background-color: transparent;
-    align-self: center;
-    background-color: rgba(238, 238, 215, 0.716);
-    background-size: cover;
-    align-self: center;
-    border-radius: 50%;
-    border: 0.1vw;
-    margin-right: 0.5vw;
-    width: 0.8vw;
-    height: 0.8vw;
-    position: relative;
-    bottom: 3.1vw;
-    left: 2.3vw;
-    cursor: pointer;
-} */
-
 .outerPopupMythos {
     position: fixed;
     display: flex;
@@ -508,27 +425,26 @@
     align-items: center;
 }
 
-.mythosPopUpMatt {
+.mythosPopUpMattBlue {
     display: flex;
     flex-direction: column;
-    background-image: url(/src/pictures/Mythos/MythosMatt.png);
+    background-image: url(/src/pictures/Mythos/MythosMattBlue.png);
     background-size: cover;
-    width: 60vw;
-    height: 41vw;
-    justify-content: center;
-    align-items: center;
-}
-
-.mythosPopUpMattDiv {
-    display: flex;
-    flex-direction: column;
     width: 50vw;
-    height: 40vw;
-    justify-content: center;
+    height: 46vw;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.mythosPopUpCloseButton{
+.mythosPopUpCloseButtonDiv {
+    display: flex;
+    width: 43vw;
+    height: 4.5vw;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.mythosPopUpCloseButton {
     width: 1.5vw;
     height: 1.5vw;
     font-family: 'Birmingham'; 
@@ -538,49 +454,30 @@
     cursor: pointer;
     border: 1px solid #000000;
     border-radius: 50%;
-    /* margin-top: -3.5vw;
-    margin-left: 41.5vw; */
-    position: relative;
-    bottom: 6.5vw;
-    left: 20.7vw;
     cursor: pointer;
 }
 
-.mythosPopUpReckoningRulesDiv {
+.mythosPopUpTextDiv {
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.tokenMythosPopUpMadness {
-    background-image: url(/src/pictures/Tokens/TokenMadness.png);
-    background-size: cover;
-    height: 11vw;
-    width: 7.1vw;
-    border-radius: 0.7vw;
-    margin-left: 2vw;
-}
-
-.tokenMythosPopUpArrow {
-    background-image: url(/src/pictures/Tokens/TokenArrowRight.png);
-    background-size: cover;
-    background-color: transparent;
-    border: none;
-    height: 4vw;
-    width: 5vw;
-    margin: 2vw;
-    margin-left: 4vw;
-}
-
-.tokenMythosPopUpLeadInvestigator {
-    background-image: url(/src/pictures/Tokens/TokenLeadInvestigator.png);
-    background-size: cover;
-    background-repeat:no-repeat;
-    background-color: transparent;
-    border: none;
+    width: 40vw;
     height: 7vw;
-    width: 10.5vw;
-    margin-left: 1vw;
+    margin-top: 2vw;
+}
+
+.mythosPopUpText {
+    display: inline;
+    font-family: "F1669 Elzevir W00 Normal"; 
+    font-size: 1.8vw;
+    margin: 0;
+    text-align: center;
+}
+
+.mythosPopUpTextNumber {
+    display: inline;
+    font-family: "Romana";  
+    font-size: 1.8vw;
+    margin: 0;
+    text-align: center;
 }
 
 .mythosPopUpCounterDiv {
@@ -588,6 +485,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    height: 9vw;
 }
 
 .tokenMythosPopUpCounter {
@@ -601,6 +499,10 @@
     padding-top: 0.4vw;
     border: 0.15vw solid black;
     border-radius: 1vw;
+}
+
+.tokenMythosPopUpCounterDiv {
+    display: flex;
 }
 
 .tokenMythosPopUpMinus {
@@ -651,29 +553,39 @@
 
 .mythosPopUpDoneDiv {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 40vw;
 }
 
-.tokenMythosPopUpIconsFont{
-    font-family: EldritchIcons;
-    font-size: 4vw;
-    font-weight: 300;
-    margin-top: 0.5vw;
-    margin-bottom: 0.5vw;
+.mythosPopUpDoneCaseDiv {
+    display: flex;
+    flex-direction: row;
+}
+
+.tokenMythosPopUpSanity {
+    background-image: url(/src/pictures/Tokens/TokenSanity.png);
+    background-size: cover;
+    background-color: transparent;
+    margin: 0.5vw;
+    margin-bottom: 0;
+    border: none;
+    width: 3.4vw;
+    height: 3vw;
 }
 
 .tokenMythosPopUpNumbersFont{
     font-family: EldritchNumbers;
-    font-size: 3.6vw;
+    font-size: 3.4vw;
     font-weight: 300;
     margin-top: 0.5vw;
-    margin-bottom: 0.5vw;
+    margin-bottom: 0;
 }
 
 .tokenMythosPopUpDone {
     display: flex;
-    width: 9vw;
+    width: 4vw;
     height: 3.3vw;
     background-image: url(/src/pictures/Tokens/TokenDone.png);
     background-color: transparent;

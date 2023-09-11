@@ -62,7 +62,7 @@
 .ancientMystery {
     display: flex;
     flex-direction: row;
-    width: 49.3vw
+    width: 49.3vw;
 }
 
 .ancientMysteryDiscard {
@@ -136,7 +136,7 @@
 
 .cthulhuSheet:focus {
     transform: scale(2.18) translate(79%, 16%);
-    z-index: 1;
+    z-index: 100;
 }
 
 #CthulhuSheetFront {
@@ -201,7 +201,7 @@
 }
 
 .sheetCardSanity {
-    background-image: url(/src/pictures/Tokens/TokenSanity.png);
+    background-image: url(/src/pictures/Tokens/TokenSanitySmall.png);
     background-color: transparent;
     background-size: cover;
     margin-left: 0.4vw;
@@ -295,7 +295,7 @@
 
 .cthulhuMystery:hover {
     transform: scale(1.1);
-    z-index: 1;
+    z-index: 100;
 }
 
 .cthulhuMysteryFrontPopup {
@@ -380,7 +380,7 @@
 
 .mythos:hover {
     transform: scale(1.1);
-    z-index: 1;
+    z-index: 50;
 }
 
 .mythosFrontPopup {
@@ -566,8 +566,7 @@
 }
 
 .encounterCard:hover {
-    transform: scale(1.1) translateY(-4%);
-    z-index: 1;
+    transform: scale(1.1);
 }
 
 .encounterCardFront {
