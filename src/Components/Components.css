@@ -108,6 +108,7 @@
     margin-left: 1.2vw;
     margin-right: 1.2vw;
     border-radius: 0.4vw;
+    border: 0.15vw black solid;
     /* STAMP ANIMATION */
     position:relative;
     animation-name: pulse;
@@ -125,6 +126,7 @@
     margin-top: 1.2vw;
     margin-left: 1.2vw;
     margin-right: 1.2vw;
+    border: 0.15vw black solid;
     border-radius: 0.4vw;
     transition: all .3s ease;
     cursor: pointer;
@@ -151,7 +153,6 @@
     background-image: url(/src/pictures/Tokens/TokenFlip.png);
     background-size: cover;
     background-color: transparent;
-    position: relative;
     height: 2vw;
     width: 2vw;
     border: 0.2vw solid;
@@ -163,13 +164,13 @@
 }
 
 #flipButtonFront {
-    top: -9.4vw;
-    left: 7.3vw;
+    margin-top: 0.3vw;
+    margin-left: 14.2vw;
 }
 
 #flipButtonBack {
-    top: -8.7vw;
-    right: 7.3vw;
+    margin-top: 0.3vw;
+    margin-left: -14.2vw;
 }
 
 
@@ -183,9 +184,8 @@
     border-radius: 1vw;
     height: 1.1vw;
     width: 5.5vw;
-    position: relative;
-    top: 1.5vw;
-    left: 0.3vw;
+    margin-top: 10vw;
+    margin-left: 0.5vw;
 }
 
 .sheetCardTokenMinus {
@@ -412,6 +412,7 @@
 .lvlChar {
     display: flex;
     flex-direction: column;
+    width: 9.6vw;
     /* FADE IN ANIMATION */
     opacity: 0;
     animation: fadeInAnimation ease 3s;

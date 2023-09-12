@@ -6,7 +6,7 @@ const CthulhuMysteryCard4 = ({ characters, mystery4Decrement, mysteryCounter, my
     return (
         <div className="cthulhuMysteryFrontDiv">
             <div>
-                <button className="cthulhuMysteryFront" id="CthulhuMysteryFront4"></button>
+                <figure className="cthulhuMysteryFront" id="CthulhuMysteryFront4" tabIndex="0"></figure>
             </div>
             <div>
                 <div className="mysteryTokensMonsterDiv">

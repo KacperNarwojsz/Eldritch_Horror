@@ -5,10 +5,12 @@
 }
 
 .cthulhuMysteryFront {
-    height: 7.4vw;
-    width: 11.5vw;
+    height: 7.1vw;
+    width: 11.3vw;
+    margin: 0vw;
     margin-top: 1.2vw;
     background-size: cover;
+    border: 0.15vw black solid;
     border-radius: 0.4vw;
     transition: all .3s ease;  
     cursor: pointer;
@@ -290,11 +292,12 @@
 }
 
 .mythosFront {
-    height: 11.5vw;
-    width: 7.4vw;
+    height: 11.3vw;
+    width: 7.2vw;
     margin: 0vw 1.2vw 0vw 1.2vw;
     justify-content: center;
     background-size: cover;
+    border: 0.15vw black solid;
     border-radius: 0.4vw;
     transition: all .3s ease;
     cursor: pointer;
@@ -308,7 +311,7 @@
     transform: scale(3.8) translateY(7%);
 }
 
-.mythosFrontBig {
+/* .mythosFrontBig {
     height: 11.5vw;
     width: 7.4vw;
     margin: 1.2vw;
@@ -319,7 +322,7 @@
 
 .mythosFrontBig:hover {
     transform: scale(2);
-}
+} */
 
 .tokenMythosReckoning {
     width: 2.2vw;
@@ -399,18 +402,13 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    margin: 0.2vw;
-    margin-left: 0.25vw;
-    margin-right: 0.25vw;
-    margin-bottom: 0.5vw;
+    margin-right: 5vw;
+    margin-top: 4.1vw;
     border: none;
     border-radius: 50%;
-    position: relative;
-    bottom: 0.7vw;
-    right: 2.55vw;
     text-align: center;
     font-family: EldritchNumbers;
-    padding-top: 0.1vw;
+    padding-top: 0.2vw;
     font-size: 1.2vw;
 }
 

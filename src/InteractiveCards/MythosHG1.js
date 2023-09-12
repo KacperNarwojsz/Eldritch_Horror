@@ -31,7 +31,7 @@ class MythosHG1 extends Component {
         return (
                 <div className="mythosFrontDiv">
                     <div>
-                        <button className="mythosFront" id="MythosHG1"></button>
+                        <figure className="mythosFront" id="MythosHG1" tabIndex="0"></figure>
                     </div>
                     <div className="mythosTokensDiv">
                         <button className="tokenMythosReckoning" onClick={this.doneButtonOnOff}></button>

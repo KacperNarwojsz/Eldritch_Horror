@@ -38,7 +38,7 @@ class MythosEB1 extends Component {
         return (
                 <div className="mythosFrontDiv">
                     <div>
-                        <button className="mythosFront" id="MythosEB1">
+                        <figure className="mythosFront" id="MythosEB1" tabIndex={0}>
                             {/* <div classname='mythosEldritchDiv'>
                                 {this.state.reckoning?<button className='mythosTokenMinus' onClick={this.counterDecrement}></button>:null}
                                 <div className='mythosAddons'>
@@ -48,7 +48,7 @@ class MythosEB1 extends Component {
                                 {this.state.reckoning?<button className='mythosTokenPlus' onClick={this.counterIncrement}></button>:null}
                             </div> */}
                             <button className="tokenMythosEldritchFaded">{this.state.counter}</button>
-                        </button>
+                        </figure>
                     </div>
                     <div className="mythosTokensDiv">
                         <Popup onOpen={this.chooseMystery} onClose={this.canPop} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
@@ -59,7 +59,7 @@ class MythosEB1 extends Component {
                                         {this.state.counter===0?null:<button className='mythosPopUpCloseButton' onClick={() => close()}>X</button>}
                                     </div>
                                     <div className='mythosPopUpTextDiv'>
-                                        <p className='mythosPopUpText'>Główny Badacz otrzymuje Stan <em>SZALEŃSTWO</em>, <br></br>a następnie za każdy posiadany Stan <em>SZALEŃSTWO</em> odrzuca <p className='mythosPopUpTextNumber'>1</p> żeton Plugastwa z tej karty.</p>
+                                        <p className='mythosPopUpText'>Główny Badacz otrzymuje Stan <em>SZALEŃSTWO</em>, <br></br>a następnie za każdy posiadany Stan <em>SZALEŃSTWO</em> odrzuca <span className='mythosPopUpTextNumber'>1</span> żeton Plugastwa z tej karty.</p>
                                     </div>
                                     <div className='mythosPopUpCounterDiv'>
                                         <button className='tokenMythosPopUpCounter'>{this.state.counter}/4</button>
@@ -70,7 +70,7 @@ class MythosEB1 extends Component {
                                         </div>
                                     </div>
                                     <div className='mythosPopUpDoneDiv'>
-                                        {this.state.counter===0?<p className='mythosPopUpText'>Jeśli na tej karcie nie ma żadnych żetonów Plugastwa, każdy badacz traci <p className='mythosPopUpTextNumber'>3</p> Poczytalności, a następnie ta <em>POGŁOSKA</em> zostaje rozwiązana.</p>:null}
+                                        {this.state.counter===0?<p className='mythosPopUpText'>Jeśli na tej karcie nie ma żadnych żetonów Plugastwa, każdy badacz traci <span className='mythosPopUpTextNumber'>3</span> Poczytalności, a następnie ta <em>POGŁOSKA</em> zostaje rozwiązana.</p>:null}
                                         <div className='mythosPopUpDoneCaseDiv'>
                                             {this.state.counter===0?<button className="tokenMythosPopUpSanity"></button>:null}
                                             {this.state.counter===0?<h1 className='tokenMythosPopUpNumbersFont'>-3</h1>:null}

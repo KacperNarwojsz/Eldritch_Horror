@@ -24,7 +24,7 @@ class CthulhuBoard extends Component {
         super(); 
         this.mysteryDeck = [1,2,3,4]
         this.discardMysteryDeck = []
-        this.mythosDeck = ['EB1','EB1','EB1','EB1']
+        this.mythosDeck = ['EB1','HG1','NG1','NG6','EB1','HG1']
         this.discardMythosDeck = []
         this.state = {
             ancientCardFlipped: false,
@@ -302,7 +302,7 @@ class CthulhuBoard extends Component {
 
         return (
             <div className='ancientBoard'>
-                    <button className={this.state.isLoadDone ? 'cthulhuSheet' : 'cthulhuSheetStamp'} id={this.state.ancientCardFlipped ? 'CthulhuSheetBack' : 'CthulhuSheetFront'}>
+                    <figure className={this.state.isLoadDone ? 'cthulhuSheet' : 'cthulhuSheetStamp'} id={this.state.ancientCardFlipped ? 'CthulhuSheetBack' : 'CthulhuSheetFront'} tabIndex="0">
                         {!this.state.ancientCardFlipped?<button className='flipButton' id='flipButtonFront' onClick={this.flipCardSheet}></button>:null}
                         {this.state.ancientCardFlipped?<button className='flipButton' id='flipButtonBack' onClick={this.flipCardSheet}></button>:null}
                         {this.state.ancientCardFlipped?<div className='sheetCardAddons'>
@@ -311,7 +311,7 @@ class CthulhuBoard extends Component {
                             <button className='sheetCardCounter'>{this.state.sheetCardCounter}</button>
                             <button className='sheetCardTokenPlus' onClick={this.sheetCardCounterIncrement}></button>
                         </div>:null}
-                    </button>
+                    </figure>
 
                 <div className='ancientMysteryMythosLvlChar'>
                     <div className='ancientMysteryLvlChar'>

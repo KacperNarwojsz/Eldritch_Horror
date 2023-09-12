@@ -466,8 +466,9 @@
     background-color: transparent;
     background-size: cover;
     align-self: flex-end;
-    margin-left: 3.5vw;
+    margin-left: 2vw;
     margin-bottom: 3.8vw;
+    padding-left: 1.5vw;
     border-radius: 50%;
     border: 0.2vw solid rgb(44, 33, 140);
     width: 3vw;
