@@ -330,7 +330,6 @@
     font-size: 0.8vw;
     border: 0.2vw solid black;
     border-radius: 1vw;
-    z-index: 0;
     transition: all .3s ease;
     /* FADE IN ANIMATION */
     opacity: 0;
@@ -348,10 +347,8 @@
     margin-bottom: 0vw;
 }
 
-#discardEncounter {
-    margin-bottom: 0vw;
-    z-index: -1;
-}
+/* #discardEncounter {
+} */
 
 .discardButton:hover {
     transform: scale(1.1);
@@ -463,7 +460,7 @@
     background-image: url(/src/pictures/Mythos/Mythos_Card.png);
     height: 11.5vw;
     width: 7.4vw;
-    margin: 0.1vw 1.2vw 0.2vw 1.2vw;
+    margin: 0.1vw 1.05vw 0.2vw 1.05vw;
     justify-content: center;
     background-size: cover;
     border-radius: 0.4vw;
@@ -657,12 +654,10 @@
     border-radius: 0.4vw;
     transition: all .3s ease;
     cursor: pointer;
-    z-index: 50;
 }
 
 .encounterCard:hover {
-    transform: scale(1.1);
-    z-index: 50;
+    transform: scale(1.05) translateY(-1%);
 }
 
 .encounterCardFront {
