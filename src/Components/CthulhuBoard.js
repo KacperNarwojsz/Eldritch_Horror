@@ -302,17 +302,31 @@ class CthulhuBoard extends Component {
 
         return (
             <div className='ancientBoard'>
-                    <figure className={this.state.isLoadDone ? 'cthulhuSheet' : 'cthulhuSheetStamp'} id={this.state.ancientCardFlipped ? 'CthulhuSheetBack' : 'CthulhuSheetFront'} tabIndex="0">
-                        {!this.state.ancientCardFlipped?<button className='flipButton' id='flipButtonFront' onClick={this.flipCardSheet}></button>:null}
-                        {this.state.ancientCardFlipped?<button className='flipButton' id='flipButtonBack' onClick={this.flipCardSheet}></button>:null}
-                        {this.state.ancientCardFlipped?<div className='sheetCardAddons'>
-                            <button className='sheetCardTokenMinus' onClick={this.sheetCardCounterDecrement}></button>
-                            <button className='sheetCardSanity'></button>
-                            <button className='sheetCardCounter'>{this.state.sheetCardCounter}</button>
-                            <button className='sheetCardTokenPlus' onClick={this.sheetCardCounterIncrement}></button>
+                <Popup contentStyle={{background:'none', border: 'none'}} trigger=
+                    {<figure className={this.state.isLoadDone ? 'cthulhuSheet' : 'cthulhuSheetStamp'} id={this.state.ancientCardFlipped ? 'CthulhuSheetBack' : 'CthulhuSheetFront'} tabIndex="0">
+                        {this.state.ancientCardFlipped?<button className="sheetCardSanityCounter">{this.state.sheetCardCounter}</button>:null}
+                    </figure>}modal nested>
+                    {<div className='cthulhuSheetFocus' id={this.state.ancientCardFlipped ? 'CthulhuSheetBack' : 'CthulhuSheetFront'}>
+                    {!this.state.ancientCardFlipped?<button className='flipButton' id='flipButtonFrontFocus' onClick={this.flipCardSheet}></button>:null}
+                        {this.state.ancientCardFlipped?<button className='flipButton' id='flipButtonBackFocus' onClick={this.flipCardSheet}></button>:null}
+                        {this.state.ancientCardFlipped?<div className='sheetCardAddons' id='sheetCardAddonsFocus'>
+                            <button className='sheetCardTokenMinus' id='sheetCardTokenMinusFocus' onClick={this.sheetCardCounterDecrement}></button>
+                            <button className='sheetCardSanity' id='sheetCardSanityFocus'></button>
+                            <button className='sheetCardCounter' id='sheetCardCounterFocus'>{this.state.sheetCardCounter}</button>
+                            <button className='sheetCardTokenPlus' id='sheetCardTokenPlusFocus' onClick={this.sheetCardCounterIncrement}></button>
                         </div>:null}
-                    </figure>
-
+                    </div>}
+                </Popup>
+                {/* <figure className={this.state.isLoadDone ? 'cthulhuSheet' : 'cthulhuSheetStamp'} id={this.state.ancientCardFlipped ? 'CthulhuSheetBack' : 'CthulhuSheetFront'} tabIndex="0">
+                    {!this.state.ancientCardFlipped?<button className='flipButton' id='flipButtonFront' onClick={this.flipCardSheet}></button>:null}
+                    {this.state.ancientCardFlipped?<button className='flipButton' id='flipButtonBack' onClick={this.flipCardSheet}></button>:null}
+                    {this.state.ancientCardFlipped?<div className='sheetCardAddons'>
+                        <button className='sheetCardTokenMinus' onClick={this.sheetCardCounterDecrement}></button>
+                        <button className='sheetCardSanity'></button>
+                        <button className='sheetCardCounter'>{this.state.sheetCardCounter}</button>
+                        <button className='sheetCardTokenPlus' onClick={this.sheetCardCounterIncrement}></button>
+                    </div>:null}
+                </figure> */}
                 <div className='ancientMysteryMythosLvlChar'>
                     <div className='ancientMysteryLvlChar'>
                         <div className='ancientMystery'>
@@ -348,7 +362,7 @@ class CthulhuBoard extends Component {
                     <div className='ancientMythos'>
                         <div className='ancientMythosDiscard'>
                             {this.state.prevMythosNo?
-                            <Popup onOpen={this.chooseMythos} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
+                            <Popup onOpen={this.chooseMythos} contentStyle={{background:'none', border: 'transparent', }} trigger=
                                 {<button className={this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>}modal nested>
                                 {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.prevMythosNo}`}><button className='mythosCloseButton' onClick={() => close()}>X</button></div></div>)}
                             </Popup>:<button className='mythos'></button>}
@@ -392,3 +406,5 @@ class CthulhuBoard extends Component {
 }
 
 export default CthulhuBoard;
+
+// style={{isolation: 'isolate', zIndex: '-1'}}

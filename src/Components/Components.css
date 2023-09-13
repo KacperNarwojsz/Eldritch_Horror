@@ -136,10 +136,26 @@
     transform: scale(1.03);
 }
 
-.cthulhuSheet:focus {
-    transform: scale(2.18) translate(79%, 16%);
-    z-index: 100;
+.cthulhuSheetFocus {
+    justify-content: flex-start;
+    background-size: cover;
+    height: 48vw;
+    width: 38.3vw;
+    border: 0.4vw black solid;
+    border-radius: 1vw;
 }
+
+.popup-overlay:has(.cthulhuSheetFocus) {
+    background: none;
+}
+
+.popup-content:has(.cthulhuSheetFocus) {
+    width: 39.1vw;
+}
+
+/* .cthulhuSheet:focus {
+    transform: scale(2.18) translate(77.5%, 16%);
+} */
 
 #CthulhuSheetFront {
     background-image: url(/src/pictures/SheetCards/Ancient_Cthulhu_sheet_front.png);
@@ -168,13 +184,44 @@
     margin-left: 14.2vw;
 }
 
+#flipButtonFrontFocus {
+    height: 4vw;
+    width: 4vw;
+    margin-top: 0.5vw;
+    margin-left: 33.5vw;
+}
+
 #flipButtonBack {
     margin-top: 0.3vw;
     margin-left: -14.2vw;
 }
 
+#flipButtonBackFocus {
+    height: 4vw;
+    width: 4vw;
+    margin-top: 0.5vw;
+    margin-left: 1vw;
+}
 
-.sheetCardAddons{
+.sheetCardSanityCounter {
+    width: 2.5vw;
+    height: 2.5vw;
+    background-image: url(/src/pictures/Tokens/TokenSanityFaded.png);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 10vw;
+    margin-top: 11.5vw;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    font-family: EldritchNumbers;
+    padding-top: 0.2vw;
+    font-size: 1.2vw;
+}
+
+.sheetCardAddons {
     align-self: center;
     background-color: rgba(238, 238, 215, 0.716);
     margin: 0.1vw;
@@ -186,6 +233,15 @@
     width: 5.5vw;
     margin-top: 10vw;
     margin-left: 0.5vw;
+}
+
+#sheetCardAddonsFocus {
+    border: 0.25vw solid black;
+    border-radius: 3vw;
+    height: 2vw;
+    width: 12vw;
+    margin-top: 24vw;
+    margin-left: 1.6vw;
 }
 
 .sheetCardTokenMinus {
@@ -200,6 +256,15 @@
     cursor: pointer;
 }
 
+#sheetCardTokenMinusFocus {
+    border-radius: 50%;
+    border: 1vw;
+    width: 1.9vw;
+    height: 1.9vw;
+    margin-left: 0.2vw;
+    cursor: pointer;
+}
+
 .sheetCardSanity {
     background-image: url(/src/pictures/Tokens/TokenSanitySmall.png);
     background-color: transparent;
@@ -211,6 +276,12 @@
     align-items: center;
 }
 
+#sheetCardSanityFocus {
+    margin-left: 1vw;
+    width: 2.4vw;
+    height: 2vw;
+}
+
 .sheetCardCounter {
     background-color: transparent;
     width: 1.6vw;
@@ -220,6 +291,14 @@
     font-family: EldritchNumbers;
     font-size: 0.95vw;
     padding-top: 0.15vw;
+}
+
+#sheetCardCounterFocus {
+    width: 1.6vw;
+    height: 1vw;
+    margin-left: 1vw;
+    font-size: 1.8vw;
+    padding-top: 0.2vw;
 }
 
 .sheetCardTokenPlus {
@@ -234,6 +313,14 @@
     cursor: pointer;
 }
 
+#sheetCardTokenPlusFocus {
+    border-radius: 50%;
+    border: 1vw;
+    width: 1.9vw;
+    height: 1.9vw;
+    margin-left: 1.7vw;
+}
+
 .discardButton {
     background-color: transparent;
     width: 7vw;
@@ -243,6 +330,7 @@
     font-size: 0.8vw;
     border: 0.2vw solid black;
     border-radius: 1vw;
+    z-index: 0;
     transition: all .3s ease;
     /* FADE IN ANIMATION */
     opacity: 0;
@@ -258,6 +346,11 @@
 #discardMystery {
     width: 11.5vw;
     margin-bottom: 0vw;
+}
+
+#discardEncounter {
+    margin-bottom: 0vw;
+    z-index: -1;
 }
 
 .discardButton:hover {
@@ -295,7 +388,7 @@
 
 .cthulhuMystery:hover {
     transform: scale(1.1);
-    z-index: 100;
+    z-index: 50;
 }
 
 .cthulhuMysteryFrontPopup {
@@ -517,7 +610,7 @@
     align-items: center;
 }
 
-.encounterDiscardDiv {
+.encounterCardDiscardDiv {
     flex-direction: column;
     width: 10vw;
 }
@@ -564,10 +657,12 @@
     border-radius: 0.4vw;
     transition: all .3s ease;
     cursor: pointer;
+    z-index: 50;
 }
 
 .encounterCard:hover {
     transform: scale(1.1);
+    z-index: 50;
 }
 
 .encounterCardFront {

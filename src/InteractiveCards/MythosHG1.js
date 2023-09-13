@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Popup from 'reactjs-popup';
 import "./InteractiveCards.css"
 
 class MythosHG1 extends Component {
@@ -31,7 +32,10 @@ class MythosHG1 extends Component {
         return (
                 <div className="mythosFrontDiv">
                     <div>
-                        <figure className="mythosFront" id="MythosHG1" tabIndex="0"></figure>
+                        <Popup contentStyle={{background:'none', border: 'none'}} trigger=
+                            {<figure className="mythosFront" id="MythosHG1"></figure>}modal nested>
+                            {<div className="mythosFrontFocus" id="MythosHG1"></div>}
+                        </Popup>
                     </div>
                     <div className="mythosTokensDiv">
                         <button className="tokenMythosReckoning" onClick={this.doneButtonOnOff}></button>

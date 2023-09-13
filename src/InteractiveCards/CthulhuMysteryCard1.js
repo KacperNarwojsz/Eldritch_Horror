@@ -1,13 +1,15 @@
 import React from 'react';
+import Popup from 'reactjs-popup';
 import "./InteractiveCards.css"
 
 const CthulhuMysteryCard1 = ({ characters, mystery123Decrement, mysteryCounter, mystery13Increment, mysteryDone, }) => {
 
     return (
-        <div className="cthulhuMysteryFrontDiv">
-            <div>
-                <figure className="cthulhuMysteryFront" id="CthulhuMysteryFront1" tabIndex="0"></figure>
-            </div>
+        <div className="cthulhuMysteryFrontDiv">                
+            <Popup contentStyle={{background:'none', border: 'none'}} trigger=
+                {<figure className="cthulhuMysteryFront" id="CthulhuMysteryFront1"></figure>}modal nested>
+                {<div className="cthulhuMysteryFrontFocus" id="CthulhuMysteryFront1"></div>}
+            </Popup>
             <div className="mysteryTokensDiv">
                 <div className="mysteryCounter">
                     <button className="tokenMysteryMinus" onClick={mystery123Decrement}></button>

@@ -38,17 +38,14 @@ class MythosEB1 extends Component {
         return (
                 <div className="mythosFrontDiv">
                     <div>
-                        <figure className="mythosFront" id="MythosEB1" tabIndex={0}>
-                            {/* <div classname='mythosEldritchDiv'>
-                                {this.state.reckoning?<button className='mythosTokenMinus' onClick={this.counterDecrement}></button>:null}
-                                <div className='mythosAddons'>
-                                    <button className='mythosEldritch'></button>
-                                    <button className='mythosCounter'>{this.state.counter}</button>
-                                </div>
-                                {this.state.reckoning?<button className='mythosTokenPlus' onClick={this.counterIncrement}></button>:null}
-                            </div> */}
+                    <Popup contentStyle={{background:'none', border: 'none'}} trigger=
+                        {<figure className="mythosFront" id="MythosEB1">
                             <button className="tokenMythosEldritchFaded">{this.state.counter}</button>
-                        </figure>
+                        </figure>}modal nested>
+                        {<div className="mythosFrontFocus" id="MythosEB1">
+                            <button className="tokenMythosEldritchFaded" id="tokenMythosEldritchFadedFocus">{this.state.counter}</button>
+                        </div>}
+                    </Popup>
                     </div>
                     <div className="mythosTokensDiv">
                         <Popup onOpen={this.chooseMystery} onClose={this.canPop} contentStyle={{background:'transparent', border: 'transparent'}} trigger=

@@ -199,7 +199,7 @@ class EncountersCards extends Component {
             <p>{`TheHimalayas array ${this.shuffleDeckExpeditionTheHimalayas}`}{` ThePyramids array ${this.shuffleDeckExpeditionThePyramids}`}{ `Tunguska array ${this.shuffleDeckExpeditionTunguska}`}</p>
             <p>{`CthulhuResearch no. ${this.state.cthulhuresearchShuffle} array ${this.shuffleDeckCthulhuResearch}`}</p>
             <p>{`CthulhuSpecial no. ${this.state.cthulhuspecialShuffle} array ${this.shuffleDeckCthulhuSpecial}`}</p> */}
-            <div className='encounterDiscardDiv'>
+            <div className='encounterCardDiscardDiv'>
             <Popup onOpen={this.handleAmericaShuffle} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                 {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='America'></button>}modal nested>
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`AmericaFront${this.state.americaShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
@@ -245,7 +245,7 @@ class EncountersCards extends Component {
                 </div>)}
             </Popup>
             </div>
-            <div className='encounterDiscardDiv'>
+            <div className='encounterCardDiscardDiv'>
             <Popup onOpen={this.handleEuropeShuffle} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                 {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='Europe'></button>}modal nested>
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`EuropeFront${this.state.europeShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
@@ -291,7 +291,7 @@ class EncountersCards extends Component {
                 </div>)}
             </Popup>
             </div>
-            <div className='encounterDiscardDiv'>
+            <div className='encounterCardDiscardDiv'>
             <Popup onOpen={this.handleAsiaAustraliaShuffle} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                 {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='AsiaAustralia'></button>}modal nested>
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`AsiaAustraliaFront${this.state.asiaamericaShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
@@ -337,7 +337,7 @@ class EncountersCards extends Component {
                 </div>)}
             </Popup>
             </div>
-            <div className='encounterDiscardDiv'>
+            <div className='encounterCardDiscardDiv'>
             <Popup onOpen={this.handleGeneralShuffle} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                 {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='General'></button>}modal nested>
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`GeneralFront${this.state.generalShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
@@ -383,7 +383,7 @@ class EncountersCards extends Component {
                 </div>)}
             </Popup>
             </div>
-            <div className='encounterDiscardDiv'>
+            <div className='encounterCardDiscardDiv'>
             <Popup onOpen={this.handleOtherWorldShuffle} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                 {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='OtherWorld'></button>}modal nested>
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`OtherWorldFront${this.state.otherworldShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
@@ -429,7 +429,7 @@ class EncountersCards extends Component {
                 </div>)}
             </Popup>
             </div>
-            <div className='encounterDiscardDiv'>
+            <div className='encounterCardDiscardDiv'>
             <Popup onOpen={this.handleExpeditionShuffle} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                 {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id={`Expedition${this.state.expeditionReverseShuffle}`}></button>}modal nested>
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`Expedition${this.state.expeditionPreviousReverse}Front${this.state.expeditionShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
@@ -475,7 +475,7 @@ class EncountersCards extends Component {
                 </div>)}
             </Popup>
             </div>
-            <div className='encounterDiscardDiv'>
+            <div className='encounterCardDiscardDiv'>
             <Popup onOpen={this.handleCthulhuResearchShuffle} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                 {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='CthulhuResearch'></button>}modal nested>
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`CthulhuResearchFront${this.state.cthulhuresearchShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
@@ -521,7 +521,7 @@ class EncountersCards extends Component {
                 </div>)}
             </Popup>
             </div>
-            <div className='encounterDiscardDiv'>
+            <div className='encounterCardDiscardDiv'>
             <Popup onOpen={this.handleCthulhuSpecialShuffle} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                 {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='CthulhuSpecial'></button>}modal nested>
                 {close => (<div className='outerPopup'><div className='encounterCardFront' id={`CthulhuSpecialFront${this.state.cthulhuspecialShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
