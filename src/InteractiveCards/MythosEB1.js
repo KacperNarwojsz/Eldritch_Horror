@@ -43,7 +43,7 @@ class MythosEB1 extends Component {
                             <button className="tokenMythosEldritchFaded" id="tokenMythosEldritchFadedEB1">{this.state.counter}</button>
                         </figure>}modal nested>
                         {<div className="mythosFrontFocus" id="MythosEB1">
-                            <button className="tokenMythosEldritchFaded" id="tokenMythosEldritchFadedFocusEB2">{this.state.counter}</button>
+                            <button className="tokenMythosEldritchFaded" id="tokenMythosEldritchFadedFocusEB1">{this.state.counter}</button>
                         </div>}
                     </Popup>
                     </div>
