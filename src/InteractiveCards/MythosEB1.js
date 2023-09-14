@@ -23,7 +23,7 @@ class MythosEB1 extends Component {
     }
 
     counterIncrement = () => {
-        if (this.state.counter <= this.state.characters) {
+        if (this.state.counter < 4) {
             this.setState ({counter: this.state.counter +1})
         }
     }
