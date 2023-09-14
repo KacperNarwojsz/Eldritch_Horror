@@ -48,7 +48,7 @@ class MythosEB1 extends Component {
                     </Popup>
                     </div>
                     <div className="mythosTokensDiv">
-                        <Popup onOpen={this.chooseMystery} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
+                        <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                             {<button className="tokenMythosReckoning" onClick={this.reckoningButton}></button>}modal nested>
                             {close => (<div className='outerPopupMythos'>
                                 <div className='mythosPopUpMattBlue'>

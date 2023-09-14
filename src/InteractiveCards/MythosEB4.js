@@ -47,14 +47,14 @@ class MythosEB4 extends Component {
                     </Popup>
                     </div>
                     <div className="mythosTokensDiv">
-                        <Popup onOpen={this.chooseMystery} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
+                        <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                             {<button className="tokenMythosReckoning" onClick={this.reckoningButton}></button>}modal nested>
                             {close => (<div className='outerPopupMythos'>
                                 <div className='mythosPopUpMattBlue'>
                                     <div className='mythosPopUpCloseButtonDiv'>
                                         {this.state.counter===0?null:<button className='mythosPopUpCloseButton' onClick={() => close()}>X</button>}
                                     </div>
-                                    <div className='mythosPopUpTextDiv' id='mythosPopUpTextDivEB4'>
+                                    <div className='mythosPopUpTextDiv' id='mythosPopUpTextDivOneliner'>
                                         <p className='mythosPopUpText'>Odrzuć z tej karty <span className='mythosPopUpTextNumber'>1</span> żeton Plugastwa.</p>
                                     </div>
                                     <div className='mythosPopUpCounterDiv'>
