@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import Popup from 'reactjs-popup';
 import "./InteractiveCards.css"
 
-class MythosEB1 extends Component {
-    constructor({ mythosEB1Done, characters }) {
+class MythosEB2 extends Component {
+    constructor({ mythosEB2Done }) {
         super(); 
         this.state = {
-            characters: characters,
             counter: 4,
-            mythosEB1Done: mythosEB1Done,
+            mythosEB2Done: mythosEB2Done,
             isTokenMythosDoneActive: false,
             reckoning: false,
         } 
@@ -39,10 +38,10 @@ class MythosEB1 extends Component {
                 <div className="mythosFrontDiv">
                     <div>
                     <Popup contentStyle={{background:'none', border: 'none'}} trigger=
-                        {<figure className="mythosFront" id="MythosEB1">
-                            <button className="tokenMythosEldritchFaded" id="tokenMythosEldritchFadedEB1">{this.state.counter}</button>
+                        {<figure className="mythosFront" id="MythosEB2">
+                            <button className="tokenMythosEldritchFaded" id="tokenMythosEldritchFadedEB2">{this.state.counter}</button>
                         </figure>}modal nested>
-                        {<div className="mythosFrontFocus" id="MythosEB1">
+                        {<div className="mythosFrontFocus" id="MythosEB2">
                             <button className="tokenMythosEldritchFaded" id="tokenMythosEldritchFadedFocusEB2">{this.state.counter}</button>
                         </div>}
                     </Popup>
@@ -56,7 +55,7 @@ class MythosEB1 extends Component {
                                         {this.state.counter===0?null:<button className='mythosPopUpCloseButton' onClick={() => close()}>X</button>}
                                     </div>
                                     <div className='mythosPopUpTextDiv'>
-                                        <p className='mythosPopUpText'>Główny Badacz otrzymuje Stan <em>SZALEŃSTWO</em>, <br></br>a następnie za każdy posiadany Stan <em>SZALEŃSTWO</em> odrzuca <span className='mythosPopUpTextNumber'>1</span> żeton Plugastwa z tej karty.</p>
+                                        <p className='mythosPopUpText'>Odrzuć z tej karty <span className='mythosPopUpTextNumber'>1</span> żeton Plugastwa.</p>
                                     </div>
                                     <div className='mythosPopUpCounterDiv'>
                                         <button className='tokenMythosPopUpCounter'>{this.state.counter}/4</button>
@@ -67,21 +66,23 @@ class MythosEB1 extends Component {
                                         </div>
                                     </div>
                                     <div className='mythosPopUpDoneDiv'>
-                                        {this.state.counter===0?<p className='mythosPopUpText'>Jeśli na tej karcie nie ma żadnych żetonów Plugastwa, każdy badacz traci <span className='mythosPopUpTextNumber'>3</span> Poczytalności, a następnie ta <em>POGŁOSKA</em> zostaje rozwiązana.</p>:null}
+                                        {this.state.counter===0?<p className='mythosPopUpText'>Jeśli na tej karcie nie ma żadnych żetonów Plugastwa, za każdą Bramę na planszy Zagłada postępuje o <span className='mythosPopUpTextNumber'>1</span>, a ta <em>POGŁOSKA</em> zostaje rozwiązana.</p>:null}
                                         <div className='mythosPopUpDoneCaseDiv'>
-                                            {this.state.counter===0?<button className="tokenMythosPopUpSanity"></button>:null}
-                                            {this.state.counter===0?<h1 className='tokenMythosPopUpNumbersFont'>-3</h1>:null}
+                                            {this.state.counter===0?<button className="tokenMythosPopUpGate"></button>:null}
+                                            {this.state.counter===0?<button className="tokenMythosPopUpArrow"></button>:null}
+                                            {this.state.counter===0?<button className="tokenMythosPopUpDoom"></button>:null}
+                                            {this.state.counter===0?<h1 className='tokenMythosPopUpNumbersFont'>-1</h1>:null}
                                         </div>
-                                        {this.state.counter===0?<button className='tokenMythosPopUpDone' onClick={this.state.mythosEB1Done}></button>:null} 
+                                        {this.state.counter===0?<button className='tokenMythosPopUpDone' onClick={this.state.mythosEB2Done}></button>:null} 
                                     </div>                           
                                 </div>
                             </div>)}
                         </Popup>
-                        {this.state.isTokenMythosDoneActive?<button className="tokenMythosDone" onClick={this.state.mythosEB1Done}></button>:null}
-                        <button className="tokenMythosClueFaded" onClick={this.doneButtonOnOff}>{Math.ceil(this.state.characters/2)}</button>
+                        {this.state.isTokenMythosDoneActive?<button className="tokenMythosDone" onClick={this.state.mythosEB2Done}></button>:null}
+                        <button className="tokenMythosGateFaded" onClick={this.doneButtonOnOff}></button>
                     </div>
                 </div>
         )
     }
 }
-export default MythosEB1;
+export default MythosEB2;
