@@ -35,7 +35,7 @@ class CthulhuBoard extends Component {
         super(); 
         this.mysteryDeck = [1,2,3,4]
         this.discardMysteryDeck = []
-        this.mythosDeck = ['EB1','EB2','EB4','NB1','NB2','NB3']
+        this.mythosDeck = ['EB2','EB4','NB1','NB2','NB3']
         this.discardMythosDeck = []
         this.state = {
             ancientCardFlipped: false,
