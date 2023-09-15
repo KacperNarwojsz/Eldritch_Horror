@@ -802,7 +802,7 @@
     height: 3.2vw;
 }
 
-/* .tokenMythosPopUpDelayedInvestigator {
+.tokenMythosPopUpDelayedInvestigator {
     background-image: url(/src/pictures/Tokens/TokenDelayedInvestigator.png);
     background-size: cover;
     background-color: transparent;
@@ -810,7 +810,7 @@
     margin-left: -1.8vw;
     width: 6vw;
     height: 3.5vw;
-} */
+}
 
 .tokenMythosPopUpDoom {
     background-image: url(/src/pictures/Tokens/TokenDoom.png);
