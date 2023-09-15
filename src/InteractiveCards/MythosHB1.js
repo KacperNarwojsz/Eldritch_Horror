@@ -75,7 +75,7 @@ class MythosHB1 extends Component {
                             </div>)}
                         </Popup>
                         {this.state.isTokenMythosDoneActive?<button className="tokenMythosDone" onClick={this.state.mythosHB1Done}></button>:null}
-                        <button className="tokenMythosClueFaded" onClick={this.doneButtonOnOff}>{Math.ceil(this.state.characters)-this.state.counter}</button>
+                        <button className="tokenMythosClueFaded" onClick={this.doneButtonOnOff}>{(this.state.characters-this.state.counter<0)?0:this.state.characters-this.state.counter}</button>
                     </div>
                 </div>
         )
