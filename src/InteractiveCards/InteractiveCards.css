@@ -554,6 +554,20 @@
     font-size: 5vw;
 }
 
+#tokenMythosEldritchFadedNB4 {
+    margin-left: 5.5vw;
+    margin-top: 2.9vw;
+}
+
+#tokenMythosEldritchFadedFocusNB4 {
+    width: 6.5vw;
+    height: 6.5vw;
+    margin-left: 21.8vw;
+    margin-top: 12vw;
+    padding-top: 1vw;
+    font-size: 5vw;
+}
+
 .tokenMythosMonsterToughnessFaded {
     width: 1.5vw;
     height: 2vw;
@@ -582,6 +596,36 @@
     margin-top: 0.1vw;
     padding-bottom: 1vw;
     font-size: 2.9vw;
+}
+
+.tokenMythosHealthFaded {
+    width: 4vw;
+    height: 2.3vw;
+    background-image: url(/src/pictures/Tokens/TokenHealth.png);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    font-family: EldritchNumbers;
+    padding-top: 0.3vw;
+    font-size: 1.2vw;
+}
+
+#tokenMythosHealthFadedHB1 {
+    margin-top: 4vw;
+    margin-left: 3.8vw;
+}
+
+#tokenMythosHealthFadedFocusHB1 {
+    width: 9vw;
+    height: 10vw;
+    margin-left: 19vw;
+    margin-top: 15vw;
+    padding-top: 1vw;
+    font-size: 5vw;
 }
 
 .outerPopupMythos {
@@ -643,6 +687,14 @@
     display: flex;
     align-items: flex-end;
     height: 7vw;
+}
+
+#mythosPopUpTextDivNB4 {
+    height: 12vw;
+}
+
+#mythosPopUpTextDivHB1{
+    height: 6vw;
 }
 
 .mythosPopUpTextCaseDiv {
@@ -782,6 +834,12 @@
     align-items: center;
 }
 
+.mythosPopUpCounterCaseDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .tokenMythosPopUpSanity {
     background-image: url(/src/pictures/Tokens/TokenSanity.png);
     background-size: cover;
@@ -800,6 +858,11 @@
     border: none;
     width: 3.4vw;
     height: 3.2vw;
+}
+
+#tokenMythosPopUpHealthHB1 {
+    width: 5vw;
+    height: 5vw;
 }
 
 .tokenMythosPopUpDelayedInvestigator {
@@ -948,4 +1011,20 @@
 
 #MythosNB4 {
     background-image: url(/src/pictures/Mythos/Mythos_NB4.png);
+}
+
+#MythosHB1 {
+    background-image: url(/src/pictures/Mythos/Mythos_HB1.png);
+}
+
+#MythosHB2 {
+    background-image: url(/src/pictures/Mythos/Mythos_HB2.png);
+}
+
+#MythosHB3 {
+    background-image: url(/src/pictures/Mythos/Mythos_HB3.png);
+}
+
+#MythosHB4 {
+    background-image: url(/src/pictures/Mythos/Mythos_HB4.png);
 }
