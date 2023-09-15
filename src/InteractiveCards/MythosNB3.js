@@ -39,7 +39,7 @@ class MythosNB3 extends Component {
                     <div>
                     <Popup contentStyle={{background:'none', border: 'none'}} trigger=
                         {<figure className="mythosFront" id="MythosNB3">
-                            <button className="tokenMythosEldritchFaded" id="tokenMythosEldritchFadedNB3">{this.state.counter}</button>
+                            <button className="tokenMythosEldritchFaded">{this.state.counter}</button>
                         </figure>}modal nested>
                         {<div className="mythosFrontFocus" id="MythosNB3">
                             <button className="tokenMythosEldritchFaded" id="tokenMythosEldritchFadedFocusNB3">{this.state.counter}</button>

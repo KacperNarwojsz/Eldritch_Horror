@@ -482,10 +482,16 @@
     background-image: url(/src/pictures/Tokens/TokenWindWalkerSlayed.png);
 }
 
+#tokenMythosSpinnerOfWebsSlayed {
+    background-image: url(/src/pictures/Tokens/TokenSpinnerOfWebsSlayed.png);
+}
+
 .tokenMythosEldritchFaded {
-    width: 1.7vw;
-    height: 1.7vw;
-    background-image: url(/src/pictures/Tokens/TokenEldritchFaded.png);
+    width: 2vw;
+    height: 2vw;
+    margin-left: 4.6vw;
+    margin-top: 0.2vw;
+    background-image: url(/src/pictures/Tokens/TokenEldritchDarkened.png);
     background-color: transparent;
     background-size: contain;
     background-repeat: no-repeat;
@@ -494,27 +500,19 @@
     border-radius: 50%;
     text-align: center;
     font-family: EldritchNumbers;
-    padding-top: 0.2vw;
-    font-size: 1.2vw;
-}
-
-#tokenMythosEldritchFadedEB1 {
-    margin-right: 5vw;
-    margin-top: 4.1vw;
+    color: white;
+    padding-top: 0.3vw;
+    font-weight: 150;
+    font-size: 1.4vw;
 }
 
 #tokenMythosEldritchFadedFocusEB1 {
     width: 6.5vw;
     height: 6.5vw;
-    margin-left: 1vw;
-    margin-top: 16vw;
+    margin-left: 21.3vw;
+    margin-top: 10.8vw;
     padding-top: 1vw;
     font-size: 5vw;
-}
-
-#tokenMythosEldritchFadedEB2 {
-    margin-left: 5.2vw;
-    margin-top: 2.4vw;
 }
 
 #tokenMythosEldritchFadedFocusEB2 {
@@ -526,37 +524,22 @@
     font-size: 5vw;
 }
 
-#tokenMythosEldritchFadedEB4 {
-    margin-right: 5vw;
-    margin-top: 4.1vw;
-}
-
 #tokenMythosEldritchFadedFocusEB4 {
     width: 6.5vw;
     height: 6.5vw;
-    margin-left: 1vw;
-    margin-top: 16vw;
+    margin-left: 21.3vw;
+    margin-top: 10.6vw;
     padding-top: 1vw;
     font-size: 5vw;
-}
-
-#tokenMythosEldritchFadedNB3 {
-    margin-right: 5.3vw;
-    margin-top: 8.5vw;
 }
 
 #tokenMythosEldritchFadedFocusNB3 {
     width: 6.5vw;
     height: 6.5vw;
-    margin-left: 0.5vw;
-    margin-top: 33.5svw;
+    margin-left: 21vw;
+    margin-top: 8vw;
     padding-top: 1vw;
     font-size: 5vw;
-}
-
-#tokenMythosEldritchFadedNB4 {
-    margin-left: 5.5vw;
-    margin-top: 2.9vw;
 }
 
 #tokenMythosEldritchFadedFocusNB4 {
@@ -568,9 +551,28 @@
     font-size: 5vw;
 }
 
+#tokenMythosEldritchFadedFocusHB2 {
+    width: 6.5vw;
+    height: 6.5vw;
+    margin-left: 21.8vw;
+    margin-top: 7vw;
+    padding-top: 1vw;
+    font-size: 5vw;
+}
+
+#tokenMythosEldritchFadedFocusHB4 {
+    width: 6.5vw;
+    height: 6.5vw;
+    margin-left: 21.8vw;
+    margin-top: 9.5vw;
+    padding-top: 1vw;
+    font-size: 5vw;
+}
+
 .tokenMythosMonsterToughnessFaded {
-    width: 1.5vw;
-    height: 2vw;
+    width: 3vw;
+    height: 3.3vw;
+    margin-left: 4.7vw;
     background-image: url(/src/pictures/Tokens/TokenMonsterToughness.png);
     background-color: transparent;
     background-size: contain;
@@ -582,11 +584,7 @@
     font-family: EldritchNumbers;
     color: white;
     padding-bottom: 0.2vw;
-    font-size: 0.8vw;
-}
-
-#tokenMythosMonsterToughnessFadedNB2 {
-    margin-left: 6vw;
+    font-size: 1.4vw;
 }
 
 #tokenMythosMonsterToughnessFadedFocusNB2 {
@@ -600,8 +598,9 @@
 
 .tokenMythosHealthFaded {
     width: 4vw;
-    height: 2.3vw;
-    background-image: url(/src/pictures/Tokens/TokenHealth.png);
+    height: 3vw;
+    margin-left: 4.2vw;
+    background-image: url(/src/pictures/Tokens/TokenHealthDarkened.png);
     background-color: transparent;
     background-size: contain;
     background-repeat: no-repeat;
@@ -610,13 +609,9 @@
     border-radius: 50%;
     text-align: center;
     font-family: EldritchNumbers;
+    color: white;
     padding-top: 0.3vw;
-    font-size: 1.2vw;
-}
-
-#tokenMythosHealthFadedHB1 {
-    margin-top: 4vw;
-    margin-left: 3.8vw;
+    font-size: 1.4vw;
 }
 
 #tokenMythosHealthFadedFocusHB1 {
@@ -625,7 +620,7 @@
     margin-left: 19vw;
     margin-top: 15vw;
     padding-top: 1vw;
-    font-size: 5vw;
+    font-size: 4.8vw;
 }
 
 .outerPopupMythos {
@@ -942,6 +937,29 @@
 }
 
 .tokenMythosPopUpDone:hover {
+    transform: scale(1.05);
+}
+
+.tokenMythosPopUpDefeat {
+    display: flex;
+    width: 15vw;
+    height: 3.5vw;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Birmingham;
+    font-size: 2.2vw;
+    margin: 0.5vw;
+    border: 0.15vw solid black;
+    border-radius: 1vw;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease; 
+    cursor: pointer;
+}
+
+.tokenMythosPopUpDefeat:hover {
     transform: scale(1.05);
 }
 

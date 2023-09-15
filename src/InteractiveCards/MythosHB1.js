@@ -38,7 +38,7 @@ class MythosHB1 extends Component {
                     <div>
                     <Popup contentStyle={{background:'none', border: 'none'}} trigger=
                         {<figure className="mythosFront" id="MythosHB1">
-                            <button className="tokenMythosHealthFaded" id="tokenMythosHealthFadedHB1">{this.state.counter}</button>
+                            <button className="tokenMythosHealthFaded">{this.state.counter}</button>
                         </figure>}modal nested>
                         {<div className="mythosFrontFocus" id="MythosHB1">
                             <button className="tokenMythosHealthFaded" id="tokenMythosHealthFadedFocusHB1">{this.state.counter}</button>
@@ -74,7 +74,7 @@ class MythosHB1 extends Component {
                                 </div>
                             </div>)}
                         </Popup>
-                        {this.state.isTokenMythosDoneActive?<button className="tokenMythosDone" onClick={this.state.mythosEB1Done}></button>:null}
+                        {this.state.isTokenMythosDoneActive?<button className="tokenMythosDone" onClick={this.state.mythosHB1Done}></button>:null}
                         <button className="tokenMythosClueFaded" onClick={this.doneButtonOnOff}>{Math.ceil(this.state.characters)-this.state.counter}</button>
                     </div>
                 </div>

@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import Popup from 'reactjs-popup';
 import "./InteractiveCards.css"
 
-class MythosNB4 extends Component {
-    constructor({ mythosNB4Done, characters }) {
+class MythosHB2 extends Component {
+    constructor({ mythosHB2Done, defeat }) {
         super(); 
         this.state = {
-            characters: characters,
-            counter: 4,
-            mythosNB4Done: mythosNB4Done,
+            counter: 3,
+            mythosHB2Done: mythosHB2Done,
+            defeat: defeat,
             isTokenMythosDoneActive: false,
             reckoning: false,
         } 
@@ -23,7 +23,7 @@ class MythosNB4 extends Component {
     }
 
     counterIncrement = () => {
-        if (this.state.counter < 4) {
+        if (this.state.counter < 3) {
             this.setState ({counter: this.state.counter +1})
         }
     }
@@ -39,11 +39,11 @@ class MythosNB4 extends Component {
                 <div className="mythosFrontDiv">
                     <div>
                     <Popup contentStyle={{background:'none', border: 'none'}} trigger=
-                        {<figure className="mythosFront" id="MythosNB4">
+                        {<figure className="mythosFront" id="MythosHB2">
                             <button className="tokenMythosEldritchFaded">{this.state.counter}</button>
                         </figure>}modal nested>
-                        {<div className="mythosFrontFocus" id="MythosNB4">
-                            <button className="tokenMythosEldritchFaded" id="tokenMythosEldritchFadedFocusNB4">{this.state.counter}</button>
+                        {<div className="mythosFrontFocus" id="MythosHB2">
+                            <button className="tokenMythosEldritchFaded" id="tokenMythosEldritchFadedFocusHB2">{this.state.counter}</button>
                         </div>}
                     </Popup>
                     </div>
@@ -55,11 +55,11 @@ class MythosNB4 extends Component {
                                     <div className='mythosPopUpCloseButtonDiv'>
                                         {this.state.counter===0?null:<button className='mythosPopUpCloseButton' onClick={() => close()}>X</button>}
                                     </div>
-                                    <div className='mythosPopUpTextDiv' id='mythosPopUpTextDivNB4'>
-                                        <p className='mythosPopUpText'>Wyszukaj w talii Zasobów, stosie kart odrzuconych <br></br>i rezerwach wszystkie Zasoby o wartości równej lub wyższej od liczby żetonów Plugastwa na tej karcie <br></br>i odłóż je do pudełka. Następnie odrzuć z tej karty <br></br><span className='mythosPopUpTextNumber'>1</span> żeton Plugastwa.</p>
+                                    <div className='mythosPopUpTextDiv'>
+                                        <p className='mythosPopUpText'>Odrzuć z tej karty <span className='mythosPopUpTextNumber'>1</span> żeton Plugastwa, <br></br>chyba że badacze jako grupa, poświęcą <br></br>Wskazówki w liczbie równej połowie <span className='mythosPopUpTextIcons'>h</span>.</p>
                                     </div>
                                     <div className='mythosPopUpCounterDiv'>
-                                        <button className='tokenMythosPopUpCounter'>{this.state.counter}/4</button>
+                                        <button className='tokenMythosPopUpCounter'>{this.state.counter}/3</button>
                                         <div className='tokenMythosPopUpCounterDiv'>
                                             <button className="tokenMythosPopUpMinus" onClick={this.counterDecrement}></button>
                                             <button className="tokenMythosPopUpEldritch"></button>
@@ -67,17 +67,17 @@ class MythosNB4 extends Component {
                                         </div>
                                     </div>
                                     <div className='mythosPopUpDoneDiv'>
-                                        {this.state.counter===0?<p className='mythosPopUpText'>Jeśli na tej karcie nie ma żadnego żetonu Plugastwa, <br></br>ta <em>POGŁOSKA</em> zostaje rozwiązana.</p>:null}
-                                        {this.state.counter===0?<button className='tokenMythosPopUpDone' onClick={this.state.mythosNB4Done}></button>:null} 
+                                        {this.state.counter===0?<p className='mythosPopUpText'>Jeśli na tej karcie nie ma żadnych żetonów Plugastwa, <strong>badacze przegrywają</strong>.</p>:null}
+                                        {this.state.counter===0?<button className='tokenMythosPopUpDefeat' onClick={this.state.defeat}>PRZEGRANA</button>:null} 
                                     </div>                           
                                 </div>
                             </div>)}
                         </Popup>
-                        {this.state.isTokenMythosDoneActive?<button className="tokenMythosDone" onClick={this.state.mythosNB4Done}></button>:null}
-                        <button className="tokenMythosClueFaded" onClick={this.doneButtonOnOff}>{Math.ceil(this.state.characters/2)}</button>
+                        {this.state.isTokenMythosDoneActive?<button className="tokenMythosDone" onClick={this.state.mythosHB2Done}></button>:null}
+                        <button className="tokenMythosMonsterSlayed" id='tokenMythosSpinnerOfWebsSlayed' onClick={this.doneButtonOnOff}></button>
                     </div>
                 </div>
         )
     }
 }
-export default MythosNB4;
+export default MythosHB2;

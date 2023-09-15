@@ -11,6 +11,9 @@ import CthulhuMysteryRise from '../InteractiveCards/CthulhuMysteryRise';
 import MythosNG1 from '../InteractiveCards/MythosNG1';
 import MythosNG6 from '../InteractiveCards/MythosNG6';
 import MythosHG1 from '../InteractiveCards/MythosHG1';
+// import MythosNY8 from '../InteractiveCards/MythosNY8';
+// import MythosHY1 from '../InteractiveCards/MythosHY1';
+// import MythosHY5 from '../InteractiveCards/MythosHY5';
 import MythosEB1 from '../InteractiveCards/MythosEB1';
 import MythosEB2 from '../InteractiveCards/MythosEB2';
 // import MythosEB3 from '../InteractiveCards/MythosEB3';
@@ -20,9 +23,9 @@ import MythosNB2 from '../InteractiveCards/MythosNB2';
 import MythosNB3 from '../InteractiveCards/MythosNB3';
 import MythosNB4 from '../InteractiveCards/MythosNB4';
 import MythosHB1 from '../InteractiveCards/MythosHB1';
-// import MythosHB2 from '../InteractiveCards/MythosHB2';
-// import MythosHB3 from '../InteractiveCards/MythosHB3';
-// import MythosHB4 from '../InteractiveCards/MythosHB4';
+import MythosHB2 from '../InteractiveCards/MythosHB2';
+import MythosHB3 from '../InteractiveCards/MythosHB3';
+import MythosHB4 from '../InteractiveCards/MythosHB4';
 import chooseRandom from './Shuffler';
 import Popup from 'reactjs-popup';
 import 'swiper/css';
@@ -31,14 +34,14 @@ import './Components.css';
 import '../InteractiveCards/InteractiveCards.css';
 
 class CthulhuBoard extends Component {
-    constructor({ level, characters, victory}) {
+    constructor({ level, characters, mythosDeckOut, victory, defeat}) {
         super(); 
         this.mysteryDeck = [1,2,3,4]
         this.discardMysteryDeck = []
-        this.mythosDeck = [
-            // 'EB1','EB2','EB4',
-            'NB1','NB2','NB3','NB4',
-            'HB1']
+        this.mythosDeck = ['HB1','HB2','HB3','HB4']
+        // this.mythosDeckEasy = ['EB1','EB2','EB4']
+        // this.mythosDeckNormal = ['NB1','NB2','NB3','NB4']
+        // this.mythosDeckHard = ['HB1','HB2','HB3','HB4']
         this.discardMythosDeck = []
         this.state = {
             ancientCardFlipped: false,
@@ -56,6 +59,7 @@ class CthulhuBoard extends Component {
             isCthulhuAwake: false,
             popping: true,
             victory: victory,
+            defeat: defeat,
             sheetCardCounter: 0,
             mythosNo: chooseRandom(this.mythosDeck),
             prevMythosNo: true,
@@ -84,7 +88,10 @@ class CthulhuBoard extends Component {
             this.state.prevMythosNo !== 'NB2' && 
             this.state.prevMythosNo !== 'NB3' && 
             this.state.prevMythosNo !== 'NB4' && 
-            this.state.prevMythosNo !== 'HB1') {
+            this.state.prevMythosNo !== 'HB1' && 
+            this.state.prevMythosNo !== 'HB2' && 
+            this.state.prevMythosNo !== 'HB3' && 
+            this.state.prevMythosNo !== 'HB4') {
             this.discardMythosDeck.push(this.state.prevMythosNo);
         }
     } 
@@ -283,6 +290,27 @@ class CthulhuBoard extends Component {
             else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
             else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
             else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
+        } else if (this.state.mythosNo === 'HB2') {
+            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
+        } else if (this.state.mythosNo === 'HB3') {
+            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
+        } else if (this.state.mythosNo === 'HB4') {
+            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
         }
     }
 
@@ -384,6 +412,33 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[4] === 'HB1') { this.setState ({mythos5: 'done' }) }
         this.discardMythosDeck.push('HB1');
     }
+
+    mythosHB2Done = () => {
+        if      (this.state.choosenMythos[0] === 'HB2') { this.setState ({mythos1: 'done' }) } 
+        else if (this.state.choosenMythos[1] === 'HB2') { this.setState ({mythos2: 'done' }) } 
+        else if (this.state.choosenMythos[2] === 'HB2') { this.setState ({mythos3: 'done' }) } 
+        else if (this.state.choosenMythos[3] === 'HB2') { this.setState ({mythos4: 'done' }) } 
+        else if (this.state.choosenMythos[4] === 'HB2') { this.setState ({mythos5: 'done' }) }
+        this.discardMythosDeck.push('HB2');
+    }
+
+    mythosHB3Done = () => {
+        if      (this.state.choosenMythos[0] === 'HB3') { this.setState ({mythos1: 'done' }) } 
+        else if (this.state.choosenMythos[1] === 'HB3') { this.setState ({mythos2: 'done' }) } 
+        else if (this.state.choosenMythos[2] === 'HB3') { this.setState ({mythos3: 'done' }) } 
+        else if (this.state.choosenMythos[3] === 'HB3') { this.setState ({mythos4: 'done' }) } 
+        else if (this.state.choosenMythos[4] === 'HB3') { this.setState ({mythos5: 'done' }) }
+        this.discardMythosDeck.push('HB3');
+    }
+
+    mythosHB4Done = () => {
+        if      (this.state.choosenMythos[0] === 'HB4') { this.setState ({mythos1: 'done' }) } 
+        else if (this.state.choosenMythos[1] === 'HB4') { this.setState ({mythos2: 'done' }) } 
+        else if (this.state.choosenMythos[2] === 'HB4') { this.setState ({mythos3: 'done' }) } 
+        else if (this.state.choosenMythos[3] === 'HB4') { this.setState ({mythos4: 'done' }) } 
+        else if (this.state.choosenMythos[4] === 'HB4') { this.setState ({mythos5: 'done' }) }
+        this.discardMythosDeck.push('HB4');
+    }
       
     render() {
         const { choosenMythos } = this.state;
@@ -400,6 +455,9 @@ class CthulhuBoard extends Component {
               case "NB3":      return <MythosNB3 mythosNB3Done={this.mythosNB3Done}/>;
               case "NB4":      return <MythosNB4 mythosNB4Done={this.mythosNB4Done} characters={this.state.characters}/>;
               case "HB1":      return <MythosHB1 mythosHB1Done={this.mythosHB1Done} characters={this.state.characters}/>;
+              case "HB2":      return <MythosHB2 mythosHB2Done={this.mythosHB2Done} defeat={this.state.defeat}/>;
+              case "HB3":      return <MythosHB3 mythosHB3Done={this.mythosHB3Done} characters={this.state.characters}/>;
+              case "HB4":      return <MythosHB4 mythosHB4Done={this.mythosHB4Done} characters={this.state.characters} defeat={this.state.defeat}/>;
               default:         return null;
             }
         } 
@@ -417,6 +475,9 @@ class CthulhuBoard extends Component {
               case "NB3":      return <MythosNB3 mythosNB3Done={this.mythosNB3Done}/>;
               case "NB4":      return <MythosNB4 mythosNB4Done={this.mythosNB4Done} characters={this.state.characters}/>;
               case "HB1":      return <MythosHB1 mythosHB1Done={this.mythosHB1Done} characters={this.state.characters}/>;
+              case "HB2":      return <MythosHB2 mythosHB2Done={this.mythosHB2Done} defeat={this.state.defeat}/>;
+              case "HB3":      return <MythosHB3 mythosHB3Done={this.mythosHB3Done} characters={this.state.characters}/>;
+              case "HB4":      return <MythosHB4 mythosHB4Done={this.mythosHB4Done} characters={this.state.characters} defeat={this.state.defeat}/>;
               default:         return null;
             }
         }
@@ -434,6 +495,9 @@ class CthulhuBoard extends Component {
               case "NB3":      return <MythosNB3 mythosNB3Done={this.mythosNB3Done}/>;
               case "NB4":      return <MythosNB4 mythosNB4Done={this.mythosNB4Done} characters={this.state.characters}/>;
               case "HB1":      return <MythosHB1 mythosHB1Done={this.mythosHB1Done} characters={this.state.characters}/>;
+              case "HB2":      return <MythosHB2 mythosHB2Done={this.mythosHB2Done} defeat={this.state.defeat}/>;
+              case "HB3":      return <MythosHB3 mythosHB3Done={this.mythosHB3Done} characters={this.state.characters}/>;
+              case "HB4":      return <MythosHB4 mythosHB4Done={this.mythosHB4Done} characters={this.state.characters} defeat={this.state.defeat}/>;
               default:         return null;
             }
         }
@@ -451,6 +515,9 @@ class CthulhuBoard extends Component {
               case "NB3":      return <MythosNB3 mythosNB3Done={this.mythosNB3Done}/>;
               case "NB4":      return <MythosNB4 mythosNB4Done={this.mythosNB4Done} characters={this.state.characters}/>;
               case "HB1":      return <MythosHB1 mythosHB1Done={this.mythosHB1Done} characters={this.state.characters}/>;
+              case "HB2":      return <MythosHB2 mythosHB2Done={this.mythosHB2Done} defeat={this.state.defeat}/>;
+              case "HB3":      return <MythosHB3 mythosHB3Done={this.mythosHB3Done} characters={this.state.characters}/>;
+              case "HB4":      return <MythosHB4 mythosHB4Done={this.mythosHB4Done} characters={this.state.characters} defeat={this.state.defeat}/>;
               default:         return null;
             }
         }
@@ -468,6 +535,9 @@ class CthulhuBoard extends Component {
               case "NB3":      return <MythosNB3 mythosNB3Done={this.mythosNB3Done}/>;
               case "NB4":      return <MythosNB4 mythosNB4Done={this.mythosNB4Done} characters={this.state.characters}/>;
               case "HB1":      return <MythosHB1 mythosHB1Done={this.mythosHB1Done} characters={this.state.characters}/>;
+              case "HB2":      return <MythosHB2 mythosHB2Done={this.mythosHB2Done} defeat={this.state.defeat}/>;
+              case "HB3":      return <MythosHB3 mythosHB3Done={this.mythosHB3Done} characters={this.state.characters}/>;
+              case "HB4":      return <MythosHB4 mythosHB4Done={this.mythosHB4Done} characters={this.state.characters} defeat={this.state.defeat}/>;
               default:         return null;
             }
         }
@@ -533,6 +603,7 @@ class CthulhuBoard extends Component {
                     </div>
                     <div className='ancientMythos'>
                         <div className='ancientMythosDiscard'>
+                            {/* <p>{`prevMysteryNo:${this.state.prevMythosNo} mysteryNo:${this.state.mythosNo} mythosDeck:${this.mythosDeck} chosenMythos:${this.state.choosenMythos} discardMythosDeck:${this.discardMythosDeck}`}</p> */}
                             {this.state.prevMythosNo?
                             <Popup onOpen={this.chooseMythos} contentStyle={{background:'none', border: 'transparent', }} trigger=
                                 {<button className={this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>}modal nested>
@@ -578,5 +649,3 @@ class CthulhuBoard extends Component {
 }
 
 export default CthulhuBoard;
-
-// style={{isolation: 'isolate', zIndex: '-1'}}

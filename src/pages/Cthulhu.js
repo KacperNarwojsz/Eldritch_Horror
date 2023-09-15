@@ -6,7 +6,7 @@ import Popup from "reactjs-popup";
 import './AllPages.css'
 
 
-const Cthulhu = ({ loadChulhuLvlChar, level, characters, victory, defeat }) => {
+const Cthulhu = ({ loadChulhuLvlChar, level, characters, victory, defeat, mythosDeckOut }) => {
     return (
         <div className="cthulhu">
             <EldritchBoard>
@@ -14,7 +14,7 @@ const Cthulhu = ({ loadChulhuLvlChar, level, characters, victory, defeat }) => {
                     <div className="boardDiv">
                         <div className="flexDiv">
                             <button className="backBoardButton" onClick={loadChulhuLvlChar}></button>
-                            <CthulhuBoard level={level} characters={characters} victory={victory}/>
+                            <CthulhuBoard level={level} characters={characters} mythosDeckOut={mythosDeckOut} victory={victory} defeat={defeat}/>
                             <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                             {<button className="surrenderButton"></button>}modal nested>
                             {close => (<div className='defeatPopup'><h1 className="defeatPopupText">Czy chcesz poddać grę?</h1><div className="defeatChoiceButtons"><button className="defeatChoiceButton" onClick={defeat}>TAK</button><button className="defeatChoiceButton" onClick={() => close()}>NIE</button></div></div>)}

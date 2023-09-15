@@ -13,6 +13,7 @@ class App extends Component {
   
   constructor() {
     super();
+    this.mythosDeckOut = ['NB1','NB2','NB3','NB4']
     this.state = {
         route: "'Home'",
         level: false,
@@ -64,14 +65,17 @@ class App extends Component {
 
   setLvlEasy = () => {
     this.setState({ level: 'Easy'})
+    // this.setState({ mythosDeck: ['EB1','EB2','EB4']})
   }
 
   setLvlNormal = () => {
     this.setState({ level: 'Normal'})
+    // this.setState({ mythosDeck: ['NB1','NB2','NB3','NB4']})
   }
 
   setLvlHard = () => {
     this.setState({ level: 'Hard'})
+    // this.setState({ mythosDeck: ['HB1','HB2']})
   }
 
   setCharTo1 = () => {
@@ -120,6 +124,7 @@ class App extends Component {
                                             characters={this.state.characters}
                                             victory={this.routeToVictory}
                                             defeat={this.routeToDefeat}
+                                            mythosDeckOut={this.mythosDeckOut}
                                           />;
         case "CthulhuLvlChar":    return <CthulhuLvlChar 
                                             loadCthulhu={this.routeToCthulhu}
