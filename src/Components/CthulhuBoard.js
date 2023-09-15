@@ -34,14 +34,11 @@ import './Components.css';
 import '../InteractiveCards/InteractiveCards.css';
 
 class CthulhuBoard extends Component {
-    constructor({ level, characters, mythosDeckOut, victory, defeat}) {
+    constructor({ level, characters, victory, defeat}) {
         super(); 
         this.mysteryDeck = [1,2,3,4]
         this.discardMysteryDeck = []
-        this.mythosDeck = ['HB1','HB2','HB3','HB4']
-        // this.mythosDeckEasy = ['EB1','EB2','EB4']
-        // this.mythosDeckNormal = ['NB1','NB2','NB3','NB4']
-        // this.mythosDeckHard = ['HB1','HB2','HB3','HB4']
+        this.mythosDeck = level === 'Easy' ? ['EB1','EB2','EB4'] : level === 'Normal' ? ['NB1','NB2','NB3','NB4'] : ['HB1','HB2','HB3','HB4']
         this.discardMythosDeck = []
         this.state = {
             ancientCardFlipped: false,
