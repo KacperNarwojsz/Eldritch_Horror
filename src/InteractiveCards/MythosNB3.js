@@ -68,7 +68,7 @@ class MythosNB3 extends Component {
                                     <div className='mythosPopUpDoneDiv'>
                                         {this.state.counter===0?<p className='mythosPopUpText'>Jeśli na tej karcie nie ma żadnych żetonów Plugastwa, każdy badacz zostaje Wstrzymany i traci <span className='mythosPopUpTextNumber'>6</span> Zdrowia, a następnie ta <em>POGŁOSKA</em> zostaje rozwiązana.</p>:null}
                                         <div className='mythosPopUpDoneCaseDiv'>
-                                        {this.state.counter===0?<button className="tokenMythosPopUpDelayedInvestigator"></button>:null}
+                                        {/* {this.state.counter===0?<button className="tokenMythosPopUpDelayedInvestigator"></button>:null} */}
                                             {this.state.counter===0?<button className="tokenMythosPopUpHealth"></button>:null}
                                             {this.state.counter===0?<h1 className='tokenMythosPopUpNumbersFont'>- 6</h1>:null}
                                         </div>
