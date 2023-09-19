@@ -634,6 +634,55 @@
     align-items: center;
 }
 
+.mythosPopUpMattYellow {
+    display: flex;
+    flex-direction: column;
+    background-image: url(/src/pictures/Mythos/MythosMattYellow.png);
+    background-size: cover;
+    width: 52.3vw;
+    height: 46vw;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.mythosPopUpYellowDiv {
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    height: 55vw;
+    margin-top: 10vw;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.mythosPopUpYellowButton {
+    background: none;
+    border-radius: 2vw;
+    border: 0.25vw black solid;
+    width: 40vw;
+    height: 8vw;
+    font-family: "F1669 Elzevir W00 Normal"; 
+    font-size: 2.5vw;
+    margin: 2vw;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mythosPopUpTextNumberYellow {
+    display: inline;
+    font-family: "Romana";  
+    font-size: 2.5vw;
+    margin: 0;
+    text-align: center;
+}
+
+.mythosPopUpYellowCaseDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2vw;
+}
+
 .mythosPopUpMattBlue {
     display: flex;
     flex-direction: column;

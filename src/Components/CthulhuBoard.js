@@ -38,7 +38,7 @@ class CthulhuBoard extends Component {
         super(); 
         this.mysteryDeck = [1,2,3,4]
         this.discardMysteryDeck = []
-        this.mythosDeck = ['HY1','HB1','HB2','HB3','HB4']
+        this.mythosDeck = ['HY1','HY5']
         // this.mythosDeck = level === 'Easy' ? ['EB1','EB2','EB4'] : level === 'Normal' ? ['NB1','NB2','NB3','NB4'] : ['HB1','HB2','HB3','HB4']
         this.rumorDeck = ['NB1','NB2','NB3','NB4']
         this.discardMythosDeck = []
@@ -174,21 +174,21 @@ class CthulhuBoard extends Component {
            this.setState ({isMystery1Active: false })
            this.setState ({mysteryCounter: 0})
            this.discardMysteryDeck.push(1);
-       } else if (this.state.isMystery2Active === true) {
+        } else if (this.state.isMystery2Active === true) {
            this.setState ({isMystery2Active: false})
            this.setState ({mysteryCounter: 0})
            this.discardMysteryDeck.push(2);
-       } else if (this.state.isMystery3Active === true) {
+        } else if (this.state.isMystery3Active === true) {
            this.setState ({isMystery3Active: false})
            this.setState ({mysteryCounter: 0})
            this.discardMysteryDeck.push(3);
-       } else if (this.state.isMystery4Active === true) {
+        } else if (this.state.isMystery4Active === true) {
            this.setState ({isMystery4Active: false})
            this.setState ({mysteryCounter: 0})
            this.discardMysteryDeck.push(4);
-       }
-       this.setState(({popping: true}))
-   }
+        }
+        this.setState(({popping: true}))
+    }
 
     canPop = () => {
         this.setState ({popping: false})
@@ -382,29 +382,11 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[5] === 'HB4') { this.setState ({mythos6: 'done' }) }
         this.discardMythosDeck.push('HB4');
     }
-
-    // yellowMythosInteractiveHandle = () => {
-    //     if (this.state.prevMythosNo === 'HY1' 
-    //     // && 
-    //     //     this.state.mythos1 !== true && this.state.mythos2 !== true && this.state.mythos3 !== true && 
-    //     //     this.state.mythos4 !== true && this.state.mythos5 !== true && this.state.mythos6 !== true
-    //         ) {
-    //         return(
-    //             <Popup onOpen={this.chooseRumor} contentStyle={{background:'none', border: 'transparent', }} trigger=
-    //             {<button className={this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>}modal nested>
-    //             {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.prevMythosNo}`}><button className='mythosCloseButton' onClick={() => close()}>X</button></div></div>)}
-    //             </Popup>
-    //         )
-    //     }
-    // }
-
-    yellowBack = () => { 
-        this.setState ({yellow: false})
-    }
-
-    
-      
+   
     render() {
+        const reverseMystery = () => {
+            this.mysteryDeck.push(chooseRandom(this.discardMysteryDeck));
+        }
         const { choosenMythos } = this.state;
         const InteractiveCard1 = (choosenMythos) => {
             switch(choosenMythos[0]) {
@@ -594,22 +576,48 @@ class CthulhuBoard extends Component {
                             // {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.prevMythosNo}`}><button className='mythosCloseButton' onClick={() => close()}>X</button></div></div>)}
                             // </Popup>:<button className='mythos'></button>}
 
-                            <Popup onOpen={this.chooseMythos} contentStyle={{background:'none', border: 'transparent', }} trigger=
+                            <Popup onOpen={this.chooseMythos} contentStyle={{background:'none', border: 'transparent'}} trigger=
                             {<button className={this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>}modal nested>
                             {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.prevMythosNo}`}>
-                            {this.state.prevMythosNo === 'HY1' && this.state.mythos1 !== true && this.state.mythos2 !== true && this.state.mythos3 !== true && this.state.mythos4 !== true && this.state.mythos5 !== true && this.state.mythos6 !== true ?
-                                
-                                <Popup onOpen={this.chooseRumor} contentStyle={{background:'none', border: 'transparent', }} trigger=
+                            {
+                            this.state.prevMythosNo === 'NY8'
+                                ?<Popup contentStyle={{background:'none', border: 'transparent'}} trigger=
                                 {<button className='mythosCloseButton' onClick={() => close()}>X</button>}modal nested>
                                 {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.rumorNo}`}><button className='mythosCloseButton' onClick={() => close()}>X</button></div></div>)}
+                                </Popup>:
+                            this.state.prevMythosNo === 'HY1' && this.state.mythos1 !== true && this.state.mythos2 !== true && this.state.mythos3 !== true && this.state.mythos4 !== true && this.state.mythos5 !== true && this.state.mythos6 !== true 
+                                ?<Popup onOpen={this.chooseRumor} contentStyle={{background:'none', border: 'transparent'}} trigger=
+                                {<button className='mythosCloseButton'>X</button>}modal nested>
+                                {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.rumorNo}`}><button className='mythosCloseButton' onClick={() => close()}>X</button></div></div>)}
+                                </Popup>:
+                            this.state.prevMythosNo === 'HY5'
+                                ?<Popup onClose={() => close()} contentStyle={{background:'none', border: 'transparent'}} trigger=
+                                {<button className='mythosCloseButton'>X</button>}modal nested>
+                                {close => (<div className='outerPopupMythos'>
+                                    <div className='mythosPopUpMattYellow'>
+                                        {this.discardMysteryDeck.length===0?<div className='mythosPopUpYellowDiv'>
+                                            <div className='mythosPopUpTextDiv'>
+                                                <p className='mythosPopUpText'>Żadna tajemnica nie została rozwiązana. <br></br>Zagłada postępuje o <span className='mythosPopUpTextNumber'>1</span>.</p>
+                                            </div>
+                                            <div className='mythosPopUpYellowCaseDiv'>
+                                                <button className="tokenMythosPopUpDoom"></button>
+                                                <h1 className='tokenMythosPopUpNumbersFont'> - 1</h1>
+                                            </div>
+                                            <button className='tokenMythosPopUpDone' onClick={() => close()}></button>
+                                        </div>:null}  
+                                        {this.discardMysteryDeck.length>0?<div className='mythosPopUpYellowDiv'>
+                                            <button className='mythosPopUpYellowButton' onClick={() => {reverseMystery(); close()}}>Cofnięcie rozwiązanej tajemnicy</button>
+                                            <button className='mythosPopUpYellowButton' onClick={() => close()}>Poświęcenie <span className='mythosPopUpTextNumberYellow'>{Math.ceil(this.state.characters/2)}</span> wskazówek</button>
+                                        </div>:null}                      
+                                    </div>
+                                </div>)}
+                                {/* <div className='mythosPopUpCloseButtonDiv'>
+                                    {this.state.counter===0?null:<button className='mythosPopUpCloseButton' onClick={() => close()}>X</button>}
+                                </div> */}
                                 </Popup>
                                 :<button className='mythosCloseButton' onClick={() => close()}>X</button>}
-                                
-                                </div></div>)}
-                            
-                            
+                            </div></div>)}
                             </Popup>:<button className='mythos'></button>}
-
                             <div className='ancientMythosDiscardButtonDiv'>
                                 <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                                     {this.discardMythosDeck.length!==0?<button className='discardButton' id='discardMythos'>ODRZUCONE</button>:null}modal nested>
