@@ -38,7 +38,9 @@ class CthulhuBoard extends Component {
         super(); 
         this.mysteryDeck = [1,2,3,4]
         this.discardMysteryDeck = []
-        this.mythosDeck = level === 'Easy' ? ['EB1','EB2','EB4'] : level === 'Normal' ? ['NB1','NB2','NB3','NB4'] : ['HB1','HB2','HB3','HB4']
+        this.mythosDeck = ['HY1','HB1','HB2','HB3','HB4']
+        // this.mythosDeck = level === 'Easy' ? ['EB1','EB2','EB4'] : level === 'Normal' ? ['NB1','NB2','NB3','NB4'] : ['HB1','HB2','HB3','HB4']
+        this.rumorDeck = ['NB1','NB2','NB3','NB4']
         this.discardMythosDeck = []
         this.state = {
             ancientCardFlipped: false,
@@ -60,14 +62,18 @@ class CthulhuBoard extends Component {
             sheetCardCounter: 0,
             mythosNo: chooseRandom(this.mythosDeck),
             prevMythosNo: true,
+            rumorNo: chooseRandom(this.rumorDeck),
             choosenMythos: [],
             mythos1: false,
             mythos2: false,
             mythos3: false,
             mythos4: false,
             mythos5: false,
+            mythos6: false,
         }  
     }
+
+    
 
     componentDidMount() {
         this.timer()
@@ -75,20 +81,11 @@ class CthulhuBoard extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         if(prevState.prevMythosNo !== this.state.prevMythosNo && 
-            this.state.prevMythosNo !== 'NG1' && 
-            this.state.prevMythosNo !== 'NG6' && 
-            this.state.prevMythosNo !== 'HG1' && 
-            this.state.prevMythosNo !== 'EB1' && 
-            this.state.prevMythosNo !== 'EB2' && 
-            this.state.prevMythosNo !== 'EB4' && 
-            this.state.prevMythosNo !== 'NB1' && 
-            this.state.prevMythosNo !== 'NB2' && 
-            this.state.prevMythosNo !== 'NB3' && 
-            this.state.prevMythosNo !== 'NB4' && 
-            this.state.prevMythosNo !== 'HB1' && 
-            this.state.prevMythosNo !== 'HB2' && 
-            this.state.prevMythosNo !== 'HB3' && 
-            this.state.prevMythosNo !== 'HB4') {
+            this.state.prevMythosNo !== 'NG1' && this.state.prevMythosNo !== 'NG6' && this.state.prevMythosNo !== 'HG1' && 
+            this.state.prevMythosNo !== 'EB1' && this.state.prevMythosNo !== 'EB2' && this.state.prevMythosNo !== 'EB3' &&
+            this.state.prevMythosNo !== 'EB4' && this.state.prevMythosNo !== 'NB1' && this.state.prevMythosNo !== 'NB2' && 
+            this.state.prevMythosNo !== 'NB3' && this.state.prevMythosNo !== 'NB4' && this.state.prevMythosNo !== 'HB1' && 
+            this.state.prevMythosNo !== 'HB2' && this.state.prevMythosNo !== 'HB3' && this.state.prevMythosNo !== 'HB4') {
             this.discardMythosDeck.push(this.state.prevMythosNo);
         }
     } 
@@ -210,105 +207,30 @@ class CthulhuBoard extends Component {
     chooseMythos = () => {
         this.setState(prevState => ({prevMythosNo: prevState.mythosNo}))
         this.setState({mythosNo: chooseRandom(this.mythosDeck)});
-        if (this.state.mythosNo === 'NG1') {
+        if (this.state.mythosNo === 'NG1' || this.state.mythosNo === 'NG6' || this.state.mythosNo === 'HG1' || 
+            this.state.mythosNo === 'EB1' || this.state.mythosNo === 'EB2' || this.state.mythosNo === 'EB3' || 
+            this.state.mythosNo === 'EB4' || this.state.mythosNo === 'NB1' || this.state.mythosNo === 'NB2' || 
+            this.state.mythosNo === 'NB3' || this.state.mythosNo === 'NB4' || this.state.mythosNo === 'HB1' || 
+            this.state.mythosNo === 'HB2' || this.state.mythosNo === 'HB3' || this.state.mythosNo === 'HB4') {
             this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
             if  (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
             else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
             else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
             else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
-            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
-        } else if (this.state.mythosNo === 'NG6') {
-            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
-            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
-            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
-            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
-            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
-            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
-        } else if (this.state.mythosNo === 'HG1') {
-            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
-            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
-            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
-            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
-            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
-            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
-        } else if (this.state.mythosNo === 'EB1') {
-            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
-            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
-            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
-            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
-            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
-            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
-        } else if (this.state.mythosNo === 'EB2') {
-            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
-            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
-            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
-            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
-            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
-            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
-        } else if (this.state.mythosNo === 'EB4') {
-            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
-            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
-            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
-            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
-            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
-            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
-        } else if (this.state.mythosNo === 'NB1') {
-            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
-            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
-            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
-            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
-            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
-            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
-        } else if (this.state.mythosNo === 'NB2') {
-            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
-            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
-            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
-            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
-            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
-            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
-        } else if (this.state.mythosNo === 'NB3') {
-            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
-            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
-            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
-            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
-            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
-            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
-        } else if (this.state.mythosNo === 'NB4') {
-            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
-            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
-            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
-            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
-            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
-            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
-        } else if (this.state.mythosNo === 'HB1') {
-            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
-            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
-            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
-            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
-            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
-            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
-        } else if (this.state.mythosNo === 'HB2') {
-            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
-            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
-            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
-            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
-            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
-            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
-        } else if (this.state.mythosNo === 'HB3') {
-            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
-            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
-            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
-            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
-            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
-            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
-        } else if (this.state.mythosNo === 'HB4') {
-            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
-            if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
-            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
-            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
-            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
-            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }}}}}
-        }
+            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
+            else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+        } 
+    }
+
+    chooseRumor = () => {
+        this.setState(prevState => ({prevMythosNo: prevState.rumorNo}))
+        this.setState({choosenMythos: [...this.state.choosenMythos, this.state.rumorNo]})
+        if  (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+        else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+        else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+        else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+        else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) } 
+        else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
     }
 
     mythosNG1Done = () => {
@@ -317,6 +239,7 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'NG1') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'NG1') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'NG1') { this.setState ({mythos5: 'done' }) }
+        else if (this.state.choosenMythos[5] === 'NG1') { this.setState ({mythos6: 'done' }) }
         this.discardMythosDeck.push('NG1');
     }
 
@@ -326,6 +249,7 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'NG6') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'NG6') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'NG6') { this.setState ({mythos5: 'done' }) }
+        else if (this.state.choosenMythos[5] === 'NG6') { this.setState ({mythos6: 'done' }) }
         this.discardMythosDeck.push('NG6');
     }  
 
@@ -335,6 +259,7 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'HG1') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'HG1') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'HG1') { this.setState ({mythos5: 'done' }) }
+        else if (this.state.choosenMythos[5] === 'HG1') { this.setState ({mythos6: 'done' }) }
         this.discardMythosDeck.push('HG1');
     }
 
@@ -344,6 +269,7 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'EB1') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'EB1') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'EB1') { this.setState ({mythos5: 'done' }) }
+        else if (this.state.choosenMythos[5] === 'EB1') { this.setState ({mythos6: 'done' }) }
         this.discardMythosDeck.push('EB1');
     }
 
@@ -353,7 +279,18 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'EB2') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'EB2') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'EB2') { this.setState ({mythos5: 'done' }) }
+        else if (this.state.choosenMythos[5] === 'EB2') { this.setState ({mythos6: 'done' }) }
         this.discardMythosDeck.push('EB2');
+    }
+
+    mythosEB3Done = () => {
+        if      (this.state.choosenMythos[0] === 'EB3') { this.setState ({mythos1: 'done' }) } 
+        else if (this.state.choosenMythos[1] === 'EB3') { this.setState ({mythos2: 'done' }) } 
+        else if (this.state.choosenMythos[2] === 'EB3') { this.setState ({mythos3: 'done' }) } 
+        else if (this.state.choosenMythos[3] === 'EB3') { this.setState ({mythos4: 'done' }) } 
+        else if (this.state.choosenMythos[4] === 'EB3') { this.setState ({mythos5: 'done' }) }
+        else if (this.state.choosenMythos[5] === 'EB3') { this.setState ({mythos6: 'done' }) }
+        this.discardMythosDeck.push('EB3');
     }
 
     mythosEB4Done = () => {
@@ -362,6 +299,7 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'EB4') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'EB4') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'EB4') { this.setState ({mythos5: 'done' }) }
+        else if (this.state.choosenMythos[5] === 'EB4') { this.setState ({mythos6: 'done' }) }
         this.discardMythosDeck.push('EB4');
     }
 
@@ -371,6 +309,7 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'NB1') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'NB1') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'NB1') { this.setState ({mythos5: 'done' }) }
+        else if (this.state.choosenMythos[5] === 'NB1') { this.setState ({mythos6: 'done' }) }
         this.discardMythosDeck.push('NB1');
     }
 
@@ -380,6 +319,7 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'NB2') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'NB2') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'NB2') { this.setState ({mythos5: 'done' }) }
+        else if (this.state.choosenMythos[5] === 'NB2') { this.setState ({mythos6: 'done' }) }
         this.discardMythosDeck.push('NB2');
     }
 
@@ -389,6 +329,7 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'NB3') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'NB3') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'NB3') { this.setState ({mythos5: 'done' }) }
+        else if (this.state.choosenMythos[5] === 'NB3') { this.setState ({mythos6: 'done' }) }
         this.discardMythosDeck.push('NB3');
     }
 
@@ -398,6 +339,7 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'NB4') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'NB4') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'NB4') { this.setState ({mythos5: 'done' }) }
+        else if (this.state.choosenMythos[5] === 'NB4') { this.setState ({mythos6: 'done' }) }
         this.discardMythosDeck.push('NB4');
     } 
 
@@ -407,6 +349,7 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'HB1') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'HB1') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'HB1') { this.setState ({mythos5: 'done' }) }
+        else if (this.state.choosenMythos[5] === 'HB1') { this.setState ({mythos6: 'done' }) }
         this.discardMythosDeck.push('HB1');
     }
 
@@ -416,6 +359,7 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'HB2') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'HB2') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'HB2') { this.setState ({mythos5: 'done' }) }
+        else if (this.state.choosenMythos[5] === 'HB2') { this.setState ({mythos6: 'done' }) }
         this.discardMythosDeck.push('HB2');
     }
 
@@ -425,6 +369,7 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'HB3') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'HB3') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'HB3') { this.setState ({mythos5: 'done' }) }
+        else if (this.state.choosenMythos[5] === 'HB3') { this.setState ({mythos6: 'done' }) }
         this.discardMythosDeck.push('HB3');
     }
 
@@ -434,8 +379,30 @@ class CthulhuBoard extends Component {
         else if (this.state.choosenMythos[2] === 'HB4') { this.setState ({mythos3: 'done' }) } 
         else if (this.state.choosenMythos[3] === 'HB4') { this.setState ({mythos4: 'done' }) } 
         else if (this.state.choosenMythos[4] === 'HB4') { this.setState ({mythos5: 'done' }) }
+        else if (this.state.choosenMythos[5] === 'HB4') { this.setState ({mythos6: 'done' }) }
         this.discardMythosDeck.push('HB4');
     }
+
+    // yellowMythosInteractiveHandle = () => {
+    //     if (this.state.prevMythosNo === 'HY1' 
+    //     // && 
+    //     //     this.state.mythos1 !== true && this.state.mythos2 !== true && this.state.mythos3 !== true && 
+    //     //     this.state.mythos4 !== true && this.state.mythos5 !== true && this.state.mythos6 !== true
+    //         ) {
+    //         return(
+    //             <Popup onOpen={this.chooseRumor} contentStyle={{background:'none', border: 'transparent', }} trigger=
+    //             {<button className={this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>}modal nested>
+    //             {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.prevMythosNo}`}><button className='mythosCloseButton' onClick={() => close()}>X</button></div></div>)}
+    //             </Popup>
+    //         )
+    //     }
+    // }
+
+    yellowBack = () => { 
+        this.setState ({yellow: false})
+    }
+
+    
       
     render() {
         const { choosenMythos } = this.state;
@@ -539,6 +506,26 @@ class CthulhuBoard extends Component {
             }
         }
 
+        const InteractiveCard6 = (choosenMythos) => {
+            switch(choosenMythos[5]) {
+              case "NG1":      return <MythosNG1 mythosNG1Done={this.mythosNG1Done}/>;
+              case "NG6":      return <MythosNG6 mythosNG6Done={this.mythosNG6Done}/>;
+              case "HG1":      return <MythosHG1 mythosHG1Done={this.mythosHG1Done}/>;
+              case "EB1":      return <MythosEB1 mythosEB1Done={this.mythosEB1Done} characters={this.state.characters}/>;
+              case "EB2":      return <MythosEB2 mythosEB2Done={this.mythosEB2Done}/>;
+              case "EB4":      return <MythosEB4 mythosEB4Done={this.mythosEB4Done}/>;
+              case "NB1":      return <MythosNB1 mythosNB1Done={this.mythosNB1Done} characters={this.state.characters}/>;
+              case "NB2":      return <MythosNB2 mythosNB2Done={this.mythosNB2Done} characters={this.state.characters}/>;
+              case "NB3":      return <MythosNB3 mythosNB3Done={this.mythosNB3Done}/>;
+              case "NB4":      return <MythosNB4 mythosNB4Done={this.mythosNB4Done} characters={this.state.characters}/>;
+              case "HB1":      return <MythosHB1 mythosHB1Done={this.mythosHB1Done} characters={this.state.characters}/>;
+              case "HB2":      return <MythosHB2 mythosHB2Done={this.mythosHB2Done} defeat={this.state.defeat}/>;
+              case "HB3":      return <MythosHB3 mythosHB3Done={this.mythosHB3Done} characters={this.state.characters}/>;
+              case "HB4":      return <MythosHB4 mythosHB4Done={this.mythosHB4Done} characters={this.state.characters} defeat={this.state.defeat}/>;
+              default:         return null;
+            }
+        }
+
         return (
             <div className='ancientBoard'>
                 <Popup contentStyle={{background:'none', border: 'none'}} trigger=
@@ -602,10 +589,27 @@ class CthulhuBoard extends Component {
                         <div className='ancientMythosDiscard'>
                             {/* <p>{`prevMysteryNo:${this.state.prevMythosNo} mysteryNo:${this.state.mythosNo} mythosDeck:${this.mythosDeck} chosenMythos:${this.state.choosenMythos} discardMythosDeck:${this.discardMythosDeck}`}</p> */}
                             {this.state.prevMythosNo?
+                            // <Popup onOpen={this.chooseMythos} onClose={this.yellowMythosInteractiveHandle} contentStyle={{background:'none', border: 'transparent', }} trigger=
+                            // {<button className={this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>}modal nested>
+                            // {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.prevMythosNo}`}><button className='mythosCloseButton' onClick={() => close()}>X</button></div></div>)}
+                            // </Popup>:<button className='mythos'></button>}
+
                             <Popup onOpen={this.chooseMythos} contentStyle={{background:'none', border: 'transparent', }} trigger=
-                                {<button className={this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>}modal nested>
-                                {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.prevMythosNo}`}><button className='mythosCloseButton' onClick={() => close()}>X</button></div></div>)}
+                            {<button className={this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>}modal nested>
+                            {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.prevMythosNo}`}>
+                            {this.state.prevMythosNo === 'HY1' && this.state.mythos1 !== true && this.state.mythos2 !== true && this.state.mythos3 !== true && this.state.mythos4 !== true && this.state.mythos5 !== true && this.state.mythos6 !== true ?
+                                
+                                <Popup onOpen={this.chooseRumor} contentStyle={{background:'none', border: 'transparent', }} trigger=
+                                {<button className='mythosCloseButton' onClick={() => close()}>X</button>}modal nested>
+                                {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.rumorNo}`}><button className='mythosCloseButton' onClick={() => close()}>X</button></div></div>)}
+                                </Popup>
+                                :<button className='mythosCloseButton' onClick={() => close()}>X</button>}
+                                
+                                </div></div>)}
+                            
+                            
                             </Popup>:<button className='mythos'></button>}
+
                             <div className='ancientMythosDiscardButtonDiv'>
                                 <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                                     {this.discardMythosDeck.length!==0?<button className='discardButton' id='discardMythos'>ODRZUCONE</button>:null}modal nested>
@@ -638,6 +642,7 @@ class CthulhuBoard extends Component {
                         {this.state.mythos3 === true ?<div>{ InteractiveCard3(choosenMythos) }</div>:null}
                         {this.state.mythos4 === true ?<div>{ InteractiveCard4(choosenMythos) }</div>:null}
                         {this.state.mythos5 === true ?<div>{ InteractiveCard5(choosenMythos) }</div>:null}
+                        {this.state.mythos6 === true ?<div>{ InteractiveCard6(choosenMythos) }</div>:null}
                     </div>
                 </div>
             </div>
@@ -646,3 +651,130 @@ class CthulhuBoard extends Component {
 }
 
 export default CthulhuBoard;
+
+
+    // chooseMythos = () => {
+    //     this.setState(prevState => ({prevMythosNo: prevState.mythosNo}))
+    //     this.setState({mythosNo: chooseRandom(this.mythosDeck)});
+    //     if (this.state.mythosNo === 'NG1') {
+    //         this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+    //         if  (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+    //         else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+    //         else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+    //         else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+    //         else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
+    //         else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+    //     } else if (this.state.mythosNo === 'NG6') {
+    //         this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+    //         if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+    //         else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+    //         else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+    //         else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+    //         else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
+    //         else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+    //     } else if (this.state.mythosNo === 'HG1') {
+    //         this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+    //         if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+    //         else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+    //         else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+    //         else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+    //         else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
+    //         else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+    //     } else if (this.state.mythosNo === 'EB1') {
+    //         this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+    //         if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+    //         else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+    //         else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+    //         else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+    //         else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
+    //         else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+    //     } else if (this.state.mythosNo === 'EB2') {
+    //         this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+    //         if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+    //         else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+    //         else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+    //         else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+    //         else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
+    //         else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+    //     } else if (this.state.mythosNo === 'EB3') {
+    //         this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+    //         if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+    //         else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+    //         else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+    //         else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+    //         else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
+    //         else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+    //     } else if (this.state.mythosNo === 'EB4') {
+    //         this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+    //         if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+    //         else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+    //         else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+    //         else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+    //         else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
+    //         else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+    //     } else if (this.state.mythosNo === 'NB1') {
+    //         this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+    //         if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+    //         else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+    //         else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+    //         else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+    //         else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
+    //         else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+    //     } else if (this.state.mythosNo === 'NB2') {
+    //         this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+    //         if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+    //         else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+    //         else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+    //         else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+    //         else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
+    //         else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+    //     } else if (this.state.mythosNo === 'NB3') {
+    //         this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+    //         if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+    //         else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+    //         else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+    //         else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+    //         else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
+    //         else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+    //     } else if (this.state.mythosNo === 'NB4') {
+    //         this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+    //         if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+    //         else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+    //         else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+    //         else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+    //         else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
+    //         else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+    //     } else if (this.state.mythosNo === 'HB1') {
+    //         this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+    //         if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+    //         else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+    //         else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+    //         else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+    //         else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
+    //         else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+    //     } else if (this.state.mythosNo === 'HB2') {
+    //         this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+    //         if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+    //         else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+    //         else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+    //         else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+    //         else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
+    //         else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+    //     } else if (this.state.mythosNo === 'HB3') {
+    //         this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+    //         if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+    //         else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+    //         else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+    //         else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+    //         else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
+    //         else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+    //     } else if (this.state.mythosNo === 'HB4') {
+    //         this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+    //         if (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
+    //         else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
+    //         else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
+    //         else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
+    //         else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
+    //         else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+    //     }
+    // }
