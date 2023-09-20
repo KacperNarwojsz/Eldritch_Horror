@@ -655,6 +655,16 @@
     align-items: center;
 }
 
+.mythosPopUpYellowDivExpedition{
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    height: 55vw;
+    margin-top: 7vw;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .mythosPopUpYellowButton {
     background: none;
     border-radius: 2vw;
@@ -676,11 +686,60 @@
     text-align: center;
 }
 
+.mythosPopUpTextExpedition {
+    display: inline;
+    font-family: "F1669 Elzevir W00 Normal"; 
+    font-size: 2.5vw;
+    margin: 0;
+    text-align: center;
+}
+
 .mythosPopUpYellowCaseDiv {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 2vw;
+}
+
+.mythosPopUpYellowExpedition {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tokenMythosPopUpExpedition {
+    display: flex;
+    flex-direction: row;
+    background: none;
+    background-size: cover;
+    border: none;
+    align-items: center;
+    width: 17.5vw;
+    height: 13vw;
+}
+
+#tokenMythosPopUpExpeditionAntarctica {
+    background-image: url(/src/pictures/Tokens/TokenAntarctica.png);
+}
+
+#tokenMythosPopUpExpeditionTheAmazon {
+    background-image: url(/src/pictures/Tokens/TokenTheAmazon.png);
+}
+
+#tokenMythosPopUpExpeditionTheHeartofAfrica {
+    background-image: url(/src/pictures/Tokens/TokenTheHeartOfAfrica.png);
+}
+
+#tokenMythosPopUpExpeditionTheHimalayas {
+    background-image: url(/src/pictures/Tokens/TokenTheHimalayas.png);
+}
+
+#tokenMythosPopUpExpeditionThePyramids {
+    background-image: url(/src/pictures/Tokens/TokenThePyramids.png);
+}
+
+#tokenMythosPopUpExpeditionTunguska {
+    background-image: url(/src/pictures/Tokens/TokenTunguska.png);
 }
 
 .mythosPopUpMattBlue {
@@ -719,6 +778,14 @@
     display: flex;
     width: 40vw;
     height: 7vw;
+    margin-top: 2vw;
+    justify-content: center;
+}
+
+.mythosPopUpTextDivExpedition{
+    display: flex;
+    width: 40vw;
+    height: 5vw;
     margin-top: 2vw;
     justify-content: center;
 }
