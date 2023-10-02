@@ -34,7 +34,7 @@ class App extends Component {
       // level: "Easy",
       // characters: 3,
       start: false,
-      mythosDeck: ['EG1','EG2','EG3','EG4','EG5','NG1','NG2','NG3','NG4','NG5','NG6','NG7','NG8','HG1','HG2','HG3','HG4','HG5'],
+      mythosDeck: ['EB3','EY1','EY2','EY3','EY4','EY5','NY1','NY2','NY3','NY4','NY5','NY6','NY7','NY8','NY9','NY10','NY11','HY1','HY2','HY3','HY4','HY5'],
     }
   }
 
