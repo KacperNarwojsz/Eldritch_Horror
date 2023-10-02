@@ -48,7 +48,7 @@ class CthulhuBoard extends Component {
             isLoadDone: false,
             level: level,
             characters: characters,
-            mysteryNo: 0,
+            mysteryNo: chooseRandom(this.mysteryDeck),
             prevMysteryNo: 0,
             isMystery1Active: false,
             isMystery2Active: false,
