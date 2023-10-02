@@ -14,8 +14,7 @@ class App extends Component {
   
   constructor() {
     super();
-    this.mythosDeck = []
-    this.mythosDeckStage1 = []
+    this.mythosDeck = ['HB1','HB2','HB3','HB4']
     this.mythosDeckStage2 = []
     this.mythosDeckStage3 = []
     this.mythosDeckGreenEasy = ['EG1','EG2','EG3','EG4','EG5','NG1','NG2','NG3','NG4','NG5','NG6','NG7','NG8']
@@ -78,10 +77,10 @@ class App extends Component {
   }
 
   setLvlEasy = () => {
-    this.mythosDeck.push(chooseRandom(this.mythosDeckYellowEasy)); 
-    this.mythosDeck.push(chooseRandom(this.mythosDeckYellowEasy));
-    this.mythosDeck.push(chooseRandom(this.mythosDeckBlueEasy)); 
-    this.mythosDeck.push(chooseRandom(this.mythosDeckBlueEasy));
+    // this.mythosDeck.push(chooseRandom(this.mythosDeckYellowEasy)); 
+    // this.mythosDeck.push(chooseRandom(this.mythosDeckYellowEasy));
+    // this.mythosDeck.push(chooseRandom(this.mythosDeckBlueEasy)); 
+    // this.mythosDeck.push(chooseRandom(this.mythosDeckBlueEasy));
     this.mythosDeckStage2.push(chooseRandom(this.mythosDeckGreenEasy)); 
     this.mythosDeckStage2.push(chooseRandom(this.mythosDeckYellowEasy));
     this.mythosDeckStage2.push(chooseRandom(this.mythosDeckYellowEasy)); 
