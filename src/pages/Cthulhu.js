@@ -20,6 +20,7 @@ const Cthulhu = ({ loadChulhuLvlChar, level, characters, victory, defeat }) => {
     const mythosDeck = []
     const mythosDeckStage2 = []
     const mythosDeckStage3 = []
+    const rumorDeck = []
     if (level === 'Easy') {
         mythosDeck.push(chooseRandom(mythosDeckYellowEasy)); 
         mythosDeck.push(chooseRandom(mythosDeckYellowEasy));
@@ -36,6 +37,9 @@ const Cthulhu = ({ loadChulhuLvlChar, level, characters, victory, defeat }) => {
         mythosDeckStage3.push(chooseRandom(mythosDeckYellowEasy));
         mythosDeckStage3.push(chooseRandom(mythosDeckYellowEasy));
         mythosDeckStage3.push(chooseRandom(mythosDeckYellowEasy));
+        for (let i = 0; i <= mythosDeckBlueEasy.length; i++) {
+            rumorDeck.push(mythosDeckBlueEasy[i])
+          } 
     } else if (level === 'Normal') {
         mythosDeck.push(chooseRandom(mythosDeckYellowNormal)); 
         mythosDeck.push(chooseRandom(mythosDeckYellowNormal));
@@ -52,6 +56,9 @@ const Cthulhu = ({ loadChulhuLvlChar, level, characters, victory, defeat }) => {
         mythosDeckStage3.push(chooseRandom(mythosDeckYellowNormal));
         mythosDeckStage3.push(chooseRandom(mythosDeckYellowNormal));
         mythosDeckStage3.push(chooseRandom(mythosDeckYellowNormal));
+        for (let i = 0; i <= mythosDeckBlueNormal.length; i++) {
+            rumorDeck.push(mythosDeckBlueNormal[i])
+          } 
     } else if (level === 'Hard') {
         mythosDeck.push(chooseRandom(mythosDeckYellowHard)); 
         mythosDeck.push(chooseRandom(mythosDeckYellowHard));
@@ -68,6 +75,9 @@ const Cthulhu = ({ loadChulhuLvlChar, level, characters, victory, defeat }) => {
         mythosDeckStage3.push(chooseRandom(mythosDeckYellowHard));
         mythosDeckStage3.push(chooseRandom(mythosDeckYellowHard));
         mythosDeckStage3.push(chooseRandom(mythosDeckYellowHard));
+        for (let i = 0; i <= mythosDeckBlueHard.length; i++) {
+            rumorDeck.push(mythosDeckBlueHard[i])
+          } 
     }
 
     return (
@@ -77,7 +87,7 @@ const Cthulhu = ({ loadChulhuLvlChar, level, characters, victory, defeat }) => {
                     <div className="boardDiv">
                         <div className="flexDiv">
                             <button className="backBoardButton" onClick={loadChulhuLvlChar}></button>
-                            <CthulhuBoard level={level} characters={characters} mythosDeck={mythosDeck} mythosDeckStage2={mythosDeckStage2} mythosDeckStage3={mythosDeckStage3} victory={victory} defeat={defeat}/>
+                            <CthulhuBoard level={level} characters={characters} mythosDeck={mythosDeck} mythosDeckStage2={mythosDeckStage2} mythosDeckStage3={mythosDeckStage3} rumorDeck={rumorDeck} victory={victory} defeat={defeat}/>
                             <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                             {<button className="surrenderButton"></button>}modal nested>
                             {close => (<div className='defeatPopup'><h1 className="defeatPopupText">Czy chcesz poddać grę?</h1><div className="defeatChoiceButtons"><button className="defeatChoiceButton" onClick={defeat}>TAK</button><button className="defeatChoiceButton" onClick={() => close()}>NIE</button></div></div>)}
