@@ -212,30 +212,37 @@ class CthulhuBoard extends Component {
     chooseMythos = () => {
         this.setState(prevState => ({prevMythosNo: prevState.mythosNo}))
         this.setState({mythosNo: chooseRandom(this.mythosDeck)});
-        if (this.state.mythosNo === 'NG1' || this.state.mythosNo === 'NG6' || this.state.mythosNo === 'HG1' || 
-            this.state.mythosNo === 'EB1' || this.state.mythosNo === 'EB2' || this.state.mythosNo === 'EB3' || 
-            this.state.mythosNo === 'EB4' || this.state.mythosNo === 'NB1' || this.state.mythosNo === 'NB2' || 
-            this.state.mythosNo === 'NB3' || this.state.mythosNo === 'NB4' || this.state.mythosNo === 'HB1' || 
-            this.state.mythosNo === 'HB2' || this.state.mythosNo === 'HB3' || this.state.mythosNo === 'HB4') {
+        if (this.state.mythosNo === 'NG1' || this.state.mythosNo === 'NG6' || this.state.mythosNo === 'HG1') {
             this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
-            if  (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
-            else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
-            else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
-            else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
-            else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) }
-            else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
-        } 
+            if  (this.state.mythos1 === false) { this.setState({mythos1: 'green'}) } 
+            else { if (this.state.mythos2 === false) { this.setState({mythos2: 'green'}) } 
+            else { if (this.state.mythos3 === false) { this.setState({mythos3: 'green'}) } 
+            else { if (this.state.mythos4 === false) { this.setState({mythos4: 'green'}) } 
+            else { if (this.state.mythos5 === false) { this.setState({mythos5: 'green'}) }
+            else { if (this.state.mythos6 === false) { this.setState({mythos6: 'green'}) }}}}}}
+        } else if (this.state.mythosNo === 'EB1' || this.state.mythosNo === 'EB2' || this.state.mythosNo === 'EB3' || 
+        this.state.mythosNo === 'EB4' || this.state.mythosNo === 'NB1' || this.state.mythosNo === 'NB2' || 
+        this.state.mythosNo === 'NB3' || this.state.mythosNo === 'NB4' || this.state.mythosNo === 'HB1' || 
+        this.state.mythosNo === 'HB2' || this.state.mythosNo === 'HB3' || this.state.mythosNo === 'HB4') {
+            this.setState ({choosenMythos: [...this.state.choosenMythos, this.state.mythosNo]})
+            if  (this.state.mythos1 === false) { this.setState({mythos1: 'blue'}) } 
+            else { if (this.state.mythos2 === false) { this.setState({mythos2: 'blue'}) } 
+            else { if (this.state.mythos3 === false) { this.setState({mythos3: 'blue'}) } 
+            else { if (this.state.mythos4 === false) { this.setState({mythos4: 'blue'}) } 
+            else { if (this.state.mythos5 === false) { this.setState({mythos5: 'blue'}) }
+            else { if (this.state.mythos6 === false) { this.setState({mythos6: 'blue'}) }}}}}}
+        }
     }
 
     chooseRumor = () => {
         this.setState(prevState => ({prevMythosNo: prevState.rumorNo}))
         this.setState({choosenMythos: [...this.state.choosenMythos, this.state.rumorNo]})
-        if  (this.state.mythos1 === false) { this.setState({mythos1: true}) } 
-        else { if (this.state.mythos2 === false) { this.setState({mythos2: true}) } 
-        else { if (this.state.mythos3 === false) { this.setState({mythos3: true}) } 
-        else { if (this.state.mythos4 === false) { this.setState({mythos4: true}) } 
-        else { if (this.state.mythos5 === false) { this.setState({mythos5: true}) } 
-        else { if (this.state.mythos6 === false) { this.setState({mythos6: true}) }}}}}}
+        if  (this.state.mythos1 === false) { this.setState({mythos1: 'blue'}) } 
+        else { if (this.state.mythos2 === false) { this.setState({mythos2: 'blue'}) } 
+        else { if (this.state.mythos3 === false) { this.setState({mythos3: 'blue'}) } 
+        else { if (this.state.mythos4 === false) { this.setState({mythos4: 'blue'}) } 
+        else { if (this.state.mythos5 === false) { this.setState({mythos5: 'blue'}) } 
+        else { if (this.state.mythos6 === false) { this.setState({mythos6: 'blue'}) }}}}}}
     }
 
     mythosNG1Done = () => {
@@ -587,7 +594,7 @@ class CthulhuBoard extends Component {
                                     </div>
                                 </div>)}
                                 </Popup>:
-                            this.state.prevMythosNo === 'HY1' && this.state.mythos1 !== true && this.state.mythos2 !== true && this.state.mythos3 !== true && this.state.mythos4 !== true && this.state.mythos5 !== true && this.state.mythos6 !== true 
+                            this.state.prevMythosNo === 'HY1' && this.state.mythos1 !== 'blue' && this.state.mythos2 !== 'blue' && this.state.mythos3 !== 'blue' && this.state.mythos4 !== 'blue' && this.state.mythos5 !== 'blue' && this.state.mythos6 !== 'blue' 
                                 ?<Popup onOpen={this.chooseRumor} contentStyle={{background:'none', border: 'transparent'}} trigger=
                                 {<button className='mythosCloseButton'>X</button>}modal nested>
                                 {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.rumorNo}`}><button className='mythosCloseButton' onClick={() => close()}>X</button></div></div>)}
@@ -643,12 +650,12 @@ class CthulhuBoard extends Component {
                                 </Popup>
                             </div>
                         </div>
-                        {this.state.mythos1 === true ?<div>{ InteractiveCard1(choosenMythos) }</div>:null}
-                        {this.state.mythos2 === true ?<div>{ InteractiveCard2(choosenMythos) }</div>:null}
-                        {this.state.mythos3 === true ?<div>{ InteractiveCard3(choosenMythos) }</div>:null}
-                        {this.state.mythos4 === true ?<div>{ InteractiveCard4(choosenMythos) }</div>:null}
-                        {this.state.mythos5 === true ?<div>{ InteractiveCard5(choosenMythos) }</div>:null}
-                        {this.state.mythos6 === true ?<div>{ InteractiveCard6(choosenMythos) }</div>:null}
+                        {this.state.mythos1 === 'green' || this.state.mythos1 === 'blue' ?<div>{ InteractiveCard1(choosenMythos) }</div>:null}
+                        {this.state.mythos2 === 'green' || this.state.mythos2 === 'blue' ?<div>{ InteractiveCard2(choosenMythos) }</div>:null}
+                        {this.state.mythos3 === 'green' || this.state.mythos3 === 'blue' ?<div>{ InteractiveCard3(choosenMythos) }</div>:null}
+                        {this.state.mythos4 === 'green' || this.state.mythos4 === 'blue' ?<div>{ InteractiveCard4(choosenMythos) }</div>:null}
+                        {this.state.mythos5 === 'green' || this.state.mythos5 === 'blue' ?<div>{ InteractiveCard5(choosenMythos) }</div>:null}
+                        {this.state.mythos6 === 'green' || this.state.mythos6 === 'blue' ?<div>{ InteractiveCard6(choosenMythos) }</div>:null}
                     </div>
                 </div>
             </div>
