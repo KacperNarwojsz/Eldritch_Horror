@@ -7,25 +7,12 @@ import Cthulhu from './pages/Cthulhu';
 import CthulhuLvlChar from './pages/CthulhuLvlChar';
 import Victory from './pages/Victory';
 import Defeat from './pages/Defeat';
-import chooseRandom from './Components/Shuffler';
 import './App.css';
 
 class App extends Component {
   
   constructor() {
     super();
-    this.mythosDeck = []
-    this.mythosDeckStage2 = []
-    this.mythosDeckStage3 = []
-    this.mythosDeckGreenEasy = ['EG1','EG2','EG3','EG4','EG5','NG1','NG2','NG3','NG4','NG5','NG6','NG7','NG8']
-    this.mythosDeckGreenNormal = ['EG1','EG2','EG3','EG4','EG5','NG1','NG2','NG3','NG4','NG5','NG6','NG7','NG8','HG1','HG2','HG3','HG4','HG5']
-    this.mythosDeckGreenHard = ['NG1','NG2','NG3','NG4','NG5','NG6','NG7','NG8','HG1','HG2','HG3','HG4','HG5']
-    this.mythosDeckYellowEasy = ['EY1','EY2','EY3','EY4','EY5','NY1','NY2','NY3','NY4','NY5','NY6','NY7','NY8','NY9','NY10','NY11']
-    this.mythosDeckYellowNormal = ['EY1','EY2','EY3','EY4','EY5','NY1','NY2','NY3','NY4','NY5','NY6','NY7','NY8','NY9','NY10','NY11','HY1','HY2','HY3','HY4','HY5']
-    this.mythosDeckYellowHard = ['NY1','NY2','NY3','NY4','NY5','NY6','NY7','NY8','NY9','NY10','NY11','HY1','HY2','HY3','HY4','HY5']
-    this.mythosDeckBlueEasy = ['EB1','EB2','EB4','NB1','NB2','NB3','NB4']
-    this.mythosDeckBlueNormal = ['EB1','EB2','EB4','NB1','NB2','NB3','NB4','HB1','HB2','HB3','HB4']
-    this.mythosDeckBlueHard = ['NB1','NB2','NB3','NB4','HB1','HB2','HB3','HB4']
     this.state = {
       route: "'Home'",
       level: false,
@@ -77,59 +64,14 @@ class App extends Component {
   }
 
   setLvlEasy = () => {
-    this.mythosDeck.push(chooseRandom(this.mythosDeckYellowEasy)); 
-    this.mythosDeck.push(chooseRandom(this.mythosDeckYellowEasy));
-    this.mythosDeck.push(chooseRandom(this.mythosDeckBlueEasy)); 
-    this.mythosDeck.push(chooseRandom(this.mythosDeckBlueEasy));
-    this.mythosDeckStage2.push(chooseRandom(this.mythosDeckGreenEasy)); 
-    this.mythosDeckStage2.push(chooseRandom(this.mythosDeckYellowEasy));
-    this.mythosDeckStage2.push(chooseRandom(this.mythosDeckYellowEasy)); 
-    this.mythosDeckStage2.push(chooseRandom(this.mythosDeckYellowEasy));
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckGreenEasy)); 
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckGreenEasy));
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckGreenEasy)); 
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckYellowEasy));
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckYellowEasy));
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckYellowEasy));
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckYellowEasy));
     this.setState({ level: 'Easy'})
   }
 
   setLvlNormal = () => {
-    this.mythosDeck.push(chooseRandom(this.mythosDeckYellowNormal)); 
-    this.mythosDeck.push(chooseRandom(this.mythosDeckYellowNormal));
-    this.mythosDeck.push(chooseRandom(this.mythosDeckBlueNormal)); 
-    this.mythosDeck.push(chooseRandom(this.mythosDeckBlueNormal));
-    this.mythosDeckStage2.push(chooseRandom(this.mythosDeckGreenNormal)); 
-    this.mythosDeckStage2.push(chooseRandom(this.mythosDeckYellowNormal));
-    this.mythosDeckStage2.push(chooseRandom(this.mythosDeckYellowNormal)); 
-    this.mythosDeckStage2.push(chooseRandom(this.mythosDeckYellowNormal));
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckGreenNormal)); 
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckGreenNormal));
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckGreenNormal)); 
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckYellowNormal));
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckYellowNormal));
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckYellowNormal));
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckYellowNormal));
     this.setState({ level: 'Normal'})
   }
 
   setLvlHard = () => {
-    this.mythosDeck.push(chooseRandom(this.mythosDeckYellowHard)); 
-    this.mythosDeck.push(chooseRandom(this.mythosDeckYellowHard));
-    this.mythosDeck.push(chooseRandom(this.mythosDeckBlueHard)); 
-    this.mythosDeck.push(chooseRandom(this.mythosDeckBlueHard));
-    this.mythosDeckStage2.push(chooseRandom(this.mythosDeckGreenHard)); 
-    this.mythosDeckStage2.push(chooseRandom(this.mythosDeckYellowHard));
-    this.mythosDeckStage2.push(chooseRandom(this.mythosDeckYellowHard)); 
-    this.mythosDeckStage2.push(chooseRandom(this.mythosDeckYellowHard));
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckGreenHard)); 
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckGreenHard));
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckGreenHard)); 
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckYellowHard));
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckYellowHard));
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckYellowHard));
-    this.mythosDeckStage3.push(chooseRandom(this.mythosDeckYellowHard));
     this.setState({ level: 'Hard'})
   }
 
@@ -177,9 +119,6 @@ class App extends Component {
                                             loadChulhuLvlChar={this.routeToCthulhuLvlChar}
                                             level={this.state.level}
                                             characters={this.state.characters}
-                                            mythosDeck={this.mythosDeck}
-                                            mythosDeckStage2={this.mythosDeckStage2}
-                                            mythosDeckStage3={this.mythosDeckStage3}
                                             victory={this.routeToVictory}
                                             defeat={this.routeToDefeat}
                                           />;
