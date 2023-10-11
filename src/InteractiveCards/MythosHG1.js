@@ -38,8 +38,8 @@ class MythosHG1 extends Component {
                         </Popup>
                     </div>
                     <div className="mythosTokensDiv">
-                        <button className="tokenMythosReckoning" onClick={this.doneButtonOnOff}></button>
                         {this.state.isTokenMythosDoneActive?<button className="tokenMythosDone" onClick={this.state.mythosHG1Done}></button>:null}
+                        <button className="tokenMythosReckoning" onClick={this.doneButtonOnOff}></button>
                     </div>
                 </div>
         )

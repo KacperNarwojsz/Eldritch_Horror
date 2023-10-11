@@ -38,8 +38,8 @@ class MythosNG6 extends Component {
                         </Popup>
                     </div>
                     <div className="mythosTokensDiv">
-                        <button className="tokenMythosReckoning" onClick={this.doneButtonOnOff}></button>
                         {this.state.isTokenMythosDoneActive?<button className="tokenMythosDone" onClick={this.state.mythosNG6Done}></button>:null}
+                        <button className="tokenMythosReckoning" onClick={this.doneButtonOnOff}></button>
                     </div>
                 </div>
         )
