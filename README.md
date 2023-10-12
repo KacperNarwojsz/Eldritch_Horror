@@ -1,7 +1,8 @@
 # Eldritch Horror Helper
 
-Lay out your board, choose your researchers, launch the app, choose your Ancient One and let the Horror begin! <br>
-
+Lay out your board, choose your researchers, launch the app, choose the Ancient One and let the Horror begin! <br>
+App created to save table space and time needed for shuffling 10+ card decks. 
+App requires the board version of the game and cannot be played on its own. 
 
 
 
