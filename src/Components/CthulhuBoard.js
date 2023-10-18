@@ -34,14 +34,15 @@ import './Components.css';
 import '../InteractiveCards/InteractiveCards.css';
 
 class CthulhuBoard extends Component {
-    constructor({ level, characters, mythosDeck, mythosDeckStage2, mythosDeckStage3, rumorDeck, victory, defeat}) {
-        super(); 
+    constructor({ props, level, characters, mythosDeck, mythosDeckStage2, mythosDeckStage3, rumorDeck, removeExpedition, victory, defeat}) {
+        super(props); 
         this.mysteryDeck = [1,2,3,4]
         this.discardMysteryDeck = []
         this.mythosDeck = mythosDeck
         this.mythosDeckStage2 = mythosDeckStage2
         this.mythosDeckStage3 = mythosDeckStage3
         this.rumorDeck = rumorDeck
+        this.removeExpedition = removeExpedition
         this.discardMythosDeck = []
         this.state = {
             ancientCardFlipped: false,
@@ -587,9 +588,9 @@ class CthulhuBoard extends Component {
                                                 <p className='mythosPopUpTextExpedition'>Aktywna Ekspedycja:</p>
                                             </div>
                                             <div className='mythosPopUpYellowExpedition'>
-                                                <button className="tokenMythosPopUpExpedition" id="tokenMythosPopUpExpeditionTheAmazon"></button>
+                                                <button className="tokenMythosPopUpExpedition" id={`tokenMythosPopUpExpedition${this.props.expeditionReverseShuffle}`}></button>
                                             </div>
-                                            <button className='mythosPopUpYellowButton' onClick={() => {reverseMystery(); close()}}>Usunięcie Aktywnej Ekspedycji</button>
+                                            <button className='mythosPopUpYellowButton' onClick={() => {this.removeExpedition(); close()}}>Usunięcie Aktywnej Ekspedycji</button>
                                         </div>                    
                                     </div>
                                 </div>)}

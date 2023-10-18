@@ -20,7 +20,6 @@ class App extends Component {
       // route: "Cthulhu",
       // level: "Easy",
       // characters: 3,
-      start: false,
     }
   }
 
@@ -127,7 +126,6 @@ class App extends Component {
                                             loadHome={this.routeToHome}
                                             level={this.state.level}
                                             characters={this.state.characters}
-                                            allowanceToStart={this.state.start}
                                             chooseLvlEasy={this.setLvlEasy}
                                             chooseLvlNormal={this.setLvlNormal}
                                             chooseLvlHard={this.setLvlHard}

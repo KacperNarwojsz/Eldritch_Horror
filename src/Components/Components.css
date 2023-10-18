@@ -1103,6 +1103,10 @@
     background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionTunguska_Front_3.png);
 }
 
+#ExpeditionDefeat {
+    background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionDefeat.png);
+}
+
 #CthulhuResearch {
     background-image: url(/src/pictures/EncounterCards/CthulhuResearch/Encounter_CthulhuResearch.png);
     animation-delay:4.7s
