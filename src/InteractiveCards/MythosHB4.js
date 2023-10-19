@@ -24,7 +24,7 @@ class MythosHB4 extends Component {
     }
 
     counterIncrement = () => {
-        if (this.state.counter < 4) {
+        if (this.state.counter < 8) {
             this.setState ({counter: this.state.counter +1})
         }
     }

@@ -35,6 +35,7 @@ class Cthulhu extends Component {
                                                      'ThePyramids', 'ThePyramids', 'ThePyramids', 
                                                      'Tunguska', 'Tunguska', 'Tunguska']
         this.discardDeckReverseExpedition = []
+        this.deletedDeckReverseExpedition = []
         this.shuffleDeckExpeditionAntarctica = [1,2,3]
         this.shuffleDeckExpeditionTheAmazon = [1,2,3]
         this.shuffleDeckExpeditionTheHeartofAfrica = [1,2,3]
@@ -51,6 +52,12 @@ class Cthulhu extends Component {
             expeditionReverseShuffle: chooseRandom(this.shuffleDeckReverseExpedition),
             expeditionPreviousReverse: 0,
             expeditionShuffle: 0,
+            deletedAntarctica: false,
+            deletedTheAmazon: false,
+            deletedTheHeartofAfrica: false,
+            deletedTheHimalayas: false,
+            deletedThePyramids: false,
+            deletedTunguska: false,
           }                        
 
         if (level === 'Easy') {
@@ -173,11 +180,18 @@ class Cthulhu extends Component {
     }
 
     removeExpedition = () => {
+        if      (this.state.expeditionReverseShuffle === 'Antarctica')       {this.setState({deletedAntarctica: true})} 
+        else if (this.state.expeditionReverseShuffle === 'TheAmazon')        {this.setState({deletedTheAmazon: true})} 
+        else if (this.state.expeditionReverseShuffle === 'TheHeartofAfrica') {this.setState({deletedTheHeartofAfrica: true})}
+        else if (this.state.expeditionReverseShuffle === 'TheHimalayas')     {this.setState({deletedTheHimalayas: true})} 
+        else if (this.state.expeditionReverseShuffle === 'ThePyramids')      {this.setState({deletedThePyramids: true})} 
+        else if (this.state.expeditionReverseShuffle === 'Tunguska')         {this.setState({deletedTunguska: true})}
+        this.deletedDeckReverseExpedition.push(this.state.expeditionReverseShuffle);
         let filterExpeditions = this.shuffleDeckReverseExpedition.filter(currentExpedition => currentExpedition !== this.state.expeditionReverseShuffle)
         this.shuffleDeckReverseExpedition = filterExpeditions
-        this.setState({expeditionReverseShuffle: chooseRandom(this.shuffleDeckReverseExpedition)}) 
         let backupExpeditions = this.shuffleDeckReverseExpeditionFiltered.filter(currentExpedition => currentExpedition !== this.state.expeditionReverseShuffle)
         this.shuffleDeckReverseExpeditionFiltered = backupExpeditions
+        this.setState({expeditionReverseShuffle: chooseRandom(this.shuffleDeckReverseExpedition)}) 
     }
 
     render() {
@@ -189,6 +203,7 @@ class Cthulhu extends Component {
                             <div className="flexDiv">
                                 <button className="backBoardButton" onClick={this.state.loadChulhuLvlChar}></button>
                                 {/* <button onClick={this.removeExpedition}>CLICK ME</button> */}
+                                {/* <p>{`Array ${this.deletedDeckReverseExpedition}`}</p> */}
                                 <CthulhuBoard level={this.state.level} 
                                               characters={this.state.characters} 
                                               mythosDeck={this.mythosDeck} 
@@ -196,6 +211,13 @@ class Cthulhu extends Component {
                                               mythosDeckStage3={this.mythosDeckStage3} 
                                               rumorDeck={this.rumorDeck} 
                                               expeditionReverseShuffle={this.state.expeditionReverseShuffle} 
+                                              deletedDeckReverseExpedition={this.deletedDeckReverseExpedition}
+                                              deletedAntarctica={this.state.deletedAntarctica}
+                                              deletedTheAmazon={this.state.deletedTheAmazon}
+                                              deletedTheHeartofAfrica={this.state.deletedTheHeartofAfrica}
+                                              deletedTheHimalayas={this.state.deletedTheHimalayas}
+                                              deletedThePyramids={this.state.deletedThePyramids}
+                                              deletedTunguska={this.state.deletedTunguska}
                                               removeExpedition={this.removeExpedition}
                                               victory={this.state.victory} 
                                               defeat={this.state.defeat} />

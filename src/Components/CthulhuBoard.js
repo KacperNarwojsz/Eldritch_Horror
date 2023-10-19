@@ -11,12 +11,9 @@ import CthulhuMysteryRise from '../InteractiveCards/CthulhuMysteryRise';
 import MythosNG1 from '../InteractiveCards/MythosNG1';
 import MythosNG6 from '../InteractiveCards/MythosNG6';
 import MythosHG1 from '../InteractiveCards/MythosHG1';
-// import MythosNY8 from '../InteractiveCards/MythosNY8';
-// import MythosHY1 from '../InteractiveCards/MythosHY1';
-// import MythosHY5 from '../InteractiveCards/MythosHY5';
 import MythosEB1 from '../InteractiveCards/MythosEB1';
 import MythosEB2 from '../InteractiveCards/MythosEB2';
-// import MythosEB3 from '../InteractiveCards/MythosEB3';
+import MythosEB3 from '../InteractiveCards/MythosEB3';
 import MythosEB4 from '../InteractiveCards/MythosEB4';
 import MythosNB1 from '../InteractiveCards/MythosNB1';
 import MythosNB2 from '../InteractiveCards/MythosNB2';
@@ -34,14 +31,16 @@ import './Components.css';
 import '../InteractiveCards/InteractiveCards.css';
 
 class CthulhuBoard extends Component {
-    constructor({ props, level, characters, mythosDeck, mythosDeckStage2, mythosDeckStage3, rumorDeck, removeExpedition, victory, defeat}) {
+    constructor({ props, level, characters, mythosDeck, mythosDeckStage2, mythosDeckStage3, rumorDeck, deletedDeckReverseExpedition, removeExpedition, victory, defeat}) {
         super(props); 
         this.mysteryDeck = [1,2,3,4]
         this.discardMysteryDeck = []
-        this.mythosDeck = mythosDeck
+        // this.mythosDeck = mythosDeck
+        this.mythosDeck = ['EB3']
         this.mythosDeckStage2 = mythosDeckStage2
         this.mythosDeckStage3 = mythosDeckStage3
         this.rumorDeck = rumorDeck
+        this.deletedDeckReverseExpedition = deletedDeckReverseExpedition
         this.removeExpedition = removeExpedition
         this.discardMythosDeck = []
         this.state = {
@@ -408,6 +407,9 @@ class CthulhuBoard extends Component {
               case "HG1":      return <MythosHG1 mythosHG1Done={this.mythosHG1Done}/>;
               case "EB1":      return <MythosEB1 mythosEB1Done={this.mythosEB1Done} characters={this.state.characters}/>;
               case "EB2":      return <MythosEB2 mythosEB2Done={this.mythosEB2Done}/>;
+              case "EB3":      return <MythosEB3 mythosEB3Done={this.mythosEB3Done} characters={this.state.characters} deletedDeckReverseExpedition={this.deletedDeckReverseExpedition} removeExpedition={this.removeExpedition}
+                                                 deletedAntarctica={this.props.deletedAntarctica} deletedTheAmazon={this.props.deletedTheAmazon} deletedTheHeartofAfrica={this.props.deletedTheHeartofAfrica} 
+                                                 deletedTheHimalayas={this.props.deletedTheHimalayas} deletedThePyramids={this.props.deletedThePyramids} deletedTunguska={this.props.deletedTunguska} defeat={this.state.defeat}/>;
               case "EB4":      return <MythosEB4 mythosEB4Done={this.mythosEB4Done}/>;
               case "NB1":      return <MythosNB1 mythosNB1Done={this.mythosNB1Done} characters={this.state.characters}/>;
               case "NB2":      return <MythosNB2 mythosNB2Done={this.mythosNB2Done} characters={this.state.characters}/>;
@@ -428,6 +430,9 @@ class CthulhuBoard extends Component {
               case "HG1":      return <MythosHG1 mythosHG1Done={this.mythosHG1Done}/>;
               case "EB1":      return <MythosEB1 mythosEB1Done={this.mythosEB1Done} characters={this.state.characters}/>;
               case "EB2":      return <MythosEB2 mythosEB2Done={this.mythosEB2Done}/>;
+              case "EB3":      return <MythosEB3 mythosEB3Done={this.mythosEB3Done} characters={this.state.characters} deletedDeckReverseExpedition={this.deletedDeckReverseExpedition} removeExpedition={this.removeExpedition}
+                                                 deletedAntarctica={this.props.deletedAntarctica} deletedTheAmazon={this.props.deletedTheAmazon} deletedTheHeartofAfrica={this.props.deletedTheHeartofAfrica} 
+                                                 deletedTheHimalayas={this.props.deletedTheHimalayas} deletedThePyramids={this.props.deletedThePyramids} deletedTunguska={this.props.deletedTunguska} defeat={this.state.defeat}/>;
               case "EB4":      return <MythosEB4 mythosEB4Done={this.mythosEB4Done}/>;
               case "NB1":      return <MythosNB1 mythosNB1Done={this.mythosNB1Done} characters={this.state.characters}/>;
               case "NB2":      return <MythosNB2 mythosNB2Done={this.mythosNB2Done} characters={this.state.characters}/>;
@@ -448,6 +453,9 @@ class CthulhuBoard extends Component {
               case "HG1":      return <MythosHG1 mythosHG1Done={this.mythosHG1Done}/>;
               case "EB1":      return <MythosEB1 mythosEB1Done={this.mythosEB1Done} characters={this.state.characters}/>;
               case "EB2":      return <MythosEB2 mythosEB2Done={this.mythosEB2Done}/>;
+              case "EB3":      return <MythosEB3 mythosEB3Done={this.mythosEB3Done} characters={this.state.characters} deletedDeckReverseExpedition={this.deletedDeckReverseExpedition} removeExpedition={this.removeExpedition}
+                                                 deletedAntarctica={this.props.deletedAntarctica} deletedTheAmazon={this.props.deletedTheAmazon} deletedTheHeartofAfrica={this.props.deletedTheHeartofAfrica} 
+                                                 deletedTheHimalayas={this.props.deletedTheHimalayas} deletedThePyramids={this.props.deletedThePyramids} deletedTunguska={this.props.deletedTunguska} defeat={this.state.defeat}/>;
               case "EB4":      return <MythosEB4 mythosEB4Done={this.mythosEB4Done}/>;
               case "NB1":      return <MythosNB1 mythosNB1Done={this.mythosNB1Done} characters={this.state.characters}/>;
               case "NB2":      return <MythosNB2 mythosNB2Done={this.mythosNB2Done} characters={this.state.characters}/>;
@@ -468,6 +476,9 @@ class CthulhuBoard extends Component {
               case "HG1":      return <MythosHG1 mythosHG1Done={this.mythosHG1Done}/>;
               case "EB1":      return <MythosEB1 mythosEB1Done={this.mythosEB1Done} characters={this.state.characters}/>;
               case "EB2":      return <MythosEB2 mythosEB2Done={this.mythosEB2Done}/>;
+              case "EB3":      return <MythosEB3 mythosEB3Done={this.mythosEB3Done} characters={this.state.characters} deletedDeckReverseExpedition={this.deletedDeckReverseExpedition} removeExpedition={this.removeExpedition}
+                                                 deletedAntarctica={this.props.deletedAntarctica} deletedTheAmazon={this.props.deletedTheAmazon} deletedTheHeartofAfrica={this.props.deletedTheHeartofAfrica} 
+                                                 deletedTheHimalayas={this.props.deletedTheHimalayas} deletedThePyramids={this.props.deletedThePyramids} deletedTunguska={this.props.deletedTunguska} defeat={this.state.defeat}/>;
               case "EB4":      return <MythosEB4 mythosEB4Done={this.mythosEB4Done}/>;
               case "NB1":      return <MythosNB1 mythosNB1Done={this.mythosNB1Done} characters={this.state.characters}/>;
               case "NB2":      return <MythosNB2 mythosNB2Done={this.mythosNB2Done} characters={this.state.characters}/>;
@@ -488,6 +499,9 @@ class CthulhuBoard extends Component {
               case "HG1":      return <MythosHG1 mythosHG1Done={this.mythosHG1Done}/>;
               case "EB1":      return <MythosEB1 mythosEB1Done={this.mythosEB1Done} characters={this.state.characters}/>;
               case "EB2":      return <MythosEB2 mythosEB2Done={this.mythosEB2Done}/>;
+              case "EB3":      return <MythosEB3 mythosEB3Done={this.mythosEB3Done} characters={this.state.characters} deletedDeckReverseExpedition={this.deletedDeckReverseExpedition} removeExpedition={this.removeExpedition}
+                                                 deletedAntarctica={this.props.deletedAntarctica} deletedTheAmazon={this.props.deletedTheAmazon} deletedTheHeartofAfrica={this.props.deletedTheHeartofAfrica} 
+                                                 deletedTheHimalayas={this.props.deletedTheHimalayas} deletedThePyramids={this.props.deletedThePyramids} deletedTunguska={this.props.deletedTunguska} defeat={this.state.defeat}/>;
               case "EB4":      return <MythosEB4 mythosEB4Done={this.mythosEB4Done}/>;
               case "NB1":      return <MythosNB1 mythosNB1Done={this.mythosNB1Done} characters={this.state.characters}/>;
               case "NB2":      return <MythosNB2 mythosNB2Done={this.mythosNB2Done} characters={this.state.characters}/>;
@@ -508,6 +522,9 @@ class CthulhuBoard extends Component {
               case "HG1":      return <MythosHG1 mythosHG1Done={this.mythosHG1Done}/>;
               case "EB1":      return <MythosEB1 mythosEB1Done={this.mythosEB1Done} characters={this.state.characters}/>;
               case "EB2":      return <MythosEB2 mythosEB2Done={this.mythosEB2Done}/>;
+              case "EB3":      return <MythosEB3 mythosEB3Done={this.mythosEB3Done} characters={this.state.characters} deletedDeckReverseExpedition={this.deletedDeckReverseExpedition} removeExpedition={this.removeExpedition}
+                                                 deletedAntarctica={this.props.deletedAntarctica} deletedTheAmazon={this.props.deletedTheAmazon} deletedTheHeartofAfrica={this.props.deletedTheHeartofAfrica} 
+                                                 deletedTheHimalayas={this.props.deletedTheHimalayas} deletedThePyramids={this.props.deletedThePyramids} deletedTunguska={this.props.deletedTunguska} defeat={this.state.defeat}/>;
               case "EB4":      return <MythosEB4 mythosEB4Done={this.mythosEB4Done}/>;
               case "NB1":      return <MythosNB1 mythosNB1Done={this.mythosNB1Done} characters={this.state.characters}/>;
               case "NB2":      return <MythosNB2 mythosNB2Done={this.mythosNB2Done} characters={this.state.characters}/>;

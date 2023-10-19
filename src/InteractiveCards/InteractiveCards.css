@@ -707,6 +707,11 @@
     align-items: center;
 }
 
+.mythosPopUpExpeditions {
+    display: flex;
+    flex-direction: row;
+}
+
 .tokenMythosPopUpExpedition {
     display: flex;
     flex-direction: row;
@@ -718,28 +723,112 @@
     height: 13vw;
 }
 
+.tokenMythosPopUpExpeditionSmall {
+    display: flex;
+    flex-direction: row;
+    background: none;
+    background-size: cover;
+    margin: -0.05vw;
+    margin-top: 0.6vw;
+    margin-bottom: 0.6vw;
+    border: none;
+    width: 7vw;
+    height: 6.5vw;
+}
+
+.tokenMythosPopUpExpeditionButton {
+    display: flex;
+    width: 28vw;
+    height: 3.5vw;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: "F1669 Elzevir W00 Normal"; 
+    font-size: 2.2vw;
+    margin: 0.5vw;
+    border: 0.15vw solid black;
+    border-radius: 1vw;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease; 
+    cursor: pointer;
+}
+
+.tokenMythosPopUpExpeditionButton:hover {
+    transform: scale(1.05);
+}
+
 #tokenMythosPopUpExpeditionAntarctica {
     background-image: url(/src/pictures/Tokens/TokenAntarctica.png);
+}
+
+#tokenMythosPopUpExpeditionAntarcticaSmall {
+    background-image: url(/src/pictures/Tokens/TokenAntarcticaSmall.png);
+}
+
+#tokenMythosPopUpExpeditionAntarcticaCrossedOut {
+    background-image: url(/src/pictures/Tokens/TokenAntarcticaCrossedOut.png);
 }
 
 #tokenMythosPopUpExpeditionTheAmazon {
     background-image: url(/src/pictures/Tokens/TokenTheAmazon.png);
 }
 
+#tokenMythosPopUpExpeditionTheAmazonSmall {
+    background-image: url(/src/pictures/Tokens/TokenTheAmazonSmall.png);
+}
+
+#tokenMythosPopUpExpeditionTheAmazonCrossedOut {
+    background-image: url(/src/pictures/Tokens/TokenTheAmazonCrossedOut.png);
+}
+
 #tokenMythosPopUpExpeditionTheHeartofAfrica {
     background-image: url(/src/pictures/Tokens/TokenTheHeartOfAfrica.png);
+}
+
+#tokenMythosPopUpExpeditionTheHeartofAfricaSmall {
+    background-image: url(/src/pictures/Tokens/TokenTheHeartOfAfricaSmall.png);
+}
+
+#tokenMythosPopUpExpeditionTheHeartofAfricaCrossedOut {
+    background-image: url(/src/pictures/Tokens/TokenTheHeartOfAfricaCrossedOut.png);
 }
 
 #tokenMythosPopUpExpeditionTheHimalayas {
     background-image: url(/src/pictures/Tokens/TokenTheHimalayas.png);
 }
 
+#tokenMythosPopUpExpeditionTheHimalayasSmall {
+    background-image: url(/src/pictures/Tokens/TokenTheHimalayasSmall.png);
+}
+
+#tokenMythosPopUpExpeditionTheHimalayasCrossedOut {
+    background-image: url(/src/pictures/Tokens/TokenTheHimalayasCrossedOut.png);
+}
+
 #tokenMythosPopUpExpeditionThePyramids {
     background-image: url(/src/pictures/Tokens/TokenThePyramids.png);
 }
 
+#tokenMythosPopUpExpeditionThePyramidsSmall {
+    background-image: url(/src/pictures/Tokens/TokenThePyramidsSmall.png);
+}
+
+#tokenMythosPopUpExpeditionThePyramidsCrossedOut {
+    background-image: url(/src/pictures/Tokens/TokenThePyramidsCrossedOut.png);
+}
+
 #tokenMythosPopUpExpeditionTunguska {
     background-image: url(/src/pictures/Tokens/TokenTunguska.png);
+}
+
+#tokenMythosPopUpExpeditionTunguskaSmall {
+    background-image: url(/src/pictures/Tokens/TokenTunguskaSmall.png);
+}
+
+#tokenMythosPopUpExpeditionTunguskaCrossedOut {
+    background-image: url(/src/pictures/Tokens/TokenTunguskaCrossedOut.png);
 }
 
 .mythosPopUpMattBlue {
