@@ -127,6 +127,12 @@ class Cthulhu extends Component {
     //         this.discardDeckExpedition.push(this.state.expeditionShuffle);
     //     }
     // } 
+    
+    componentDidUpdate() {
+        if (this.shuffleDeckReverseExpedition.length < 1) {
+            this.shuffleDeckReverseExpedition = this.shuffleDeckReverseExpeditionFiltered.slice();
+        }  
+    }
 
     handleExpeditionShuffle = () => {
         switch (this.state.expeditionReverseShuffle) {
@@ -166,12 +172,8 @@ class Cthulhu extends Component {
                         this.shuffleDeckExpeditionTunguska = [1,2,3]
                     }
         }
-
         this.setState(prevState => ({expeditionPreviousReverse: prevState.expeditionReverseShuffle})); 
-        this.setState({expeditionReverseShuffle: chooseRandom(this.shuffleDeckReverseExpedition)});
-            if (this.shuffleDeckReverseExpedition.length < 1) {
-                this.shuffleDeckReverseExpedition = this.shuffleDeckReverseExpeditionFiltered.slice();
-            }  
+        this.setState({expeditionReverseShuffle: chooseRandom(this.shuffleDeckReverseExpedition)}); 
     }
 
     handleExpeditionDiscard = () => {
@@ -203,7 +205,7 @@ class Cthulhu extends Component {
                             <div className="flexDiv">
                                 <button className="backBoardButton" onClick={this.state.loadChulhuLvlChar}></button>
                                 {/* <button onClick={this.removeExpedition}>CLICK ME</button> */}
-                                {/* <p>{`Array ${this.deletedDeckReverseExpedition}`}</p> */}
+                                {/* <p>{`Reverse  ${this.shuffleDeckReverseExpedition}`}</p> */}
                                 <CthulhuBoard level={this.state.level} 
                                               characters={this.state.characters} 
                                               mythosDeck={this.mythosDeck} 

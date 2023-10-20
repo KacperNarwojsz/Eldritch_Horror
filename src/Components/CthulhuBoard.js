@@ -35,8 +35,7 @@ class CthulhuBoard extends Component {
         super(props); 
         this.mysteryDeck = [1,2,3,4]
         this.discardMysteryDeck = []
-        // this.mythosDeck = mythosDeck
-        this.mythosDeck = ['EB3']
+        this.mythosDeck = mythosDeck
         this.mythosDeckStage2 = mythosDeckStage2
         this.mythosDeckStage3 = mythosDeckStage3
         this.rumorDeck = rumorDeck
