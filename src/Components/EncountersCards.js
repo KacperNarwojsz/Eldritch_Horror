@@ -8,7 +8,7 @@ import 'swiper/css/effect-cards';
 import './Components.css';
 
 class EncountersCards extends Component {
-    constructor({ props, handleExpeditionShuffle, handleExpeditionDiscard, discardDeckReverseExpedition, discardDeckExpedition, defeat }) {
+    constructor({ props, handleExpeditionShuffle, handleExpeditionDiscard, discardDeckReverseExpedition, discardDeckExpedition, defeat, ancient }) {
         super(props); 
         this.shuffleDeckAmerica = [1,2,3,4,5,6,7,8]
         this.discardDeckAmerica = []
@@ -24,18 +24,21 @@ class EncountersCards extends Component {
         this.discardDeckExpedition = discardDeckExpedition
         this.handleExpeditionShuffle = handleExpeditionShuffle
         this.handleExpeditionDiscard = handleExpeditionDiscard
-        this.shuffleDeckCthulhuResearch = [1,2,3,4,5,6,7,8]
-        this.discardDeckCthulhuResearch = []
-        this.shuffleDeckCthulhuSpecial = [1,2,3,4,5,6]
-        this.discardDeckCthulhuSpecial = []
+        this.shuffleDeckAncientResearch = [1,2,3,4,5,6,7,8]
+        this.discardDeckAncientResearch = []
+        this.shuffleDeckAncientSpecial = [1,2,3,4,5,6]
+        this.discardDeckAncientSpecial = []
         this.state = {
             isLoadDone: false,
             americaShuffle: 0,
             europeShuffle: 0,
-            asiaamericaShuffle: 0,
+            asiaaustraliaShuffle: 0,
             generalShuffle: 0,
             otherworldShuffle: 0,
+            ancientresearchShuffle: 0,
+            ancientspecialShuffle: 0,
             defeat: defeat,
+            ancient: ancient,
         }
     }
 
@@ -72,14 +75,14 @@ class EncountersCards extends Component {
     }
 
     handleAsiaAustraliaShuffle = () => {
-        this.setState({asiaamericaShuffle: chooseRandom(this.shuffleDeckAsiaAustralia)});
+        this.setState({asiaaustraliaShuffle: chooseRandom(this.shuffleDeckAsiaAustralia)});
         if (this.shuffleDeckAsiaAustralia.length < 1) {
             this.shuffleDeckAsiaAustralia = [1,2,3,4,5,6,7,8]
         }
     }
 
     handleAsiaAustraliaDiscard = () => {
-        this.discardDeckAsiaAustralia.push(this.state.asiaamericaShuffle);
+        this.discardDeckAsiaAustralia.push(this.state.asiaaustraliaShuffle);
     }
 
     handleGeneralShuffle = () => {
@@ -104,26 +107,26 @@ class EncountersCards extends Component {
         this.discardDeckOtherWorld.push(this.state.otherworldShuffle);
     }
 
-    handleCthulhuResearchShuffle = () => {
-        this.setState({cthulhuresearchShuffle: chooseRandom(this.shuffleDeckCthulhuResearch)});
-        if (this.shuffleDeckCthulhuResearch.length < 1) {
-            this.shuffleDeckCthulhuResearch = [1,2,3,4,5,6,7,8]
+    handleAncientResearchShuffle = () => {
+        this.setState({ancientresearchShuffle: chooseRandom(this.shuffleDeckAncientResearch)});
+        if (this.shuffleDeckAncientResearch.length < 1) {
+            this.shuffleDeckAncientResearch = [1,2,3,4,5,6,7,8]
         }
     }
 
-    handleCthulhuResearchDiscard = () => {
-        this.discardDeckCthulhuResearch.push(this.state.cthulhuresearchShuffle);
+    handleAncientResearchDiscard = () => {
+        this.discardDeckAncientResearch.push(this.state.ancientresearchShuffle);
     }
 
-    handleCthulhuSpecialShuffle = () => {
-        this.setState({cthulhuspecialShuffle: chooseRandom(this.shuffleDeckCthulhuSpecial)});
-        if (this.shuffleDeckCthulhuSpecial.length < 1) {
-            this.shuffleDeckCthulhuSpecial = [1,2,3,4,5,6]
+    handleAncientSpecialShuffle = () => {
+        this.setState({ancientspecialShuffle: chooseRandom(this.shuffleDeckAncientSpecial)});
+        if (this.shuffleDeckAncientSpecial.length < 1) {
+            this.shuffleDeckAncientSpecial = [1,2,3,4,5,6]
         }
     }
 
-    handleCthulhuSpecialDiscard = () => {
-        this.discardDeckCthulhuSpecial.push(this.state.cthulhuspecialShuffle);
+    handleAncientSpecialDiscard = () => {
+        this.discardDeckAncientSpecial.push(this.state.ancientspecialShuffle);
     }
 
     render() {
@@ -225,7 +228,7 @@ class EncountersCards extends Component {
             <div className='encounterCardDiscardDiv'>
             <Popup onOpen={this.handleAsiaAustraliaShuffle} onClose={this.handleAsiaAustraliaDiscard} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                 {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='AsiaAustralia'></button>}modal nested>
-                {close => (<div className='outerPopup'><div className='encounterCardFront' id={`AsiaAustraliaFront${this.state.asiaamericaShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
+                {close => (<div className='outerPopup'><div className='encounterCardFront' id={`AsiaAustraliaFront${this.state.asiaaustraliaShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup>
             <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                 {this.discardDeckAsiaAustralia.length!==0?<button className='discardButton'>ODRZUCONE</button>:null}modal nested>
@@ -407,97 +410,98 @@ class EncountersCards extends Component {
             </Popup>
             </div>
             <div className='encounterCardDiscardDiv'>
-            <Popup onOpen={this.handleCthulhuResearchShuffle} onClose={this.handleCthulhuResearchDiscard} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='CthulhuResearch'></button>}modal nested>
-                {close => (<div className='outerPopup'><div className='encounterCardFront' id={`CthulhuResearchFront${this.state.cthulhuresearchShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
+            <Popup onOpen={this.handleAncientResearchShuffle} onClose={this.handleAncientResearchDiscard} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
+                {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id={`${this.state.ancient}Research`}></button>}modal nested>
+                {close => (<div className='outerPopup'><div className='encounterCardFront' id={`${this.state.ancient}ResearchFront${this.state.ancientresearchShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup>
             <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                {this.discardDeckCthulhuResearch.length!==0?<button className='discardButton'>ODRZUCONE</button>:null}modal nested>
+                {this.discardDeckAncientResearch.length!==0?<button className='discardButton'>ODRZUCONE</button>:null}modal nested>
                 {close => (<div className='outerPopupDiscard'>
                 <button className='encounterDiscardCloseButton' onClick={() => close()}>X</button>
                 <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]} className="mySwiper">
-                    {this.discardDeckCthulhuResearch.length>=1?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-1]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=2?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-2]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=3?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-3]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=4?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-4]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=5?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-5]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=6?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-6]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=7?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-7]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=8?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-8]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=9?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-9]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=10?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-10]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=11?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-11]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=12?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-12]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=13?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-13]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=14?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-14]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=15?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-15]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=16?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-16]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=17?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-17]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=18?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-18]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=19?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-19]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=20?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-20]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=21?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-21]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=22?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-22]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=23?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-23]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=24?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-24]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=25?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-25]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=26?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-26]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=27?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-27]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=28?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-28]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=29?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-29]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=30?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-30]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=31?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-31]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuResearch.length>=32?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuResearchFront${this.discardDeckCthulhuResearch[this.discardDeckCthulhuResearch.length-32]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=1?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-1]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=2?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-2]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=3?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-3]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=4?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-4]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=5?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-5]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=6?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-6]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=7?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-7]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=8?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-8]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=9?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-9]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=10?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-10]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=11?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-11]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=12?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-12]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=13?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-13]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=14?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-14]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=15?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-15]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=16?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-16]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=17?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-17]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=18?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-18]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=19?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-19]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=20?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-20]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=21?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-21]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=22?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-22]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=23?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-23]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=24?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-24]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=25?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-25]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=26?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-26]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=27?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-27]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=28?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-28]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=29?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-29]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=30?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-30]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=31?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-31]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientResearch.length>=32?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}ResearchFront${this.discardDeckAncientResearch[this.discardDeckAncientResearch.length-32]}`}></div></SwiperSlide>:null}
                 </Swiper>
                 </div>)}
             </Popup>
             </div>
+            {this.state.ancient === 'Cthulhu' || this.state.ancient === 'YogSothoth'?
             <div className='encounterCardDiscardDiv'>
-            <Popup onOpen={this.handleCthulhuSpecialShuffle} onClose={this.handleCthulhuSpecialDiscard} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id='CthulhuSpecial'></button>}modal nested>
-                {close => (<div className='outerPopup'><div className='encounterCardFront' id={`CthulhuSpecialFront${this.state.cthulhuspecialShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
+            <Popup onOpen={this.handleAncientSpecialShuffle} onClose={this.handleAncientSpecialDiscard} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
+                {<button className={this.state.isLoadDone ? 'encounterCard' : 'encounterCardStamp'} id={`${this.state.ancient}Special`}></button>}modal nested>
+                {close => (<div className='outerPopup'><div className='encounterCardFront' id={`${this.state.ancient}SpecialFront${this.state.ancientspecialShuffle}`}><button className='encounterCloseButton' onClick={() => close()}>X</button></div></div>)}
             </Popup> 
             <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                {this.discardDeckCthulhuSpecial.length!==0?<button className='discardButton'>ODRZUCONE</button>:null}modal nested>
+                {this.discardDeckAncientSpecial.length!==0?<button className='discardButton'>ODRZUCONE</button>:null}modal nested>
                 {close => (<div className='outerPopupDiscard'>
                 <button className='encounterDiscardCloseButton' onClick={() => close()}>X</button>
                 <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]} className="mySwiper">
-                    {this.discardDeckCthulhuSpecial.length>=1?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-1]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=2?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-2]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=3?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-3]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=4?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-4]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=5?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-5]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=6?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-6]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=7?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-7]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=8?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-8]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=9?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-9]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=10?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-10]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=11?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-11]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=12?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-12]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=13?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-13]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=14?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-14]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=15?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-15]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=16?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-16]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=17?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-17]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=18?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-18]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=19?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-19]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=20?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-20]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=21?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-21]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=22?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-22]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=23?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-23]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=24?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-24]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=25?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-25]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=26?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-26]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=27?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-27]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=28?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-28]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=29?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-29]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=30?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-30]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=31?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-31]}`}></div></SwiperSlide>:null}
-                    {this.discardDeckCthulhuSpecial.length>=32?<SwiperSlide><div className='encounterCardDiscard' id={`CthulhuSpecialFront${this.discardDeckCthulhuSpecial[this.discardDeckCthulhuSpecial.length-32]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=1?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-1]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=2?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-2]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=3?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-3]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=4?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-4]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=5?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-5]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=6?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-6]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=7?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-7]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=8?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-8]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=9?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-9]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=10?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-10]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=11?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-11]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=12?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-12]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=13?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-13]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=14?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-14]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=15?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-15]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=16?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-16]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=17?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-17]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=18?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-18]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=19?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-19]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=20?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-20]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=21?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-21]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=22?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-22]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=23?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-23]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=24?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-24]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=25?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-25]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=26?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-26]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=27?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-27]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=28?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-28]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=29?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-29]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=30?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-30]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=31?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-31]}`}></div></SwiperSlide>:null}
+                    {this.discardDeckAncientSpecial.length>=32?<SwiperSlide><div className='encounterCardDiscard' id={`${this.state.ancient}SpecialFront${this.discardDeckAncientSpecial[this.discardDeckAncientSpecial.length-32]}`}></div></SwiperSlide>:null}
                 </Swiper>
                 </div>)}
             </Popup>
-            </div>           
+            </div>:null}         
         </div>
         )
     }

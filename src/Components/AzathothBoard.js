@@ -3,11 +3,10 @@ import 'reactjs-popup/dist/index.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards } from 'swiper/modules';
 import LvlChar from './LvlChar';
-import CthulhuMysteryCard1 from '../InteractiveCards/CthulhuMysteryCard1';
-import CthulhuMysteryCard2 from '../InteractiveCards/CthulhuMysteryCard2';
-import CthulhuMysteryCard3 from '../InteractiveCards/CthulhuMysteryCard3';
-import CthulhuMysteryCard4 from '../InteractiveCards/CthulhuMysteryCard4';
-import CthulhuMysteryRise from '../InteractiveCards/CthulhuMysteryRise';
+import AzathothMysteryCard1 from '../InteractiveCards/AzathothMysteryCard1';
+import AzathothMysteryCard2 from '../InteractiveCards/AzathothMysteryCard2';
+import AzathothMysteryCard3 from '../InteractiveCards/AzathothMysteryCard3';
+import AzathothMysteryCard4 from '../InteractiveCards/AzathothMysteryCard4';
 import MythosNG1 from '../InteractiveCards/MythosNG1';
 import MythosNG6 from '../InteractiveCards/MythosNG6';
 import MythosHG1 from '../InteractiveCards/MythosHG1';
@@ -30,13 +29,12 @@ import 'swiper/css/effect-cards';
 import './Components.css';
 import '../InteractiveCards/InteractiveCards.css';
 
-class CthulhuBoard extends Component {
+class AzathothBoard extends Component {
     constructor({ props, level, characters, mythosDeck, mythosDeckStage2, mythosDeckStage3, rumorDeck, deletedDeckReverseExpedition, removeExpedition, victory, defeat}) {
         super(props); 
         this.mysteryDeck = [1,2,3,4]
         this.discardMysteryDeck = []
-        // this.mythosDeck = mythosDeck
-        this.mythosDeck = ['EB3']
+        this.mythosDeck = mythosDeck
         this.mythosDeckStage2 = mythosDeckStage2
         this.mythosDeckStage3 = mythosDeckStage3
         this.rumorDeck = rumorDeck
@@ -56,7 +54,6 @@ class CthulhuBoard extends Component {
             isMystery4Active: false,
             monsterSlayed: false,
             mysteryCounter: 0,
-            isCthulhuAwake: false,
             popping: true,
             victory: victory,
             defeat: defeat,
@@ -197,17 +194,7 @@ class CthulhuBoard extends Component {
 
     canPop = () => {
         this.setState ({popping: false})
-    }
-
-    cthulhuAwakening = () => {
-        this.setState ({isCthulhuAwake: true})
-        this.setState ({isMystery1Active: false })
-        this.setState ({isMystery2Active: false })
-        this.setState ({isMystery3Active: false })
-        this.setState ({isMystery4Active: false })
-        this.setState(({popping: false}))
-        this.discardMysteryDeck.push(this.state.prevMysteryNo);
-    }   
+    }  
 
     chooseMythos = () => {
         this.setState(prevState => ({prevMythosNo: prevState.mythosNo}))
@@ -541,18 +528,11 @@ class CthulhuBoard extends Component {
         return (
             <div className='ancientBoard'>
                 <Popup contentStyle={{background:'none', border: 'none'}} trigger=
-                    {<figure className={this.state.isLoadDone ? 'ancientSheet' : 'ancientSheetStamp'} id={this.state.ancientCardFlipped ? 'CthulhuSheetBack' : 'CthulhuSheetFront'} tabIndex="0">
-                        {this.state.ancientCardFlipped?<button className="sheetCardSanityCounter">{this.state.sheetCardCounter}</button>:null}
-                    </figure>}modal nested>
-                    {<div className='ancientSheetFocus' id={this.state.ancientCardFlipped ? 'CthulhuSheetBack' : 'CthulhuSheetFront'}>
-                    {!this.state.ancientCardFlipped?<button className='flipButton' id='flipButtonFrontFocus' onClick={this.flipCardSheet}></button>:null}
+                    {<figure className={this.state.isLoadDone ? 'ancientSheet' : 'ancientSheetStamp'} id={this.state.ancientCardFlipped ? 'AzathothSheetBack' : 'AzathothSheetFront'} tabIndex="0"></figure>}modal nested>
+                    {<div className='ancientSheetFocus' id={this.state.ancientCardFlipped ? 'AzathothSheetBack' : 'AzathothSheetFront'}>
+                        {!this.state.ancientCardFlipped?<button className='flipButton' id='flipButtonFrontFocus' onClick={this.flipCardSheet}></button>:null}
                         {this.state.ancientCardFlipped?<button className='flipButton' id='flipButtonBackFocus' onClick={this.flipCardSheet}></button>:null}
-                        {this.state.ancientCardFlipped?<div className='sheetCardAddons' id='sheetCardAddonsFocus'>
-                            <button className='sheetCardTokenMinus' id='sheetCardTokenMinusFocus' onClick={this.sheetCardCounterDecrement}></button>
-                            <button className='sheetCardSanity' id='sheetCardSanityFocus'></button>
-                            <button className='sheetCardCounter' id='sheetCardCounterFocus'>{this.state.sheetCardCounter}</button>
-                            <button className='sheetCardTokenPlus' id='sheetCardTokenPlusFocus' onClick={this.sheetCardCounterIncrement}></button>
-                        </div>:null}
+                        {this.state.ancientCardFlipped?<button className='sheetCardDefeatButton' onClick={this.state.defeat}>PRZEGRANA</button>:null}
                     </div>}
                 </Popup>
                 <div className='ancientMysteryMythosLvlChar'>
@@ -561,29 +541,28 @@ class CthulhuBoard extends Component {
                             <div className='ancientMysteryDiscard'>
                                 {this.state.popping?
                                 <Popup onOpen={this.chooseMystery} onClose={this.canPop} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                                {<button className={this.state.isLoadDone ? 'ancientMysteryReverse' : 'ancientMysteryReverseStamp'} id='CthulhuMysteryReverse'></button>}modal nested>
-                                {close => (<div className='outerPopup'><div className='ancientMysteryFrontPopup' id={`CthulhuMysteryFront${this.state.prevMysteryNo}`}><button className='mysteryCloseButton' onClick={() => close()}>X</button></div></div>)}
-                                </Popup>:<button className='ancientMysteryReverse' id='CthulhuMysteryReverse'></button>}
+                                {<button className={this.state.isLoadDone ? 'ancientMysteryReverse' : 'ancientMysteryReverseStamp'} id='AzathothMysteryReverse'></button>}modal nested>
+                                {close => (<div className='outerPopup'><div className='ancientMysteryFrontPopup' id={`AzathothMysteryFront${this.state.prevMysteryNo}`}><button className='mysteryCloseButton' onClick={() => close()}>X</button></div></div>)}
+                                </Popup>:<button className='ancientMysteryReverse' id='AzathothMysteryReverse'></button>}
                                 <div className='ancientMysteryDiscardButtonDiv'>
                                     <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                                         {this.discardMysteryDeck.length!==0?<button className='discardButton' id='discardMystery'>ODRZUCONE</button>:null}modal nested>
                                         {close => (<div className='outerPopupDiscard'>
                                         <button className='mysteryDiscardCloseButton' onClick={() => close()}>X</button>
                                         <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]} className="mySwiper" id="swiperMystery">
-                                            {this.discardMysteryDeck.length>=1?<SwiperSlide><div className='mysteryCardDiscard' id={`CthulhuMysteryFront${this.discardMysteryDeck[this.discardMysteryDeck.length-1]}`}></div></SwiperSlide>:null}
-                                            {this.discardMysteryDeck.length>=2?<SwiperSlide><div className='mysteryCardDiscard' id={`CthulhuMysteryFront${this.discardMysteryDeck[this.discardMysteryDeck.length-2]}`}></div></SwiperSlide>:null}
-                                            {this.discardMysteryDeck.length>=3?<SwiperSlide><div className='mysteryCardDiscard' id={`CthulhuMysteryFront${this.discardMysteryDeck[this.discardMysteryDeck.length-3]}`}></div></SwiperSlide>:null}
-                                            {this.discardMysteryDeck.length>=4?<SwiperSlide><div className='mysteryCardDiscard' id={`CthulhuMysteryFront${this.discardMysteryDeck[this.discardMysteryDeck.length-4]}`}></div></SwiperSlide>:null}
+                                            {this.discardMysteryDeck.length>=1?<SwiperSlide><div className='mysteryCardDiscard' id={`AzathothMysteryFront${this.discardMysteryDeck[this.discardMysteryDeck.length-1]}`}></div></SwiperSlide>:null}
+                                            {this.discardMysteryDeck.length>=2?<SwiperSlide><div className='mysteryCardDiscard' id={`AzathothMysteryFront${this.discardMysteryDeck[this.discardMysteryDeck.length-2]}`}></div></SwiperSlide>:null}
+                                            {this.discardMysteryDeck.length>=3?<SwiperSlide><div className='mysteryCardDiscard' id={`AzathothMysteryFront${this.discardMysteryDeck[this.discardMysteryDeck.length-3]}`}></div></SwiperSlide>:null}
+                                            {this.discardMysteryDeck.length>=4?<SwiperSlide><div className='mysteryCardDiscard' id={`AzathothMysteryFront${this.discardMysteryDeck[this.discardMysteryDeck.length-4]}`}></div></SwiperSlide>:null}
                                         </Swiper>
                                         </div>)}
                                     </Popup>
                                 </div>
                             </div>
-                            {this.state.isMystery1Active?<CthulhuMysteryCard1 characters={this.state.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.state.mysteryCounter} mysteryIncrementFull={this.mysteryIncrementFull} key={this.state.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.state.ancientCardFlipped ? this.state.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
-                            {this.state.isMystery2Active?<CthulhuMysteryCard2 characters={this.state.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.state.mysteryCounter} mysteryIncrementHalf={this.mysteryIncrementHalf} key={this.state.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.state.ancientCardFlipped ? this.state.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
-                            {this.state.isMystery3Active?<CthulhuMysteryCard3 characters={this.state.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.state.mysteryCounter} mysteryIncrementFull={this.mysteryIncrementFull} key={this.state.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.state.ancientCardFlipped ? this.state.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
-                            {this.state.isMystery4Active?<CthulhuMysteryCard4 characters={this.state.characters} mysteryDecrementMonster={this.mysteryDecrementMonster} mysteryCounter={this.state.mysteryCounter} mysteryIncrementMonster={this.mysteryIncrementMonster} key={this.state.ancientCardFlipped} monsterSlayed={this.state.monsterSlayed} mysteryDone={this.mysteryDeck.length === 0 ? (!this.state.ancientCardFlipped ? this.state.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
-                            {this.state.isCthulhuAwake?<CthulhuMysteryRise characters={this.state.characters} cthulhuSlayed={this.state.victory}/>:null}
+                            {this.state.isMystery1Active?<AzathothMysteryCard1 characters={this.state.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.state.mysteryCounter} mysteryIncrementHalf={this.mysteryIncrementHalf} key={this.state.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? this.state.victory : this.mysteryDone}/>:null}
+                            {this.state.isMystery2Active?<AzathothMysteryCard2 characters={this.state.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.state.mysteryCounter} mysteryIncrementHalf={this.mysteryIncrementHalf} key={this.state.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? this.state.victory : this.mysteryDone}/>:null}
+                            {this.state.isMystery3Active?<AzathothMysteryCard3 characters={this.state.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.state.mysteryCounter} mysteryIncrementHalf={this.mysteryIncrementHalf} key={this.state.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? this.state.victory : this.mysteryDone}/>:null}
+                            {this.state.isMystery4Active?<AzathothMysteryCard4 characters={this.state.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.state.mysteryCounter} mysteryIncrementFull={this.mysteryIncrementFull} key={this.state.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? this.state.victory : this.mysteryDone}/>:null}
                         </div>
                         <LvlChar level={this.state.level} characters={this.state.characters}/> 
                     </div>
@@ -666,6 +645,7 @@ class CthulhuBoard extends Component {
                                         {this.discardMythosDeck.length>=14?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-14]}`}></div></SwiperSlide>:null}
                                         {this.discardMythosDeck.length>=15?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-15]}`}></div></SwiperSlide>:null}
                                         {this.discardMythosDeck.length>=16?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-16]}`}></div></SwiperSlide>:null}
+                                        {this.discardMythosDeck.length>=17?<SwiperSlide><div className='encounterCardDiscard' id={`Mythos${this.discardMythosDeck[this.discardMythosDeck.length-17]}`}></div></SwiperSlide>:null}
                                     </Swiper>
                                     </div>)}
                                 </Popup>
@@ -684,4 +664,4 @@ class CthulhuBoard extends Component {
     } 
 }
 
-export default CthulhuBoard;
+export default AzathothBoard;

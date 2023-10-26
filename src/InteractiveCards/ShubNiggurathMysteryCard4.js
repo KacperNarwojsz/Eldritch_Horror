@@ -2,17 +2,17 @@ import React from 'react';
 import Popup from 'reactjs-popup';
 import "./InteractiveCards.css"
 
-const CthulhuMysteryCard4 = ({ characters, mysteryDecrementMonster, mysteryCounter, mysteryIncrementMonster, monsterSlayed, mysteryDone, }) => {
+const ShubNiggurathMysteryCard4 = ({ characters, mysteryDecrementMonster, mysteryCounter, mysteryIncrementMonster, monsterSlayed, mysteryDone, }) => {
 
     return (
         <div className="ancientMysteryFrontDiv">
             <Popup contentStyle={{background:'none', border: 'none'}} trigger=
-                {<figure className="ancientMysteryFront" id="CthulhuMysteryFront4"></figure>}modal nested>
-                {<div className="ancientMysteryFrontFocus" id="CthulhuMysteryFront4"></div>}
+                {<figure className="ancientMysteryFront" id="ShubNiggurathMysteryFront4"></figure>}modal nested>
+                {<div className="ancientMysteryFrontFocus" id="ShubNiggurathMysteryFront4"></div>}
             </Popup>
             <div>
                 <div className="mysteryTokensMonsterDiv">
-                    <button className="mysteryMonster" id={monsterSlayed?"TokenCthyllaSlayed":"TokenCthylla"}></button>
+                    <button className="mysteryMonster" id={monsterSlayed?"TokenNugSlayed":"TokenNug"}></button>
                     <div className="mysteryTokensMonster">
                         {mysteryCounter===characters+2?null:<button className="tokenMysteryKilling"></button>}
                         {mysteryCounter===characters+2?<button className="tokenMysteryMonsterDone" onClick={mysteryDone}></button>:null}
@@ -28,4 +28,4 @@ const CthulhuMysteryCard4 = ({ characters, mysteryDecrementMonster, mysteryCount
         </div>
     )
 }
-export default CthulhuMysteryCard4;
+export default ShubNiggurathMysteryCard4;

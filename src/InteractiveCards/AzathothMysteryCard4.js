@@ -2,18 +2,18 @@ import React from 'react';
 import Popup from 'reactjs-popup';
 import "./InteractiveCards.css"
 
-const CthulhuMysteryCard1 = ({ characters, mysteryDecrementHalfFull, mysteryCounter, mysteryIncrementFull, mysteryDone, }) => {
+const AzathothMysteryCard4 = ({ characters, mysteryDecrementHalfFull, mysteryCounter, mysteryIncrementFull, mysteryDone, }) => {
 
     return (
-        <div className="ancientMysteryFrontDiv">                
+        <div className="ancientMysteryFrontDiv">
             <Popup contentStyle={{background:'none', border: 'none'}} trigger=
-                {<figure className="ancientMysteryFront" id="CthulhuMysteryFront1"></figure>}modal nested>
-                {<div className="ancientMysteryFrontFocus" id="CthulhuMysteryFront1"></div>}
+                {<figure className="ancientMysteryFront" id="AzathothMysteryFront4"></figure>}modal nested>
+                {<div className="ancientMysteryFrontFocus" id="AzathothMysteryFront4"></div>}
             </Popup>
             <div className="mysteryTokensDiv">
                 <div className="mysteryCounter">
                     <button className="tokenMysteryMinus" onClick={mysteryDecrementHalfFull}></button>
-                    <button className="tokenMysteryEldritch"></button>
+                    <button className="tokenMysteryClue"></button>
                     <button className="tokenMysteryPlus" onClick={mysteryIncrementFull}></button>
                 </div>
                 {mysteryCounter!==characters?<button className="tokenMysteryCounter">{`${mysteryCounter}/${characters}`}</button>:null}
@@ -22,4 +22,4 @@ const CthulhuMysteryCard1 = ({ characters, mysteryDecrementHalfFull, mysteryCoun
         </div>
     )
 }
-export default CthulhuMysteryCard1;
+export default AzathothMysteryCard4;

@@ -94,12 +94,12 @@
 
 /* BUTTONS  */
 
-.cthulhuSheetCard {
+.ancientSheetCard {
     display: flex;
     flex-direction: column;
 }
 
-.cthulhuSheetStamp {
+.ancientSheetStamp {
     justify-content: flex-start;
     background-size: cover;
     height: 21.5vw;
@@ -118,7 +118,7 @@
     animation-fill-mode:forwards;
 }
 
-.cthulhuSheet {
+.ancientSheet {
     justify-content: flex-start;
     background-size: cover;
     height: 21.5vw;
@@ -132,11 +132,11 @@
     cursor: pointer;
 }
 
-.cthulhuSheet:hover {
+.ancientSheet:hover {
     transform: scale(1.03);
 }
 
-.cthulhuSheetFocus {
+.ancientSheetFocus {
     justify-content: flex-start;
     background-size: cover;
     height: 48vw;
@@ -145,17 +145,21 @@
     border-radius: 1vw;
 }
 
-.popup-overlay:has(.cthulhuSheetFocus) {
+.popup-overlay:has(.ancientSheetFocus) {
     background: none;
 }
 
-.popup-content:has(.cthulhuSheetFocus) {
+.popup-content:has(.ancientSheetFocus) {
     width: 39.1vw;
 }
 
-/* .cthulhuSheet:focus {
-    transform: scale(2.18) translate(77.5%, 16%);
-} */
+#AzathothSheetFront {
+    background-image: url(/src/pictures/SheetCards/Ancient_Azathoth_sheet_front.png);
+}
+
+#AzathothSheetBack {
+    background-image: url(/src/pictures/SheetCards/Ancient_Azathoth_sheet_back.png);
+}
 
 #CthulhuSheetFront {
     background-image: url(/src/pictures/SheetCards/Ancient_Cthulhu_sheet_front.png);
@@ -219,6 +223,30 @@
     font-family: EldritchNumbers;
     padding-top: 0.2vw;
     font-size: 1.2vw;
+}
+
+.sheetCardDefeatButton {
+    display: flex;
+    width: 15vw;
+    height: 3.5vw;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Birmingham;
+    font-size: 2.2vw;
+    margin-top: 14.7vw;
+    margin-left: 11.5vw;
+    border: 0.15vw solid black;
+    border-radius: 1vw;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease; 
+    cursor: pointer;
+}
+
+.sheetCardDefeatButton:hover {
+    transform: scale(1.05);
 }
 
 .sheetCardAddons {
@@ -354,8 +382,7 @@
     transform: scale(1.1);
 }
 
-.cthulhuMysteryStamp {
-    background-image: url(/src/pictures/MysteryCards/Ancient_Cthulhu_Mystery.png);
+.ancientMysteryReverseStamp {
     height: 7.4vw;
     width: 11.5vw;
     margin: 1.2vw;
@@ -371,8 +398,7 @@
     animation-fill-mode:forwards;   
 }
 
-.cthulhuMystery {
-    background-image: url(/src/pictures/MysteryCards/Ancient_Cthulhu_Mystery.png);
+.ancientMysteryReverse {
     height: 7.4vw;
     width: 11.5vw;
     margin: 1.2vw;
@@ -383,12 +409,20 @@
     cursor: pointer;
 }
 
-.cthulhuMystery:hover {
+.ancientMysteryReverse:hover {
     transform: scale(1.1);
     z-index: 50;
 }
 
-.cthulhuMysteryFrontPopup {
+#AzathothMysteryReverse {
+    background-image: url(/src/pictures/MysteryCards/Ancient_Azathoth_Mystery.png);
+}
+
+#CthulhuMysteryReverse {
+    background-image: url(/src/pictures/MysteryCards/Ancient_Cthulhu_Mystery.png);
+}
+
+.ancientMysteryFrontPopup {
     display: flex;
     height: 26.3vw;
     width: 41.5vw;
@@ -607,6 +641,7 @@
 .encounters {
     position: relative;
     display: flex;
+    justify-content: center;
     width: 78vw;
     margin-top: 4.7vw;
     margin-left: 11vw;
@@ -1105,6 +1140,146 @@
 
 #ExpeditionDefeat {
     background-image: url(/src/pictures/EncounterCards/Expedition/Encounter_ExpeditionDefeat.png);
+}
+
+#AzathothResearch {
+    background-image: url(/src/pictures/EncounterCards/AzathothResearch/Encounter_AzathothResearch.png);
+    animation-delay:4.7s
+}
+
+#AzathothResearchFront1 {
+    background-image: url(/src/pictures/EncounterCards/AzathothResearch/Encounter_AzathothResearch_Front_1.png);
+}
+
+#AzathothResearchFront2 {
+    background-image: url(/src/pictures/EncounterCards/AzathothResearch/Encounter_AzathothResearch_Front_2.png);
+}
+
+#AzathothResearchFront3 {
+    background-image: url(/src/pictures/EncounterCards/AzathothResearch/Encounter_AzathothResearch_Front_3.png);
+}
+
+#AzathothResearchFront4 {
+    background-image: url(/src/pictures/EncounterCards/AzathothResearch/Encounter_AzathothResearch_Front_4.png);
+}
+
+#AzathothResearchFront5 {
+    background-image: url(/src/pictures/EncounterCards/AzathothResearch/Encounter_AzathothResearch_Front_5.png);
+}
+
+#AzathothResearchFront6 {
+    background-image: url(/src/pictures/EncounterCards/AzathothResearch/Encounter_AzathothResearch_Front_6.png);
+}
+
+#AzathothResearchFront7 {
+    background-image: url(/src/pictures/EncounterCards/AzathothResearch/Encounter_AzathothResearch_Front_7.png);
+}
+
+#AzathothResearchFront8 {
+    background-image: url(/src/pictures/EncounterCards/AzathothResearch/Encounter_AzathothResearch_Front_8.png);
+}
+
+#YogSothothResearch {
+    background-image: url(/src/pictures/EncounterCards/Yog-SothothResearch/Encounter_Yog-SothothResearch.png);
+    animation-delay:4.7s
+}
+
+#YogSothothResearchFront1 {
+    background-image: url(/src/pictures/EncounterCards/Yog-SothothResearch/Encounter_Yog-SothothResearch_Front_1.png);
+}
+
+#YogSothothResearchFront2 {
+    background-image: url(/src/pictures/EncounterCards/Yog-SothothResearch/Encounter_Yog-SothothResearch_Front_2.png);
+}
+
+#YogSothothResearchFront3 {
+    background-image: url(/src/pictures/EncounterCards/Yog-SothothResearch/Encounter_Yog-SothothResearch_Front_3.png);
+}
+
+#YogSothothResearchFront4 {
+    background-image: url(/src/pictures/EncounterCards/Yog-SothothResearch/Encounter_Yog-SothothResearch_Front_4.png);
+}
+
+#YogSothothResearchFront5 {
+    background-image: url(/src/pictures/EncounterCards/Yog-SothothResearch/Encounter_Yog-SothothResearch_Front_5.png);
+}
+
+#YogSothothResearchFront6 {
+    background-image: url(/src/pictures/EncounterCards/Yog-SothothResearch/Encounter_Yog-SothothResearch_Front_6.png);
+}
+
+#YogSothothResearchFront7 {
+    background-image: url(/src/pictures/EncounterCards/Yog-SothothResearch/Encounter_Yog-SothothResearch_Front_7.png);
+}
+
+#YogSothothResearchFront8 {
+    background-image: url(/src/pictures/EncounterCards/Yog-SothothResearch/Encounter_Yog-SothothResearch_Front_8.png);
+}
+
+#YogSothothSpecial {
+    background-image: url(/src/pictures/EncounterCards/Yog-SothothSpecial/Encounter_Yog-SothothSpecial.png);
+    animation-delay:4.8s
+}
+
+#YogSothothSpecialFront1 {
+    background-image: url(/src/pictures/EncounterCards/Yog-SothothSpecial/Encounter_Yog-SothothSpecial_Front_1.png);
+}
+
+#YogSothothSpecialFront2 {
+    background-image: url(/src/pictures/EncounterCards/Yog-SothothSpecial/Encounter_Yog-SothothSpecial_Front_2.png);
+}
+
+#YogSothothSpecialFront3 {
+    background-image: url(/src/pictures/EncounterCards/Yog-SothothSpecial/Encounter_Yog-SothothSpecial_Front_3.png);
+}
+
+#YogSothothSpecialFront4 {
+    background-image: url(/src/pictures/EncounterCards/Yog-SothothSpecial/Encounter_Yog-SothothSpecial_Front_4.png);
+}
+
+#YogSothothSpecialFront5 {
+    background-image: url(/src/pictures/EncounterCards/Yog-SothothSpecial/Encounter_Yog-SothothSpecial_Front_5.png);
+}
+
+#YogSothothSpecialFront6 {
+    background-image: url(/src/pictures/EncounterCards/Yog-SothothSpecial/Encounter_Yog-SothothSpecial_Front_6.png);
+}
+
+#ShubNiggurathResearch {
+    background-image: url(/src/pictures/EncounterCards/Shub-NiggurathResearch/Encounter_Shub-NiggurathResearch.png);
+    animation-delay:4.7s
+}
+
+#ShubNiggurathResearchFront1 {
+    background-image: url(/src/pictures/EncounterCards/Shub-NiggurathResearch/Encounter_Shub-NiggurathResearch_Front_1.png);
+}
+
+#ShubNiggurathResearchFront2 {
+    background-image: url(/src/pictures/EncounterCards/Shub-NiggurathResearch/Encounter_Shub-NiggurathResearch_Front_2.png);
+}
+
+#ShubNiggurathResearchFront3 {
+    background-image: url(/src/pictures/EncounterCards/Shub-NiggurathResearch/Encounter_Shub-NiggurathResearch_Front_3.png);
+}
+
+#ShubNiggurathResearchFront4 {
+    background-image: url(/src/pictures/EncounterCards/Shub-NiggurathResearch/Encounter_Shub-NiggurathResearch_Front_4.png);
+}
+
+#ShubNiggurathResearchFront5 {
+    background-image: url(/src/pictures/EncounterCards/Shub-NiggurathResearch/Encounter_Shub-NiggurathResearch_Front_5.png);
+}
+
+#ShubNiggurathResearchFront6 {
+    background-image: url(/src/pictures/EncounterCards/Shub-NiggurathResearch/Encounter_Shub-NiggurathResearch_Front_6.png);
+}
+
+#ShubNiggurathResearchFront7 {
+    background-image: url(/src/pictures/EncounterCards/Shub-NiggurathResearch/Encounter_Shub-NiggurathResearch_Front_7.png);
+}
+
+#ShubNiggurathResearchFront8 {
+    background-image: url(/src/pictures/EncounterCards/Shub-NiggurathResearch/Encounter_Shub-NiggurathResearch_Front_8.png);
 }
 
 #CthulhuResearch {

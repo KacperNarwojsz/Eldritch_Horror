@@ -3,7 +3,7 @@ import eldritch_logo from "../pictures/Main/Eldritch_logo.png";
 import './AllPages.css'
 
 
-const Home = ({ loadAzathoth, loadYog, loadShub, loadCthulhuLvlChar }) => {
+const Home = ({ loadAzathothLvlChar, loadYogLvlChar, loadShubLvlChar, loadCthulhuLvlChar }) => {
 
     return (
         <div className='home'>
@@ -14,9 +14,9 @@ const Home = ({ loadAzathoth, loadYog, loadShub, loadCthulhuLvlChar }) => {
                 <h1 className="mainTitle">WYBIERZ PRZEDWIECZNEGO:</h1>
             </div>
             <div className="ancientsButtons">
-                <button className="mainButton" id="ButtonAzathoth" onClick={loadAzathoth}>Azathoth</button>
-                <button className="mainButton" id="ButtonYog" onClick={loadYog}>Yog-Sothoth</button>
-                <button className="mainButton" id="ButtonShub" onClick={loadShub}>Shub-Niggurath</button>
+                <button className="mainButton" id="ButtonAzathoth" onClick={loadAzathothLvlChar}>Azathoth</button>
+                <button className="mainButton" id="ButtonYog" onClick={loadYogLvlChar}>Yog-Sothoth</button>
+                <button className="mainButton" id="ButtonShub" onClick={loadShubLvlChar}>Shub-Niggurath</button>
                 <button className="mainButton" id="ButtonCthulhu" onClick={loadCthulhuLvlChar}>Cthulhu</button>
             </div>
         </div>

@@ -1,10 +1,10 @@
 /* --------- MYSTERIES --------- */
 
-.cthulhuMysteryFrontDiv {
+.ancientMysteryFrontDiv {
     display: flex;
 }
 
-.cthulhuMysteryFront {
+.ancientMysteryFront {
     height: 7.1vw;
     width: 11.3vw;
     margin: 0vw;
@@ -14,6 +14,54 @@
     border-radius: 0.4vw;
     transition: all .3s ease;  
     cursor: pointer;
+}
+
+#AzathothMysteryFront1 {
+    background-image: url(/src/pictures/MysteryCards/Ancient_Azathoth_Mystery_Front_1.png);
+}
+
+#AzathothMysteryFront2 {
+    background-image: url(/src/pictures/MysteryCards/Ancient_Azathoth_Mystery_Front_2.png);
+}
+
+#AzathothMysteryFront3 {
+    background-image: url(/src/pictures/MysteryCards/Ancient_Azathoth_Mystery_Front_3.png);
+}
+
+#AzathothMysteryFront4 {
+    background-image: url(/src/pictures/MysteryCards/Ancient_Azathoth_Mystery_Front_4.png);
+}
+
+#YogSothothMysteryFront1 {
+    background-image: url(/src/pictures/MysteryCards/Ancient_Yog-Sothoth_Mystery_Front_1.png);
+}
+
+#YogSothothMysteryFront2 {
+    background-image: url(/src/pictures/MysteryCards/Ancient_Yog-Sothoth_Mystery_Front_2.png);
+}
+
+#YogSothothMysteryFront3 {
+    background-image: url(/src/pictures/MysteryCards/Ancient_Yog-Sothoth_Mystery_Front_3.png);
+}
+
+#YogSothothMysteryFront4 {
+    background-image: url(/src/pictures/MysteryCards/Ancient_Yog-Sothoth_Mystery_Front_4.png);
+}
+
+#ShubNiggurathMysteryFront1 {
+    background-image: url(/src/pictures/MysteryCards/Ancient_Shub-Niggurath_Mystery_Front_1.png);
+}
+
+#ShubNiggurathMysteryFront2 {
+    background-image: url(/src/pictures/MysteryCards/Ancient_Shub-Niggurath_Mystery_Front_2.png);
+}
+
+#ShubNiggurathMysteryFront3 {
+    background-image: url(/src/pictures/MysteryCards/Ancient_Shub-Niggurath_Mystery_Front_3.png);
+}
+
+#ShubNiggurathMysteryFront4 {
+    background-image: url(/src/pictures/MysteryCards/Ancient_Shub-Niggurath_Mystery_Front_4.png);
 }
 
 #CthulhuMysteryFront1 {
@@ -32,11 +80,11 @@
     background-image: url(/src/pictures/MysteryCards/Ancient_Cthulhu_Mystery_Front_4.png);
 }
 
-.cthulhuMysteryFront:hover {
+.ancientMysteryFront:hover {
     transform: scale(1.05);
 }
 
-.cthulhuMysteryFrontFocus {
+.ancientMysteryFrontFocus {
     height: 31.5vw;
     width: 50vw;
     background-size: cover;
@@ -44,11 +92,11 @@
     border-radius: 1.5vw;
 }
 
-.popup-overlay:has(.cthulhuMysteryFrontFocus) {
+.popup-overlay:has(.ancientMysteryFrontFocus) {
     background: none;
 }
 
-.popup-content:has(.cthulhuMysteryFrontFocus) {
+.popup-content:has(.ancientMysteryFrontFocus) {
     width: 50vw;
 }
 
@@ -180,6 +228,22 @@
     border:none;
     width: 6vw;
     height: 6vw;
+}
+
+#TokenDunwichHorror {
+    background-image: url(/src/pictures/Tokens/TokenDunwichHorror.png);
+}
+
+#TokenDunwichHorrorSlayed {
+    background-image: url(/src/pictures/Tokens/TokenDunwichHorrorSlayed.png);
+}
+
+#TokenNug {
+    background-image: url(/src/pictures/Tokens/TokenNug.png);
+}
+
+#TokenNugSlayed {
+    background-image: url(/src/pictures/Tokens/TokenNugSlayed.png);
 }
 
 #TokenCthylla {

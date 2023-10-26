@@ -7,7 +7,7 @@ import chooseRandom from '../Components/Shuffler';
 import './AllPages.css'
 
 class Cthulhu extends Component {
-    constructor({ loadChulhuLvlChar, level, characters, victory, defeat }) {
+    constructor({ loadCthulhuLvlChar, level, characters, handleExpeditionShuffle, handleExpeditionDiscard, removeExpedition, victory, defeat }) {
         super();
         this.mythosDeckGreenEasy = ['EG1','EG2','EG3','EG4','EG5','NG1','NG2','NG3','NG4','NG5','NG6','NG7','NG8']
         this.mythosDeckGreenNormal = ['EG1','EG2','EG3','EG4','EG5','NG1','NG2','NG3','NG4','NG5','NG6','NG7','NG8','HG1','HG2','HG3','HG4','HG5']
@@ -22,42 +22,15 @@ class Cthulhu extends Component {
         this.mythosDeckStage2 = []
         this.mythosDeckStage3 = []
         this.rumorDeck = []
-        this.shuffleDeckReverseExpedition = ['Antarctica', 'Antarctica', 'Antarctica', 
-                                             'TheAmazon', 'TheAmazon', 'TheAmazon', 
-                                             'TheHeartofAfrica', 'TheHeartofAfrica', 'TheHeartofAfrica',
-                                             'TheHimalayas', 'TheHimalayas', 'TheHimalayas',
-                                             'ThePyramids', 'ThePyramids', 'ThePyramids', 
-                                             'Tunguska', 'Tunguska', 'Tunguska']                                
-        this.shuffleDeckReverseExpeditionFiltered = ['Antarctica', 'Antarctica', 'Antarctica', 
-                                                     'TheAmazon', 'TheAmazon', 'TheAmazon', 
-                                                     'TheHeartofAfrica', 'TheHeartofAfrica', 'TheHeartofAfrica',
-                                                     'TheHimalayas', 'TheHimalayas', 'TheHimalayas',
-                                                     'ThePyramids', 'ThePyramids', 'ThePyramids', 
-                                                     'Tunguska', 'Tunguska', 'Tunguska']
-        this.discardDeckReverseExpedition = []
-        this.deletedDeckReverseExpedition = []
-        this.shuffleDeckExpeditionAntarctica = [1,2,3]
-        this.shuffleDeckExpeditionTheAmazon = [1,2,3]
-        this.shuffleDeckExpeditionTheHeartofAfrica = [1,2,3]
-        this.shuffleDeckExpeditionTheHimalayas = [1,2,3]
-        this.shuffleDeckExpeditionThePyramids = [1,2,3]
-        this.shuffleDeckExpeditionTunguska = [1,2,3]
-        this.discardDeckExpedition = []  
+        this.handleExpeditionShuffle = handleExpeditionShuffle
+        this.handleExpeditionDiscard = handleExpeditionDiscard
+        this.removeExpedition = removeExpedition  
         this.state = {
-            loadChulhuLvlChar: loadChulhuLvlChar,
+            loadCthulhuLvlChar: loadCthulhuLvlChar,
             level: level,
             characters: characters,
             victory: victory,
             defeat: defeat,
-            expeditionReverseShuffle: chooseRandom(this.shuffleDeckReverseExpedition),
-            expeditionPreviousReverse: 0,
-            expeditionShuffle: 0,
-            deletedAntarctica: false,
-            deletedTheAmazon: false,
-            deletedTheHeartofAfrica: false,
-            deletedTheHimalayas: false,
-            deletedThePyramids: false,
-            deletedTunguska: false,
           }                        
 
         if (level === 'Easy') {
@@ -120,82 +93,6 @@ class Cthulhu extends Component {
         }
     }
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     if  (prevState.expeditionPreviousReverse !== this.state.expeditionPreviousReverse || 
-    //          prevState.expeditionShuffle !== this.state.expeditionShuffle) {
-    //         this.discardDeckReverseExpedition.push(this.state.expeditionPreviousReverse);
-    //         this.discardDeckExpedition.push(this.state.expeditionShuffle);
-    //     }
-    // } 
-    
-    componentDidUpdate() {
-        if (this.shuffleDeckReverseExpedition.length < 1) {
-            this.shuffleDeckReverseExpedition = this.shuffleDeckReverseExpeditionFiltered.slice();
-        }  
-    }
-
-    handleExpeditionShuffle = () => {
-        switch (this.state.expeditionReverseShuffle) {
-            case 'Antarctica':
-                this.setState({expeditionShuffle: chooseRandom(this.shuffleDeckExpeditionAntarctica)});
-                    if (this.shuffleDeckExpeditionAntarctica.length < 1) {
-                        this.shuffleDeckExpeditionAntarctica = [1,2,3]
-                    }
-            break;        
-            case 'TheAmazon':
-                this.setState({expeditionShuffle: chooseRandom(this.shuffleDeckExpeditionTheAmazon)});
-                    if (this.shuffleDeckExpeditionTheAmazon.length < 1) {
-                        this.shuffleDeckExpeditionTheAmazon = [1,2,3]
-                    }
-            break;             
-            case 'TheHeartofAfrica':
-                this.setState({expeditionShuffle: chooseRandom(this.shuffleDeckExpeditionTheHeartofAfrica)});
-                    if (this.shuffleDeckExpeditionTheHeartofAfrica.length < 1) {
-                        this.shuffleDeckExpeditionTheHeartofAfrica = [1,2,3]
-                    }
-            break;     
-            case 'TheHimalayas':
-                this.setState({expeditionShuffle: chooseRandom(this.shuffleDeckExpeditionTheHimalayas)});
-                    if (this.shuffleDeckExpeditionTheHimalayas.length < 1) {
-                        this.shuffleDeckExpeditionTheHimalayas = [1,2,3]
-                    }
-            break;     
-            case 'ThePyramids':
-                this.setState({expeditionShuffle: chooseRandom(this.shuffleDeckExpeditionThePyramids)});
-                    if (this.shuffleDeckExpeditionThePyramids.length < 1) {
-                        this.shuffleDeckExpeditionThePyramids = [1,2,3]
-                    }
-            break;          
-            default:
-                this.setState({expeditionShuffle: chooseRandom(this.shuffleDeckExpeditionTunguska)});
-                    if (this.shuffleDeckExpeditionTunguska.length < 1) {
-                        this.shuffleDeckExpeditionTunguska = [1,2,3]
-                    }
-        }
-        this.setState(prevState => ({expeditionPreviousReverse: prevState.expeditionReverseShuffle})); 
-        this.setState({expeditionReverseShuffle: chooseRandom(this.shuffleDeckReverseExpedition)}); 
-    }
-
-    handleExpeditionDiscard = () => {
-        this.discardDeckReverseExpedition.push(this.state.expeditionPreviousReverse);
-        this.discardDeckExpedition.push(this.state.expeditionShuffle);
-    }
-
-    removeExpedition = () => {
-        if      (this.state.expeditionReverseShuffle === 'Antarctica')       {this.setState({deletedAntarctica: true})} 
-        else if (this.state.expeditionReverseShuffle === 'TheAmazon')        {this.setState({deletedTheAmazon: true})} 
-        else if (this.state.expeditionReverseShuffle === 'TheHeartofAfrica') {this.setState({deletedTheHeartofAfrica: true})}
-        else if (this.state.expeditionReverseShuffle === 'TheHimalayas')     {this.setState({deletedTheHimalayas: true})} 
-        else if (this.state.expeditionReverseShuffle === 'ThePyramids')      {this.setState({deletedThePyramids: true})} 
-        else if (this.state.expeditionReverseShuffle === 'Tunguska')         {this.setState({deletedTunguska: true})}
-        this.deletedDeckReverseExpedition.push(this.state.expeditionReverseShuffle);
-        let filterExpeditions = this.shuffleDeckReverseExpedition.filter(currentExpedition => currentExpedition !== this.state.expeditionReverseShuffle)
-        this.shuffleDeckReverseExpedition = filterExpeditions
-        let backupExpeditions = this.shuffleDeckReverseExpeditionFiltered.filter(currentExpedition => currentExpedition !== this.state.expeditionReverseShuffle)
-        this.shuffleDeckReverseExpeditionFiltered = backupExpeditions
-        this.setState({expeditionReverseShuffle: chooseRandom(this.shuffleDeckReverseExpedition)}) 
-    }
-
     render() {
         return (
             <div className="cthulhu">
@@ -203,23 +100,22 @@ class Cthulhu extends Component {
                     <div className="topDiv">
                         <div className="boardDiv">
                             <div className="flexDiv">
-                                <button className="backBoardButton" onClick={this.state.loadChulhuLvlChar}></button>
+                                <button className="backBoardButton" onClick={this.state.loadCthulhuLvlChar}></button>
                                 {/* <button onClick={this.removeExpedition}>CLICK ME</button> */}
-                                {/* <p>{`Reverse  ${this.shuffleDeckReverseExpedition}`}</p> */}
                                 <CthulhuBoard level={this.state.level} 
                                               characters={this.state.characters} 
                                               mythosDeck={this.mythosDeck} 
                                               mythosDeckStage2={this.mythosDeckStage2} 
                                               mythosDeckStage3={this.mythosDeckStage3} 
                                               rumorDeck={this.rumorDeck} 
-                                              expeditionReverseShuffle={this.state.expeditionReverseShuffle} 
-                                              deletedDeckReverseExpedition={this.deletedDeckReverseExpedition}
-                                              deletedAntarctica={this.state.deletedAntarctica}
-                                              deletedTheAmazon={this.state.deletedTheAmazon}
-                                              deletedTheHeartofAfrica={this.state.deletedTheHeartofAfrica}
-                                              deletedTheHimalayas={this.state.deletedTheHimalayas}
-                                              deletedThePyramids={this.state.deletedThePyramids}
-                                              deletedTunguska={this.state.deletedTunguska}
+                                              expeditionReverseShuffle={this.props.expeditionReverseShuffle} 
+                                              deletedDeckReverseExpedition={this.props.deletedDeckReverseExpedition}
+                                              deletedAntarctica={this.props.deletedAntarctica}
+                                              deletedTheAmazon={this.props.deletedTheAmazon}
+                                              deletedTheHeartofAfrica={this.props.deletedTheHeartofAfrica}
+                                              deletedTheHimalayas={this.props.deletedTheHimalayas}
+                                              deletedThePyramids={this.props.deletedThePyramids}
+                                              deletedTunguska={this.props.deletedTunguska}
                                               removeExpedition={this.removeExpedition}
                                               victory={this.state.victory} 
                                               defeat={this.state.defeat} />
@@ -233,11 +129,12 @@ class Cthulhu extends Component {
                     <div className="bottomDiv">
                         <EncountersCards handleExpeditionShuffle={this.handleExpeditionShuffle} 
                                          handleExpeditionDiscard={this.handleExpeditionDiscard}
-                                         expeditionReverseShuffle={this.state.expeditionReverseShuffle} 
-                                         expeditionPreviousReverse={this.state.expeditionPreviousReverse} 
-                                         expeditionShuffle={this.state.expeditionShuffle} 
-                                         discardDeckReverseExpedition={this.discardDeckReverseExpedition}
-                                         discardDeckExpedition={this.discardDeckExpedition} 
+                                         expeditionReverseShuffle={this.props.expeditionReverseShuffle} 
+                                         expeditionPreviousReverse={this.props.expeditionPreviousReverse} 
+                                         expeditionShuffle={this.props.expeditionShuffle} 
+                                         discardDeckReverseExpedition={this.props.discardDeckReverseExpedition}
+                                         discardDeckExpedition={this.props.discardDeckExpedition} 
+                                         ancient={this.props.ancient}
                                          defeat={this.state.defeat} />
                     </div> 
                 </EldritchBoard>
