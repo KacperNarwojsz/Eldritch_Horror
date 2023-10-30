@@ -161,6 +161,22 @@
     background-image: url(/src/pictures/SheetCards/Ancient_Azathoth_sheet_back.png);
 }
 
+#YogSothothSheetFront {
+    background-image: url(/src/pictures/SheetCards/Ancient_YogSothoth_sheet_front.png);
+}
+
+#YogSothothSheetBack {
+    background-image: url(/src/pictures/SheetCards/Ancient_YogSothoth_sheet_back.png);
+}
+
+#ShubNiggurathSheetFront {
+    background-image: url(/src/pictures/SheetCards/Ancient_ShubNiggurath_sheet_front.png);
+}
+
+#ShubNiggurathSheetBack {
+    background-image: url(/src/pictures/SheetCards/Ancient_ShubNiggurath_sheet_back.png);
+}
+
 #CthulhuSheetFront {
     background-image: url(/src/pictures/SheetCards/Ancient_Cthulhu_sheet_front.png);
 }
@@ -416,6 +432,14 @@
 
 #AzathothMysteryReverse {
     background-image: url(/src/pictures/MysteryCards/Ancient_Azathoth_Mystery.png);
+}
+
+#YogSothothMysteryReverse {
+    background-image: url(/src/pictures/MysteryCards/Ancient_Yog-Sothoth_Mystery.png);
+}
+
+#ShubNiggurathMysteryReverse {
+    background-image: url(/src/pictures/MysteryCards/Ancient_Shub-Niggurath_Mystery.png);
 }
 
 #CthulhuMysteryReverse {

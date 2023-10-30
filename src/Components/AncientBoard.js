@@ -3,11 +3,14 @@ import 'reactjs-popup/dist/index.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards } from 'swiper/modules';
 import LvlChar from './LvlChar';
-import CthulhuMysteryCard1 from '../InteractiveCards/CthulhuMysteryCard1';
-import CthulhuMysteryCard2 from '../InteractiveCards/CthulhuMysteryCard2';
-import CthulhuMysteryCard3 from '../InteractiveCards/CthulhuMysteryCard3';
-import CthulhuMysteryCard4 from '../InteractiveCards/CthulhuMysteryCard4';
-import CthulhuMysteryRise from '../InteractiveCards/CthulhuMysteryRise';
+import AzathothSheet from './AzathothSheet'
+import YogSothothSheet from './YogSothothSheet'
+import ShubNiggurathSheet from './ShubNiggurathSheet';    
+import CthulhuSheet from './CthulhuSheet';
+import AzathothMystery from './AzathothMystery';
+import YogSothothMystery from './YogSothothMystery';
+import ShubNiggurathMystery from './ShubNiggurathMystery';
+import CthulhuMystery from './CthulhuMystery';
 import MythosNG1 from '../InteractiveCards/MythosNG1';
 import MythosNG6 from '../InteractiveCards/MythosNG6';
 import MythosHG1 from '../InteractiveCards/MythosHG1';
@@ -30,13 +33,13 @@ import 'swiper/css/effect-cards';
 import './Components.css';
 import '../InteractiveCards/InteractiveCards.css';
 
-class CthulhuBoard extends Component {
+class AncientBoard extends Component {
     constructor({ props, level, characters, mythosDeck, mythosDeckStage2, mythosDeckStage3, rumorDeck, deletedDeckReverseExpedition, removeExpedition, victory, defeat}) {
         super(props); 
         this.mysteryDeck = [1,2,3,4]
         this.discardMysteryDeck = []
-        // this.mythosDeck = mythosDeck
-        this.mythosDeck = ['EB3']
+        this.mythosDeck = mythosDeck
+        // this.mythosDeck = ['EB3']
         this.mythosDeckStage2 = mythosDeckStage2
         this.mythosDeckStage3 = mythosDeckStage3
         this.rumorDeck = rumorDeck
@@ -540,51 +543,145 @@ class CthulhuBoard extends Component {
 
         return (
             <div className='ancientBoard'>
-                <Popup contentStyle={{background:'none', border: 'none'}} trigger=
-                    {<figure className={this.state.isLoadDone ? 'ancientSheet' : 'ancientSheetStamp'} id={this.state.ancientCardFlipped ? 'CthulhuSheetBack' : 'CthulhuSheetFront'} tabIndex="0">
-                        {this.state.ancientCardFlipped?<button className="sheetCardSanityCounter">{this.state.sheetCardCounter}</button>:null}
-                    </figure>}modal nested>
-                    {<div className='ancientSheetFocus' id={this.state.ancientCardFlipped ? 'CthulhuSheetBack' : 'CthulhuSheetFront'}>
-                    {!this.state.ancientCardFlipped?<button className='flipButton' id='flipButtonFrontFocus' onClick={this.flipCardSheet}></button>:null}
-                        {this.state.ancientCardFlipped?<button className='flipButton' id='flipButtonBackFocus' onClick={this.flipCardSheet}></button>:null}
-                        {this.state.ancientCardFlipped?<div className='sheetCardAddons' id='sheetCardAddonsFocus'>
-                            <button className='sheetCardTokenMinus' id='sheetCardTokenMinusFocus' onClick={this.sheetCardCounterDecrement}></button>
-                            <button className='sheetCardSanity' id='sheetCardSanityFocus'></button>
-                            <button className='sheetCardCounter' id='sheetCardCounterFocus'>{this.state.sheetCardCounter}</button>
-                            <button className='sheetCardTokenPlus' id='sheetCardTokenPlusFocus' onClick={this.sheetCardCounterIncrement}></button>
-                        </div>:null}
-                    </div>}
-                </Popup>
+                {this.props.ancient === 'Azathoth'?
+                <AzathothSheet      ancient={this.props.ancient}
+                                    isLoadDone={this.state.isLoadDone} 
+                                    ancientCardFlipped={this.state.ancientCardFlipped} 
+                                    defeat={this.state.defeat}
+                                    flipCardSheet={this.flipCardSheet} 
+                                />
+                :this.props.ancient === 'YogSothoth'?
+                <YogSothothSheet    ancient={this.props.ancient}
+                                    isLoadDone={this.state.isLoadDone} 
+                                    ancientCardFlipped={this.state.ancientCardFlipped} 
+                                    sheetCardCounter={this.state.sheetCardCounter} 
+                                    flipCardSheet={this.flipCardSheet} 
+                                    sheetCardCounterDecrement={this.sheetCardCounterDecrement} 
+                                    sheetCardCounterIncrement={this.sheetCardCounterIncrement}
+                                />
+                :this.props.ancient === 'ShubNiggurath'?
+                <ShubNiggurathSheet ancient={this.props.ancient}
+                                    isLoadDone={this.state.isLoadDone} 
+                                    ancientCardFlipped={this.state.ancientCardFlipped} 
+                                    sheetCardCounter={this.state.sheetCardCounter} 
+                                    flipCardSheet={this.flipCardSheet} 
+                                    sheetCardCounterDecrement={this.sheetCardCounterDecrement} 
+                                    sheetCardCounterIncrement={this.sheetCardCounterIncrement}
+                                />  
+                :
+                <CthulhuSheet       ancient={this.props.ancient}
+                                    isLoadDone={this.state.isLoadDone} 
+                                    ancientCardFlipped={this.state.ancientCardFlipped} 
+                                    sheetCardCounter={this.state.sheetCardCounter} 
+                                    flipCardSheet={this.flipCardSheet} 
+                                    sheetCardCounterDecrement={this.sheetCardCounterDecrement} 
+                                    sheetCardCounterIncrement={this.sheetCardCounterIncrement}
+                                />}
                 <div className='ancientMysteryMythosLvlChar'>
                     <div className='ancientMysteryLvlChar'>
-                        <div className='ancientMystery'>
-                            <div className='ancientMysteryDiscard'>
-                                {this.state.popping?
-                                <Popup onOpen={this.chooseMystery} onClose={this.canPop} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                                {<button className={this.state.isLoadDone ? 'ancientMysteryReverse' : 'ancientMysteryReverseStamp'} id='CthulhuMysteryReverse'></button>}modal nested>
-                                {close => (<div className='outerPopup'><div className='ancientMysteryFrontPopup' id={`CthulhuMysteryFront${this.state.prevMysteryNo}`}><button className='mysteryCloseButton' onClick={() => close()}>X</button></div></div>)}
-                                </Popup>:<button className='ancientMysteryReverse' id='CthulhuMysteryReverse'></button>}
-                                <div className='ancientMysteryDiscardButtonDiv'>
-                                    <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                                        {this.discardMysteryDeck.length!==0?<button className='discardButton' id='discardMystery'>ODRZUCONE</button>:null}modal nested>
-                                        {close => (<div className='outerPopupDiscard'>
-                                        <button className='mysteryDiscardCloseButton' onClick={() => close()}>X</button>
-                                        <Swiper effect={'cards'} grabCursor={true} modules={[EffectCards]} className="mySwiper" id="swiperMystery">
-                                            {this.discardMysteryDeck.length>=1?<SwiperSlide><div className='mysteryCardDiscard' id={`CthulhuMysteryFront${this.discardMysteryDeck[this.discardMysteryDeck.length-1]}`}></div></SwiperSlide>:null}
-                                            {this.discardMysteryDeck.length>=2?<SwiperSlide><div className='mysteryCardDiscard' id={`CthulhuMysteryFront${this.discardMysteryDeck[this.discardMysteryDeck.length-2]}`}></div></SwiperSlide>:null}
-                                            {this.discardMysteryDeck.length>=3?<SwiperSlide><div className='mysteryCardDiscard' id={`CthulhuMysteryFront${this.discardMysteryDeck[this.discardMysteryDeck.length-3]}`}></div></SwiperSlide>:null}
-                                            {this.discardMysteryDeck.length>=4?<SwiperSlide><div className='mysteryCardDiscard' id={`CthulhuMysteryFront${this.discardMysteryDeck[this.discardMysteryDeck.length-4]}`}></div></SwiperSlide>:null}
-                                        </Swiper>
-                                        </div>)}
-                                    </Popup>
-                                </div>
-                            </div>
-                            {this.state.isMystery1Active?<CthulhuMysteryCard1 characters={this.state.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.state.mysteryCounter} mysteryIncrementFull={this.mysteryIncrementFull} key={this.state.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.state.ancientCardFlipped ? this.state.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
-                            {this.state.isMystery2Active?<CthulhuMysteryCard2 characters={this.state.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.state.mysteryCounter} mysteryIncrementHalf={this.mysteryIncrementHalf} key={this.state.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.state.ancientCardFlipped ? this.state.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
-                            {this.state.isMystery3Active?<CthulhuMysteryCard3 characters={this.state.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.state.mysteryCounter} mysteryIncrementFull={this.mysteryIncrementFull} key={this.state.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.state.ancientCardFlipped ? this.state.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
-                            {this.state.isMystery4Active?<CthulhuMysteryCard4 characters={this.state.characters} mysteryDecrementMonster={this.mysteryDecrementMonster} mysteryCounter={this.state.mysteryCounter} mysteryIncrementMonster={this.mysteryIncrementMonster} key={this.state.ancientCardFlipped} monsterSlayed={this.state.monsterSlayed} mysteryDone={this.mysteryDeck.length === 0 ? (!this.state.ancientCardFlipped ? this.state.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
-                            {this.state.isCthulhuAwake?<CthulhuMysteryRise characters={this.state.characters} cthulhuSlayed={this.state.victory}/>:null}
-                        </div>
+                        {this.props.ancient === 'Azathoth'?
+                        <AzathothMystery        ancient={this.props.ancient}
+                                                characters={this.state.characters}
+                                                popping={this.state.popping} 
+                                                isLoadDone={this.state.isLoadDone} 
+                                                prevMysteryNo={this.state.prevMysteryNo}
+                                                isMystery1Active={this.state.isMystery1Active}
+                                                isMystery2Active={this.state.isMystery2Active}
+                                                isMystery3Active={this.state.isMystery3Active}
+                                                isMystery4Active={this.state.isMystery4Active}
+                                                mysteryCounter={this.state.mysteryCounter}
+                                                ancientCardFlipped={this.state.ancientCardFlipped}
+                                                victory={this.state.victory}
+                                                chooseMystery={this.chooseMystery}
+                                                canPop={this.canPop}
+                                                discardMysteryDeck={this.discardMysteryDeck}
+                                                mysteryDecrementHalfFull={this.mysteryDecrementHalfFull}
+                                                mysteryIncrementFull={this.mysteryIncrementFull}
+                                                mysteryIncrementHalf={this.mysteryIncrementHalf}
+                                                mysteryDeck={this.mysteryDeck}
+                                                mysteryDone={this.mysteryDone}
+                                            />
+                        :this.props.ancient === 'YogSothoth'?
+                        <YogSothothMystery      ancient={this.props.ancient}
+                                                characters={this.state.characters}
+                                                popping={this.state.popping} 
+                                                isLoadDone={this.state.isLoadDone} 
+                                                prevMysteryNo={this.state.prevMysteryNo}
+                                                isMystery1Active={this.state.isMystery1Active}
+                                                isMystery2Active={this.state.isMystery2Active}
+                                                isMystery3Active={this.state.isMystery3Active}
+                                                isMystery4Active={this.state.isMystery4Active}
+                                                mysteryCounter={this.state.mysteryCounter}
+                                                ancientCardFlipped={this.state.ancientCardFlipped}
+                                                victory={this.state.victory}
+                                                monsterSlayed={this.state.monsterSlayed}
+                                                isCthulhuAwake={this.state.isCthulhuAwake}
+                                                chooseMystery={this.chooseMystery}
+                                                canPop={this.canPop}
+                                                discardMysteryDeck={this.discardMysteryDeck}
+                                                mysteryDecrementHalfFull={this.mysteryDecrementHalfFull}
+                                                mysteryIncrementFull={this.mysteryIncrementFull}
+                                                mysteryIncrementHalf={this.mysteryIncrementHalf}
+                                                mysteryDeck={this.mysteryDeck}
+                                                cthulhuAwakening={this.cthulhuAwakening}
+                                                mysteryDone={this.mysteryDone}
+                                                mysteryDecrementMonster={this.mysteryDecrementMonster}
+                                                mysteryIncrementMonster={this.mysteryIncrementMonster}
+                                            />
+                        :this.props.ancient === 'ShubNiggurath'?
+                        <ShubNiggurathMystery   ancient={this.props.ancient}
+                                                characters={this.state.characters}
+                                                popping={this.state.popping} 
+                                                isLoadDone={this.state.isLoadDone} 
+                                                prevMysteryNo={this.state.prevMysteryNo}
+                                                isMystery1Active={this.state.isMystery1Active}
+                                                isMystery2Active={this.state.isMystery2Active}
+                                                isMystery3Active={this.state.isMystery3Active}
+                                                isMystery4Active={this.state.isMystery4Active}
+                                                mysteryCounter={this.state.mysteryCounter}
+                                                ancientCardFlipped={this.state.ancientCardFlipped}
+                                                victory={this.state.victory}
+                                                monsterSlayed={this.state.monsterSlayed}
+                                                isCthulhuAwake={this.state.isCthulhuAwake}
+                                                chooseMystery={this.chooseMystery}
+                                                canPop={this.canPop}
+                                                discardMysteryDeck={this.discardMysteryDeck}
+                                                mysteryDecrementHalfFull={this.mysteryDecrementHalfFull}
+                                                mysteryIncrementFull={this.mysteryIncrementFull}
+                                                mysteryIncrementHalf={this.mysteryIncrementHalf}
+                                                mysteryDeck={this.mysteryDeck}
+                                                cthulhuAwakening={this.cthulhuAwakening}
+                                                mysteryDone={this.mysteryDone}
+                                                mysteryDecrementMonster={this.mysteryDecrementMonster}
+                                                mysteryIncrementMonster={this.mysteryIncrementMonster}
+                                            />
+                        :
+                        <CthulhuMystery         ancient={this.props.ancient}
+                                                characters={this.state.characters}
+                                                popping={this.state.popping} 
+                                                isLoadDone={this.state.isLoadDone} 
+                                                prevMysteryNo={this.state.prevMysteryNo}
+                                                isMystery1Active={this.state.isMystery1Active}
+                                                isMystery2Active={this.state.isMystery2Active}
+                                                isMystery3Active={this.state.isMystery3Active}
+                                                isMystery4Active={this.state.isMystery4Active}
+                                                mysteryCounter={this.state.mysteryCounter}
+                                                ancientCardFlipped={this.state.ancientCardFlipped}
+                                                victory={this.state.victory}
+                                                monsterSlayed={this.state.monsterSlayed}
+                                                isCthulhuAwake={this.state.isCthulhuAwake}
+                                                chooseMystery={this.chooseMystery}
+                                                canPop={this.canPop}
+                                                discardMysteryDeck={this.discardMysteryDeck}
+                                                mysteryDecrementHalfFull={this.mysteryDecrementHalfFull}
+                                                mysteryIncrementFull={this.mysteryIncrementFull}
+                                                mysteryIncrementHalf={this.mysteryIncrementHalf}
+                                                mysteryDeck={this.mysteryDeck}
+                                                cthulhuAwakening={this.cthulhuAwakening}
+                                                mysteryDone={this.mysteryDone}
+                                                mysteryDecrementMonster={this.mysteryDecrementMonster}
+                                                mysteryIncrementMonster={this.mysteryIncrementMonster}
+                                            />}
                         <LvlChar level={this.state.level} characters={this.state.characters}/> 
                     </div>
                     <div className='ancientMythos'>
@@ -684,4 +781,4 @@ class CthulhuBoard extends Component {
     } 
 }
 
-export default CthulhuBoard;
+export default AncientBoard;

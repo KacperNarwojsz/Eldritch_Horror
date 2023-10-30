@@ -6,13 +6,13 @@ import './AllPages.css'
 
 
 
-const AzathothLvlChar = ({ loadAzathoth, loadHome, level, characters,
+const AncientLvlChar = ({ ancient, loadAncientOne, loadHome, level, characters,
                         chooseLvlEasy, chooseLvlNormal, chooseLvlHard, 
                         chooseCharNo1, chooseCharNo2, chooseCharNo3, chooseCharNo4, 
                         chooseCharNo5, chooseCharNo6, chooseCharNo7, chooseCharNo8 }) => {                       
 
     return (
-        <div className='ancientLvlChar' id='AzathothLvlChar'>
+        <div className='ancientLvlChar' id={`${ancient}`}>
                 <LvlCharMatt>
                     <div className='topDiv'>
                         <div className='lvlDiv'>
@@ -42,11 +42,11 @@ const AzathothLvlChar = ({ loadAzathoth, loadHome, level, characters,
                                 <button className={characters === 7 ? 'charButtonActive' : 'charButton'} onClick={chooseCharNo7}>7</button>
                                 <button className={characters === 8 ? 'charButtonActive' : 'charButton'} onClick={chooseCharNo8}>8</button>
                             </div>
-                            <button className='startButton' onClick={!characters || !level ? undefined : loadAzathoth}>ROZPOCZNIJ</button>
+                            <button className='startButton' onClick={!characters || !level ? undefined : loadAncientOne}>ROZPOCZNIJ</button>
                         </div>
                     </div>
                 </LvlCharMatt>
             </div>      
     )
 }
-export default AzathothLvlChar;
+export default AncientLvlChar;

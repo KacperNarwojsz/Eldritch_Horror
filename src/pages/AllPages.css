@@ -88,21 +88,27 @@
     justify-content: center;
 }
 
-.azathoth {
+.ancient {
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+#Azathoth {
     background-image: url(/src/pictures/Main/Ancient_Azathoth.jpg);
-    background-size: cover;
 }
 
-.yohSothoth {
+#YogSothoth {
     background-image: url(/src/pictures/Main/Ancient_Yog-Sothoth.jpg);
-    background-size: cover;
 }
 
-.shubNiggurath {
+#ShubNiggurath {
     background-image: url(/src/pictures/Main/Ancient_Shub-Niggurath.jpg);
-    background-size: cover;
 }
 
+#Cthulhu {
+    background-image: url(/src/pictures/Main/Ancient_Cthulhu.jpg);
+}
 .ancientLvlChar {
     background-size: cover;
     height: 100vh;
@@ -112,29 +118,6 @@
     animation: fadeInAnimation ease 7s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-}
-
-#AzathothLvlChar {
-    background-image: url(/src/pictures/Main/Ancient_Azathoth.jpg);
-}
-
-#YogSothothLvlChar {
-    background-image: url(/src/pictures/Main/Ancient_Yog-Sothoth.jpg);
-}
-
-#YogSothothLvlChar {
-    background-image: url(/src/pictures/Main/Ancient_Shub-Niggurath.jpg);
-}
-
-#CthulhuLvlChar {
-    background-image: url(/src/pictures/Main/Ancient_Cthulhu.jpg);
-}
-
-.cthulhu {
-    background-image: url(/src/pictures/Main/Ancient_Cthulhu.jpg);
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
 }
 
 .topDiv {
