@@ -40,9 +40,6 @@ class AncientOne extends Component {
         this.mythosDeckStage2 = []
         this.mythosDeckStage3 = []
         this.rumorDeck = []
-        // this.handleExpeditionShuffle = handleExpeditionShuffle
-        // this.handleExpeditionDiscard = handleExpeditionDiscard
-        // this.removeExpedition = removeExpedition  
         this.state = {
             ancient: ancient,
             chooseAzathoth: chooseAzathoth,
@@ -232,7 +229,11 @@ class AncientOne extends Component {
         this.shuffleDeckReverseExpedition = filterExpeditions
         let backupExpeditions = this.shuffleDeckReverseExpeditionFiltered.filter(currentExpedition => currentExpedition !== this.state.expeditionReverseShuffle)
         this.shuffleDeckReverseExpeditionFiltered = backupExpeditions
-        this.setState({expeditionReverseShuffle: chooseRandom(this.shuffleDeckReverseExpedition)}) 
+        if (this.shuffleDeckReverseExpedition.length === 0 && this.shuffleDeckReverseExpeditionFiltered.length !== 0){
+            this.setState({expeditionReverseShuffle: chooseRandom(this.shuffleDeckReverseExpeditionFiltered)}) 
+        } else {
+            this.setState({expeditionReverseShuffle: chooseRandom(this.shuffleDeckReverseExpedition)})
+        }
     }
   
     // undoRemoveExpedition = () => {

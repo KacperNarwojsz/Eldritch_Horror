@@ -38,8 +38,8 @@ class AncientBoard extends Component {
         super(props); 
         this.mysteryDeck = [1,2,3,4]
         this.discardMysteryDeck = []
-        // this.mythosDeck = mythosDeck
-        this.mythosDeck = ['HY5']
+        this.mythosDeck = mythosDeck
+        // this.mythosDeck = ['HY5']
         this.mythosDeckStage2 = mythosDeckStage2
         this.mythosDeckStage3 = mythosDeckStage3
         this.rumorDeck = rumorDeck
