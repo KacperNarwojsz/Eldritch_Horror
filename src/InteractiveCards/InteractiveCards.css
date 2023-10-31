@@ -202,6 +202,16 @@
     height: 2.8vw;
 }
 
+.tokenMysteryGate {
+    background-image: url(/src/pictures/Tokens/TokenGate.png);
+    background-size: cover;
+    background-color: transparent;
+    margin: 0.5vw;
+    border-radius: 50%;
+    width: 2.8vw;
+    height: 2.8vw;
+}
+
 /* MONSTER MYSTERIES */
 
 .mysteryTokensMonsterDiv {

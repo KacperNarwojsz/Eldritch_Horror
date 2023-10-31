@@ -38,8 +38,8 @@ class AncientBoard extends Component {
         super(props); 
         this.mysteryDeck = [1,2,3,4]
         this.discardMysteryDeck = []
-        this.mythosDeck = mythosDeck
-        // this.mythosDeck = ['EB3']
+        // this.mythosDeck = mythosDeck
+        this.mythosDeck = ['HY5']
         this.mythosDeckStage2 = mythosDeckStage2
         this.mythosDeckStage3 = mythosDeckStage3
         this.rumorDeck = rumorDeck
@@ -196,6 +196,26 @@ class AncientBoard extends Component {
            this.discardMysteryDeck.push(4);
         }
         this.setState(({popping: true}))
+    }
+
+    mysteryDoneFinal = () => {
+        if (this.state.isMystery1Active === true) {
+           this.setState ({isMystery1Active: false })
+           this.setState ({mysteryCounter: 0})
+           this.discardMysteryDeck.push(1);
+        } else if (this.state.isMystery2Active === true) {
+           this.setState ({isMystery2Active: false})
+           this.setState ({mysteryCounter: 0})
+           this.discardMysteryDeck.push(2);
+        } else if (this.state.isMystery3Active === true) {
+           this.setState ({isMystery3Active: false})
+           this.setState ({mysteryCounter: 0})
+           this.discardMysteryDeck.push(3);
+        } else if (this.state.isMystery4Active === true) {
+           this.setState ({isMystery4Active: false})
+           this.setState ({mysteryCounter: 0})
+           this.discardMysteryDeck.push(4);
+        }
     }
 
     canPop = () => {
@@ -401,6 +421,11 @@ class AncientBoard extends Component {
     render() {
         const reverseMystery = () => {
             this.mysteryDeck.push(chooseRandom(this.discardMysteryDeck));
+            if (!this.state.isMystery1Active && !this.state.isMystery2Active && 
+                !this.state.isMystery3Active && !this.state.isMystery4Active && 
+                !this.state.popping) {
+                this.setState({popping: true})
+            }
         }
         const { choosenMythos } = this.state;
         const InteractiveCard1 = (choosenMythos) => {
@@ -600,6 +625,7 @@ class AncientBoard extends Component {
                                                 mysteryIncrementHalf={this.mysteryIncrementHalf}
                                                 mysteryDeck={this.mysteryDeck}
                                                 mysteryDone={this.mysteryDone}
+                                                mysteryDoneFinal={this.mysteryDoneFinal}
                                             />
                         :this.props.ancient === 'YogSothoth'?
                         <YogSothothMystery      ancient={this.props.ancient}
@@ -625,6 +651,7 @@ class AncientBoard extends Component {
                                                 mysteryDeck={this.mysteryDeck}
                                                 cthulhuAwakening={this.cthulhuAwakening}
                                                 mysteryDone={this.mysteryDone}
+                                                mysteryDoneFinal={this.mysteryDoneFinal}
                                                 mysteryDecrementMonster={this.mysteryDecrementMonster}
                                                 mysteryIncrementMonster={this.mysteryIncrementMonster}
                                             />

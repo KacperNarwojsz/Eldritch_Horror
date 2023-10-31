@@ -10,7 +10,7 @@ import 'reactjs-popup/dist/index.css';
 import './Components.css'
 
 class CthulhuMystery extends Component {
-    constructor({props, chooseMystery, canPop, discardMysteryDeck, mysteryDecrementHalfFull, mysteryIncrementFull, mysteryIncrementHalf, mysteryDeck, mysteryDone}) {
+    constructor({props, chooseMystery, canPop, discardMysteryDeck, mysteryDecrementHalfFull, mysteryIncrementFull, mysteryIncrementHalf, mysteryDeck, mysteryDone, mysteryDoneFinal}) {
         super(props);
         this.chooseMystery = chooseMystery
         this.canPop = canPop
@@ -20,6 +20,7 @@ class CthulhuMystery extends Component {
         this.mysteryIncrementHalf = mysteryIncrementHalf
         this.mysteryDeck = mysteryDeck
         this.mysteryDone = mysteryDone
+        this.mysteryDoneFinal = mysteryDoneFinal
     }
 
     render(){
@@ -46,10 +47,10 @@ class CthulhuMystery extends Component {
                                     </Popup>
                                 </div>
                             </div>
-                            {this.props.isMystery1Active?<AzathothMysteryCard1 characters={this.props.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.props.mysteryCounter} mysteryIncrementHalf={this.mysteryIncrementHalf} key={this.props.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? this.props.victory : this.mysteryDone}/>:null}
-                            {this.props.isMystery2Active?<AzathothMysteryCard2 characters={this.props.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.props.mysteryCounter} mysteryIncrementHalf={this.mysteryIncrementHalf} key={this.props.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? this.props.victory : this.mysteryDone}/>:null}
-                            {this.props.isMystery3Active?<AzathothMysteryCard3 characters={this.props.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.props.mysteryCounter} mysteryIncrementHalf={this.mysteryIncrementHalf} key={this.props.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? this.props.victory : this.mysteryDone}/>:null}
-                            {this.props.isMystery4Active?<AzathothMysteryCard4 characters={this.props.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.props.mysteryCounter} mysteryIncrementFull={this.mysteryIncrementFull} key={this.props.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? this.props.victory : this.mysteryDone}/>:null}
+                            {this.props.isMystery1Active?<AzathothMysteryCard1 characters={this.props.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.props.mysteryCounter} mysteryIncrementHalf={this.mysteryIncrementHalf} key={this.props.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.props.ancientCardFlipped ? this.props.victory : this.mysteryDoneFinal) : this.mysteryDone}/>:null}
+                            {this.props.isMystery2Active?<AzathothMysteryCard2 characters={this.props.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.props.mysteryCounter} mysteryIncrementHalf={this.mysteryIncrementHalf} key={this.props.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.props.ancientCardFlipped ? this.props.victory : this.mysteryDoneFinal) : this.mysteryDone}/>:null}
+                            {this.props.isMystery3Active?<AzathothMysteryCard3 characters={this.props.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.props.mysteryCounter} mysteryIncrementHalf={this.mysteryIncrementHalf} key={this.props.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.props.ancientCardFlipped ? this.props.victory : this.mysteryDoneFinal) : this.mysteryDone}/>:null}
+                            {this.props.isMystery4Active?<AzathothMysteryCard4 characters={this.props.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.props.mysteryCounter} mysteryIncrementFull={this.mysteryIncrementFull} key={this.props.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.props.ancientCardFlipped ? this.props.victory : this.mysteryDoneFinal) : this.mysteryDone}/>:null}
                         </div>
         )
     }

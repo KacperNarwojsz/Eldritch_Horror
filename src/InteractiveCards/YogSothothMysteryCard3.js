@@ -13,7 +13,7 @@ const YogSothothMysteryCard3 = ({ characters, mysteryDecrementHalfFull, mysteryC
             <div className="mysteryTokensDiv">
                 <div className="mysteryCounter">
                     <button className="tokenMysteryMinus" onClick={mysteryDecrementHalfFull}></button>
-                    <button className="tokenMysteryEldritch"></button>
+                    <button className="tokenMysteryGate"></button>
                     <button className="tokenMysteryPlus" onClick={mysteryIncrementHalf}></button>
                 </div>
                 {mysteryCounter!==Math.ceil(characters/2)?<button className="tokenMysteryCounter">{`${mysteryCounter}/${Math.ceil(characters/2)}`}</button>:null}
