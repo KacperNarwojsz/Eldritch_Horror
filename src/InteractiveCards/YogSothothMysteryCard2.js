@@ -2,7 +2,7 @@ import React from 'react';
 import Popup from 'reactjs-popup';
 import "./InteractiveCards.css"
 
-const YogSothothMysteryCard2 = ({ characters, mysteryDecrementHalfFull, mysteryCounter, mysteryIncrementFull, mysteryDone, }) => {
+const YogSothothMysteryCard2 = ({ characters, mysteryDecrement, mysteryCounter, mysteryIncrementFull, mysteryDone, }) => {
 
     return (
         <div className="ancientMysteryFrontDiv">
@@ -12,7 +12,7 @@ const YogSothothMysteryCard2 = ({ characters, mysteryDecrementHalfFull, mysteryC
             </Popup>
             <div className="mysteryTokensDiv">
                 <div className="mysteryCounter">
-                    <button className="tokenMysteryMinus" onClick={mysteryDecrementHalfFull}></button>
+                    <button className="tokenMysteryMinus" onClick={mysteryDecrement}></button>
                     <button className="tokenMysteryClue"></button>
                     <button className="tokenMysteryPlus" onClick={mysteryIncrementFull}></button>
                 </div>

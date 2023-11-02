@@ -4,24 +4,26 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards } from 'swiper/modules';
 import ShubNiggurathMysteryCard1 from '../InteractiveCards/ShubNiggurathMysteryCard1';
 import ShubNiggurathMysteryCard2 from '../InteractiveCards/ShubNiggurathMysteryCard2';
-import CthulhuMysteryCard3 from '../InteractiveCards/CthulhuMysteryCard3';
+import ShubNiggurathMysteryCard3 from '../InteractiveCards/ShubNiggurathMysteryCard3';
 import ShubNiggurathMysteryCard4 from '../InteractiveCards/ShubNiggurathMysteryCard4';
-import CthulhuMysteryRise from '../InteractiveCards/CthulhuMysteryRise';
+import ShubNiggurathMysteryRise from '../InteractiveCards/ShubNiggurathMysteryRise';
 import 'reactjs-popup/dist/index.css';
 import './Components.css'
 
 class ShubNiggurathMystery extends Component {
-    constructor({props, chooseMystery, canPop, discardMysteryDeck, mysteryDecrementHalfFull, mysteryIncrementFull, mysteryIncrementHalf, mysteryDeck, cthulhuAwakening, mysteryDone, mysteryDecrementMonster, mysteryIncrementMonster}) {
+    constructor({props, chooseMystery, canPop, discardMysteryDeck, mysteryDecrement, mysteryIncrementFull, mysteryIncrementHalf, mysteryIncrementDouble, mysteryDeck, shubNiggurathAwakening, mysteryDone, mysteryDoneFinal, mysteryDecrementMonster, mysteryIncrementMonster}) {
         super(props);
         this.chooseMystery = chooseMystery
         this.canPop = canPop
         this.discardMysteryDeck = discardMysteryDeck
-        this.mysteryDecrementHalfFull = mysteryDecrementHalfFull
+        this.mysteryDecrement = mysteryDecrement
         this.mysteryIncrementFull = mysteryIncrementFull
         this.mysteryIncrementHalf = mysteryIncrementHalf
+        this.mysteryIncrementDouble = mysteryIncrementDouble
         this.mysteryDeck = mysteryDeck
-        this.cthulhuAwakening = cthulhuAwakening
+        this.shubNiggurathAwakening = shubNiggurathAwakening
         this.mysteryDone = mysteryDone
+        this.mysteryDoneFinal = mysteryDoneFinal
         this.mysteryDecrementMonster = mysteryDecrementMonster
         this.mysteryIncrementMonster = mysteryIncrementMonster
     }
@@ -50,11 +52,11 @@ class ShubNiggurathMystery extends Component {
                         </Popup>
                     </div>
                 </div>
-                {this.props.isMystery1Active?<ShubNiggurathMysteryCard1 characters={this.props.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.props.mysteryCounter} mysteryIncrementHalf={this.mysteryIncrementHalf} key={this.props.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.props.ancientCardFlipped ? this.props.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
-                {this.props.isMystery2Active?<ShubNiggurathMysteryCard2 characters={this.props.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.props.mysteryCounter} mysteryIncrementFull={this.mysteryIncrementFull} key={this.props.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.props.ancientCardFlipped ? this.props.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
-                {this.props.isMystery3Active?<CthulhuMysteryCard3 characters={this.props.characters} mysteryDecrementHalfFull={this.mysteryDecrementHalfFull} mysteryCounter={this.props.mysteryCounter} mysteryIncrementFull={this.mysteryIncrementFull} key={this.props.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.props.ancientCardFlipped ? this.props.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
-                {this.props.isMystery4Active?<ShubNiggurathMysteryCard4 characters={this.props.characters} mysteryDecrementMonster={this.mysteryDecrementMonster} mysteryCounter={this.props.mysteryCounter} mysteryIncrementMonster={this.mysteryIncrementMonster} key={this.props.ancientCardFlipped} monsterSlayed={this.props.monsterSlayed} mysteryDone={this.mysteryDeck.length === 0 ? (!this.props.ancientCardFlipped ? this.props.victory : this.cthulhuAwakening) : this.mysteryDone}/>:null}
-                {this.props.isCthulhuAwake?<CthulhuMysteryRise characters={this.props.characters} cthulhuSlayed={this.props.victory}/>:null}
+                {this.props.isMystery1Active?<ShubNiggurathMysteryCard1 characters={this.props.characters} mysteryDecrement={this.mysteryDecrement} mysteryCounter={this.props.mysteryCounter} mysteryIncrementHalf={this.mysteryIncrementHalf} key={this.props.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.props.ancientCardFlipped ? this.props.victory : this.mysteryDoneFinal) : this.mysteryDone}/>:null}
+                {this.props.isMystery2Active?<ShubNiggurathMysteryCard2 characters={this.props.characters} mysteryDecrement={this.mysteryDecrement} mysteryCounter={this.props.mysteryCounter} mysteryIncrementFull={this.mysteryIncrementFull} key={this.props.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.props.ancientCardFlipped ? this.props.victory : this.mysteryDoneFinal) : this.mysteryDone}/>:null}
+                {this.props.isMystery3Active?<ShubNiggurathMysteryCard3 characters={this.props.characters} mysteryDecrement={this.mysteryDecrement} mysteryCounter={this.props.mysteryCounter} mysteryIncrementDouble={this.mysteryIncrementDouble} key={this.props.ancientCardFlipped} mysteryDone={this.mysteryDeck.length === 0 ? (!this.props.ancientCardFlipped ? this.props.victory : this.mysteryDoneFinal) : this.mysteryDone}/>:null}
+                {this.props.isMystery4Active?<ShubNiggurathMysteryCard4 characters={this.props.characters} mysteryDecrementMonster={this.mysteryDecrementMonster} mysteryCounter={this.props.mysteryCounter} mysteryIncrementMonster={this.mysteryIncrementMonster} key={this.props.ancientCardFlipped} monsterSlayed={this.props.monsterSlayed} mysteryDone={this.mysteryDeck.length === 0 ? (!this.props.ancientCardFlipped ? this.props.victory : this.mysteryDoneFinal) : this.mysteryDone}/>:null}
+                {this.props.isShubNiggurathAwake?<ShubNiggurathMysteryRise characters={this.props.characters} discardMysteryDeck={this.discardMysteryDeck} shubNiggurathSlayed={this.props.victory}/>:null}
             </div>
         )
     }

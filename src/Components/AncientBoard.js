@@ -38,8 +38,8 @@ class AncientBoard extends Component {
         super(props); 
         this.mysteryDeck = [1,2,3,4]
         this.discardMysteryDeck = []
-        this.mythosDeck = mythosDeck
-        // this.mythosDeck = ['HY5']
+        // this.mythosDeck = mythosDeck
+        this.mythosDeck = ['HY5']
         this.mythosDeckStage2 = mythosDeckStage2
         this.mythosDeckStage3 = mythosDeckStage3
         this.rumorDeck = rumorDeck
@@ -60,6 +60,7 @@ class AncientBoard extends Component {
             monsterSlayed: false,
             mysteryCounter: 0,
             isCthulhuAwake: false,
+            isShubNiggurathAwake: false,
             popping: true,
             victory: victory,
             defeat: defeat,
@@ -148,6 +149,12 @@ class AncientBoard extends Component {
             this.setState ({mysteryCounter: this.state.mysteryCounter +1})
         }
     }
+
+    mysteryIncrementDouble = () => {
+        if (this.state.mysteryCounter !== this.state.characters*2) {
+            this.setState ({mysteryCounter: this.state.mysteryCounter +1})
+        }
+    }
     
     mysteryIncrementHalf = () => {
         if (this.state.mysteryCounter !== Math.ceil(this.state.characters/2)) {
@@ -155,7 +162,7 @@ class AncientBoard extends Component {
         }
     }
     
-    mysteryDecrementHalfFull = () => {
+    mysteryDecrement = () => {
         if (this.state.mysteryCounter !== 0) {
             this.setState ({mysteryCounter: this.state.mysteryCounter -1})
         }
@@ -230,7 +237,11 @@ class AncientBoard extends Component {
         this.setState ({isMystery4Active: false })
         this.setState(({popping: false}))
         this.discardMysteryDeck.push(this.state.prevMysteryNo);
-    }   
+    }
+    
+    shubNiggurathAwakening = () => {
+        this.setState ({isShubNiggurathAwake: true})
+    }
 
     chooseMythos = () => {
         this.setState(prevState => ({prevMythosNo: prevState.mythosNo}))
@@ -592,6 +603,7 @@ class AncientBoard extends Component {
                                     flipCardSheet={this.flipCardSheet} 
                                     sheetCardCounterDecrement={this.sheetCardCounterDecrement} 
                                     sheetCardCounterIncrement={this.sheetCardCounterIncrement}
+                                    shubNiggurathAwakening={this.shubNiggurathAwakening}
                                 />  
                 :
                 <CthulhuSheet       ancient={this.props.ancient}
@@ -620,7 +632,7 @@ class AncientBoard extends Component {
                                                 chooseMystery={this.chooseMystery}
                                                 canPop={this.canPop}
                                                 discardMysteryDeck={this.discardMysteryDeck}
-                                                mysteryDecrementHalfFull={this.mysteryDecrementHalfFull}
+                                                mysteryDecrement={this.mysteryDecrement}
                                                 mysteryIncrementFull={this.mysteryIncrementFull}
                                                 mysteryIncrementHalf={this.mysteryIncrementHalf}
                                                 mysteryDeck={this.mysteryDeck}
@@ -641,15 +653,13 @@ class AncientBoard extends Component {
                                                 ancientCardFlipped={this.state.ancientCardFlipped}
                                                 victory={this.state.victory}
                                                 monsterSlayed={this.state.monsterSlayed}
-                                                isCthulhuAwake={this.state.isCthulhuAwake}
                                                 chooseMystery={this.chooseMystery}
                                                 canPop={this.canPop}
                                                 discardMysteryDeck={this.discardMysteryDeck}
-                                                mysteryDecrementHalfFull={this.mysteryDecrementHalfFull}
+                                                mysteryDecrement={this.mysteryDecrement}
                                                 mysteryIncrementFull={this.mysteryIncrementFull}
                                                 mysteryIncrementHalf={this.mysteryIncrementHalf}
                                                 mysteryDeck={this.mysteryDeck}
-                                                cthulhuAwakening={this.cthulhuAwakening}
                                                 mysteryDone={this.mysteryDone}
                                                 mysteryDoneFinal={this.mysteryDoneFinal}
                                                 mysteryDecrementMonster={this.mysteryDecrementMonster}
@@ -669,16 +679,18 @@ class AncientBoard extends Component {
                                                 ancientCardFlipped={this.state.ancientCardFlipped}
                                                 victory={this.state.victory}
                                                 monsterSlayed={this.state.monsterSlayed}
-                                                isCthulhuAwake={this.state.isCthulhuAwake}
+                                                isShubNiggurathAwake={this.state.isShubNiggurathAwake}
                                                 chooseMystery={this.chooseMystery}
                                                 canPop={this.canPop}
                                                 discardMysteryDeck={this.discardMysteryDeck}
-                                                mysteryDecrementHalfFull={this.mysteryDecrementHalfFull}
+                                                mysteryDecrement={this.mysteryDecrement}
                                                 mysteryIncrementFull={this.mysteryIncrementFull}
                                                 mysteryIncrementHalf={this.mysteryIncrementHalf}
+                                                mysteryIncrementDouble={this.mysteryIncrementDouble}
                                                 mysteryDeck={this.mysteryDeck}
-                                                cthulhuAwakening={this.cthulhuAwakening}
+                                                shubNiggurathAwakening={this.shubNiggurathAwakening}
                                                 mysteryDone={this.mysteryDone}
+                                                mysteryDoneFinal={this.mysteryDoneFinal}
                                                 mysteryDecrementMonster={this.mysteryDecrementMonster}
                                                 mysteryIncrementMonster={this.mysteryIncrementMonster}
                                             />
@@ -700,7 +712,7 @@ class AncientBoard extends Component {
                                                 chooseMystery={this.chooseMystery}
                                                 canPop={this.canPop}
                                                 discardMysteryDeck={this.discardMysteryDeck}
-                                                mysteryDecrementHalfFull={this.mysteryDecrementHalfFull}
+                                                mysteryDecrement={this.mysteryDecrement}
                                                 mysteryIncrementFull={this.mysteryIncrementFull}
                                                 mysteryIncrementHalf={this.mysteryIncrementHalf}
                                                 mysteryDeck={this.mysteryDeck}

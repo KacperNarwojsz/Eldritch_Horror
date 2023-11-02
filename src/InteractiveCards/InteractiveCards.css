@@ -212,6 +212,19 @@
     height: 2.8vw;
 }
 
+.tokenMysteryToughness{
+    background-image: url(/src/pictures/Tokens/TokenMonsterToughness.png);
+    background-size: cover;
+    background-color: transparent;
+    margin: 0.5vw;
+    margin-left: 0.7vw;
+    margin-right: 0.7vw;
+    margin-bottom: 0.1vw;
+    border: none;
+    width: 2.4vw;
+    height: 3.2vw;
+}
+
 /* MONSTER MYSTERIES */
 
 .mysteryTokensMonsterDiv {
@@ -262,6 +275,14 @@
 
 #TokenCthyllaSlayed {
     background-image: url(/src/pictures/Tokens/TokenCthyllaSlayed.png);
+}
+
+#TokenShubNiggurath {
+    background-image: url(/src/pictures/Tokens/TokenShubNiggurath.png);
+}
+
+#TokenShubNiggurathSlayed {
+    background-image: url(/src/pictures/Tokens/TokenShubNiggurathSlayed.png);
 }
 
 #TokenCthulhu {

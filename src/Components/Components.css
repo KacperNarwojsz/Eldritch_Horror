@@ -265,6 +265,30 @@
     transform: scale(1.05);
 }
 
+.sheetCardAwakeningButton {
+    display: flex;
+    width: 13vw;
+    height: 2.9vw;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Birmingham;
+    font-size: 1.8vw;
+    margin-top: 12vw;
+    margin-left: 1.1vw;
+    border: 0.15vw solid black;
+    border-radius: 1vw;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease; 
+    cursor: pointer;
+}
+
+.sheetCardAwakeningButton:hover {
+    transform: scale(1.05);
+}
+
 .sheetCardAddons {
     align-self: center;
     background-color: rgba(238, 238, 215, 0.716);

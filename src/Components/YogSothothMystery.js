@@ -10,7 +10,7 @@ import 'reactjs-popup/dist/index.css';
 import './Components.css'
 
 class YogSothothMystery extends Component {
-    constructor({props, chooseMystery, canPop, discardMysteryDeck, mysteryDecrementHalfFull, mysteryIncrementFull, mysteryIncrementHalf, mysteryDeck, cthulhuAwakening, mysteryDone, mysteryDoneFinal, mysteryDecrementMonster, mysteryIncrementMonster}) {
+    constructor({props, chooseMystery, canPop, discardMysteryDeck, mysteryDecrementHalfFull, mysteryIncrementFull, mysteryIncrementHalf, mysteryDeck, mysteryDone, mysteryDoneFinal, mysteryDecrementMonster, mysteryIncrementMonster}) {
         super(props);
         this.chooseMystery = chooseMystery
         this.canPop = canPop
@@ -19,7 +19,6 @@ class YogSothothMystery extends Component {
         this.mysteryIncrementFull = mysteryIncrementFull
         this.mysteryIncrementHalf = mysteryIncrementHalf
         this.mysteryDeck = mysteryDeck
-        this.cthulhuAwakening = cthulhuAwakening
         this.mysteryDone = mysteryDone
         this.mysteryDoneFinal = mysteryDoneFinal
         this.mysteryDecrementMonster = mysteryDecrementMonster
