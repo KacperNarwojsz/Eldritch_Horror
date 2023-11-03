@@ -241,6 +241,47 @@
     font-size: 1.2vw;
 }
 
+.sheetCardCounterDiv {
+    display: flex;
+    flex-direction: row;
+    margin-top: 11vw;
+    margin-left: 0.6vw;
+}
+
+.sheetCardEldritchCounter {
+    width: 2.5vw;
+    height: 2.5vw;
+    background-image: url(/src/pictures/Tokens/TokenEldritchFaded.png);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    font-family: EldritchNumbers;
+    padding-top: 0.4vw;
+    font-size: 1.7vw;
+    color: white;
+}
+
+.sheetCardGateCounter {
+    width: 2.5vw;
+    height: 2.5vw;
+    background-image: url(/src/pictures/Tokens/TokenGateFaded.png);
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 0.7vw;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    font-family: EldritchNumbers;
+    padding-top: 0.4vw;
+    font-size: 1.7vw;
+    color: white;
+}
+
 .sheetCardDefeatButton {
     display: flex;
     width: 15vw;
@@ -263,6 +304,15 @@
 
 .sheetCardDefeatButton:hover {
     transform: scale(1.05);
+}
+
+#sheetCardYogSothothButton{
+    background-color: rgba(238, 238, 215, 0.716);
+    height: 2.5vw;
+    width: 14vw;
+    font-size: 2vw;
+    margin-top: 1.5vw;
+    margin-left: 0.7vw;
 }
 
 .sheetCardAwakeningButton {
@@ -308,8 +358,17 @@
     border-radius: 3vw;
     height: 2vw;
     width: 12vw;
-    margin-top: 24vw;
+    margin-top: 2vw;
     margin-left: 1.6vw;
+}
+
+#sheetCardYogSothothAddonsFocus {
+    border: 0.25vw solid black;
+    border-radius: 3vw;
+    height: 2.5vw;
+    width: 14vw;
+    margin-top: 1.5vw;
+    margin-left: 0.5vw;
 }
 
 .sheetCardTokenMinus {
@@ -331,6 +390,40 @@
     height: 1.9vw;
     margin-left: 0.2vw;
     cursor: pointer;
+}
+
+.sheetCardEldritch {
+    background-image: url(/src/pictures/Tokens/TokenEldritch.png);
+    background-color: transparent;
+    background-size: cover;
+    margin-left: 0.4vw;
+    width: 1.3vw;
+    height: 1.3vw;
+    border: none;
+    align-items: center;
+}
+
+#sheetCardEldritchFocus {
+    margin-left: 1vw;
+    width: 2.4vw;
+    height: 2.4vw;
+}
+
+.sheetCardGate {
+    background-image: url(/src/pictures/Tokens/TokenGate.png);
+    background-color: transparent;
+    background-size: cover;
+    margin-left: 0.4vw;
+    width: 1.3vw;
+    height: 1.3vw;
+    border: none;
+    align-items: center;
+}
+
+#sheetCardGateFocus {
+    margin-left: 1vw;
+    width: 2.4vw;
+    height: 2.4vw;
 }
 
 .sheetCardSanity {
@@ -361,7 +454,15 @@
     padding-top: 0.15vw;
 }
 
-#sheetCardCounterFocus {
+#sheetCardYogSothothCounterFocus {
+    width: 1.6vw;
+    height: 1vw;
+    margin-left: 1vw;
+    font-size: 2.1vw;
+    padding-top: 0.3vw;
+}
+
+#sheetCardCthulhuCounterFocus {
     width: 1.6vw;
     height: 1vw;
     margin-left: 1vw;
@@ -387,6 +488,14 @@
     width: 1.9vw;
     height: 1.9vw;
     margin-left: 1.7vw;
+}
+
+#sheetCardYogSothothTokenPlusFocus {
+    border-radius: 50%;
+    border: 1vw;
+    width: 1.9vw;
+    height: 1.9vw;
+    margin-left: 3.7vw;
 }
 
 .discardButton {

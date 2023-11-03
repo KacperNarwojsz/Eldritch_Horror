@@ -38,8 +38,7 @@ class AncientBoard extends Component {
         super(props); 
         this.mysteryDeck = [1,2,3,4]
         this.discardMysteryDeck = []
-        // this.mythosDeck = mythosDeck
-        this.mythosDeck = ['HY5']
+        this.mythosDeck = mythosDeck
         this.mythosDeckStage2 = mythosDeckStage2
         this.mythosDeckStage3 = mythosDeckStage3
         this.rumorDeck = rumorDeck
@@ -64,7 +63,9 @@ class AncientBoard extends Component {
             popping: true,
             victory: victory,
             defeat: defeat,
-            sheetCardCounter: 0,
+            sheetCardCthulhuCounter: 0,
+            sheetCardYogSothothEldritchCounter: 0,
+            sheetCardYogSothothGateCounter: 0,
             mythosNo: chooseRandom(this.mythosDeck),
             prevMythosNo: true,
             rumorNo: chooseRandom(this.rumorDeck),
@@ -117,13 +118,35 @@ class AncientBoard extends Component {
         this.setState ({ancientCardFlipped: false})
     }
 
-    sheetCardCounterIncrement = () => {
-        this.setState ({sheetCardCounter: this.state.sheetCardCounter +1})
+    sheetCardYogSothothEldritchCounterIncrement = () => {
+        if (this.state.sheetCardYogSothothEldritchCounter !== Math.ceil(this.state.characters/2)) {
+            this.setState ({sheetCardYogSothothEldritchCounter: this.state.sheetCardYogSothothEldritchCounter +1})
+        }
     }
 
-    sheetCardCounterDecrement = () => {
-        if (this.state.sheetCardCounter !== 0) {
-            this.setState ({sheetCardCounter: this.state.sheetCardCounter -1})
+    sheetCardYogSothothEldritchCounterDecrement = () => {
+        if (this.state.sheetCardYogSothothEldritchCounter !== 0) {
+            this.setState ({sheetCardYogSothothEldritchCounter: this.state.sheetCardYogSothothEldritchCounter -1})
+        }
+    }
+    
+    sheetCardYogSothothGateCounterIncrement = () => {
+            this.setState ({sheetCardYogSothothGateCounter: this.state.sheetCardYogSothothGateCounter +1})
+    }
+
+    sheetCardYogSothothGateCounterDecrement = () => {
+        if (this.state.sheetCardYogSothothGateCounter !== 0) {
+            this.setState ({sheetCardYogSothothGateCounter: this.state.sheetCardYogSothothGateCounter -1})
+        }
+    }
+
+    sheetCardCthulhuCounterIncrement = () => {
+        this.setState ({sheetCardCthulhuCounter: this.state.sheetCardCthulhuCounter +1})
+    }
+
+    sheetCardCthulhuCounterDecrement = () => {
+        if (this.state.sheetCardCthulhuCounter !== 0) {
+            this.setState ({sheetCardCthulhuCounter: this.state.sheetCardCthulhuCounter -1})
         }
     }
 
@@ -588,31 +611,34 @@ class AncientBoard extends Component {
                                 />
                 :this.props.ancient === 'YogSothoth'?
                 <YogSothothSheet    ancient={this.props.ancient}
+                                    characters={this.state.characters}
                                     isLoadDone={this.state.isLoadDone} 
+                                    victory={this.state.victory}
+                                    defeat={this.state.defeat}
                                     ancientCardFlipped={this.state.ancientCardFlipped} 
-                                    sheetCardCounter={this.state.sheetCardCounter} 
                                     flipCardSheet={this.flipCardSheet} 
-                                    sheetCardCounterDecrement={this.sheetCardCounterDecrement} 
-                                    sheetCardCounterIncrement={this.sheetCardCounterIncrement}
+                                    sheetCardYogSothothEldritchCounter={this.state.sheetCardYogSothothEldritchCounter}
+                                    sheetCardYogSothothEldritchCounterDecrement={this.sheetCardYogSothothEldritchCounterDecrement} 
+                                    sheetCardYogSothothEldritchCounterIncrement={this.sheetCardYogSothothEldritchCounterIncrement}
+                                    sheetCardYogSothothGateCounter={this.state.sheetCardYogSothothGateCounter}
+                                    sheetCardYogSothothGateCounterDecrement={this.sheetCardYogSothothGateCounterDecrement} 
+                                    sheetCardYogSothothGateCounterIncrement={this.sheetCardYogSothothGateCounterIncrement}
                                 />
                 :this.props.ancient === 'ShubNiggurath'?
                 <ShubNiggurathSheet ancient={this.props.ancient}
                                     isLoadDone={this.state.isLoadDone} 
                                     ancientCardFlipped={this.state.ancientCardFlipped} 
-                                    sheetCardCounter={this.state.sheetCardCounter} 
                                     flipCardSheet={this.flipCardSheet} 
-                                    sheetCardCounterDecrement={this.sheetCardCounterDecrement} 
-                                    sheetCardCounterIncrement={this.sheetCardCounterIncrement}
                                     shubNiggurathAwakening={this.shubNiggurathAwakening}
                                 />  
                 :
                 <CthulhuSheet       ancient={this.props.ancient}
                                     isLoadDone={this.state.isLoadDone} 
                                     ancientCardFlipped={this.state.ancientCardFlipped} 
-                                    sheetCardCounter={this.state.sheetCardCounter} 
-                                    flipCardSheet={this.flipCardSheet} 
-                                    sheetCardCounterDecrement={this.sheetCardCounterDecrement} 
-                                    sheetCardCounterIncrement={this.sheetCardCounterIncrement}
+                                    flipCardSheet={this.flipCardSheet}
+                                    sheetCardCthulhuCounter={this.state.sheetCardCthulhuCounter} 
+                                    sheetCardCthulhuCounterDecrement={this.sheetCardCthulhuCounterDecrement} 
+                                    sheetCardCthulhuCounterIncrement={this.sheetCardCthulhuCounterIncrement}
                                 />}
                 <div className='ancientMysteryMythosLvlChar'>
                     <div className='ancientMysteryLvlChar'>
