@@ -6,7 +6,6 @@ Requires the board version of the game and cannot be played on its own.
 
 
 
-Work still in progress. For now only Cthulhu is available. <br>
 Best to open with Chrome. <br>
 First loading longer than usual, to download assets for faster working.<br>
 App in Polish. <br>
