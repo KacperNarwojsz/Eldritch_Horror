@@ -259,11 +259,15 @@ class AncientOne extends Component {
                     <div className="topDiv">
                         <div className="boardDiv">
                             <div className="flexDiv">
-                                <button className="backBoardButton" 
+                                <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
+                                    {<button className="backBoardButton"></button>}modal nested>
+                                    {close => (<div className='defeatPopup'><h1 className="defeatPopupText">Czy chcesz wrócić ?</h1><div className="defeatChoiceButtons"><button className="defeatChoiceButton" onClick={this.props.ancient === 'Azathoth'?this.state.chooseAzathoth:this.props.ancient === 'YogSothoth'?this.state.chooseYogSothoth:this.props.ancient === 'ShubNiggurath'?this.state.chooseShubNiggurath:this.state.chooseCthulhu}>TAK</button><button className="defeatChoiceButton" onClick={() => close()}>NIE</button></div></div>)}
+                                </Popup>
+                                {/* <button className="backBoardButton" 
                                         onClick={this.props.ancient === 'Azathoth'?this.state.chooseAzathoth
                                                 :this.props.ancient === 'YogSothoth'?this.state.chooseYogSothoth
                                                 :this.props.ancient === 'ShubNiggurath'?this.state.chooseShubNiggurath
-                                                :this.state.chooseCthulhu}></button>
+                                                :this.state.chooseCthulhu}></button> */}
                                 {/* <button onClick={this.removeExpedition}>CLICK ME</button> */}
                                 <AncientBoard level={this.state.level} 
                                               characters={this.state.characters} 

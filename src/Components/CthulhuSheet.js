@@ -21,10 +21,10 @@ class CthulhuSheet extends Component {
                     {<div className='ancientSheetFocus' id={this.props.ancientCardFlipped ? `${this.props.ancient}SheetBack` : `${this.props.ancient}SheetFront`}>
                     {!this.props.ancientCardFlipped?<button className='flipButton' id='flipButtonFrontFocus' onClick={this.flipCardSheet}></button>:null}
                         {this.props.ancientCardFlipped?<button className='flipButton' id='flipButtonBackFocus' onClick={this.flipCardSheet}></button>:null}
-                        {this.props.ancientCardFlipped?<div className='sheetCardAddons' id='sheetCardAddonsFocus'>
+                        {this.props.ancientCardFlipped?<div className='sheetCardAddons' id='sheetCardCthulhuAddonsFocus'>
                             <button className='sheetCardTokenMinus' id='sheetCardTokenMinusFocus' onClick={this.sheetCardCthulhuCounterDecrement}></button>
                             <button className='sheetCardSanity' id='sheetCardSanityFocus'></button>
-                            <button className='sheetCardCthulhuCounter' id='sheetCardCthulhuCounterFocus'>{this.props.sheetCardCthulhuCounter}</button>
+                            <button className='sheetCardCounter' id='sheetCardCthulhuCounterFocus'>{this.props.sheetCardCthulhuCounter}</button>
                             <button className='sheetCardTokenPlus' id='sheetCardTokenPlusFocus' onClick={this.sheetCardCthulhuCounterIncrement}></button>
                         </div>:null}
                     </div>}

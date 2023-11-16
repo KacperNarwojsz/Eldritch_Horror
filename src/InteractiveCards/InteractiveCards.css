@@ -100,6 +100,12 @@
     width: 50vw;
 }
 
+.winningPopupText {
+    font-family: 'Birmingham';
+    font-size: 4vw;
+    color: white;
+    justify-content: center;
+}
 
 /* COUNTER MYSTERIES */
 
