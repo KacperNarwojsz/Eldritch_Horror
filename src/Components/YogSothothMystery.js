@@ -31,9 +31,9 @@ class YogSothothMystery extends Component {
                 <div className='ancientMysteryDiscard'>
                     {this.props.popping?
                     <Popup onOpen={this.chooseMystery} onClose={this.canPop} contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                    {<button className={this.props.isLoadDone ? 'ancientMysteryReverse' : 'ancientMysteryReverseStamp'} id={`${this.props.ancient}MysteryReverse`}></button>}modal nested>
+                    {<button className={this.props.isLoadDone ? 'ancientMysteryReverse' : 'ancientMysteryReverseStamp'} id={`${this.props.ancient}MysteryReverse`}><p className='mysteryCounterText'>Rozwiązano: {this.discardMysteryDeck.length}<span>/3</span></p></button>}modal nested>
                     {close => (<div className='outerPopup'><div className='ancientMysteryFrontPopup' id={`${this.props.ancient}MysteryFront${this.props.prevMysteryNo}`}><button className='mysteryCloseButton' onClick={() => close()}>X</button></div></div>)}
-                    </Popup>:<button className='ancientMysteryReverse' id={`${this.props.ancient}MysteryReverse`}></button>}
+                    </Popup>:<button className='ancientMysteryReverse' id={`${this.props.ancient}MysteryReverse`}><p className='mysteryCounterText'>Rozwiązano: {this.discardMysteryDeck.length}<span>/3</span></p></button>}
                     <div className='ancientMysteryDiscardButtonDiv'>
                         <Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
                             {this.discardMysteryDeck.length!==0?<button className='discardButton' id='discardMystery'>ODRZUCONE</button>:null}modal nested>
