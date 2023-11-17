@@ -41,6 +41,8 @@ class AncientBoard extends Component {
         this.mythosDeck = mythosDeck
         this.mythosDeckStage2 = mythosDeckStage2
         this.mythosDeckStage3 = mythosDeckStage3
+        this.mythosDeckCounter = mythosDeck.concat(mythosDeckStage2).concat(mythosDeckStage3)
+        this.mythosDeckLengthConst = this.mythosDeckCounter.slice();
         this.rumorDeck = rumorDeck
         this.deletedDeckReverseExpedition = deletedDeckReverseExpedition
         this.removeExpedition = removeExpedition
@@ -267,6 +269,7 @@ class AncientBoard extends Component {
     }
 
     chooseMythos = () => {
+        this.mythosDeckCounter.pop();
         this.setState(prevState => ({prevMythosNo: prevState.mythosNo}))
         this.setState({mythosNo: chooseRandom(this.mythosDeck)});
         if (this.state.mythosNo === 'NG1' || this.state.mythosNo === 'NG6' || this.state.mythosNo === 'HG1') {
@@ -754,7 +757,7 @@ class AncientBoard extends Component {
                             {/* <p>{`prevMysteryNo:${this.state.prevMythosNo} mysteryNo:${this.state.mythosNo} mythosDeck:${this.mythosDeck} chosenMythos:${this.state.choosenMythos} discardMythosDeck:${this.discardMythosDeck}`}</p> */}
                             {this.state.prevMythosNo?
                             <Popup onOpen={this.state.mythosNo === undefined ? this.state.defeat : this.chooseMythos} contentStyle={{background:'none', border: 'transparent'}} trigger=
-                            {<button className={this.state.mythosNo === undefined ? 'mythosDefeat' : this.state.isLoadDone ? 'mythos' : 'mythosStamp'}></button>}modal nested>
+                            {<button className={this.state.mythosNo === undefined ? 'mythosDefeat' : this.state.isLoadDone ? 'mythos' : 'mythosStamp'}><p className='mythosCounterText'>{this.mythosDeckCounter.length}/{this.mythosDeckLengthConst.length}</p></button>}modal nested>
                             {close => (<div className='outerPopup'><div className='mythosFrontPopup' id={`Mythos${this.state.prevMythosNo}`}>
                             {
                             this.state.prevMythosNo === 'NY8'
