@@ -18,7 +18,7 @@ const ShubNiggurathMysteryCard4 = ({ characters, mysteryDecrementMonster, myster
                         {mysteryCounter===characters+2
                         ?mysteryDeck.length === 0 && !ancientCardFlipped
                         ?<Popup contentStyle={{background:'transparent', border: 'transparent'}} trigger=
-                            {<button className="tokenMysteryDone"></button>}modal nested>
+                            {<button className="tokenMysteryMonsterDone"></button>}modal nested>
                             {close => (<div className='defeatPopup'><h1 className="winningPopupText">Czy została zakończona Faza Mitów ?</h1><div className="defeatChoiceButtons"><button className="defeatChoiceButton" onClick={victory}>TAK</button><button className="defeatChoiceButton" onClick={() => close()}>NIE</button></div></div>)}
                         </Popup>
                         :<button className="tokenMysteryMonsterDone" onClick={mysteryDone}></button>
