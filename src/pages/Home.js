@@ -29,9 +29,9 @@ const Home = ({ chooseAncient }) => {
       </div>
       <div className="ancients-buttons">
         <ul className="main-buttons-ul">
-          {Object.values(ANCIENTS).map((ancient) => {
+          {Object.values(ANCIENTS).map((ancient, index) => {
             return (
-              <li className="main-button-li">
+              <li key={index} className="main-button-li">
                 <button className="main-button" id={buttonsIds[ancient]} onClick={() => chooseAncient(ancient)}>
                   {ancientNames[ancient]}
                 </button>

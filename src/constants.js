@@ -37,7 +37,7 @@ export const CARDS = {
   },
 };
 
-export const EXPEDITIONS = [
+export const EXPEDITIONDECK = [
   'Antarctica',
   'Antarctica',
   'Antarctica',
@@ -57,3 +57,22 @@ export const EXPEDITIONS = [
   'Tunguska',
   'Tunguska',
 ];
+
+export const EXPEDITIONS = {
+  ANTARCTICA: 'Antarctica',
+  THEAMAZON: 'TheAmazon',
+  THEHEARTOFAFRICA: 'TheHeartofAfrica',
+  THEHIMALAYAS: 'TheHimalayas',
+  THEPYRAMIDS: 'ThePyramids',
+  TUNGUSKA: 'Tunguska',
+};
+
+export const ENCOUNTERS = {
+  AMERICASHUFFLE: 'americaShuffle',
+  EUROPESHUFFLE: 'europeShuffle',
+  ASIAAUSTRALIASHUFFLE: 'asiaaustraliaShuffle',
+  GENERALSHUFFLE: 'generalShuffle',
+  OTHERWORLDSHUFFLE: 'otherworldShuffle',
+  ANCIENTRESEARCHSHUFFLE: 'ancientresearchShuffle',
+  ANCIENTSPECIALSHUFFLE: 'ancientspecialShuffle',
+};

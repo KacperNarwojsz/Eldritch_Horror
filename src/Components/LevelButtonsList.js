@@ -12,13 +12,10 @@ const LevelButtonsList = ({ level, setLvl }) => {
   };
   return (
     <ul className="lvl-buttons-ul">
-      {Object.values(LEVELS).map((levelValue) => {
+      {Object.values(LEVELS).map((levelValue, index) => {
         return (
-          <li className="lvl-button-li">
-            <button
-              className={level === levelValue ? 'lvl-button-active' : 'lvl-button'}
-              onClick={() => setLvl(levelValue)}
-            >
+          <li key={index} className="lvl-button-li">
+            <button className={level === levelValue ? 'lvl-button-active' : 'lvl-button'} onClick={() => setLvl(levelValue)}>
               {levelNames[levelValue]}
             </button>
           </li>

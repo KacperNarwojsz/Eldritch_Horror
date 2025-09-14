@@ -708,13 +708,7 @@ class AncientBoard extends Component {
         case 'HB3':
           return <MythosHB3 mythosHB3Done={this.mythosHB3Done} characters={this.state.characters} />;
         case 'HB4':
-          return (
-            <MythosHB4
-              mythosHB4Done={this.mythosHB4Done}
-              characters={this.state.characters}
-              defeat={this.state.defeat}
-            />
-          );
+          return <MythosHB4 mythosHB4Done={this.mythosHB4Done} characters={this.state.characters} defeat={this.state.defeat} />;
         default:
           return null;
       }
@@ -765,13 +759,7 @@ class AncientBoard extends Component {
         case 'HB3':
           return <MythosHB3 mythosHB3Done={this.mythosHB3Done} characters={this.state.characters} />;
         case 'HB4':
-          return (
-            <MythosHB4
-              mythosHB4Done={this.mythosHB4Done}
-              characters={this.state.characters}
-              defeat={this.state.defeat}
-            />
-          );
+          return <MythosHB4 mythosHB4Done={this.mythosHB4Done} characters={this.state.characters} defeat={this.state.defeat} />;
         default:
           return null;
       }
@@ -822,13 +810,7 @@ class AncientBoard extends Component {
         case 'HB3':
           return <MythosHB3 mythosHB3Done={this.mythosHB3Done} characters={this.state.characters} />;
         case 'HB4':
-          return (
-            <MythosHB4
-              mythosHB4Done={this.mythosHB4Done}
-              characters={this.state.characters}
-              defeat={this.state.defeat}
-            />
-          );
+          return <MythosHB4 mythosHB4Done={this.mythosHB4Done} characters={this.state.characters} defeat={this.state.defeat} />;
         default:
           return null;
       }
@@ -879,13 +861,7 @@ class AncientBoard extends Component {
         case 'HB3':
           return <MythosHB3 mythosHB3Done={this.mythosHB3Done} characters={this.state.characters} />;
         case 'HB4':
-          return (
-            <MythosHB4
-              mythosHB4Done={this.mythosHB4Done}
-              characters={this.state.characters}
-              defeat={this.state.defeat}
-            />
-          );
+          return <MythosHB4 mythosHB4Done={this.mythosHB4Done} characters={this.state.characters} defeat={this.state.defeat} />;
         default:
           return null;
       }
@@ -936,13 +912,7 @@ class AncientBoard extends Component {
         case 'HB3':
           return <MythosHB3 mythosHB3Done={this.mythosHB3Done} characters={this.state.characters} />;
         case 'HB4':
-          return (
-            <MythosHB4
-              mythosHB4Done={this.mythosHB4Done}
-              characters={this.state.characters}
-              defeat={this.state.defeat}
-            />
-          );
+          return <MythosHB4 mythosHB4Done={this.mythosHB4Done} characters={this.state.characters} defeat={this.state.defeat} />;
         default:
           return null;
       }
@@ -993,13 +963,7 @@ class AncientBoard extends Component {
         case 'HB3':
           return <MythosHB3 mythosHB3Done={this.mythosHB3Done} characters={this.state.characters} />;
         case 'HB4':
-          return (
-            <MythosHB4
-              mythosHB4Done={this.mythosHB4Done}
-              characters={this.state.characters}
-              defeat={this.state.defeat}
-            />
-          );
+          return <MythosHB4 mythosHB4Done={this.mythosHB4Done} characters={this.state.characters} defeat={this.state.defeat} />;
         default:
           return null;
       }
@@ -1174,11 +1138,7 @@ class AncientBoard extends Component {
                   trigger={
                     <button
                       className={
-                        this.state.mythosNo === undefined
-                          ? 'mythos-defeat'
-                          : this.state.isLoadDone
-                          ? 'mythos'
-                          : 'mythos-stamp'
+                        this.state.mythosNo === undefined ? 'mythos-defeat' : this.state.isLoadDone ? 'mythos' : 'mythos-stamp'
                       }
                     >
                       <p className="mythos-counter-text">

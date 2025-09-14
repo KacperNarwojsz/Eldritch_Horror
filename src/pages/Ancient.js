@@ -5,7 +5,7 @@ import AncientBoard from '../Components/AncientBoard';
 import BackBoardButton from '../Components/BackBoardButton';
 import SurrenderButton from '../Components/SurrenderButton';
 import chooseRandom from '../Components/Shuffler';
-import { ANCIENTS, CARDS, EXPEDITIONS } from '../constants';
+import { ANCIENTS, CARDS, EXPEDITIONDECK, EXPEDITIONS } from '../constants';
 import './AllPages.css';
 
 // TO DO:
@@ -16,10 +16,10 @@ import './AllPages.css';
 // Niejawny elseif na obiekcie
 
 class Ancient extends Component {
-  constructor({ ancient, level, characters, victory, defeat }) {
+  constructor({ ancient, level }) {
     super();
-    this.shuffleDeckReverseExpedition = [...EXPEDITIONS];
-    this.shuffleDeckReverseExpeditionFiltered = [...EXPEDITIONS];
+    this.shuffleDeckReverseExpedition = [...EXPEDITIONDECK];
+    this.shuffleDeckReverseExpeditionFiltered = [...EXPEDITIONDECK];
     this.discardDeckReverseExpedition = [];
     this.deletedDeckReverseExpedition = [];
     this.shuffleDeckExpeditionAntarctica = [1, 2, 3];
@@ -46,11 +46,6 @@ class Ancient extends Component {
     this.mythosDeckStage3 = [];
     this.rumorDeck = [];
     this.state = {
-      ancient: ancient,
-      level: level,
-      characters: characters,
-      victory: victory,
-      defeat: defeat,
       expeditionReverseShuffle: chooseRandom(this.shuffleDeckReverseExpedition),
       expeditionPreviousReverse: 0,
       expeditionShuffle: 0,
@@ -130,7 +125,7 @@ class Ancient extends Component {
 
   handleExpeditionShuffle = () => {
     switch (this.state.expeditionReverseShuffle) {
-      case 'Antarctica':
+      case EXPEDITIONS.ANTARCTICA:
         this.setState({
           expeditionShuffle: chooseRandom(this.shuffleDeckExpeditionAntarctica),
         });
@@ -138,7 +133,7 @@ class Ancient extends Component {
           this.shuffleDeckExpeditionAntarctica = [1, 2, 3];
         }
         break;
-      case 'TheAmazon':
+      case EXPEDITIONS.THEAMAZON:
         this.setState({
           expeditionShuffle: chooseRandom(this.shuffleDeckExpeditionTheAmazon),
         });
@@ -146,7 +141,7 @@ class Ancient extends Component {
           this.shuffleDeckExpeditionTheAmazon = [1, 2, 3];
         }
         break;
-      case 'TheHeartofAfrica':
+      case EXPEDITIONS.THEHEARTOFAFRICA:
         this.setState({
           expeditionShuffle: chooseRandom(this.shuffleDeckExpeditionTheHeartofAfrica),
         });
@@ -154,7 +149,7 @@ class Ancient extends Component {
           this.shuffleDeckExpeditionTheHeartofAfrica = [1, 2, 3];
         }
         break;
-      case 'TheHimalayas':
+      case EXPEDITIONS.THEHIMALAYAS:
         this.setState({
           expeditionShuffle: chooseRandom(this.shuffleDeckExpeditionTheHimalayas),
         });
@@ -162,7 +157,7 @@ class Ancient extends Component {
           this.shuffleDeckExpeditionTheHimalayas = [1, 2, 3];
         }
         break;
-      case 'ThePyramids':
+      case EXPEDITIONS.THEPYRAMIDS:
         this.setState({
           expeditionShuffle: chooseRandom(this.shuffleDeckExpeditionThePyramids),
         });
@@ -192,17 +187,17 @@ class Ancient extends Component {
   };
 
   removeExpedition = () => {
-    if (this.state.expeditionReverseShuffle === 'Antarctica') {
+    if (this.state.expeditionReverseShuffle === EXPEDITIONS.ANTARCTICA) {
       this.setState({ deletedAntarctica: true });
-    } else if (this.state.expeditionReverseShuffle === 'TheAmazon') {
+    } else if (this.state.expeditionReverseShuffle === EXPEDITIONS.THEAMAZON) {
       this.setState({ deletedTheAmazon: true });
-    } else if (this.state.expeditionReverseShuffle === 'TheHeartofAfrica') {
+    } else if (this.state.expeditionReverseShuffle === EXPEDITIONS.THEHEARTOFAFRICA) {
       this.setState({ deletedTheHeartofAfrica: true });
-    } else if (this.state.expeditionReverseShuffle === 'TheHimalayas') {
+    } else if (this.state.expeditionReverseShuffle === EXPEDITIONS.THEHIMALAYAS) {
       this.setState({ deletedTheHimalayas: true });
-    } else if (this.state.expeditionReverseShuffle === 'ThePyramids') {
+    } else if (this.state.expeditionReverseShuffle === EXPEDITIONS.THEPYRAMIDS) {
       this.setState({ deletedThePyramids: true });
-    } else if (this.state.expeditionReverseShuffle === 'Tunguska') {
+    } else if (this.state.expeditionReverseShuffle === EXPEDITIONS.TUNGUSKA) {
       this.setState({ deletedTunguska: true });
     }
     this.deletedDeckReverseExpedition.push(this.state.expeditionReverseShuffle);
@@ -249,8 +244,8 @@ class Ancient extends Component {
               <div className="flex-div">
                 <BackBoardButton confirm={() => this.props.chooseAncient(this.state.ancient)} />
                 <AncientBoard
-                  level={this.state.level}
-                  characters={this.state.characters}
+                  level={this.props.level}
+                  characters={this.props.characters}
                   ancient={this.props.ancient}
                   mythosDeck={this.mythosDeck}
                   mythosDeckStage2={this.mythosDeckStage2}
@@ -265,10 +260,10 @@ class Ancient extends Component {
                   deletedThePyramids={this.state.deletedThePyramids}
                   deletedTunguska={this.state.deletedTunguska}
                   removeExpedition={this.removeExpedition}
-                  victory={this.state.victory}
-                  defeat={this.state.defeat}
+                  victory={this.props.victory}
+                  defeat={this.props.defeat}
                 />
-                <SurrenderButton confirm={this.state.defeat} />
+                <SurrenderButton confirm={this.props.defeat} />
               </div>
             </div>
           </div>
@@ -282,7 +277,7 @@ class Ancient extends Component {
               discardDeckReverseExpedition={this.discardDeckReverseExpedition}
               discardDeckExpedition={this.discardDeckExpedition}
               ancient={this.props.ancient}
-              defeat={this.state.defeat}
+              defeat={this.props.defeat}
             />
           </div>
         </EldritchBoard>

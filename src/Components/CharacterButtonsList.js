@@ -6,7 +6,7 @@ const CharacterButtonsList = ({ characters, setCharacters }) => {
     <ul className="char-buttons-ul">
       {Array.from({ length: 8 }).map((_, index) => {
         return (
-          <React.Fragment>
+          <React.Fragment key={index}>
             <li className="char-button-li">
               <button
                 className={characters === index + 1 ? 'char-button-active' : 'char-button'}

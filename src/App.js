@@ -9,11 +9,11 @@ import './App.css';
 
 // TO DO:
 // Refactor na hooks i typescript
-// zamiast stringów const
 // konteksty
 
 //DONE:
 // prettier format on save
+// zamiast stringów const
 
 class App extends Component {
   constructor() {
